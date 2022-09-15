@@ -89,7 +89,7 @@ export const UserPage = () => {
           id='tag'
         />
 
-        <button>Save</button>
+        <button>Add</button>
       </form>
     </section>
   )

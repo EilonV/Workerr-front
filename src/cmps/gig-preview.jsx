@@ -4,12 +4,12 @@ export const GigPreview = ({ gig }) => {
   return (
     <section className='gig-preview'>
       <Link to={`/gig/edit/${gig._id}`}>
-        <h1>GIG PREVIEW</h1>
+        <img className='img-gig' src={gig.owner.imgUrl} />
+        <img className='img-user' src={gig.imgUrl} />
+        {gig.owner && <p> {gig.owner.fullname}</p>}
         <p>{gig.title}</p>
-        <p>{gig.price}</p>
+        <p>{`$` + gig.price}</p>
         <p>{gig.description}</p>
-        <p>{gig.url}</p>
-        {gig.owner && <p>created by: {gig.owner.fullname}</p>}
       </Link>
     </section>
   )

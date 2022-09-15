@@ -18,7 +18,8 @@ const gDefaultGigs = [
     owner: {
       _id: 'u101',
       fullname: 'Dudu Da',
-      imgUrl: '',
+      imgUrl:
+        'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/112136097/original/e67e2292eb9e7d5b51939707f6fbe71f12812f26.jpg',
       level: 'premium',
       rate: 4,
     },
@@ -71,7 +72,8 @@ const gDefaultGigs = [
     owner: {
       _id: 'u101',
       fullname: 'Dudu Da',
-      imgUrl: '',
+      imgUrl:
+        'https://media.smallbiztrends.com/2021/11/how-to-make-money-on-fiverr.png',
       level: 'premium',
       rate: 4,
     },
@@ -84,7 +86,7 @@ const gDefaultGigs = [
       {
         _id: 'o1225',
         createdAt: 9898989,
-        buyer: 'some buyet',
+        buyer: 'some buyer',
         seller: 'some user',
         gig: {
           _id: 'i101',
@@ -116,7 +118,7 @@ const gDefaultGigs = [
         ],
       },
     ],
-  }
+  },
 ]
 
 function query() {

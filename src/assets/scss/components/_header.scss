@@ -1,25 +1,80 @@
+// .app-header {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 10vh;
+//   width: 100%;
+//   padding: 15px;
+//   background-color: rgb(240, 253, 247);
+
+//   .logo {
+//     font-family: Work Sans Bold;
+//     color: $dark-gray;
+
+//     span {
+//       color: $bright-green;
+//       font-size: 50px;
+//     }
+//   }
+
+//   h1 {
+//     margin: 0;
+//   }
+
+//   a {
+//     font-weight: 600;
+//   }
+
+//   .active {
+//     text-decoration: underline;
+//     font-weight: bold;
+//     color: rgb(247, 151, 151);
+//   }
+
+//   .header-nav > a {
+//     padding-inline-start: 15px;
+//     padding-inline-end: 15px;
+//     color: rgb(246, 227, 157);
+//   }
+// }
+
 .app-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-   
-    .logo {
-        font-family: Work Sans Bold;
-        color: $dark-gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  font-size: large;
+  padding: 15px;
+  justify-content: space-between;
+}
 
-        span {
-            color: $bright-green;
-            font-size: 50px;
-        }
+.header {
+  height: 100%;
+}
 
-    }
+.logo {
+  font-size: 2em;
+}
 
-    h1 {
-        margin: 0;
-    }
+.header-nav > a {
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
+  color: rgb(21, 20, 17);
+}
 
-    a{
-        font-weight: 600;
-    }
+.active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: rgb(247, 151, 151);
+}
+
+.app-header .logo {
+  font-size: 1.5em;
+}
+
+span {
+  color: $bright-green;
+  font-size: 50px;
 }
