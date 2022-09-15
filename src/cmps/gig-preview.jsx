@@ -8,7 +8,7 @@ export const GigPreview = ({ gig }) => {
             <p>{gig.title}</p>
             <p>{gig.price}</p>
             <p>{gig.description}</p>
-            <p>created by: {gig.owner.fullname}</p>
+            {gig.owner && <p>created by: {gig.owner.fullname}</p>}
         </Link>
     </section>
 }
