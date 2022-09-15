@@ -1,0 +1,15 @@
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    article {
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+}

@@ -1,0 +1,30 @@
+// SETUP
+// @import 'setup/typography';
+@import 'setup/_variables';
+@import 'setup/mixins.scss';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/layout';
+@import 'basics/helpers';
+
+// FONTS
+@import 'setup/fonts';
+
+// CMPS
+@import 'components/_header.scss';
+@import 'components/_footer.scss';
+@import 'components/_gig-filter.scss';
+@import 'components/_gig-list.scss';
+@import 'components/_gig-preview.scss';
+@import 'components/_gig-sort.scss';
+
+// PAGES
+@import 'views/_home.scss';
+@import 'views/_about.scss';
+@import 'views/_user-page.scss';
+@import 'views/_admin-page.scss';
+@import 'views/_gig-explore.scss';
+@import 'views/_gig-edit.scss';
+@import 'views/_gig-details.scss';
+@import 'views/_eighterr-app.scss';
