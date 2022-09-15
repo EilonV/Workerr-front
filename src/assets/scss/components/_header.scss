@@ -1,6 +1,25 @@
 .app-header {
-    border: 2px grey solid;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 80px;
+   
+    .logo {
+        font-family: Work Sans Bold;
+        color: $dark-gray;
+
+        span {
+            color: $bright-green;
+            font-size: 50px;
+        }
+
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    a{
+        font-weight: 600;
+    }
 }
