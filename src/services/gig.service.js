@@ -1,90 +1,47 @@
-import { type } from '@testing-library/user-event/dist/type/index.js'
-import { httpService } from './http.service.js'
+import { storageService } from './async-storage'
 
 export const gigService = {
   query,
-  getById,
-  remove,
   save,
+  remove,
+  getById,
 }
 
-const BASE_URL = `gig/`
+const STORAGE_KEY = 'gigs'
+const gDefaultGigs = []
 
-const gDefaultGigs = [
-  {
-    _id: i101,
-    title: 'I will design your logo',
-    price: 12,
-    owner: {
-      _id: u101,
-      fullname: 'Dudu Da',
-      imgUrl: url,
-      level: basic / premium,
-      rate: 4,
-    },
-    daysToMake: 3,
-    description: 'Make unique logo...',
-    imgUrl: '',
-    tags: [logo - design, artisitic, proffesional, accessible],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: mini - user,
-        seller: mini - user,
-        gig: {
-          _id: i101,
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: pending,
-      },
-    ],
-    user: [
-      {
-        _id: u101,
-        fullname: 'User 1',
-        imgUrl: url,
-        username: 'user1',
-        password: 'secret',
-        level: basic / premium,
-        reviews: [
-          {
-            id: madeId,
-            txt: 'Very kind and works fast',
-            rate: 4,
-            by: {
-              _id: u102,
-              fullname: user2,
-              // imgUrl: /img/img2.jpg
-            },
-          },
-        ],
-      },
-    ],
-  },
-]
+function query() {
+  return storageService.query(STORAGE_KEY).then((gigs) => {
+    if (!gigs || !gigs.length) {
+      storageService.postMany(STORAGE_KEY, gDefaultGigs)
+      gigs = gDefaultGigs
+    }
+    // if (filterBy) {
+    //     var { type, maxBatteryStatus, minBatteryStatus, model } = filterBy
+    //     maxBatteryStatus = maxBatteryStatus || Infinity
+    //     minBatteryStatus = minBatteryStatus || 0
+    //     gigs = gigs.filter(gig => gig.type.toLowerCase().includes(type.toLowerCase()) && gig.model.toLowerCase().includes(model.toLowerCase())
+    //         && (gig.batteryStatus < maxBatteryStatus)
+    //         && gig.batteryStatus > minBatteryStatus)
+    // }
 
-async function query(filterBy = {}) {
-  const gigs = await httpService.get(BASE_URL, { params: filterBy })
-  return gigs
-}
-async function getById(gigId) {
-  const gig = await httpService.get(BASE_URL + gigId)
-  return gig
-}
-async function remove(gigId) {
-  const gig = await httpService.delete(BASE_URL + gigId)
-  return gig
+    return gigs
+  })
 }
 
-async function save(gig) {
+function getById(gigId) {
+  return storageService.get(STORAGE_KEY, gigId)
+}
+
+function remove(gigId) {
+  return storageService.remove(STORAGE_KEY, gigId)
+}
+
+function save(gig) {
   if (gig._id) {
-    const res = await httpService.put(BASE_URL + gig._id, gig)
-    return res
+    return storageService.put(STORAGE_KEY, gig)
   } else {
-    const res = await httpService.post(BASE_URL, gig)
-    return res
+    gig.batteryStatus = 100
+    return storageService.post(STORAGE_KEY, gig)
   }
 }
