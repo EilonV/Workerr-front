@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service'
+import { storageService } from '../../src/services/async-storage'
 // import { httpService } from './http.service'
 import { store } from '../store/store'
 import { getActionSetWatchedUser } from '../store/review.actions'
