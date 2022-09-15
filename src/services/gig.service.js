@@ -1,17 +1,18 @@
 import { storageService } from './async-storage'
+import { utilService } from './util.service'
 
 export const gigService = {
   query,
   save,
   remove,
-  getById
+  getById,
 }
 
 const STORAGE_KEY = 'gig'
 
 const gDefaultGigs = [
   {
-    _id: 'i101',
+    _id: 'i100',
     title: 'I will design your logo',
     price: 12,
     owner: {
@@ -149,7 +150,7 @@ function save(gig) {
   if (gig._id) {
     return storageService.put(STORAGE_KEY, gig)
   } else {
-    gig.batteryStatus = 100
+    gig._id = utilService.makeId(4)
     return storageService.post(STORAGE_KEY, gig)
   }
 }
