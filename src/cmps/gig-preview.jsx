@@ -1,6 +1,10 @@
-export const GigPreview = () => {
+export const GigPreview = ({ gig }) => {
 
-    return (
-        <h1>PREVIEW</h1>
-    )
+    return <section className="gig-preview">
+        <h1>GIG PREVIEW</h1>
+        <p>{gig.title}</p>
+        <p>{gig.price}</p>
+        <p>{gig.description}</p>
+        <p>created by: {gig.owner.fullname}</p>
+    </section>
 }
