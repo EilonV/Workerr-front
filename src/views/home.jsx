@@ -68,6 +68,26 @@ export const Home = () => {
           id='price'
         />
 
+        <label htmlFor='desc'>Description</label>
+        <textarea
+          name='desc'
+          rows='5'
+          cols='60'
+          type='text'
+          placeholder='Enter Gig Desc...'
+          required=''
+          autocomplete='off'
+        ></textarea>
+
+        <label htmlFor='tag'>Add some tags</label>
+        <input
+          placeholder='video editing,session musician'
+          value={gig.tags}
+          onChange={handleChange}
+          type='text'
+          name='tag'
+          id='tag'
+        />
         <button>Save</button>
       </form>
     </section>
