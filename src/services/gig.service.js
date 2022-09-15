@@ -9,14 +9,14 @@ import {
 } from '../store/actions/gig.action'
 
 const gDefaultGigs = [{
-  _id: i101,
+  _id: 'i101',
   title: 'I will design your logo',
   price: 12,
   owner: {
-    _id: u101,
+    _id: 'u101',
     fullname: 'Dudu Da',
-    imgUrl: url,
-    level: basic / premium,
+    imgUrl: '',
+    level: 'premium',
     rate: 4
   },
   daysToMake: 3,
@@ -33,33 +33,33 @@ const gDefaultGigs = [{
     {
       _id: 'o1225',
       createdAt: 9898989,
-      buyer: mini - user,
-      seller: mini - user,
+      buyer: 'some buyet',
+      seller: 'some user',
       gig: {
-        _id: i101,
+        _id: 'i101',
         name: 'Design Logo',
         price: 20
       },
-      status: pending
+      status: 'pending'
     }
   ],
   user: [
     {
-      _id: u101,
+      _id: 'u101',
       fullname: 'User 1',
-      imgUrl: url,
+      imgUrl: '',
       username: 'user1',
       password: 'secret',
-      level: basic / premium,
+      level: 'basic',
       reviews: [
         {
-          id: madeId,
+          id: 1234,
           txt: 'Very kind and works fast',
           rate: 4,
           by: {
-            _id: u102,
-            fullname: user2,
-            imgUrl: /img/img2.jpg
+            _id: 'u102',
+            fullname: 'user2',
+            imgUrl: ''
           }
         }
       ],
