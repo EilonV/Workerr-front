@@ -7,6 +7,7 @@ import { Home } from './views/home'
 import { GigExplore } from './views/gig-explore'
 import { UserPage } from './views/user-page'
 import { AdminPage } from './views/admin-page'
+import { GigEdit } from './views/gig-edit'
 
 function App() {
   return (
