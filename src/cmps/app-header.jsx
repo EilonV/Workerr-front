@@ -4,7 +4,7 @@ export function AppHeader() {
 
     return (
         <header className='app-header full'>
-            <h1 className="logo">Eighterr</h1>
+            <h1 className="logo">Workerr</h1>
             <nav className="main-nav">
                 <NavLink to='/'>Home </NavLink>
                 <NavLink to='/explore'>Explore </NavLink>
