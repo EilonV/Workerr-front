@@ -4,7 +4,7 @@ export const gigService = {
   query,
   save,
   remove,
-  getById,
+  getById
 }
 
 const STORAGE_KEY = 'gig'
