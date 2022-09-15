@@ -64,8 +64,8 @@ const gDefaultGigs = [
     ],
   },
   {
-    _id: 'i101',
-    title: 'I will design your logo',
+    _id: 'i102',
+    title: 'I wont design your logo',
     price: 12,
     owner: {
       _id: 'u101',
@@ -115,7 +115,7 @@ const gDefaultGigs = [
         ],
       },
     ],
-  },
+  }
 ]
 
 function query() {
