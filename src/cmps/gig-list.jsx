@@ -1,6 +1,12 @@
-export const GigList = () => {
- 
-    return (
-        <h1>LIST</h1>
-    )
+import { GigPreview } from "./gig-preview"
+
+export const GigList = ({ gigs }) => {
+
+    console.log(gigs)
+    if (!gigs) return <div className='flex justify-center'>Loading...</div>
+    return <section>
+        <div className='gig-list cards-grid'>
+            {gigs.map(gig => <GigPreview key={gig._id} gig={gig} />)}
+        </div>
+    </section>
 }
