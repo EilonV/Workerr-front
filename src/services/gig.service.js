@@ -17,13 +17,23 @@ const gDefaultGigs = [
     owner: {
       _id: 'u101',
       fullname: 'Dudu Da',
+      ownerCountry: 'USA',
       imgUrl: '',
       level: 'premium',
       rate: 4,
+      memberSince: 'march 2015',
+      avgResponseTime: '1 hour',
+      lastDelivery: 'about 17 hours',
+      ownerLetter: ' Hi, Mayur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
+
     },
     daysToMake: 3,
-    description: 'Make unique logo...',
+    description: '',
+    longerDescription:'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
     imgUrl: '',
+
+
+
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
     order: [
@@ -44,7 +54,7 @@ const gDefaultGigs = [
       {
         _id: 'u101',
         fullname: 'User 1',
-        imgUrl: '',
+        imgUrl: 'https://www.google.com/search?q=logo+design&rlz=1C1SQJL_iwIL805IL805&sxsrf=ALiCzsY42ec3l797O-b1-EMVU5lpmPg-Mg:1663266350169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwyN__tZf6AhXMN8AKHePSCEYQ_AUoAXoECAIQAw&biw=1903&bih=900&dpr=1#imgrc=5cYaiEp_sBQEJM',
         username: 'user1',
         password: 'secret',
         level: 'basic',
@@ -57,6 +67,11 @@ const gDefaultGigs = [
               _id: 'u102',
               fullname: 'user2',
               imgUrl: '',
+              memberSince: 'march 2015',
+              avgResponseTime: '1 hour',
+              lastDelivery: 'about 17 hours',
+              ownerLetter: ' Hi, Mayur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
+
             },
           },
         ],
@@ -67,18 +82,27 @@ const gDefaultGigs = [
     _id: 'i102',
     title: 'I wont design your logo',
     price: 12,
+   
     owner: {
       _id: 'u101',
       fullname: 'Dudu Da',
       imgUrl: '',
       level: 'premium',
       rate: 4,
+      memberSince:'march 2015',
+      avgResponseTime: '1 hour',
+      lastDelivery: 'about 17 hours',
+      ownerLetter: ' Hi, Mayur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
+
     },
+   
     daysToMake: 3,
-    description: 'Make unique logo...',
+    description: '',
+    longerDescription:'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
     imgUrl: '',
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
+  
     order: [
       {
         _id: 'o1225',
