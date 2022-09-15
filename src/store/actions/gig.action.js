@@ -27,6 +27,32 @@ export function removeGig(gigId) {
   }
 }
 
+export function addGig(gig) {
+  return (dispatch) => {
+    return gigService
+      .save(gig)
+      .then((savedGig) => {
+        dispatch({ type: 'ADD_GIG', gig: savedGig })
+      })
+      .catch((err) => {
+        console.log('err:', err)
+      })
+  }
+}
+
+export function updateGig(gig) {
+  return (dispatch) => {
+    return gigService
+      .save(gig)
+      .then((savedGig) => {
+        dispatch({ type: 'UPDATE_GIG', gig: savedGig })
+      })
+      .catch((err) => {
+        console.log('err:', err)
+      })
+  }
+}
+
 export function setFilterBy(filterBy) {
   return (dispatch) => {
     dispatch({ type: 'SET_FILTER_BY', filterBy })
