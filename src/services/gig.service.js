@@ -63,6 +63,59 @@ const gDefaultGigs = [
       },
     ],
   },
+  {
+    _id: 'i101',
+    title: 'I will design your logo',
+    price: 12,
+    owner: {
+      _id: 'u101',
+      fullname: 'Dudu Da',
+      imgUrl: '',
+      level: 'premium',
+      rate: 4,
+    },
+    daysToMake: 3,
+    description: 'Make unique logo...',
+    imgUrl: '',
+    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
+    likedByUsers: ['mini-user'], // for user-wishlist : use $in
+    order: [
+      {
+        _id: 'o1225',
+        createdAt: 9898989,
+        buyer: 'some buyet',
+        seller: 'some user',
+        gig: {
+          _id: 'i101',
+          name: 'Design Logo',
+          price: 20,
+        },
+        status: 'pending',
+      },
+    ],
+    user: [
+      {
+        _id: 'u101',
+        fullname: 'User 1',
+        imgUrl: '',
+        username: 'user1',
+        password: 'secret',
+        level: 'basic',
+        reviews: [
+          {
+            id: 1234,
+            txt: 'Very kind and works fast',
+            rate: 4,
+            by: {
+              _id: 'u102',
+              fullname: 'user2',
+              imgUrl: '',
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 function query() {
