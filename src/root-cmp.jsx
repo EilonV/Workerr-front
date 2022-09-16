@@ -8,6 +8,7 @@ import { GigExplore } from './views/gig-explore'
 import { UserPage } from './views/user-page'
 import { AdminPage } from './views/admin-page'
 import { GigEdit } from './views/gig-edit'
+import { GigDetails } from './views/gig-details'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <AppHeader />
       <main className='main-container'>
         <Routes>
+          <Route path='gig/details/:id' element={<GigDetails />} />
           <Route path='gig/edit/:id' element={<GigEdit />} />
           <Route path='gig/edit' element={<GigEdit />} />
           <Route path='/about' element={<About />} />
@@ -28,5 +30,4 @@ function App() {
     </div>
   )
 }
-
 export default App

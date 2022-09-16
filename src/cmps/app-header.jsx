@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 export function AppHeader() {
-
-    return (
-        <header className='app-header full'>
-            <h1 className='logo'>Workerr<span>.</span></h1>
-            <nav className="main-nav">
-                <NavLink to='/'>Home </NavLink>
-                <NavLink to='/gigs'>Explore </NavLink>
-                <NavLink to='/about'>About </NavLink>
-                <NavLink to='/user'>User </NavLink>
-                <NavLink to='/admin'>Admin </NavLink>
-            </nav>
-        </header>
-    )
+  return (
+    <header className='app-header full'>
+      <h1 className='logo'>
+        Workerr<span>.</span>
+      </h1>
+      <nav className='header-nav '>
+        <NavLink to='/'>Home </NavLink> |<NavLink to='/gigs'>Explore </NavLink>{' '}
+        |<NavLink to='/about'>About </NavLink>|
+        <NavLink to='/user'>User </NavLink>|
+        <NavLink to='/admin'>Admin </NavLink>
+      </nav>
+    </header>
+  )
 }

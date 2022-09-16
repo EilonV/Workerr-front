@@ -67,8 +67,7 @@ export const GigEdit = () => {
           name='price'
           id='price'
         />
-
-        <button>Save</button>
+        <button>Update</button>
       </form>
     </section>
   )
