@@ -1,9 +1,6 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 25%));
-    grid-template-rows: repeat(400px)
-}
-
-.gig-preview {
-    background-color: lavender;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 20%));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 350px));
+    gap: 50px;
 }
