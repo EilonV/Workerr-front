@@ -4,7 +4,7 @@ export const GigPreview = ({ gig }) => {
     console.log(gig)
     return (
         <section className='gig-preview'>
-            <Link to={`/gig/edit/${gig._id}`}>
+            <Link to={`/gig/details/${gig._id}`}>
                 <img className='img-gig' src={gig.imgUrl} />
                 <div className='gig-owner-info'>
                     <div>
