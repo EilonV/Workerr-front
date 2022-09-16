@@ -33,7 +33,7 @@ const gDefaultGigs = [
     description: '',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: '',
+    imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuSwep5lSvNQaJ9Y4QMO2uY45YvKs0apVcy0HIj8nxfo3BgkbmXb2YOrDQ9Fkajiq8LvE&usqp=CAU',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -55,8 +55,7 @@ const gDefaultGigs = [
       {
         _id: 'u101',
         fullname: 'User 1',
-        imgUrl:
-          'https://www.google.com/search?q=logo+design&rlz=1C1SQJL_iwIL805IL805&sxsrf=ALiCzsY42ec3l797O-b1-EMVU5lpmPg-Mg:1663266350169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwyN__tZf6AhXMN8AKHePSCEYQ_AUoAXoECAIQAw&biw=1903&bih=900&dpr=1#imgrc=5cYaiEp_sBQEJM',
+        imgUrl:'https://www.google.com/search?q=logo+design&rlz=1C1SQJL_iwIL805IL805&sxsrf=ALiCzsY42ec3l797O-b1-EMVU5lpmPg-Mg:1663266350169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwyN__tZf6AhXMN8AKHePSCEYQ_AUoAXoECAIQAw&biw=1903&bih=900&dpr=1#imgrc=5cYaiEp_sBQEJM',
         username: 'user1',
         password: 'secret',
         level: 'basic',
@@ -102,7 +101,7 @@ const gDefaultGigs = [
     description: '',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: '',
+    imgUrl: 'https://static.vecteezy.com/system/resources/previews/000/586/966/non_2x/book-star-logo-design-concept-template-vector.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in

@@ -1,16 +1,12 @@
 .gig-preview {
-<<<<<<< HEAD
-    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    box-shadow: lightgray 0 0 5px 0.1px;
 }
 
-.gig-preview-wrapper{
+.img-gig{
+    width: 100%;
+    max-width: 250px;
+    max-height: 150px;
+    object-fit: cover;
 }
-=======
-  padding: 15px;
-  // background-color: lightblue;
-}
-
-.img-gig {
-  height: 100px;
-}
->>>>>>> 775f0b713afc866215f2ffc4732f1a19cdf25ece

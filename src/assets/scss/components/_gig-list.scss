@@ -1,29 +1,6 @@
 .gig-list {
-<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 20%));
     grid-template-rows: repeat(auto-fill, minmax(300px, 350px));
     gap: 50px;
 }
-=======
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 25%));
-  grid-template-rows: repeat(400px);
-  gap: 15px;
-}
-
-.gig-preview {
-  background-color: lavender;
-  display: flex;
-  flex-direction: column;
-  background-color: #e91e630a;
-  text-align: center;
-  box-shadow: 3px 4px 15px #00000026;
-  border-radius: 5px;
-  background-repeat: no-repeat;
-  background-size: 37%;
-  background-position: 50% calc(100% - 50px);
-  overflow-y: hidden;
-  // height: 250px;
-}
->>>>>>> 775f0b713afc866215f2ffc4732f1a19cdf25ece
