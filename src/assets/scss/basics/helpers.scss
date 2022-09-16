@@ -40,13 +40,11 @@
     &.column {
         flex-direction: column;
     }
-<<<<<<< HEAD
 
-=======
     &.row {
         flex-direction: row;
     }
->>>>>>> c5d3406a4987083292bc6f516429a57ea910f0c2
+
     &.justify-center {
         justify-content: center;
     }
@@ -54,11 +52,15 @@
     &.align-center {
         align-items: center;
     }
-<<<<<<< HEAD
 
     &.space-between {
         justify-content: space-between;
     }
+
+    &.gap {
+        gap: 15px;
+    }
+
 }
 
 .text-left {
@@ -71,27 +73,11 @@
 
 .text-center {
     text-align: center;
-=======
-    
-    &.space-between {
-        justify-content: space-between;
-    } 
-    &.gap {
-        gap: 15px;
-    } 
-
->>>>>>> c5d3406a4987083292bc6f516429a57ea910f0c2
 }
 
 .border-radius {
     border-radius: 100px;
     width: 10%;
 }
-<<<<<<< HEAD
 
 // Media helpers
-=======
-// Media helpers
-
-
->>>>>>> c5d3406a4987083292bc6f516429a57ea910f0c2
