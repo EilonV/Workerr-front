@@ -12,11 +12,17 @@ export const UserPage = () => {
   const dispatch = useDispatch()
 
   const [gig, handleChange, setGig] = useForm({
-    name: '',
+    title: '',
     price: '',
+    daysToMake: '',
+    longerDescription: '',
+    tags: '',
+    order: '',
+    owner: '',
   })
 
   const inputRef = useRef()
+  // console.log(inputRef)
 
   useEffect(() => {
     inputRef.current.focus()
@@ -47,7 +53,7 @@ export const UserPage = () => {
 
   return (
     <section className='gig-edit'>
-      <h1>{gig._id ? 'Edit' : 'Add'} Gig</h1>
+      <h1>{'Add'} Gig</h1>
       <form onSubmit={onSaveGig}>
         <label htmlFor='name'>Title</label>
         <input
@@ -59,36 +65,52 @@ export const UserPage = () => {
           id='title'
         />
 
-        <label htmlFor='price'>Price</label>
-        <input
-          value={gig.price}
-          onChange={handleChange}
-          type='number'
-          name='price'
-          id='price'
-        />
+        <label>
+          Days To Make
+          <input
+            placeholder='Days To Make'
+            type='number'
+            id='daysToMake'
+            name='daysToMake'
+            className='input-field'
+            required
+          />
+        </label>
 
-        <label htmlFor='desc'>Description</label>
-        <textarea
-          name='desc'
-          rows='5'
-          cols='60'
-          type='text'
-          placeholder='Enter Gig Desc...'
-          required=''
-          autocomplete='off'
-        ></textarea>
+        <div className='gig-container'>
+          <label htmlFor='price'>Price</label>
+          <input
+            value={gig.price}
+            onChange={handleChange}
+            type='number'
+            name='price'
+            id='price'
+          />
+        </div>
 
-        <label htmlFor='tag'>Add some tags</label>
-        <input
-          placeholder='Add tags..'
-          value={gig.tags}
-          onChange={handleChange}
-          type='text'
-          name='tag'
-          id='tag'
-        />
-
+        <div className='gig-container'>
+          <label htmlFor='desc'>Description</label>
+          <textarea
+            name='desc'
+            rows='5'
+            cols='60'
+            type='text'
+            placeholder='Enter Gig Desc...'
+            required=''
+            autocomplete='off'
+          ></textarea>
+        </div>
+        <div className='gig-container'>
+          <label htmlFor='tag'>Add some tags</label>
+          <input
+            placeholder='Add tags..'
+            value={gig.tags}
+            onChange={handleChange}
+            type='text'
+            name='tag'
+            id='tag'
+          />
+        </div>
         <button>Add</button>
       </form>
     </section>
