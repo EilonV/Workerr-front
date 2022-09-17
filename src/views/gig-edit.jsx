@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
@@ -47,6 +48,7 @@ export const GigEdit = () => {
 
   return (
     <section className='gig-edit'>
+      <AppHeaderExplore />
       <h1>{gig._id ? 'Edit' : 'Add'} Gig</h1>
       <form onSubmit={onSaveGig}>
         <label htmlFor='name'>Title</label>

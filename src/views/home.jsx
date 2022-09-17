@@ -2,11 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import {PopularTagsList} from '../cmps/popular-list'
+import { PopularTagsList } from '../cmps/popular-list'
 import { gigService } from '../services/gig.service'
 import { userService } from '../services/user.service'
 
 import HeroImg1 from '../assets/imgs/jumbo/1.png'
+import { AppHeader } from '../cmps/app-header'
 
 // import HeroImg2 from '../assets/imgs/jumbo/2.png'
 // import HeroImg3 from '../assets/imgs/jumbo/3.png'
@@ -22,6 +23,7 @@ export const Home = () => {
 
 
   return <section className='home'>
+    <AppHeader />
 
     <div className='hero-wrapper full'>
       <div className='hero-background hero-dani'>
@@ -52,8 +54,8 @@ export const Home = () => {
 
 
     </div>
-     
-      {/* <div className='social-proof-line flex row justify-center'>Trusted by:
+
+    {/* <div className='social-proof-line flex row justify-center'>Trusted by:
         <span>PlayBook</span>
         <span>Keygle</span>
         <span>BigNoise</span>
@@ -61,10 +63,10 @@ export const Home = () => {
         <span>PayMe</span>
       </div> */}
 
-<div className='popular-tags main-layout'>
-                <h2>Popular professional services</h2>
-                <PopularTagsList />
-            </div>
+    <div className='popular-tags main-layout'>
+      <h2>Popular professional services</h2>
+      <PopularTagsList />
+    </div>
 
   </section>
 }

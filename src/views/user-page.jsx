@@ -6,6 +6,7 @@ import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
 import { utilService } from '../services/util.service'
+import { AppHeaderExplore } from '../cmps/app-header-explore'
 
 export const UserPage = () => {
   const params = useParams()
@@ -68,6 +69,7 @@ export const UserPage = () => {
 
   return (
     <section className='gig-edit'>
+      <AppHeaderExplore />
       <h1>{'Add'} Gig</h1>
       <form onSubmit={onSaveGig}>
         <label htmlFor='name'>Title</label>

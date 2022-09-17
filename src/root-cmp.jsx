@@ -9,13 +9,13 @@ import { UserPage } from './views/user-page'
 import { AdminPage } from './views/admin-page'
 import { GigEdit } from './views/gig-edit'
 import { GigDetails } from './views/gig-details'
+import { AppHeaderExplore } from './cmps/app-header-explore'
 
 function App() {
   return (
     <section>
       <div>
         <div className='main-layout' >
-          <AppHeader />
         </div>
       </div>
 
