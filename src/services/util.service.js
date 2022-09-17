@@ -21,7 +21,6 @@ function makeId(length = 6) {
 function makeImg(size = 1) {
   var words = [
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:GbHi8bXxRWphv2nR63SDaMuTpwzz9VQuKomCBSd86Q&usqp=CAU',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/h93uyegy1l0ym2w8myvm.png&usqp=CAF',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
@@ -36,6 +35,7 @@ function makeImg(size = 1) {
     'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
+    ' https://fiverr-res.cloudinary.com/video/upload/so_24.423027,t_gig_cards_web/g9rj15lf0icjbymfbiyj.png',
   ]
   var txt = ''
   while (size > 0) {

@@ -26,18 +26,14 @@ export const UserPage = () => {
       fullname: 'Dudu Da',
       imgUrl: 'https://i1.sndcdn.com/artworks-000118768405-0t6s1f-t500x500.jpg',
       level: 'premium',
-      rate: 4,
+      rate: 0,
       memberSince: 'march 2015',
       avgResponseTime: '1 hour',
       lastDelivery: 'about 17 hours',
       ownerLetter:
         ' Hi, Mayur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
     },
-    user: [
-      {
-        title: '',
-      },
-    ],
+    user: [{ reviews: '' }],
   })
 
   const inputRef = useRef()
@@ -120,7 +116,7 @@ export const UserPage = () => {
           ></textarea>
         </div>
 
-        {/* <div className='gig-container'>
+        <div className='gig-container'>
           <label htmlFor='tag'>Add some tags</label>
           <input
             placeholder='Add tags..'
@@ -130,7 +126,7 @@ export const UserPage = () => {
             name='tag'
             id='tag'
           />
-        </div> */}
+        </div>
 
         <button>Add</button>
       </form>
