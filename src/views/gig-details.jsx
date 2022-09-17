@@ -1,21 +1,27 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
-import { userService } from '../services/user.service'
 
-export const GigDetails = (onRemoveGig) => {
+export const GigDetails = () => {
   const params = useParams()
   const navigate = useNavigate()
-
+  const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
+
   useEffect(() => {
+    // console.log('render')
     const id = params.id
     gigService.getById(id).then((gig) => setGig(gig))
   }, [])
 
+  const onRemoveGig = (toyId) => {
+    // console.log('render')
+    dispatch(removeGig(toyId))
+    navigate('/gigs')
+  }
   // console.log(gig)
 
   if (gig)
