@@ -12,22 +12,30 @@ import { GigDetails } from './views/gig-details'
 
 function App() {
   return (
-    <div className='main-app main-layout'>
-      <AppHeader />
-      <main className='main-container'>
-        <Routes>
-          <Route path='gig/details/:id' element={<GigDetails />} />
-          <Route path='gig/edit/:id' element={<GigEdit />} />
-          <Route path='gig/edit' element={<GigEdit />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/gigs' element={<GigExplore />} />
-          <Route path='/user' element={<UserPage />} />
-          <Route path='/admin' element={<AdminPage />} />
-          <Route path='/' element={<Home />} />
-        </Routes>
-      </main>
-      <AppFooter />
-    </div>
+    <section>
+      <div>
+        <div className='main-layout' >
+          <AppHeader />
+        </div>
+      </div>
+
+      <div className='main-app main-layout'>
+        <main className='main-container'>
+          <Routes>
+            <Route path='gig/details/:id' element={<GigDetails />} />
+            <Route path='gig/edit/:id' element={<GigEdit />} />
+            <Route path='gig/edit' element={<GigEdit />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/gigs' element={<GigExplore />} />
+            <Route path='/user' element={<UserPage />} />
+            <Route path='/admin' element={<AdminPage />} />
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </main>
+        <AppFooter />
+      </div>
+    </section>
+
   )
 }
 export default App
