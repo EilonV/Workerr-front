@@ -1,17 +1,19 @@
 .app-header {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   width: 100%;
-  font-size: 15px;
+  font-size: 18px;
+
 
   .logo {
     font-size: 2em;
     letter-spacing: -1.5px;
     font-family: Work Sans Bold;
     font-size: 30px;
+    padding-bottom: 7px;
+    color: white;
   }
 
   .header {
@@ -21,6 +23,7 @@
   .header-nav>a {
     padding: 0 10px;
     font-weight: 600;
+    color: white;
   }
 
   span {
@@ -33,14 +36,19 @@
     background-color: transparent;
     border: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 18px;
     margin-right: 10px;
     border: 1px white solid;
     border-radius: 8px;
     transition: 0.2s;
+
+    a {
+      color: white;
+    }
   }
 
   .header-join:hover {
     background-color: $bright-green;
+    border-color: $bright-green;
   }
 }
