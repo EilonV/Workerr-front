@@ -7,6 +7,7 @@ export const utilService = {
   randomUserName,
   makeUserImg,
   makeLevel,
+  makeTitle,
   makeCountry,
 }
 
@@ -19,6 +20,40 @@ function makeId(length = 6) {
     txt += possible.charAt(Math.floor(Math.random() * possible.length))
   }
 
+  return txt
+}
+
+function makeLevel(size = 1) {
+  var level = ['Basic', 'Premium', 'Gold']
+  var txt = ''
+  while (size > 0) {
+    size--
+    txt += level[Math.floor(Math.random() * level.length)] + ' '
+  }
+  return txt
+}
+
+function makeCountry(size = 1) {
+  var country = [
+    'Usa',
+    'Isr',
+    'Rus',
+    'Pol',
+    'Tha',
+    'Mex',
+    'Brazil',
+    'UK',
+    'Ukraine',
+    'Algir',
+    'France',
+    'belgium',
+    'Moroco',
+  ]
+  var txt = ''
+  while (size > 0) {
+    size--
+    txt += country[Math.floor(Math.random() * country.length)] + ' '
+  }
   return txt
 }
 
@@ -61,36 +96,31 @@ function makeUserImg(size = 1) {
   return txt
 }
 
-function makeLevel(size = 1) {
-  var level = ['Basic', 'Premium', 'Gold']
-  var txt = ''
-  while (size > 0) {
-    size--
-    txt += level[Math.floor(Math.random() * level.length)] + ' '
-  }
-  return txt
-}
-
-function makeCountry(size = 1) {
-  var country = [
-    'Usa',
-    'Isr',
-    'Rus',
-    'Pol',
-    'Tha',
-    'Mex',
-    'Brazil',
-    'UK',
-    'Ukraine',
-    'Algir',
-    'France',
-    'belgium',
-    'Moroco',
+function makeTitle(size = 1) {
+  var words = [
+    'i will teach you photoshop',
+    'i will how to be good social manager',
+    'i will be your social manager',
+    'i will record you a video clip',
+    'i will teach how to be in confidence',
+    'i will translate from German to English',
+    'i will translate from Czhech to English',
+    'i will catch your eye lyric',
+    'i will paint for you',
+    'i will make you tatoo',
+    'i will teach how to dance',
+    'i will teach you css & scss',
+    'i will teach you to do cover songs',
+    'i will teach you to play piano',
+    'i will improve your voice',
+    'i will teach you play on violin',
+    'i will teach how to cook',
+    'i will teach you how to bake cookies',
   ]
   var txt = ''
   while (size > 0) {
     size--
-    txt += country[Math.floor(Math.random() * country.length)] + ' '
+    txt += words[Math.floor(Math.random() * words.length)] + ' '
   }
   return txt
 }
@@ -98,21 +128,24 @@ function makeCountry(size = 1) {
 function makeImg(size = 1) {
   var urlImg = [
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/h93uyegy1l0ym2w8myvm.png&usqp=CAF',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
     'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
     'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
     'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
-    'https://fiverr-res.cloudinary.com/video/upload/so_9.127117,t_gig_cards_web/bamft0stu5tonwe65f7c.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
     'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
     'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
-    ' https://fiverr-res.cloudinary.com/video/upload/so_24.423027,t_gig_cards_web/g9rj15lf0icjbymfbiyj.png',
+    'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
+    'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
+    'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
+    'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
+    'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
+    'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
   ]
   var txt = ''
   while (size > 0) {
