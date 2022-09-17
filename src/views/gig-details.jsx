@@ -35,16 +35,6 @@ export const GigDetails = (onRemoveGig) => {
           <p>{gig.longerDescription} </p>
         </section>
 
-
-                <div className='seller-avatar flex row align-center gap'>
-                <img className='seller-img' src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" />
-                    <Link to={'/#'} >{gig.owner.fullname}</Link>
-                    <h4>{gig.owner.level}</h4>
-                    <h4>{gig.owner.rate}</h4>
-                </div>
-
-                <img className='gig-picture' src={gig.imgUrl} alt='Some Logo Design' />
-
         <h2>About The Seller</h2>
         <section className='seller-avatar flex row align-center gap'>
           <img
@@ -71,6 +61,5 @@ export const GigDetails = (onRemoveGig) => {
         </section>
         <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
       </div>
-
     )
 }
