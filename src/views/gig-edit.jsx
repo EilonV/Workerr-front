@@ -12,7 +12,7 @@ export const GigEdit = () => {
   const dispatch = useDispatch()
 
   const [gig, handleChange, setGig] = useForm({
-    name: '',
+    title: '',
     price: '',
   })
 

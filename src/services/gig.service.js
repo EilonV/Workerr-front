@@ -345,7 +345,7 @@ const gDefaultGigs = [
     ],
   },
   {
-    _id: 'i100',
+    _id: 'i105',
     title: 'I will design your logo',
     price: 12,
     owner: {
@@ -505,7 +505,7 @@ const gDefaultGigs = [
     ],
   },
   {
-    _id: 'i100',
+    _id: 'i106',
     title: 'I will design your logo',
     price: 12,
     owner: {
