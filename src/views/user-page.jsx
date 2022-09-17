@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
+import { utilService } from '../services/util.service'
 
 export const UserPage = () => {
   const params = useParams()
@@ -12,13 +13,27 @@ export const UserPage = () => {
   const dispatch = useDispatch()
 
   const [gig, handleChange, setGig] = useForm({
-    title: '',
+    title: 'I will',
     price: '',
     daysToMake: '',
     longerDescription: '',
     tags: '',
     order: '',
-    owner: '',
+    imgUrl: utilService.makeImg(),
+    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
+    owner: {
+      _id: 'u101',
+      fullname: 'Dudu Da',
+      imgUrl: 'https://i1.sndcdn.com/artworks-000118768405-0t6s1f-t500x500.jpg',
+      level: 'premium',
+      rate: 0,
+      memberSince: 'march 2015',
+      avgResponseTime: '1 hour',
+      lastDelivery: 'about 17 hours',
+      ownerLetter:
+        ' Hi, Mayur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
+    },
+    user: [{ reviews: '' }],
   })
 
   const inputRef = useRef()
@@ -100,6 +115,7 @@ export const UserPage = () => {
             autocomplete='off'
           ></textarea>
         </div>
+
         <div className='gig-container'>
           <label htmlFor='tag'>Add some tags</label>
           <input
@@ -111,6 +127,7 @@ export const UserPage = () => {
             id='tag'
           />
         </div>
+
         <button>Add</button>
       </form>
     </section>
