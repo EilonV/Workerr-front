@@ -1,0 +1,29 @@
+.gig-details>* {
+
+    padding: 49px 143px;
+
+    & img.gig-picture {
+        padding-bottom: 60px;
+        width: 40%;
+    }
+
+    & p {
+
+        padding: 25px 0px;
+    }
+
+    & .seller-img {
+
+        border-radius: 100%;
+        width: 70px;
+
+    }
+    & .seller-desc {
+        border: 2px grey solid;
+        
+    }
+
+    & h4>p {
+        color:$bright-gray ;
+    }
+}
