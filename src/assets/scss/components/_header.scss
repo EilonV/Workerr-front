@@ -1,78 +1,46 @@
-// .app-header {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   height: 10vh;
-//   width: 100%;
-//   padding: 15px;
-//   background-color: rgb(240, 253, 247);
-
-//   .logo {
-//     font-family: Work Sans Bold;
-//     color: $dark-gray;
-
-//     span {
-//       color: $bright-green;
-//       font-size: 50px;
-//     }
-//   }
-
-//   h1 {
-//     margin: 0;
-//   }
-
-//   a {
-//     font-weight: 600;
-//   }
-
-//   .active {
-//     text-decoration: underline;
-//     font-weight: bold;
-//     color: rgb(247, 151, 151);
-//   }
-
-//   .header-nav > a {
-//     padding-inline-start: 15px;
-//     padding-inline-end: 15px;
-//     color: rgb(246, 227, 157);
-//   }
-// }
-
 .app-header {
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
-  font-size: large;
-}
+  font-size: 15px;
 
-.header {
-  height: 100%;
-}
+  .logo {
+    font-size: 2em;
+    letter-spacing: -1.5px;
+    font-family: Work Sans Bold;
+    font-size: 30px;
+  }
 
-.logo {
-  font-size: 2em;
-}
+  .header {
+    height: 100%;
+  }
 
-.header-nav > a {
-  padding-inline-start: 15px;
-  padding-inline-end: 15px;
-  color: rgb(21, 20, 17);
-}
+  .header-nav>a {
+    padding: 0 10px;
+    font-weight: 600;
+  }
 
-.active {
-  text-decoration: underline;
-  font-weight: bold;
-  color: rgb(247, 151, 151);
-}
+  span {
+    color: $bright-green;
+    font-size: 45px;
+  }
 
-.app-header .logo {
-  font-size: 1.5em;
-}
+  .header-join {
+    padding: 7px 20px;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 10px;
+    border: 1px white solid;
+    border-radius: 8px;
+    transition: 0.2s;
+  }
 
-span {
-  color: $bright-green;
-  font-size: 50px;
+  .header-join:hover {
+    background-color: $bright-green;
+  }
 }
