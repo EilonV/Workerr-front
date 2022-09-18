@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export const GigPreview = ({ gig }) => {
-  console.log(gig)
+  // console.log(gig)
   return (
     <section className='gig-preview'>
       <Link to={`/gig/details/${gig._id}`}>
@@ -45,7 +45,9 @@ export const GigPreview = ({ gig }) => {
         </svg>
         {gig.owner.rate > 0 ? <p>&nbsp;{gig.owner.rate}</p> : <p>&nbsp;0</p>}
         <div className='flex'>
-          <p className='user-reviews-count'>({gig.user[0].reviews[0].length})</p>
+          <p className='user-reviews-count'>
+            ({gig.user[0].reviews[0].length})
+          </p>
           {/* {(gig.user[0].reviews && gig.user[0].reviews.length > 0) ?
             (<p className='user-reviews-count'>({gig.user[0].reviews.length})</p>) :
             (<p className='user-reviews-count'>888</p>)} */}

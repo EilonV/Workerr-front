@@ -6,7 +6,7 @@ import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 
-export const GigDetails = () => {
+export const GigDetails = ({ gigs }) => {
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -137,7 +137,7 @@ export const GigDetails = () => {
               <span className='days-to-delivery'>
                 {gig.daysToMake} Days To Make{' '}
               </span>
-              <Link to={'/gig/gig-check-out-summery'} className='flex row gap'>
+              <Link to={`/gig/details/:id/checkout`} className='flex row gap'>
                 Continue <span>(${gig.price})</span>
               </Link>
             </div>
