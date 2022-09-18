@@ -20,7 +20,9 @@ export const GigDetails = () => {
 
   const onRemoveGig = (gigId) => {
     dispatch(removeGig(gigId))
-    navigate('/gigs')
+    setTimeout(() => {
+      navigate('/gigs')
+    }, 500)
   }
 
   if (gig)
@@ -28,13 +30,13 @@ export const GigDetails = () => {
       <section className='gig-details main-layout'>
         <AppHeaderExplore />
         <div className='details-container flex row'>
-          <div className='main-details'>
+          <div className='main-details gap'>
             <section>
               <h1>{gig.title}</h1>
 
               <div className='seller-avatar flex row align-center gap'>
                 <img
-                  className='gig-owner-image border-radius'
+                  className='gig-owner-image-top border-radius'
                   src={gig.owner.imgUrl}
                   alt=''
                 />
@@ -43,9 +45,21 @@ export const GigDetails = () => {
                 className='gig-owner-image border-radius'
                 src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=LcEQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFVBabmxQTVRAAVE%3D&w=1000&q=80'
               /> */}
-                <Link to={'/#'}>{gig.owner.fullname}</Link>
-                <h4>{gig.owner.level}</h4>
+                <Link to={'/#'}>{gig.owner.fullname}|</Link>
+                <h4>{gig.owner.level}Link|</h4>
                 <h4>{gig.owner.rate}</h4>
+                <svg
+                  className='gig-review-star'
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 1792 1792'
+                  width='16'
+                  height='16'
+                >
+                  <path
+                    fill='#ffbe5b'
+                    d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
+                  />
+                </svg>
               </div>
 
               <img src={gig.imgUrl} alt='Some Logo Design' />
@@ -56,18 +70,29 @@ export const GigDetails = () => {
             <h2>About The Seller</h2>
             <section className='seller-avatar flex row align-center gap'>
               <img
-                className='gig-owner-image border-radius'
+                className='gig-owner-image-about border-radius'
                 src={gig.owner.imgUrl}
                 alt=''
               />
-              {/* <img
-              className='gig-owner-image border-radius'
-              src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=LcEQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFVBabmxQTVRAAVE%3D&w=1000&q=80'
-            /> */}
+
               <div className='flex column'>
                 <Link to={'/#'}> {gig.owner.fullname}</Link>
                 <h4 className='seller-level'>{gig.owner.level}</h4>
-                <h4>{gig.owner.rate}</h4>
+                <div className='flex row'>
+                  <h4>{gig.owner.rate}</h4>
+                  <svg
+                    className='gig-review-star'
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 1792 1792'
+                    width='16'
+                    height='16'
+                  >
+                    <path
+                      fill='#ffbe5b'
+                      d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
+                    />
+                  </svg>
+                </div>
               </div>
             </section>
 
@@ -103,16 +128,18 @@ export const GigDetails = () => {
             <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
           </div>
 
-          <aside className='aside'>
+          <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
               <div className='flex row gap'>
                 <h1>Package details</h1>
                 <span>{gig.price}$</span>
               </div>
-              <span className='days-to-delivery'>4 Days To Delivery</span>
-              <button className='flex row gap'>
+              <span className='days-to-delivery'>
+                {gig.daysToMake} Days To Make{' '}
+              </span>
+              <Link to={'/gig/gig-check-out-summery'} className='flex row gap'>
                 Continue <span>(${gig.price})</span>
-              </button>
+              </Link>
             </div>
           </aside>
         </div>

@@ -1,6 +1,22 @@
-.details-container>* {
+.details-container  {
 
-    padding: 49px 143px;
+.main-details {
+    padding-right:100px ;
+    padding-top: 128px;
+
+    h1 {
+
+        font-size: 28px;
+
+    }
+
+    .gig-owner-image-top {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
 
 
     & p {
@@ -8,20 +24,50 @@
         padding: 25px 0px;
     }
 
-    .gig-owner-image {
+    .gig-owner-image-about {
         width: 80px;
         height: 80px;
         border-radius: 50%;
         object-fit: cover;
     }
 
-    & .seller-desc {
-        border-style: solid;
-        border-width: 5px;
+    .seller-desc {
+        border: 1px solid $bright-gray;
+        padding: 1.25rem 1.5rem 1.5rem;
+
+        .formal-desc {
+            border-bottom: 1px solid $bright-gray;
+            padding-bottom: 2rem;
+
+        }
     }
 
     & h4>span {
-        color:$bright-gray ;
+        color: $bright-gray ;
         font-weight: 100;
     }
+
+}
+
+    .aside {
+        
+        padding-right: 80px;
+        align-items: flex-start;
+        // justify-content: end;
+
+        .package-content {
+            // min-height: 400px;
+            position: sticky;
+            top: 150px;
+            margin-bottom: 20px;
+            padding: 1.25rem 1.5rem 1.5rem;
+            // padding-left: 24px;
+            // padding-right: 24px;
+            width: 100%;
+            border: 1px solid $bright-gray;
+
+        }
+    }
+
+
 }

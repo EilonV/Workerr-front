@@ -1,7 +1,8 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill,max(250px));
+    grid-template-columns: repeat(auto-fill,max(252px));
     grid-template-rows: repeat(auto-fill, max(353px));
     gap: 35px;
-    padding-top: 32px;
+    padding-top: 82px;
+    padding-bottom: 64px;
 }
