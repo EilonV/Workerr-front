@@ -19,7 +19,6 @@ export const GigDetails = () => {
   }, [])
 
   const onRemoveGig = (gigId) => {
-    // console.log('render')
     dispatch(removeGig(gigId))
     navigate('/gigs')
   }
@@ -33,10 +32,12 @@ export const GigDetails = () => {
             <h1>{gig.title}</h1>
 
             <div className='seller-avatar flex row align-center gap'>
-              <img
+              <img src={gig.owner.imgUrl} alt='' />
+
+              {/* <img
                 className='gig-owner-image border-radius'
                 src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'
-              />
+              /> */}
               <Link to={'/#'}>{gig.owner.fullname}</Link>
               <h4>{gig.owner.level}</h4>
               <h4>{gig.owner.rate}</h4>
@@ -49,10 +50,11 @@ export const GigDetails = () => {
 
           <h2>About The Seller</h2>
           <section className='seller-avatar flex row align-center gap'>
-            <img
+            <img src={gig.owner.imgUrl} alt='' />
+            {/* <img
               className='gig-owner-image border-radius'
               src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'
-            />
+            /> */}
             <div className='flex column'>
               <Link to={'/#'}> {gig.owner.fullname}</Link>
               <h4 className='seller-level'>{gig.owner.level}</h4>
@@ -63,19 +65,30 @@ export const GigDetails = () => {
           <section className='seller-desc flex column gap'>
             <div className='formal-desc flex row gap'>
               <div className='flex column gap'>
-                <h4 className='flex column gap'> <span>  From</span> {gig.owner.ownerCountry}</h4>
-                <h4 className='flex column gap'> <span>  Member Since</span> {gig.owner.memberSince}</h4>
+                <h4 className='flex column gap'>
+                  {' '}
+                  <span> From</span> {gig.owner.ownerCountry}
+                </h4>
+                <h4 className='flex column gap'>
+                  {' '}
+                  <span> Member Since</span> {gig.owner.memberSince}
+                </h4>
               </div>
               <div className='flex column gap'>
-                <h4 className='flex column gap'> <span> Avg. response time</span> {gig.owner.avgResponseTime}</h4>
-                <h4 className='flex column gap'> <span> Last delivery</span> {gig.owner.lastDelivery}</h4>
+                <h4 className='flex column gap'>
+                  {' '}
+                  <span> Avg. response time</span> {gig.owner.avgResponseTime}
+                </h4>
+                <h4 className='flex column gap'>
+                  {' '}
+                  <span> Last delivery</span> {gig.owner.lastDelivery}
+                </h4>
               </div>
             </div>
 
             <div className='seller-letter'>
               <p>{gig.owner.ownerLetter}</p>
             </div>
-
           </section>
           <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
           <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
@@ -89,7 +102,6 @@ export const GigDetails = () => {
             {/* <Link></Link> */}
           </div>
         </aside>
-
       </section>
     )
 }
