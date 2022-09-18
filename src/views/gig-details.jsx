@@ -86,7 +86,7 @@ export const GigDetails = () => {
             <h3>{gig.name}</h3>
             <span>{gig.price}$</span>
             <span className='days-to-delivery'>4 Days Delivery</span>
-            <Link></Link>
+            {/* <Link></Link> */}
           </div>
         </aside>
 
