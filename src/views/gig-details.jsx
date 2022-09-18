@@ -18,12 +18,11 @@ export const GigDetails = () => {
     gigService.getById(id).then((gig) => setGig(gig))
   }, [])
 
-  const onRemoveGig = (toyId) => {
+  const onRemoveGig = (gigId) => {
     // console.log('render')
-    dispatch(removeGig(toyId))
+    dispatch(removeGig(gigId))
     navigate('/gigs')
   }
-  // console.log(gig)
 
   if (gig)
     return (
@@ -71,6 +70,5 @@ export const GigDetails = () => {
           <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
         </div>
       </section>
-
     )
 }

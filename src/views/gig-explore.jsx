@@ -12,7 +12,7 @@ export const GigExplore = () => {
 
   useEffect(() => {
     dispatch(loadGigs())
-  }, [])
+  }, [gigs])
 
   return (
     <section>
