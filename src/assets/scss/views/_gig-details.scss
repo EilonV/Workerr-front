@@ -1,29 +1,27 @@
-.gig-details>* {
+.details-container>* {
 
     padding: 49px 143px;
 
-    & img.gig-picture {
-        padding-bottom: 60px;
-        width: 40%;
-    }
 
     & p {
 
         padding: 25px 0px;
     }
 
-    & .seller-img {
-
-        border-radius: 100%;
-        width: 70px;
-
+    .gig-owner-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
     }
+
     & .seller-desc {
-        border: 2px grey solid;
-        
+        border-style: solid;
+        border-width: 5px;
     }
 
-    & h4>p {
+    & h4>span {
         color:$bright-gray ;
+        font-weight: 100;
     }
 }

@@ -1,14 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { PopularTagsList } from '../cmps/popular-list'
-import { gigService } from '../services/gig.service'
-import { userService } from '../services/user.service'
 
-import HeroImg1 from '../assets/imgs/jumbo/1.png'
+
 import { AppHeader } from '../cmps/app-header'
 
+
+import WorkingWomen from '../assets/imgs/jumbo/6.jpeg'
+import HeroImg1 from '../assets/imgs/jumbo/1.png'
 // import HeroImg2 from '../assets/imgs/jumbo/2.png'
 // import HeroImg3 from '../assets/imgs/jumbo/3.png'
 // import HeroImg4 from '../assets/imgs/jumbo/4.png'
@@ -17,7 +16,7 @@ import { AppHeader } from '../cmps/app-header'
 
 export const Home = () => {
 
-  let navigate = useNavigate();
+
 
 
 
@@ -25,7 +24,7 @@ export const Home = () => {
   return <section className='home'>
     <AppHeader />
 
-    <div className='hero-wrapper full'>
+    <div className='hero-wrapper'>
       <div className='hero-background hero-dani'>
         <img src={HeroImg1} alt="Dani, Web Expert" />
         <div className='seller-name'>
@@ -55,18 +54,48 @@ export const Home = () => {
 
     </div>
 
-    {/* <div className='social-proof-line flex row justify-center'>Trusted by:
-        <span>PlayBook</span>
-        <span>Keygle</span>
-        <span>BigNoise</span>
-        <span>BHB</span>
-        <span>PayMe</span>
-      </div> */}
+    <div className='social-proof-line flex row gap justify-center'>Trusted by:
+      <span>PlayBook</span>
+      <span>Keygle</span>
+      <span>BigNoise</span>
+      <span>BHB</span>
+      <span>PayMe</span>
+    </div>
 
     <div className='popular-tags main-layout'>
       <h2>Popular professional services</h2>
       <PopularTagsList />
     </div>
+
+    <section>
+      <div className='about-us'>
+        <div className='content'>
+          <h2>A whole world of freelance talent at your fingertips</h2>
+          <div>
+            <h6> <span></span>The best for every budget</h6>
+            <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+          </div>
+          <div>
+            <h6><span></span>Quality work done quickly</h6>
+            <p>Find the right freelancer to begin working on your project within minutes.</p>
+          </div>
+          <div>
+            <h6><span></span>Protected payments, every time</h6>
+            <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+          </div>
+          <div>
+            <h6><span></span>24/7 support</h6>
+            <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+          </div>
+        </div>
+        <div className='about-us-img'>
+          <img src={WorkingWomen} alt="working women" />
+        </div>
+      </div>
+
+    </section>
+
+
 
   </section>
 }

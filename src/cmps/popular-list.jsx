@@ -25,7 +25,7 @@ export const PopularTagsList = () => {
 
         <section>
 
-            <ul className='popular-tags-list'>
+            <ul className='popular-tags-list flex row gap  justify-center'>
                 {popularTags.map((tag) =>
 
 
