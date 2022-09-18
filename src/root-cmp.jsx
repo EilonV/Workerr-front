@@ -15,7 +15,7 @@ function App() {
   return (
     <section>
       <div>
-        <div className='main-layout' >
+        <div className='' >
         </div>
       </div>
 
