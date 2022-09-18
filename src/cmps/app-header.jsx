@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 export function AppHeader() {
   return (
-    <header className='app-header full'>
+    <header className='app-header main-layout'>
       <h1 className='logo'>
         Workerr<span>.</span>
       </h1>
-      <nav className='header-nav '>
+      <nav className='header-nav'>
         <NavLink to='/'>Home </NavLink>
         <NavLink to='/gigs'>Explore </NavLink>
         <NavLink to='/about'>About </NavLink>
