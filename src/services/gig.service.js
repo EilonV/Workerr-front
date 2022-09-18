@@ -51,583 +51,8 @@ function save(gig) {
 const gDefaultGigs = [
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
-    price: utilService.getRandomIntInclusive(1, 1000),
-    owner: {
-      _id: 'u101',
-      fullname: utilService.randomUserName(2),
-      ownerCountry: utilService.makeCountry(1),
-      imgUrl: utilService.makeUserImg(),
-      level: utilService.makeLevel(1),
-      rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
-      avgResponseTime: '1 hour',
-      lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
-    },
-    daysToMake: utilService.getRandomIntInclusive(1, 10),
-    description: utilService.makeLorem(3),
-    longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
-
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: 'some buyer',
-        seller: 'some user',
-        gig: {
-          _id: 'i101',
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: 'pending',
-      },
-    ],
-    user: [
-      {
-        _id: 'u101',
-        fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
-        username: 'user1',
-        password: 'secret',
-        level: utilService.makeLevel(1),
-        reviews: [
-          {
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
-    price: utilService.getRandomIntInclusive(1, 1000),
-    owner: {
-      _id: 'u101',
-      fullname: utilService.randomUserName(2),
-      ownerCountry: utilService.makeCountry(1),
-      imgUrl: utilService.makeUserImg(),
-      level: utilService.makeLevel(1),
-      rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
-      avgResponseTime: '1 hour',
-      lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
-    },
-    daysToMake: utilService.getRandomIntInclusive(1, 10),
-    description: utilService.makeLorem(3),
-    longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
-
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: 'some buyer',
-        seller: 'some user',
-        gig: {
-          _id: 'i101',
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: 'pending',
-      },
-    ],
-    user: [
-      {
-        _id: 'u101',
-        fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
-        username: 'user1',
-        password: 'secret',
-        level: utilService.makeLevel(1),
-        reviews: [
-          {
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
-    price: utilService.getRandomIntInclusive(1, 1000),
-    owner: {
-      _id: 'u101',
-      fullname: utilService.randomUserName(2),
-      ownerCountry: utilService.makeCountry(1),
-      imgUrl: utilService.makeUserImg(),
-      level: utilService.makeLevel(1),
-      rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
-      avgResponseTime: '1 hour',
-      lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
-    },
-    daysToMake: utilService.getRandomIntInclusive(1, 10),
-    description: utilService.makeLorem(3),
-    longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
-
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: 'some buyer',
-        seller: 'some user',
-        gig: {
-          _id: 'i101',
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: 'pending',
-      },
-    ],
-    user: [
-      {
-        _id: 'u101',
-        fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
-        username: 'user1',
-        password: 'secret',
-        level: utilService.makeLevel(1),
-        reviews: [
-          {
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
-    price: utilService.getRandomIntInclusive(1, 1000),
-    owner: {
-      _id: 'u101',
-      fullname: utilService.randomUserName(2),
-      ownerCountry: utilService.makeCountry(1),
-      imgUrl: utilService.makeUserImg(),
-      level: utilService.makeLevel(1),
-      rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
-      avgResponseTime: '1 hour',
-      lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
-    },
-    daysToMake: utilService.getRandomIntInclusive(1, 10),
-    description: utilService.makeLorem(3),
-    longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
-
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: 'some buyer',
-        seller: 'some user',
-        gig: {
-          _id: 'i101',
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: 'pending',
-      },
-    ],
-    user: [
-      {
-        _id: 'u101',
-        fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
-        username: 'user1',
-        password: 'secret',
-        level: utilService.makeLevel(1),
-        reviews: [
-          {
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
+    title: 'i will teach you photoshop',
 
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -646,7 +71,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -771,151 +197,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
-    price: utilService.getRandomIntInclusive(1, 1000),
-    owner: {
-      _id: 'u101',
-      fullname: utilService.randomUserName(2),
-      ownerCountry: utilService.makeCountry(1),
-      imgUrl: utilService.makeUserImg(),
-      level: utilService.makeLevel(1),
-      rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
-      avgResponseTime: '1 hour',
-      lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
-    },
-    daysToMake: utilService.getRandomIntInclusive(1, 10),
-    description: utilService.makeLorem(3),
-    longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
-
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
-    likedByUsers: ['mini-user'], // for user-wishlist : use $in
-    order: [
-      {
-        _id: 'o1225',
-        createdAt: 9898989,
-        buyer: 'some buyer',
-        seller: 'some user',
-        gig: {
-          _id: 'i101',
-          name: 'Design Logo',
-          price: 20,
-        },
-        status: 'pending',
-      },
-    ],
-    user: [
-      {
-        _id: 'u101',
-        fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
-        username: 'user1',
-        password: 'secret',
-        level: utilService.makeLevel(1),
-        reviews: [
-          {
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
+    title: 'i will how to be good social manager',
 
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -934,7 +217,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1059,7 +343,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will be your social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1078,7 +363,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1203,7 +489,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will record you a video clip',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1222,7 +509,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1347,7 +635,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be in confidence',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1366,7 +654,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1491,7 +780,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from Czhech to English',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1510,7 +800,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1635,7 +926,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will catch your eye lyric',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1654,7 +945,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1779,7 +1071,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will paint for you',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1798,7 +1090,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -1923,7 +1216,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will make you tatoo',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -1942,7 +1235,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2067,7 +1361,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to dance',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2086,7 +1380,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2211,7 +1506,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you css & scss',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2230,7 +1525,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2355,7 +1651,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to do cover songs',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2374,7 +1670,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2499,7 +1796,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to play piano',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2518,7 +1815,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2643,7 +1941,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will improve your voice',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2662,7 +1960,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2787,7 +2086,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you play on violin',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2806,7 +2105,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -2931,7 +2231,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be relax',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -2950,7 +2250,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3075,7 +2376,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to cook',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3094,7 +2395,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3219,7 +2521,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from German to English',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3238,7 +2540,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3363,7 +2666,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you how to bake cookies',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3382,7 +2685,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3507,7 +2811,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you photoshop',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3526,7 +2831,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3651,7 +2957,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will how to be good social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3670,7 +2977,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3795,7 +3103,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will be your social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3814,7 +3123,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -3939,7 +3249,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will record you a video clip',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -3958,7 +3269,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4083,7 +3395,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be in confidence',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4102,7 +3414,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4227,7 +3540,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from Czhech to English',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4246,7 +3560,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4371,7 +3686,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will catch your eye lyric',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4390,7 +3705,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4515,7 +3831,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will paint for you',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4534,7 +3850,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4659,7 +3976,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will make you tatoo',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4678,7 +3995,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4803,7 +4121,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to dance',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4822,7 +4140,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -4947,7 +4266,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you css & scss',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -4966,7 +4285,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5091,7 +4411,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to do cover songs',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5110,7 +4430,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5235,7 +4556,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to play piano',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5254,7 +4575,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5379,7 +4701,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will improve your voice',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5398,7 +4720,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5523,7 +4846,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you play on violin',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5542,7 +4865,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5667,7 +4991,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be relax',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5686,7 +5010,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5811,7 +5136,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to cook',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5830,7 +5155,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -5955,7 +5281,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from German to English',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -5974,7 +5300,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6099,7 +5426,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you how to bake cookies',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6118,7 +5445,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6243,7 +5571,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you photoshop',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6262,7 +5591,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6387,7 +5717,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will how to be good social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6406,7 +5737,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6531,7 +5863,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will be your social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6550,7 +5883,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6675,7 +6009,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will record you a video clip',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6694,7 +6029,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6819,7 +6155,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be in confidence',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6838,7 +6174,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -6963,7 +6300,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from Czhech to English',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -6982,7 +6320,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7107,7 +6446,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will catch your eye lyric',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7126,7 +6465,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7251,7 +6591,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will paint for you',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7270,7 +6610,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7395,7 +6736,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will make you tatoo',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7414,7 +6755,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7539,7 +6881,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to dance',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7558,7 +6900,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7683,7 +7026,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you css & scss',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7702,7 +7045,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7827,7 +7171,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to do cover songs',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7846,7 +7190,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -7971,7 +7316,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to play piano',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -7990,7 +7335,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8115,7 +7461,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will improve your voice',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8134,7 +7480,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8259,7 +7606,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you play on violin',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8278,7 +7625,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8403,7 +7751,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be relax',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8422,7 +7770,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8547,7 +7896,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to cook',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8566,7 +7915,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8691,7 +8041,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from German to English',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8710,7 +8060,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8835,7 +8186,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you how to bake cookies',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8854,7 +8205,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -8979,7 +8331,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you photoshop',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -8998,7 +8351,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9123,7 +8477,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will how to be good social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9142,7 +8497,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9267,7 +8623,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will be your social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9286,7 +8643,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9411,7 +8769,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will record you a video clip',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9430,7 +8789,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9555,7 +8915,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be in confidence',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9574,7 +8934,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9699,7 +9060,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from Czhech to English',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9718,7 +9080,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9843,7 +9206,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will catch your eye lyric',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -9862,7 +9225,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -9987,7 +9351,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will paint for you',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10006,7 +9370,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10131,7 +9496,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will make you tatoo',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10150,7 +9515,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10275,7 +9641,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to dance',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10294,7 +9660,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10419,7 +9786,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you css & scss',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10438,7 +9805,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10563,7 +9931,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to do cover songs',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10582,7 +9950,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10707,7 +10076,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to play piano',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10726,7 +10095,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10851,7 +10221,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will improve your voice',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -10870,7 +10240,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -10995,7 +10366,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you play on violin',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11014,7 +10385,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11139,7 +10511,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be relax',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11158,7 +10530,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11283,7 +10656,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to cook',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11302,7 +10675,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11427,7 +10801,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from German to English',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11446,7 +10820,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11571,7 +10946,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you how to bake cookies',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11590,7 +10965,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11715,7 +11091,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you photoshop',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11734,7 +11111,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/180975848/original/38493411675d6228a01307dc5f409f8909b6f440.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -11859,7 +11237,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will how to be good social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -11878,7 +11257,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134138878/original/1a446d41f8b277fff8b2b0f07cf84962dfbf3ff5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12003,7 +11383,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will be your social manager',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12022,7 +11403,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/268108524/original/2b891bd971bbae9ed374779b8222dcd1336fd713.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12147,7 +11529,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will record you a video clip',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12166,7 +11549,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/a94b3d3be392ebed6d84fd3c678ebe93-1593446014511/live%20stream-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12291,7 +11675,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be in confidence',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12310,7 +11694,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/image/upload/w_430/q_auto,f_auto/v1/attachments/generic_asset/asset/c107cea1eb9b99825c7fb935ef388730-1593447852749/explainer%20videos-fiverr%20guide.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12435,7 +11820,8 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from Czhech to English',
+
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12454,7 +11840,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/228204077/original/0e67ea24213a39863acb07114ef8d8f94995f34e.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12579,7 +11966,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will catch your eye lyric',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12598,7 +11985,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_67.025563,t_gig_cards_web/oiuutpqaktmraomavcjn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12723,7 +12111,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will paint for you',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12742,7 +12130,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_32.0690694,t_gig_cards_web/obfsb5nyo4dn3bjqoygf.png ',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -12867,7 +12256,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will make you tatoo',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -12886,7 +12275,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_10.406597,t_gig_cards_web/gwldo5lkp0uu5ucjhlob.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13011,7 +12401,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to dance',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13030,7 +12420,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_36.189074,t_gig_cards_web/tipmwbddkwvsjp8vu8h4.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13155,7 +12546,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you css & scss',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13174,7 +12565,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_25.383732,t_gig_cards_web/ccbuy246nzgyxjqfctyp.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13299,7 +12691,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to do cover songs',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13318,7 +12710,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.925555,t_gig_cards_web/xgbjbougwbay0hjy4gg5.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13443,7 +12836,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you to play piano',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13462,7 +12855,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ud4kat29e2orxg6waoyc.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13587,7 +12981,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will improve your voice',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13606,7 +13000,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ffm4tiytazmomkfikzfr.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13731,7 +13126,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you play on violin',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13750,7 +13145,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pvgzslyp7zotusct6ena.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -13875,7 +13271,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to be relax',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -13894,7 +13290,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iprpjidd046mrhkic6vn.png',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -14019,7 +13416,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach how to cook',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -14038,7 +13435,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/236865237/original/506c8f4d29f5337d923acffbf9e26318cc273ac7.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -14163,7 +13561,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will translate from German to English',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -14182,7 +13580,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/20715887/original/5f8cda71487914972eb96f21172c3493844ce7f6.jpg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
@@ -14307,7 +13706,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will ' + utilService.makeLorem(2),
+    title: 'i will teach you how to bake cookies',
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: 'u101',
@@ -14326,7 +13725,8 @@ const gDefaultGigs = [
     description: utilService.makeLorem(3),
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl: utilService.makeImg(1),
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199961532/original/c5a1ab4016cea2c364839cf2ad7faa6d56f0b458.jpeg',
 
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
