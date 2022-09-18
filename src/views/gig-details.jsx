@@ -27,13 +27,17 @@ export const GigDetails = () => {
 
   if (gig)
     return (
-      <section>
+      <section className='gig-details'>
         <AppHeaderExplore />
-        <div className='gig-details'>
+        <div className='details-container'>
           <section>
             <h1>{gig.title}</h1>
 
             <div className='seller-avatar flex row align-center gap'>
+              <img
+                className='gig-owner-image border-radius'
+                src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'
+              />
               <Link to={'/#'}>{gig.owner.fullname}</Link>
               <h4>{gig.owner.level}</h4>
               <h4>{gig.owner.rate}</h4>
@@ -47,29 +51,46 @@ export const GigDetails = () => {
           <h2>About The Seller</h2>
           <section className='seller-avatar flex row align-center gap'>
             <img
-              className='img-seller border-radius'
+              className='gig-owner-image border-radius'
               src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'
             />
-            <Link to={'/#'}> {gig.owner.fullname}</Link>
-            <p className='seller-level'>{gig.owner.level}</p>
+            <div className='flex column'>
+              <Link to={'/#'}> {gig.owner.fullname}</Link>
+              <h4 className='seller-level'>{gig.owner.level}</h4>
+              <h4>{gig.owner.rate}</h4>
+            </div>
           </section>
 
-          <section className='seller-desc flex column'>
-            <div className='formal-desc flex row'>
-              <h4> From {gig.owner.ownerCountry}</h4>
-              <h4> Member Since {gig.owner.memberSince}</h4>
-              <h4>Avg. response time {gig.owner.avgResponseTime}</h4>
-              <h4>Last delivery {gig.owner.lastDelivery}</h4>
+          <section className='seller-desc flex column gap'>
+            <div className='formal-desc flex row gap'>
+              <div className='flex column gap'>
+                <h4 className='flex column gap'> <span>  From</span> {gig.owner.ownerCountry}</h4>
+                <h4 className='flex column gap'> <span>  Member Since</span> {gig.owner.memberSince}</h4>
+              </div>
+              <div className='flex column gap'>
+                <h4 className='flex column gap'> <span> Avg. response time</span> {gig.owner.avgResponseTime}</h4>
+                <h4 className='flex column gap'> <span> Last delivery</span> {gig.owner.lastDelivery}</h4>
+              </div>
             </div>
 
             <div className='seller-letter'>
               <p>{gig.owner.ownerLetter}</p>
             </div>
 
-            <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
           </section>
+          <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
           <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
         </div>
+        <aside className='aside'>
+          <div className='package-content'>
+            <h1>Package details</h1>
+            <h3>{gig.name}</h3>
+            <span>{gig.price}$</span>
+            <span className='days-to-delivery'>4 Days Delivery</span>
+            <Link></Link>
+          </div>
+        </aside>
+
       </section>
 
     )
