@@ -27,11 +27,29 @@
       color: $black;
       font-weight: 600;
     }
+
+    p {
+      span {
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+    }
   }
 
   .owner-username-level {
     width: 100%;
     margin-left: 8px;
+
+    p {
+      color: $bright-gray;
+      font-size: 14px;
+
+      span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+    }
   }
 
   .gig-title {
@@ -96,6 +114,10 @@
       text-align: right;
       padding: 0 0 0 6px;
       font-size: 20px;
+    }
+
+    svg {
+      cursor: pointer;
     }
   }
 }

@@ -20,7 +20,10 @@ export const GigDetails = () => {
 
   const onRemoveGig = (gigId) => {
     dispatch(removeGig(gigId))
-    navigate('/gigs')
+    setTimeout(() => {
+      navigate('/gigs')
+    }, 500)
+
   }
 
   if (gig)

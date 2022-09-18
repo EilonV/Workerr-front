@@ -21,8 +21,8 @@ export const Home = () => {
 
       <div className='hero-wrapper'>
         <div className='hero-background hero-dani'>
-          <img className='full' src={HeroImg1} alt="Dani, Web Expert" />
-          <div className='seller-name'>
+          <img src={WorkingWomen} alt="Dani, Web Expert" />
+          <div className='seller-name full'>
             <div className='reviews-container flex row'></div>
             Dani, Web Expert
           </div>
@@ -83,12 +83,7 @@ export const Home = () => {
               <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
             </div>
           </div>
-          <div className='about-us-img'>
-            <img src={WorkingWomen} alt="working women" />
-          </div>
-          <div className='about-us-img'>
-          <img src={HeroImg1} alt="Dani, Web Expert" />
-          </div>
+
         </div>
 
       </section>
