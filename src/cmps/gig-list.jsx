@@ -2,7 +2,7 @@ import { GigPreview } from './gig-preview'
 
 export const GigList = ({ gigs }) => {
   if (!gigs) return <div className='flex justify-center'>Loading...</div>
-  if (gigs.length > 0) console.log(gigs)
+  console.log(gigs)
   return (
     <section>
       <div className='gig-list'>
