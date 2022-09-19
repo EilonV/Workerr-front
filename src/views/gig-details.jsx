@@ -34,18 +34,20 @@ export const GigDetails = ({ gigs }) => {
             <section>
               <h1>{gig.title}</h1>
 
+              <div className='seller-avatar-top flex row align-center gap'>
+                <img className='gig-owner-image-top border-radius' src={gig.owner.imgUrl} alt='' />
+
+
+                <Link className='seller-name-top' to={'/#'}>{gig.owner.fullname}|</Link>
+
               <div className='seller-avatar flex row align-center gap'>
                 <img
                   className='gig-owner-image-top border-radius'
                   src={gig.owner.imgUrl}
                   alt=''
                 />
-
-                {/* <img
-                className='gig-owner-image border-radius'
-                src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=LcEQenPMJNuqUwhg5W8UMFs66YBXrBVhhZzMFVBabmxQTVRAAVE%3D&w=1000&q=80'
-              /> */}
                 <Link to={'/#'}>{gig.owner.fullname}|</Link>
+
                 <h4>{gig.owner.level}Link|</h4>
                 <h4>{gig.owner.rate}</h4>
                 <svg
@@ -62,12 +64,16 @@ export const GigDetails = ({ gigs }) => {
                 </svg>
               </div>
 
-              <img src={gig.imgUrl} alt='Some Logo Design' />
+              <img className='gig-img' src={gig.imgUrl} alt='Some Logo Design' />
               <h2>About Gig</h2>
               <p>{gig.longerDescription} </p>
             </section>
 
             <h2>About The Seller</h2>
+
+            <section className='seller-avatar-about flex row align-center gap'>
+              <img className='gig-owner-image-about border-radius' src={gig.owner.imgUrl} alt='' />
+
             <section className='seller-avatar flex row align-center gap'>
               <img
                 className='gig-owner-image-about border-radius'
@@ -75,10 +81,11 @@ export const GigDetails = ({ gigs }) => {
                 alt=''
               />
 
+
               <div className='flex column'>
                 <Link to={'/#'}> {gig.owner.fullname}</Link>
                 <h4 className='seller-level'>{gig.owner.level}</h4>
-                <div className='flex row'>
+                <div className='seller-rate flex row'>
                   <h4>{gig.owner.rate}</h4>
                   <svg
                     className='gig-review-star'
@@ -97,26 +104,16 @@ export const GigDetails = ({ gigs }) => {
             </section>
 
             <section className='seller-desc flex column gap'>
-              <div className='formal-desc flex row gap'>
+              <div className='formal-desc flex row'>
+
                 <div className='flex column gap'>
-                  <h4 className='flex column gap'>
-                    {' '}
-                    <span> From</span> {gig.owner.ownerCountry}
-                  </h4>
-                  <h4 className='flex column gap'>
-                    {' '}
-                    <span> Member Since</span> {gig.owner.memberSince}
-                  </h4>
+                  <h4 className='flex column'><span> From</span> {gig.owner.ownerCountry}</h4>
+                  <h4 className='flex column'><span> Member Since</span> {gig.owner.memberSince} </h4>
                 </div>
+
                 <div className='flex column gap'>
-                  <h4 className='flex column gap'>
-                    {' '}
-                    <span> Avg. response time</span> {gig.owner.avgResponseTime}
-                  </h4>
-                  <h4 className='flex column gap'>
-                    {' '}
-                    <span> Last delivery</span> {gig.owner.lastDelivery}
-                  </h4>
+                  <h4 className='flex column'><span> Avg. response time</span> {gig.owner.avgResponseTime}</h4>
+                  <h4 className='flex column'><span> Last delivery</span> {gig.owner.lastDelivery}</h4>
                 </div>
               </div>
 
@@ -130,6 +127,14 @@ export const GigDetails = ({ gigs }) => {
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
+
+              <div className='package-title flex row' >
+                <h1>Package details</h1>
+                <span>{gig.price}$</span>
+              </div>
+              <span className='days-to-delivery align-center'>{gig.daysToMake} Days To Make </span>
+              <Link to={'/gig/gig-check-out-summery'} className='flex row gap justify-center space-between'>Continue <span>(${gig.price})</span></Link>
+
               <div className='flex row gap'>
                 <h1>Package details</h1>
                 <span>{gig.price}$</span>
@@ -140,6 +145,7 @@ export const GigDetails = ({ gigs }) => {
               <Link to={`/gig/details/:id/checkout`} className='flex row gap'>
                 Continue <span>(${gig.price})</span>
               </Link>
+
             </div>
           </aside>
         </div>
