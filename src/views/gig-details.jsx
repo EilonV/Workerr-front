@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
+import { GigCheckOut } from './gig-check-out'
 
-export const GigDetails = ({ gigs }) => {
+export const GigDetails = () => {
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
 
   useEffect(() => {
-    // console.log('render')
     const id = params.id
     gigService.getById(id).then((gig) => setGig(gig))
   }, [])
@@ -133,10 +133,10 @@ export const GigDetails = ({ gigs }) => {
                 <span>{gig.price}$</span>
               </div>
               <span className='days-to-delivery align-center'>
-                {gig.daysToMake} Days To Make{' '}
+                {gig.daysToMake} Days To Make
               </span>
               <Link
-                to={`/gig/details/:id/checkout`}
+                to={`/gig/details/${gig._id}/checkout/`}
                 className='flex row gap justify-center space-between'
               >
                 Continue <span>(${gig.price})</span>
