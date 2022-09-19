@@ -6,7 +6,7 @@ import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewSeller } from '../cmps/reviews-seller'
-// import { Reviews } from '@mui/icons-material'
+import { GigCheckOut } from './gig-check-out'
 
 
 export const GigDetails = () => {
@@ -16,7 +16,6 @@ export const GigDetails = () => {
   const [gig, setGig] = useState(null)
 
   useEffect(() => {
-    // console.log('render')
     const id = params.id
     gigService.getById(id).then((gig) => setGig(gig))
   }, [])
@@ -38,8 +37,14 @@ export const GigDetails = () => {
               <h1>{gig.title}</h1>
 
               <div className='seller-avatar-top flex row align-center gap'>
-                <img className='gig-owner-image-top border-radius' src={gig.owner.imgUrl} alt='' />
-                <Link className='seller-name-top' to={'/#'}>{gig.owner.fullname}|</Link>
+                <img
+                  className='gig-owner-image-top border-radius'
+                  src={gig.owner.imgUrl}
+                  alt=''
+                />
+                <Link className='seller-name-top' to={'/#'}>
+                  {gig.owner.fullname}|
+                </Link>
                 <h4>{gig.owner.level}|</h4>
                 <h4>{gig.owner.rate}</h4>
                 <svg
@@ -56,7 +61,11 @@ export const GigDetails = () => {
                 </svg>
               </div>
 
-              <img className='gig-img' src={gig.imgUrl} alt='Some Logo Design' />
+              <img
+                className='gig-img'
+                src={gig.imgUrl}
+                alt='Some Logo Design'
+              />
               <h2>About Gig</h2>
               <p>{gig.longerDescription} </p>
             </section>
@@ -114,8 +123,7 @@ export const GigDetails = () => {
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
-
-              <div className='package-title flex row' >
+              <div className='package-title flex row'>
                 <h1>Package details</h1>
                 <span>{gig.price}$</span>
               </div>
@@ -129,7 +137,7 @@ export const GigDetails = () => {
 
                 {gig.tags.map(a => <li>{a}<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill='#1dbf73' d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z" /></svg></li>)}
               </ul>
-              <Link to={`/gig/details/:id/checkout`} className='flex row gap justify-center space-between'>Continue <span>(${gig.price})</span></Link>
+              <Link to={`/gig/details/${gig._id}/checkout/`} className='flex row gap justify-center space-between'>Continue <span>(${gig.price})</span></Link>
 
 
             </div>
