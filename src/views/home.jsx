@@ -149,19 +149,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        {/* <div className='hero-content'>
-          <h1>Find the perfect <span className='italic-font'>freelance</span> <br /> services for your business</h1>
-          <form className='home-search-box flex row'>
-            <div className='search-icon flex justify-center'><i>icon</i></div>
-            <input type="text" />
-            <button>Search</button>
-          </form>
-          <div className='popular-categories flex gap'>Popular:
-            {['logo design', 'artisitic', 'proffesional', 'accessible'].map((tag, idx) =>
-              <span key={idx}><Link to={`/explore?filter=tags:${tag}`}>{tag}</Link></span>
-            )}
-          </div>
-        </div> */}
+
         <div className='trusted-by-full'>
           <div className='trusted-by-content main-layout flex justify-center align-center'>
             <p>Trusted by:</p>
