@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export const GigPreview = ({ gig }) => {
-  console.log(gig)
+  // console.log(gig)
   return (
     <section className='gig-preview'>
       <Link to={`/gig/details/${gig._id}`}>
@@ -43,9 +43,11 @@ export const GigPreview = ({ gig }) => {
             d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
           />
         </svg>
-        {gig.owner.rate > 0 ? (<p>&nbsp;{gig.owner.rate}</p>) : <p>&nbsp;0</p>}
+        {gig.owner.rate > 0 ? <p>&nbsp;{gig.owner.rate}</p> : <p>&nbsp;0</p>}
         <div className='flex'>
-          <p className='user-reviews-count'>({gig.user[0].reviews[0].length})</p>
+          <p className='user-reviews-count'>
+            ({gig.user[0].reviews[0].length})
+          </p>
           {/* {(gig.user[0].reviews && gig.user[0].reviews.length > 0) ?
             (<p className='user-reviews-count'>({gig.user[0].reviews.length})</p>) :
             (<p className='user-reviews-count'>888</p>)} */}

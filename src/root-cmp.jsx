@@ -9,19 +9,20 @@ import { UserPage } from './views/user-page'
 import { AdminPage } from './views/admin-page'
 import { GigEdit } from './views/gig-edit'
 import { GigDetails } from './views/gig-details'
+import { GigCheckOut } from './views/gig-check-out'
 import { AppHeaderExplore } from './cmps/app-header-explore'
 
 function App() {
   return (
     <section>
       <div>
-        <div className='' >
-        </div>
+        <div className=''></div>
       </div>
 
       <div className='main-app main-layout'>
         <main className='main-container'>
           <Routes>
+            <Route path='gig/details/:id/checkout' element={<GigCheckOut />} />
             <Route path='gig/details/:id' element={<GigDetails />} />
             <Route path='gig/edit/:id' element={<GigEdit />} />
             <Route path='gig/edit' element={<GigEdit />} />
@@ -35,7 +36,6 @@ function App() {
         <AppFooter />
       </div>
     </section>
-
   )
 }
 export default App

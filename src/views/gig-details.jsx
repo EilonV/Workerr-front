@@ -6,7 +6,7 @@ import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 
-export const GigDetails = () => {
+export const GigDetails = ({ gigs }) => {
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -23,7 +23,6 @@ export const GigDetails = () => {
     setTimeout(() => {
       navigate('/gigs')
     }, 500)
-
   }
 
   if (gig)
@@ -40,6 +39,15 @@ export const GigDetails = () => {
 
 
                 <Link className='seller-name-top' to={'/#'}>{gig.owner.fullname}|</Link>
+
+              <div className='seller-avatar flex row align-center gap'>
+                <img
+                  className='gig-owner-image-top border-radius'
+                  src={gig.owner.imgUrl}
+                  alt=''
+                />
+                <Link to={'/#'}>{gig.owner.fullname}|</Link>
+
                 <h4>{gig.owner.level}Link|</h4>
                 <h4>{gig.owner.rate}</h4>
                 <svg
@@ -54,7 +62,6 @@ export const GigDetails = () => {
                     d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
                   />
                 </svg>
-
               </div>
 
               <img className='gig-img' src={gig.imgUrl} alt='Some Logo Design' />
@@ -63,8 +70,17 @@ export const GigDetails = () => {
             </section>
 
             <h2>About The Seller</h2>
+
             <section className='seller-avatar-about flex row align-center gap'>
               <img className='gig-owner-image-about border-radius' src={gig.owner.imgUrl} alt='' />
+
+            <section className='seller-avatar flex row align-center gap'>
+              <img
+                className='gig-owner-image-about border-radius'
+                src={gig.owner.imgUrl}
+                alt=''
+              />
+
 
               <div className='flex column'>
                 <Link to={'/#'}> {gig.owner.fullname}</Link>
@@ -111,15 +127,27 @@ export const GigDetails = () => {
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
+
               <div className='package-title flex row' >
                 <h1>Package details</h1>
                 <span>{gig.price}$</span>
               </div>
               <span className='days-to-delivery align-center'>{gig.daysToMake} Days To Make </span>
               <Link to={'/gig/gig-check-out-summery'} className='flex row gap justify-center space-between'>Continue <span>(${gig.price})</span></Link>
+
+              <div className='flex row gap'>
+                <h1>Package details</h1>
+                <span>{gig.price}$</span>
+              </div>
+              <span className='days-to-delivery'>
+                {gig.daysToMake} Days To Make{' '}
+              </span>
+              <Link to={`/gig/details/:id/checkout`} className='flex row gap'>
+                Continue <span>(${gig.price})</span>
+              </Link>
+
             </div>
           </aside>
-
         </div>
       </section>
     )
