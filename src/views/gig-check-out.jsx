@@ -8,7 +8,7 @@ export const GigCheckOut = () => {
       </h1>
       <div className='GigCheckOut-header'>
         <ul>
-          <span class='RH2d4kh oL5D1Be crumb-icon l8Lme3S'>1</span>
+          <span class='order-details'>1</span>
           <span class='_8i8oN7C jhr5dUl crumb-current'>
             <span>Order Details</span>
           </span>
@@ -134,7 +134,7 @@ export const GigCheckOut = () => {
               </select>
             </label>
             <span class='price'>
-              <b>₪90.04</b>
+              <b></b>
             </span>
           </div>
         </div>
