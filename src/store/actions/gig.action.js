@@ -14,12 +14,13 @@ export function loadGigs() {
   }
 }
 
-export function removeGig(gigId) {
+export function removeGig(gigId, cb) {
   return (dispatch, getState) => {
     gigService
       .remove(gigId)
       .then(() => {
         dispatch({ type: 'REMOVE_GIG', gigId })
+        cb()
       })
       .catch((err) => {
         console.log('err:', err)

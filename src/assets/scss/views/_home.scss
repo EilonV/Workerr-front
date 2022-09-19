@@ -1,45 +1,133 @@
-// .reviews-container {
-//     display: flex;
-//     flex-wrap: wrap;
-
-
-//     article {
-//         padding: 15px;
-//         border-radius: 8px;
-//         margin: 15px;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: flex-start;
-//         align-items: flex-start;
-//     }
-
-// }
-
-
 .home {
+    .filler{
+        height: 700px;
+    }
+    .hero-image {
+        position: absolute;
+        height: 680px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-repeat: no-repeat;
+        z-index: 0;
+        pointer-events: none;
+    }
+
     .hero-wrapper {
+        position: absolute;
+        height: 680px;
+        // width: 100vw;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: none !important;
 
-        
-        position: relative;
-
-        .hero-background {
+        .hero-background2,
+        .hero-background3,
+        .hero-background4,
+        .hero-background5,
+        .hero-background6 {
             position: absolute;
+            height: 680px;
+            // width: 100vw;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: none !important;
+            opacity: 0;
+            transition: 1s;
+        }
 
-            img {
-                width: 100%;
-                position: static;
-                top: 0;
-                left: 0;
-                // width: 1972px !important;
-            }
+        .hero-background2 {
+            background-color: #023a15;
+        }
 
-            .seller-name {
+        .hero-background3 {
+            background-color: #b64762;
+        }
+
+        .hero-background4 {
+            background-color: #540e1f;
+        }
+
+        .hero-background5 {
+            background-color: #023a15;
+        }
+
+        .hero-background6 {
+            background-color: #7d1a00;
+        }
+
+        .hero-info-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 100%;
+            padding: 0;
+            // z-index: 10;
+
+            .hero-info {
+                display: flex;
                 position: absolute;
-                right: 40px;
-                bottom: 20px;
-                color: $white;
-                text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+                bottom: 0;
+                right: 0;
+                padding-bottom: 32px;
+
+                p,
+                span {
+                    color: white;
+                }
             }
+
+            .hero-search {
+                input {
+                    position: relative;
+                    height: 33px;
+                    padding: 8px 7px 7px 44px;
+                    font-size: 16px;
+                    width: 495.25px;
+                    border-radius: 4px 0 0 4px;
+                    border: none;
+                }
+
+                button {
+                    height: 100%;
+                    padding: 13px 24px;
+                    border-radius: 0 4px 4px 0;
+                    border: none;
+                    background-color: $bright-green;
+                    color: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                    font-weight: 700;
+                    transition: 0.2s;
+
+                    &:hover {
+                        background-color: #19a463;
+                        transition: 0.2s;
+                    }
+                }
+
+                form {
+                    position: relative;
+                    display: flex;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 16px;
+                    left: 16px;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .seller-name {
+            position: absolute;
+            right: 40px;
+            bottom: 20px;
+            color: $white;
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
         }
 
         .hero-content {
@@ -105,8 +193,8 @@
 
             .popular-categories {
                 padding-top: 24px;
-                margin
-                span {
+
+                margin span {
                     color: $white;
                     font-size: 14px;
                     font-weight: 600;
@@ -124,6 +212,110 @@
 
         }
 
+        .trusted-by-full {
+            position: relative;
+            height: 95px;
+            width: 100%;
+            background-color: #fafafa;
+            top: 680px;
+        }
+
+        .trusted-by-content {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            padding-top: 2px;
+
+            p {
+                padding-right: 20px;
+                color: $review-gray;
+                font-weight: 600;
+                padding-bottom: 8px;
+            }
+
+            ul,
+            li {
+                text-decoration: none;
+                list-style: none;
+            }
+
+            ul {
+                padding: 0 24px;
+                margin: 0;
+            }
+
+            li:not(:last-child) {
+                padding-right: 60px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .hero-data {
+            position: absolute;
+            z-index: 30;
+        }
+
+        .hero-content-left {
+
+            h2,
+            span {
+                color: white;
+                font-size: 48px;
+            }
+
+            span {
+                font-family: 'Domaine';
+            }
+
+            h2:not(:first-child) {
+                margin-bottom: 24px;
+            }
+
+            .hero-tags {
+                font-size: 15px !important;
+                padding-top: 24px;
+                font-weight: 600;
+                transition: 0.5s;
+
+                p {
+                    color: white;
+                }
+
+                .hero-list {
+                    margin: 0 0 0 12px;
+                    padding: 0;
+
+                    li {
+                        list-style: none;
+                        margin-right: 12px;
+
+                        a {
+                            color: white;
+                            padding: 3px 12px;
+                            border: 1px white solid;
+                            border-radius: 20px;
+                            transition: 0.2s;
+
+                            &:hover {
+                                color: black;
+                                background-color: white;
+                                transition: 0.2s;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+        }
     }
 
     .social-proof-line {
