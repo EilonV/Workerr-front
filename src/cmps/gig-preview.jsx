@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export const GigPreview = ({ gig }) => {
-  console.log(gig)
+  // console.log(gig)
   return (
     <section className='gig-preview'>
       <Link to={`/gig/details/${gig._id}`}>

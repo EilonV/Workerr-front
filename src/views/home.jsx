@@ -194,41 +194,9 @@ export const Home = () => {
       </div>
 
       <div className='filler'></div>
-      <div>
-
-      </div>
-      {/* <div className='popular-tags'>
-        <h2>Popular professional services</h2>
-        <PopularTagsList />
-      </div> */}
-
-      {/* <section>
-        <div className='about-us'>
-          <div className='content'>
-            <h2>A whole world of freelance talent at your fingertips</h2>
-            <div>
-              <h6> <span></span>The best for every budget</h6>
-              <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
-            </div>
-            <div>
-              <h6><span></span>Quality work done quickly</h6>
-              <p>Find the right freelancer to begin working on your project within minutes.</p>
-            </div>
-            <div>
-              <h6><span></span>Protected payments, every time</h6>
-              <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
-            </div>
-            <div>
-              <h6><span></span>24/7 support</h6>
-              <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </section> */}
 
     </section>
+
   </section>
 
 }

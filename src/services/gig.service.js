@@ -52,30 +52,29 @@ const gDefaultGigs = [
   {
     _id: utilService.makeId(4),
     title: 'I will extract or remove drums bass vocals creating backing track',
-
+    gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution'],
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
-      _id: 'u101',
+      _id: utilService.makeId(4),
       fullname: utilService.randomUserName(2),
       ownerCountry: utilService.makeCountry(1),
       imgUrl:
         'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/28835120/original/1458651736868_facebook20160322-22751-10p13xc.jpg',
       level: utilService.makeLevel(1),
       rate: utilService.getRandomIntInclusive(0, 4),
-      memberSince: 'march 2015',
+      memberSince: 'march 2017',
       avgResponseTime: '1 hour',
       lastDelivery: 'about 17 hours',
-      ownerLetter:
-        'Hi, May ur here I am a professional graphic designer with an experience of 10+ years. Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring',
+      ownerLetter: `I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. `,
     },
     daysToMake: utilService.getRandomIntInclusive(1, 10),
     description: utilService.makeLorem(3),
     longerDescription:
-      'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
+      'Using a perfect combination of melody, harmony, and rhythm, I will compose harmonious piano music that allows ones emotions to be changed.Songs can be used in films, podcasts, ads, or music streaming platforms.If you have any feelings that you wish to be portrayed in the music, let me know, and feel free to send me links to songs that you like, or similar styles that you would like me to compose in. Note: Fees may vary depending on the complexity of the genre. Songs are unique, copyright free and will belong exclusively to the buyer once the order is completed. I can create multiple songs for the time requested.    I can provide the midi for the song at no extra cost. Please request before placing the order.     Please contact me before placing your order if you require 10 minutes of music or more, so that I can create a custom offer with the discounted amount taken off. ',
     imgUrl:
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/zi9vophqo9wyccfyk4rc.png',
 
-    tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
+    tags: ['Music', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
     order: [
       {
@@ -93,103 +92,41 @@ const gDefaultGigs = [
     ],
     user: [
       {
-        _id: 'u101',
+        _id: utilService.makeId(4),
         fullname: utilService.randomUserName(2),
-        imgUrl: utilService.makeUserImg(),
+        imgUrl:
+          'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0f37300e1e09cba08685e3c85a4ceb3f-1661447564773/305c8f97-9a87-449a-908a-20275c9ab8d4.jpg',
         username: 'user1',
         password: 'secret',
         level: utilService.makeLevel(1),
         reviews: [
           {
             id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
+            txt: utilService.makeLorem(16),
             rate: utilService.getRandomIntInclusive(0, 4),
             by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
+              _id: utilService.makeId(4),
+              fullname: 'jeffgordon123',
+              imgUrl:
+                'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/b5b46e55a8b4ac6240874ee2271cf9fd-1598818335946/4458cfa4-f67e-467d-a624-37aaeae5fcad.jpg',
+              memberSince: 'may 2012',
+              avgResponseTime: '2 hours',
+              lastDelivery: 'about 14 hours',
+              ownerLetter: `Excellent experience, highly recommended. Communications were very quick and clear. Prices are very reasonable, Job was completed same-day. Excellent quality product. Will definitely be using this service again in the future and recommending to other musicians.`,
             },
 
             id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
+            txt: `He was responsive and did a great job of helping me with an instrumental track. And great price to boot. Thank you!`,
             rate: utilService.getRandomIntInclusive(0, 4),
             by: {
-              _id: 'u102',
+              _id: utilService.makeId(4),
               fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
-            },
-
-            id: utilService.makeId(4),
-            txt: utilService.makeLorem(4),
-            rate: utilService.getRandomIntInclusive(0, 4),
-            by: {
-              _id: 'u102',
-              fullname: 'user2',
-              imgUrl: '',
-              memberSince: 'march 2015',
-              avgResponseTime: '1 hour',
-              lastDelivery: 'about 17 hours',
-              ownerLetter: utilService.makeLorem(4),
+              imgUrl:
+                'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0f37300e1e09cba08685e3c85a4ceb3f-1661447564773/305c8f97-9a87-449a-908a-20275c9ab8d4.jpg',
+              memberSince: 'may 2019',
+              avgResponseTime: '5 hours',
+              lastDelivery: 'about 14 hours',
+              ownerLetter: utilService.makeLorem(20),
             },
           },
         ],
@@ -380,6 +317,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -526,6 +464,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -673,6 +612,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+       
         },
         status: 'pending',
       },
@@ -819,6 +759,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -965,6 +906,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -1112,6 +1054,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -1258,6 +1201,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -1405,6 +1349,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -1552,6 +1497,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -1698,6 +1644,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -1844,6 +1791,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -1990,6 +1938,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -2136,6 +2085,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -2282,6 +2232,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -2428,6 +2379,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -2574,6 +2526,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -2866,6 +2819,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
         },
         status: 'pending',
       },
@@ -3160,6 +3114,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+       
         },
         status: 'pending',
       },
@@ -3305,6 +3260,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -3451,6 +3407,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
         },
         status: 'pending',
       },
@@ -3597,6 +3554,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -3743,6 +3701,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+    
         },
         status: 'pending',
       },
@@ -3889,6 +3848,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+       
         },
         status: 'pending',
       },
@@ -4035,6 +3995,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -4181,6 +4142,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -4326,6 +4288,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -4472,6 +4435,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -4619,6 +4583,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -4765,6 +4730,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -4911,6 +4877,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
@@ -5057,6 +5024,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -5203,6 +5171,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -5349,6 +5318,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+          
         },
         status: 'pending',
       },
@@ -5495,6 +5465,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+        
         },
         status: 'pending',
       },
@@ -5606,7 +5577,7 @@ const gDefaultGigs = [
   },
   {
     _id: utilService.makeId(4),
-    title: 'I will be your edm ghost producer, professional ghost production',
+    title: 'I will write and produce fun childrens music and kids songs',
 
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
@@ -5641,6 +5612,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
         },
         status: 'pending',
       },
@@ -5787,6 +5759,7 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
+         
         },
         status: 'pending',
       },
