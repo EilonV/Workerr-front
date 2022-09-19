@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { PopularTagsList } from '../cmps/popular-list'
 import { AppHeader } from '../cmps/app-header'
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import BottomImg1 from '../assets/imgs/jumbo/1.png'
 import HeroImg2 from '../assets/imgs/jumbo/2.jpeg'
@@ -15,11 +18,55 @@ import trusted2 from '../assets/imgs/trusted-by/2.png'
 import trusted3 from '../assets/imgs/trusted-by/3.png'
 import trusted4 from '../assets/imgs/trusted-by/4.png'
 import trusted5 from '../assets/imgs/trusted-by/5.png'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import pop1 from '../assets/imgs/popular-slideshow-imgs/books.jpeg'
+import pop2 from '../assets/imgs/popular-slideshow-imgs/books2.jpeg'
+import pop3 from '../assets/imgs/popular-slideshow-imgs/computers.jpeg'
+import pop4 from '../assets/imgs/popular-slideshow-imgs/house-design.jpeg'
+import pop5 from '../assets/imgs/popular-slideshow-imgs/laptop.jpeg'
+import pop6 from '../assets/imgs/popular-slideshow-imgs/mic.jpeg'
+import pop7 from '../assets/imgs/popular-slideshow-imgs/phone-white.jpeg'
+import pop8 from '../assets/imgs/popular-slideshow-imgs/phone.jpeg'
+import pop9 from '../assets/imgs/popular-slideshow-imgs/photography.jpeg'
+
 let hero = 1
 
 export const Home = () => {
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
   const changeHero = () => {
     setInterval(() => {
@@ -173,16 +220,61 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className='social-proof-line flex row gap justify-center'>Trusted by:
-        <span>PlayBook</span>
-        <span>Keygle</span>
-        <span>BigNoise</span>
-        <span>BHB</span>
-        <span>PayMe</span>
-      </div>
+      <div className='social-proof-line flex row gap justify-center'></div>
 
       <div className='filler'></div>
+      <div className='slick-container'>
+        <Slider className='flex align-center' {...settings} >
+          <div className='slick-img'>
+            <a href=""><img src={pop1} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div>
+          </div>
+          <div><a href=""><img src={pop2} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop3} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop4} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop5} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop6} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop7} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop8} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+          <div><a href=""><img src={pop9} alt="" /></a>
+            <div className='slick-img-caption'>
+              <p>Sub-Cat</p>
+              <h3>Category</h3>
+            </div></div>
+        </Slider>
 
+      </div>
     </section>
 
   </section>
