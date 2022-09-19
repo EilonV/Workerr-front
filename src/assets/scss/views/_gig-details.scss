@@ -39,9 +39,10 @@
             padding-bottom: 50px;
         }
 
-        p {
+        section>p {
 
-            padding: 25px 0px;
+            padding-top: 25px;
+            padding-right: 200px;
             padding-bottom: 60px;
         }
 
@@ -106,21 +107,45 @@
             // padding-right: 24px;
             width: 100%;
             border: 1px solid $header-input-gray;
-            
+
 
             .package-title {
                 gap: 50px;
                 font-size: 16px;
+                border-bottom: 1px solid $bright-gray;
+                padding-bottom: 1rem;
 
+                h1 {
+                    color: $bright-green;
+                }
             }
-            .package-title>span{
+
+            .package-title>span {
                 font-size: 20px;
             }
 
-            .days-to-delivery {
+            .delivery-revision{
+                gap:40px
+            }
+            .delivery-revision>* {
 
                 font-size: 14px;
+                // gap:20px
             }
+
+           
+
+            ul.gig-inclusive {
+                list-style: none;
+                text-decoration: none;
+                gap: 10px;
+            }
+
+
+            ul li {
+                font-size: 14px;
+            }
+
 
             a {
                 padding: 10px 15px;
@@ -128,8 +153,9 @@
                 color: $white;
                 font-size: 16px;
             }
+
             a>span {
-                color: $white; 
+                color: $white;
                 font-size: 16px;
             }
 
