@@ -43,6 +43,15 @@ export const GigDetails = ({ gigs }) => {
                 <Link className='seller-name-top' to={'/#'}>
                   {gig.owner.fullname}|
                 </Link>
+                <img
+                  className='gig-owner-image-top border-radius'
+                  src={gig.owner.imgUrl}
+                  alt=''
+                />
+                <Link className='seller-name-top' to={'/#'}>
+                  {gig.owner.fullname}|
+                </Link>
+
                 <h4>{gig.owner.level}|</h4>
                 <h4>{gig.owner.rate}</h4>
                 <svg
