@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { gigService } from '../services/gig.service'
+import { NavLink } from 'react-router-dom'
 
 export const GigCheckOut = () => {
   const params = useParams()
@@ -19,9 +20,11 @@ export const GigCheckOut = () => {
   return (
     <section className='gig-check-out'>
       <div className='app-header-checkout'>
-        <h1 className='logo'>
-          Workerr<span>.</span>
-        </h1>
+        <NavLink to='/gigs'>
+          <h1 className='logo'>
+            Workerr<span>.</span>
+          </h1>
+        </NavLink>
 
         <nav className='header-order flex'>
           <ul className='order-details flex'>
@@ -83,7 +86,9 @@ export const GigCheckOut = () => {
                     />
                   </svg>
                   <h4>{gig.owner.rate}</h4>
-                  <p className='reviews'>(150 reviews)</p>
+                  <p className='reviews'>
+                    ({gig.user[0].reviews.length} reviews)
+                  </p>
                 </div>
                 <p className='reviews included'>View what's included</p>
                 <div className='gig-more'></div>
@@ -125,6 +130,24 @@ export const GigCheckOut = () => {
                 <h2>Your order </h2>
                 <div className='features '>
                   <ul>
+                    {gig.tags.map((a) => (
+                      <li>
+                        <svg
+                          width='16'
+                          height='16'
+                          viewBox='0 0 16 16'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <path
+                            fill='#1dbf73'
+                            d='M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z'
+                          />
+                        </svg>
+                        {a}
+                      </li>
+                    ))}
+                  </ul>
+                  {/* <ul>
                     <li>
                       <i className='line-list'></i>
                       <svg
@@ -204,7 +227,7 @@ export const GigCheckOut = () => {
                       <i className='line-list'></i>
                       <span className='line-list'>Vector File</span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </section>
@@ -220,7 +243,7 @@ export const GigCheckOut = () => {
               </div>
               <div class='service summary-item flex space-between'>
                 <p>Service Fee</p>
-                <p>{'$' + gig.price * 0.17}</p>
+                <p>{'$' + (gig.price * 0.17).toFixed(2)}</p>
               </div>
             </header>
             <article>

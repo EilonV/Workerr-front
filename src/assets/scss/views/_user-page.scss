@@ -1,9 +1,88 @@
-.gig-edit {
+.profile-user {
+  margin-top: 91px;
+  width: 338px;
+  height: 358px;
+  border: 1px $footer-line-gray solid;
   // background-color: lightblue;
-}
 
-.gig-edit form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .profile-pic {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 42px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    background-color: $footer-logo-gray;
+    color: $white;
+    margin-top: 31px;
+    margin-left: 94px;
+  }
+  .user-name {
+    width: 338px;
+    margin-left: 138px;
+    margin-right: 138px;
+    margin-top: 15px;
+    .show {
+      color: #222325;
+      font-size: 20px;
+      line-height: 18.5px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+    }
+  }
+  .profile-btn {
+    width: 338px;
+    height: 36px;
+    border: 1px $footer-line-gray solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .my-orders {
+    h1 {
+      width: 736px;
+      height: 66px;
+      border: 1px $footer-line-gray solid;
+    }
+  }
+
+  .new-gig {
+    // margin-top: 20px;
+    width: 734px;
+    height: 428px;
+    border: 1px $footer-line-gray solid;
+    text-align: center;
+  }
+  .active-gigs {
+    height: 21px;
+    padding-bottom: 40px;
+    margin-top: 23px;
+  }
+  .img-create {
+    margin-left: 244px;
+    margin-right: 204px;
+    margin-bottom: 110px;
+
+    .svg {
+      width: 168px;
+      height: 197px;
+      margin-top: 50px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+    }
+
+    .create-btn {
+      background-color: #1dbf73;
+      color: white;
+      width: 150px;
+      height: 40px;
+      font-size: 1em;
+      line-height: 24px;
+      border: 0;
+      padding: 13px 16px 13px 16px;
+    }
+  }
 }
