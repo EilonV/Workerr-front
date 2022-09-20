@@ -236,7 +236,8 @@ export const GigCheckOut = () => {
 
             <button class='btn-purchase'>Continue to checkout</button>
             <p className='not-charge'>You won't be charged yet</p>
-
+          </div>
+          <div className='credit-card'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='298'
@@ -774,7 +775,6 @@ export const GigCheckOut = () => {
           </div>
         </div>
       </div>
-      <div className='credit-card'></div>
     </section>
   )
 }
