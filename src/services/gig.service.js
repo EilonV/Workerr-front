@@ -30,7 +30,10 @@ function query() {
 }
 
 function getById(gigId) {
-  return storageService.get(STORAGE_KEY, gigId)
+  console.log(gigId);
+  const res = storageService.get(STORAGE_KEY, gigId)
+  console.log(res);
+  return res
 }
 
 function remove(gigId) {

@@ -10,6 +10,7 @@ import { GigCheckOut } from './gig-check-out'
 
 
 export const GigDetails = () => {
+
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -17,20 +18,29 @@ export const GigDetails = () => {
 
   useEffect(() => {
     const id = params.id
-    gigService.getById(id).then((gig) => setGig(gig))
+    loadGig(id)
   }, [])
+  
+  const loadGig = async gigId =>{
+  const gig = await gigService.getById(gigId)
+  setGig(gig)
+
+  }
 
   const onRemoveGig = (gigId) => {
     dispatch(removeGig(gigId, () => {
       navigate('/gigs')
     }))
-
+    
   }
+  console.log(gig);
 
   if (gig)
+ 
     return (
       <section className='gig-details main-layout'>
         <AppHeaderExplore />
+        <header className='scroll-to flex row space-between'>{gig.tags.map(tag =><nav>{tag}</nav>)}</header>
         <div className='details-container flex row'>
           <div className='main-details gap'>
             <section>
@@ -77,7 +87,7 @@ export const GigDetails = () => {
               <div className='flex column'>
                 <Link to={'/#'}> {gig.owner.fullname}</Link>
                 <h4 className='seller-level'>{gig.owner.level}</h4>
-                <div className='seller-rate flex row'>
+                <div className='seller-rate flex row gap'>
                   <h4>{gig.owner.rate}</h4>
                   <svg
                     className='gig-review-star'
@@ -115,6 +125,10 @@ export const GigDetails = () => {
 
             </section>
 
+          {/* <div>
+            <p>{gig.user}</p>
+          </div> */}
+
            {/* { gig.reviews.map(<ReviewSeller review={review} key={review._id} />)} */}
 
             <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
@@ -124,12 +138,12 @@ export const GigDetails = () => {
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
               <div className='package-title flex row'>
-                <h1>Package details</h1>
-                <span>{gig.price}$</span>
+                <h1 >Package details</h1>
+                <span>${gig.price}</span>
               </div>
 
               <div className='delivery-revision flex row justify-center'>
-                <span>{gig.daysToMake} Days To Make </span>
+                <span>{gig.daysToMake} Days To Make</span>
                 <span>Revisions</span>
               </div>
 
