@@ -20,7 +20,7 @@ export const GigEdit = () => {
   const inputRef = useRef()
 
   useEffect(() => {
-    inputRef.current.focus()
+    // inputRef.current.focus()
     const gigId = params.id
     if (!gigId) return
     gigService
@@ -33,18 +33,25 @@ export const GigEdit = () => {
       })
   }, [])
 
-  const onSaveGig = (ev) => {
+  const onSaveGig = async (ev) => {
     ev.preventDefault()
-    if (gig._id) {
-      dispatch(updateGig(gig)).then(() => {
-        navigate('/gigs')
-      })
-    } else {
-      dispatch(addGig(gig)).then(() => {
-        navigate('/gigs')
-      })
-    }
+    if (gig._id) dispatch(updateGig(gig))
+    else dispatch(addGig(gig))
+    navigate('/gigs')
   }
+
+  // const onSaveGig = (ev) => {
+  //   ev.preventDefault()
+  //   if (gig._id) {
+  //     dispatch(updateGig(gig)).then(() => {
+  //       navigate('/gigs')
+  //     })
+  //   } else {
+  //     dispatch(addGig(gig)).then(() => {
+  //       navigate('/gigs')
+  //     })
+  //   }
+  // }
 
   return (
     <section className='gig-edit'>

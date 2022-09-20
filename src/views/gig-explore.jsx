@@ -7,14 +7,15 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 
 export const GigExplore = () => {
+  const params = useParams()
   const gigs = useSelector((state) => state.gigModule.gigs)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(loadGigs())
-  }, [])
-  
+  }, [gigs])
+
   return (
     <section>
       <AppHeaderExplore />

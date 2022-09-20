@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
-import { ReviewSeller } from '../cmps/reviews-seller'
-import { GigCheckOut } from './gig-check-out'
 
 export const GigDetails = () => {
   const params = useParams()
@@ -15,9 +13,20 @@ export const GigDetails = () => {
   const [gig, setGig] = useState(null)
 
   useEffect(() => {
-    const id = params.id
-    gigService.getById(id).then((gig) => setGig(gig))
-  }, [])
+    loadGig()
+  }, [params.id])
+
+  const loadGig = async () => {
+    const gigId = params.id
+
+    const gig = await gigService.getById(gigId)
+    setGig(gig)
+  }
+
+  // useEffect(() => {
+  //   const id = params.id
+  //   gigService.getById(id).then((gig) => setGig(gig))
+  // }, [])
 
   const onRemoveGig = (gigId) => {
     dispatch(
