@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
@@ -134,9 +134,11 @@ export const UserPage = () => {
                     d='M34.5 224h145c4.1 0 7.5-3.4 7.5-7.5s-3.4-7.5-7.5-7.5h-145c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5zm0 26h95c4.1 0 7.5-3.4 7.5-7.5s-3.4-7.5-7.5-7.5h-95c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5z'
                   ></path>
                 </svg>
-                <span className='create-btn align-center'>
-                  Create a New Gig
-                </span>
+                <Link to='/user/:'>
+                  <span className='create-btn align-center'>
+                    Create a New Gig
+                  </span>
+                </Link>
               </a>
             </div>
           </div>
