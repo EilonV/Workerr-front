@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 export function AppHeader() {
   return (
     <header className='app-header main-layout'>
-      <h1 className='logo'>
+      <h1 className='logo header-logo'>
         Workerr<span>.</span>
       </h1>
       <nav className='header-nav'>
