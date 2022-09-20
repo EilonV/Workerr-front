@@ -94,6 +94,7 @@ export const Home = () => {
   useLayoutEffect(() => {
     return () => {
       clearInterval(interval)
+      hero = 1
     }
   }, [])
 
