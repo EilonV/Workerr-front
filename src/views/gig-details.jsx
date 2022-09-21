@@ -27,13 +27,6 @@ export const GigDetails = () => {
 
   }
 
-
-
-  // useEffect(() => {
-  //   const id = params.id
-  //   gigService.getById(id).then((gig) => setGig(gig))
-  // }, [])
-
   const onRemoveGig = (gigId) => {
     dispatch(removeGig(gigId, () => {
       navigate('/gigs')
@@ -144,7 +137,7 @@ export const GigDetails = () => {
               </section>
             </div>
 
-            < ReviewList />
+            <ReviewList reviews={gig.reviews} />
 
             {/* <div> {gig.user.reviews.}</div> */}
 
