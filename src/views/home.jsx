@@ -49,7 +49,7 @@ export const Home = () => {
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 4,
