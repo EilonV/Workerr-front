@@ -65,9 +65,7 @@ export const GigCheckOut = () => {
                   <img className='star-fill' src={StarFill} alt='star-fill' />
 
                   <h4>{gig.owner.rate}</h4>
-                  <p className='reviews'>
-                    ({gig.user[0].reviews.length} reviews)
-                  </p>
+                  <p className='reviews'>({gig.reviews.length} reviews)</p>
                 </div>
                 <p className='reviews included'>View what's included</p>
                 <div className='gig-more'></div>
@@ -122,30 +120,30 @@ export const GigCheckOut = () => {
           </section>
         </div>
         <div>
-          <div class='checkout-container'>
+          <div className='checkout-container'>
             <header>
               <h3>Price summary</h3>
-              <div class='subtotal summary-item flex space-between'>
+              <div className='subtotal summary-item flex space-between'>
                 <p>Subtotal</p>
                 <p>{'$' + gig.price}</p>
               </div>
-              <div class='service summary-item flex space-between'>
+              <div className='service summary-item flex space-between'>
                 <p>Service Fee</p>
                 <p>{'$' + (gig.price * 0.17).toFixed(2)}</p>
               </div>
             </header>
             <article>
-              <div class='total summary-item flex space-between'>
+              <div className='total summary-item flex space-between'>
                 <p>Total</p>
                 <p>{'$' + (gig.price * 1.17).toFixed(2)}</p>
               </div>
-              <div class='delivery summary-item flex space-between'>
+              <div className='delivery summary-item flex space-between'>
                 <p>Delivery Time</p>
                 <p>5 Days</p>
               </div>
             </article>
 
-            <button class='btn-purchase'>Continue to checkout</button>
+            <button className='btn-purchase'>Continue to checkout</button>
             <p className='not-charge'>You won't be charged yet</p>
           </div>
           <div className='credit-card'>
