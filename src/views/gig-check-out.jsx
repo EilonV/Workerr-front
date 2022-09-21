@@ -108,7 +108,7 @@ export const GigCheckOut = () => {
                 <div className='features '>
                   <ul>
                     {gig.tags.map((a) => (
-                      <li>
+                      <li className='svg'>
                         <img className='done' src={Done} alt='done' />
                         {a}
                       </li>

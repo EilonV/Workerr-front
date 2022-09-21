@@ -12,31 +12,36 @@ import { GigDetails } from './views/gig-details'
 import { GigCheckOut } from './views/gig-check-out'
 import { AppHeaderExplore } from './cmps/app-header-explore'
 import { AddNewGig } from './views/add-new-gig'
+import { Orders } from './views/gig-orders'
 
 function App() {
   return (
     <section>
       <div>
         <div className=''></div>
-      </div>
 
-      <div className='main-app main-layout'>
-        <main className='main-container'>
-          <Routes>
-            <Route path='gig/details/:id/checkout' element={<GigCheckOut />} />
-            <Route path='gig/details/:id' element={<GigDetails />} />
-            <Route path='gig/edit/:id' element={<GigEdit />} />
-            <Route path='gig/edit' element={<GigEdit />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/gigs' element={<GigExplore />} />
-            <Route path='/user/:' element={<AddNewGig />} />
-            <Route path='/user' element={<UserPage />} />
-            {/* <Route path='/orders' element={<Orders />} /> */}
-            <Route path='/admin' element={<AdminPage />} />
-            <Route path='/' element={<Home />} />
-          </Routes>
-        </main>
-        <AppFooter />
+        <div className='main-app main-layout'>
+          <main className='main-container'>
+            <Routes>
+              <Route
+                path='gig/details/:id/checkout'
+                element={<GigCheckOut />}
+              />
+
+              <Route path='gig/details/:id' element={<GigDetails />} />
+              <Route path='gig/edit/:id' element={<GigEdit />} />
+              <Route path='gig/edit' element={<GigEdit />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/gigs' element={<GigExplore />} />
+              <Route path='/user/:' element={<AddNewGig />} />
+              <Route path='/user' element={<UserPage />} />
+              <Route path='/admin' element={<AdminPage />} />
+              <Route path='/orders' element={<Orders />} />
+              <Route path='/' element={<Home />} />
+            </Routes>
+          </main>
+          <AppFooter />
+        </div>
       </div>
     </section>
   )

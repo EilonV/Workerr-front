@@ -33,6 +33,7 @@ export function AppHeaderExplore() {
         <NavLink to='/gigs'>Explore </NavLink>
         <NavLink to='/about'>About </NavLink>
         <NavLink to='/user'>User </NavLink>
+        <NavLink to='/orders'>Order </NavLink>
         <button className='header-join'>
           <NavLink to='/user'>Join </NavLink>
         </button>

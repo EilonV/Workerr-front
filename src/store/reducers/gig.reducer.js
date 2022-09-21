@@ -1,4 +1,4 @@
-const initialState = {
+const INITIAL_STATE = {
   gigs: [],
   filterBy: {
     title: '',
@@ -7,7 +7,7 @@ const initialState = {
   },
   page: null,
 }
-export function gigReducer(state = initialState, action) {
+export function gigReducer(state = INITIAL_STATE, action) {
   var newState = state
   var gigs
   // var page
@@ -33,15 +33,16 @@ export function gigReducer(state = initialState, action) {
       )
       newState = { ...state, gigs }
       break
-    case 'SET_FILTER':
+    case 'SET_FILTER_BY':
       return { ...state, filterBy: action.filterBy }
     default:
       newState = state
+
+    // For debug:
+    // window.gigState = newState
+    // console.log('Prev State:', state)
+    // console.log('Action:', action)
+    // console.log('New State:', newState)
   }
-  // For debug:
-  // window.gigState = newState
-  // console.log('Prev State:', state)
-  // console.log('Action:', action)
-  // console.log('New State:', newState)
   return newState
 }

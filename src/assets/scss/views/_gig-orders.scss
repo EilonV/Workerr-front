@@ -1,0 +1,22 @@
+.features {
+  margin-top: 50px;
+  text-align: center;
+
+  .table-orders {
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 80vh;
+      height: 100%;
+      //   border: 1px $footer-line-gray solid;
+    }
+    td {
+      width: 100px;
+      border: 2px $footer-line-gray solid;
+    }
+    th {
+      border: 5px $footer-line-gray solid;
+    }
+  }
+}
