@@ -31,6 +31,7 @@ function App() {
             <Route path='/gigs' element={<GigExplore />} />
             <Route path='/user/:' element={<AddNewGig />} />
             <Route path='/user' element={<UserPage />} />
+            {/* <Route path='/orders' element={<Orders />} /> */}
             <Route path='/admin' element={<AdminPage />} />
             <Route path='/' element={<Home />} />
           </Routes>
