@@ -67,7 +67,7 @@
     font-size: 16px;
     font-weight: 600;
   }
-  svg {
+  .svg {
     width: 12px;
     height: 12px;
     margin-right: 16px;
@@ -124,9 +124,9 @@
       margin-left: 15px;
     }
 
-    svg {
-      margin-left: 15px;
-    }
+    // svg {
+    //   margin-left: 15px;
+    // }
 
     .gig-rating {
       height: 28px;
@@ -176,7 +176,7 @@
       span.line-list {
         color: #62646a;
       }
-      svg {
+      .done {
         margin-right: 12px;
       }
     }
@@ -250,7 +250,16 @@
 
   .credit-card {
     margin-left: 113px;
-    width: 343px;
-    height: 55px;
+    .cards-container {
+      margin: 15px 11px 15px 11px;
+      width: 343px;
+      height: 55px;
+    }
+
+    .cards {
+      margin-left: 15px;
+      width: 40px;
+      height: 25px;
+    }
   }
 }
