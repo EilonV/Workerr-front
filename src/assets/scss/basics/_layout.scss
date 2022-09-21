@@ -1,8 +1,23 @@
 .main-layout{
-    max-width: 1400px;
-    padding-right: 32px;
-    padding-left: 32px;
-    margin: auto;
+    // max-width: 1400px;
+    // padding-right: 32px;
+    // padding-left: 32px;
+    // margin: auto;
+
+    display: grid;
+    grid-template-columns: 
+    minmax(32px, 1fr)
+     minmax(auto, 1400px)
+     minmax(32px, 1fr)
+     ;
+
+    > * {
+        grid-column: 2;
+
+        &.full {
+            grid-column: 1 / -1;
+        }
+    }
 
 }
 
