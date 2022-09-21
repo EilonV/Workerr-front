@@ -84,7 +84,7 @@ export const GigCheckOut = () => {
                   </svg>
                   <h4>{gig.owner.rate}</h4>
                   <p className='reviews'>
-                    ({gig.user[0].reviews.length} reviews)
+                    ({gig.reviews.length} reviews)
                   </p>
                 </div>
                 <p className='reviews included'>View what's included</p>
@@ -150,30 +150,30 @@ export const GigCheckOut = () => {
           </section>
         </div>
         <div>
-          <div class='checkout-container'>
+          <div className='checkout-container'>
             <header>
               <h3>Price summary</h3>
-              <div class='subtotal summary-item flex space-between'>
+              <div className='subtotal summary-item flex space-between'>
                 <p>Subtotal</p>
                 <p>{'$' + gig.price}</p>
               </div>
-              <div class='service summary-item flex space-between'>
+              <div className='service summary-item flex space-between'>
                 <p>Service Fee</p>
                 <p>{'$' + (gig.price * 0.17).toFixed(2)}</p>
               </div>
             </header>
             <article>
-              <div class='total summary-item flex space-between'>
+              <div className='total summary-item flex space-between'>
                 <p>Total</p>
                 <p>{'$' + (gig.price * 1.17).toFixed(2)}</p>
               </div>
-              <div class='delivery summary-item flex space-between'>
+              <div className='delivery summary-item flex space-between'>
                 <p>Delivery Time</p>
                 <p>5 Days</p>
               </div>
             </article>
 
-            <button class='btn-purchase'>Continue to checkout</button>
+            <button className='btn-purchase'>Continue to checkout</button>
             <p className='not-charge'>You won't be charged yet</p>
           </div>
           <div className='credit-card'>
@@ -374,98 +374,98 @@ export const GigCheckOut = () => {
                 fill='#CCCCCC'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M207.015 40.0518L208.13 41.2025V40.1119H208.29V41.5828L207.175 40.4356V41.52H207.015V40.0518Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M207.03 40.089C207.079 40.1395 208.146 41.2398 208.146 41.2398V40.1262H208.275V41.5467C208.225 41.4963 207.16 40.3986 207.16 40.3986V41.506H207.03V40.089ZM207 40.0519V41.5352H207.19V40.472C207.237 40.5216 208.304 41.6192 208.304 41.6192V40.0979H208.115V41.1664C208.066 41.1151 207 40.0156 207 40.0156V40.0519Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M209.062 40.1138H209.804V40.2588H209.222V40.6781H209.788V40.8231H209.222V41.376H209.804V41.5219H209.062V40.1138Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M209.789 40.126V40.2427H209.207V40.6912H209.771V40.807H209.207V41.389H209.789V41.5058H209.077V40.126H209.789ZM209.805 40.0977H209.048V41.535H209.819V41.3599H209.238V40.8362H209.802V40.6611H209.238V40.2728H209.819V40.0977H209.805Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M210.93 41.5219H210.771V40.2588H210.426V40.1138H211.28V40.2588H210.93V41.5219Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M211.264 40.126V40.2427H210.914V41.5058H210.786V40.2427H210.44V40.126H211.264ZM211.279 40.0977H210.409V40.2728H210.755V41.535H210.945V40.2728H211.294V40.0977H211.279Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M212.345 41.1668L212.808 40.0391L213.271 41.1668L213.647 40.1125H213.82L213.271 41.5923L212.808 40.4583L212.345 41.5923L211.798 40.1125H211.97L212.345 41.1668Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M212.358 41.172C212.358 41.172 212.783 40.1415 212.808 40.0787C212.834 40.1415 213.272 41.2082 213.272 41.2082C213.272 41.2082 213.65 40.1459 213.657 40.1256H213.798C213.785 40.1627 213.296 41.4842 213.271 41.5523C213.243 41.4851 212.808 40.4193 212.808 40.4193C212.808 40.4193 212.373 41.4851 212.345 41.5523C212.321 41.4842 211.833 40.1627 211.818 40.1256H211.959C211.966 40.1459 212.344 41.2082 212.344 41.2082L212.358 41.172ZM212.794 40.0336C212.794 40.0336 212.374 41.0579 212.346 41.1251C212.321 41.057 211.98 40.0973 211.98 40.0973H211.776L212.345 41.6337C212.345 41.6337 212.783 40.5634 212.808 40.498C212.834 40.5634 213.271 41.6337 213.271 41.6337L213.84 40.0973H213.636C213.636 40.0973 213.294 41.057 213.271 41.1251C213.242 41.0579 212.808 40 212.808 40L212.794 40.0336Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M214.548 40.8144C214.548 41.131 214.809 41.3964 215.134 41.3964C215.459 41.3964 215.721 41.131 215.721 40.8144C215.721 40.4951 215.463 40.2315 215.134 40.2315C214.806 40.2315 214.548 40.4951 214.548 40.8144M215.88 40.8161C215.88 41.2213 215.541 41.5423 215.134 41.5423C214.726 41.5423 214.389 41.2213 214.389 40.8161C214.389 40.4128 214.726 40.0864 215.134 40.0864C215.541 40.0864 215.88 40.4128 215.88 40.8161'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M214.402 40.8176C214.402 40.4231 214.73 40.1021 215.133 40.1021C215.537 40.1021 215.865 40.4231 215.865 40.8176C215.865 41.2095 215.537 41.5297 215.133 41.5297C214.73 41.5297 214.402 41.2095 214.402 40.8176M214.373 40.8195C214.373 41.2272 214.715 41.5607 215.133 41.5607C215.553 41.5607 215.895 41.2272 215.895 40.8195C215.895 40.4082 215.553 40.0747 215.133 40.0747C214.715 40.0747 214.373 40.4082 214.373 40.8195'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M214.564 40.8153C214.564 40.5022 214.821 40.2466 215.136 40.2466C215.451 40.2466 215.707 40.5022 215.707 40.8153C215.707 41.1284 215.451 41.3832 215.136 41.3832C214.821 41.3832 214.564 41.1284 214.564 40.8153M214.533 40.8172C214.533 41.1471 214.805 41.4142 215.135 41.4142C215.467 41.4142 215.736 41.1471 215.736 40.8172C215.736 40.4872 215.467 40.2192 215.135 40.2192C214.805 40.2192 214.533 40.4872 214.533 40.8172'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M216.731 40.7648H216.782C216.961 40.7648 217.143 40.7312 217.143 40.5127C217.143 40.2818 216.971 40.2588 216.78 40.2588H216.731V40.7648ZM216.731 41.521H216.572V40.1138H216.78C217.05 40.1138 217.303 40.1845 217.303 40.5012C217.303 40.7179 217.165 40.8718 216.944 40.8904L217.399 41.521H217.203L216.772 40.9028H216.731V41.521Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M216.779 40.126C217.125 40.126 217.286 40.2454 217.286 40.5001C217.286 40.7097 217.152 40.8566 216.942 40.8743L216.915 40.8769C216.915 40.8769 217.339 41.4625 217.37 41.5058H217.203C217.203 41.4943 216.782 40.8928 216.782 40.8928L216.73 40.8866H216.716V41.5058H216.586V40.126H216.779ZM216.572 40.0977H216.557V41.535H216.745V40.9167H216.77C216.77 40.9264 217.191 41.5279 217.191 41.5279L217.398 41.535H217.428C217.428 41.535 216.991 40.93 216.968 40.8973C217.179 40.869 217.317 40.7168 217.317 40.5001C217.317 40.2286 217.14 40.0977 216.779 40.0977H216.572Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M216.778 40.2739C216.962 40.2739 217.127 40.2916 217.127 40.5127C217.127 40.7215 216.951 40.7489 216.78 40.7489H216.745V40.2739H216.778ZM216.73 40.2427H216.716V40.7778H216.781C216.956 40.7778 217.157 40.7477 217.157 40.5116C217.157 40.263 216.961 40.2427 216.779 40.2427H216.73Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M218.843 40.1138H219.057L218.385 40.7692L219.08 41.5219H218.86L218.273 40.8753L218.232 40.9134V41.5219H218.074V40.1138H218.232V40.717L218.843 40.1138Z'
                 fill='#231F20'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M219.02 40.126C218.973 40.1737 218.365 40.7672 218.365 40.7672C218.365 40.7672 219.003 41.4589 219.046 41.5058H218.859C218.859 41.4978 218.284 40.8636 218.284 40.8636L218.273 40.8522L218.222 40.9026C218.222 40.9026 218.218 41.4766 218.218 41.5058H218.089V40.126H218.218V40.7504C218.218 40.7504 218.841 40.1348 218.849 40.126H219.02ZM219.057 40.0977H218.837C218.837 40.0977 218.294 40.6328 218.249 40.6797V40.0977H218.06V41.535H218.249V40.9149C218.251 40.9158 218.263 40.9043 218.272 40.8946C218.291 40.9167 218.849 41.5297 218.849 41.5297L219.08 41.535H219.114C219.114 41.535 218.425 40.7885 218.405 40.769C218.426 40.7478 219.092 40.0977 219.092 40.0977H219.057Z'
                 fill='#231F20'
               />
@@ -637,12 +637,12 @@ export const GigCheckOut = () => {
                   y2='9.72859'
                   gradientUnits='userSpaceOnUse'
                 >
-                  <stop stop-color='#F89F20' />
-                  <stop offset='0.2502' stop-color='#F79A20' />
-                  <stop offset='0.5331' stop-color='#F68D20' />
-                  <stop offset='0.6196' stop-color='#F58720' />
-                  <stop offset='0.7232' stop-color='#F48120' />
-                  <stop offset='1' stop-color='#F37521' />
+                  <stop stopColor='#F89F20' />
+                  <stop offset='0.2502' stopColor='#F79A20' />
+                  <stop offset='0.5331' stopColor='#F68D20' />
+                  <stop offset='0.6196' stopColor='#F58720' />
+                  <stop offset='0.7232' stopColor='#F48120' />
+                  <stop offset='1' stopColor='#F37521' />
                 </linearGradient>
                 <linearGradient
                   id='paint1_linear_3280_105264'
@@ -652,21 +652,21 @@ export const GigCheckOut = () => {
                   y2='7.52266'
                   gradientUnits='userSpaceOnUse'
                 >
-                  <stop stop-color='#F58720' stop-opacity='0' />
+                  <stop stopColor='#F58720' stopOpacity='0' />
                   <stop
                     offset='0.3587'
-                    stop-color='#E16F27'
-                    stop-opacity='0.2704'
+                    stopColor='#E16F27'
+                    stopOpacity='0.2704'
                   />
                   <stop
                     offset='0.703'
-                    stop-color='#D4602C'
-                    stop-opacity='0.5299'
+                    stopColor='#D4602C'
+                    stopOpacity='0.5299'
                   />
                   <stop
                     offset='0.9816'
-                    stop-color='#D05B2E'
-                    stop-opacity='0.74'
+                    stopColor='#D05B2E'
+                    stopOpacity='0.74'
                   />
                 </linearGradient>
                 <linearGradient
@@ -677,12 +677,12 @@ export const GigCheckOut = () => {
                   y2='35.7286'
                   gradientUnits='userSpaceOnUse'
                 >
-                  <stop stop-color='#F89F20' />
-                  <stop offset='0.2502' stop-color='#F79A20' />
-                  <stop offset='0.5331' stop-color='#F68D20' />
-                  <stop offset='0.6196' stop-color='#F58720' />
-                  <stop offset='0.7232' stop-color='#F48120' />
-                  <stop offset='1' stop-color='#F37521' />
+                  <stop stopColor='#F89F20' />
+                  <stop offset='0.2502' stopColor='#F79A20' />
+                  <stop offset='0.5331' stopColor='#F68D20' />
+                  <stop offset='0.6196' stopColor='#F58720' />
+                  <stop offset='0.7232' stopColor='#F48120' />
+                  <stop offset='1' stopColor='#F37521' />
                 </linearGradient>
                 <linearGradient
                   id='paint3_linear_3280_105264'
@@ -692,21 +692,21 @@ export const GigCheckOut = () => {
                   y2='33.5227'
                   gradientUnits='userSpaceOnUse'
                 >
-                  <stop stop-color='#F58720' stop-opacity='0' />
+                  <stop stopColor='#F58720' stopOpacity='0' />
                   <stop
                     offset='0.3587'
-                    stop-color='#E16F27'
-                    stop-opacity='0.2704'
+                    stopColor='#E16F27'
+                    stopOpacity='0.2704'
                   />
                   <stop
                     offset='0.703'
-                    stop-color='#D4602C'
-                    stop-opacity='0.5299'
+                    stopColor='#D4602C'
+                    stopOpacity='0.5299'
                   />
                   <stop
                     offset='0.9816'
-                    stop-color='#D05B2E'
-                    stop-opacity='0.74'
+                    stopColor='#D05B2E'
+                    stopOpacity='0.74'
                   />
                 </linearGradient>
               </defs>

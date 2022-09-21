@@ -13,7 +13,7 @@ export const GigExplore = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(loadGigs())
+    dispatch(loadGigs(gigs.price > 652))
   }, [gigs])
 
   return (
