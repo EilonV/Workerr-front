@@ -12,11 +12,12 @@ export function loadGigs() {
   }
 }
 
-export function removeGig(gigId) {
+export function removeGig(gigId, cb) {
   return async (dispatch) => {
     try {
       await gigService.remove(gigId)
       dispatch({ type: 'REMOVE_GIG', gigId })
+      cb()
     } catch (err) {
       console.error('err:', err)
     }
