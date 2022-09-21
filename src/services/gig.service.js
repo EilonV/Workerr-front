@@ -30,9 +30,9 @@ function query() {
 }
 
 function getById(gigId) {
-  console.log(gigId);
+  console.log(gigId)
   const res = storageService.get(STORAGE_KEY, gigId)
-  console.log(res);
+  console.log(res)
   return res
 }
 
@@ -55,7 +55,7 @@ const gDefaultGigs = [
   {
     _id: utilService.makeId(4),
     title: 'I will extract or remove drums bass vocals creating backing track',
-    gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution'],
+    gigInclusive: ['Commercial Use', 'Color', 'Source File', 'High Resolution'],
     price: utilService.getRandomIntInclusive(1, 1000),
     owner: {
       _id: utilService.makeId(4),
@@ -77,7 +77,13 @@ const gDefaultGigs = [
     imgUrl:
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/zi9vophqo9wyccfyk4rc.png',
 
-    tags: ['Music', 'artisitic', 'proffesional', 'accessible'],
+    tags: [
+      'pencil drawing',
+      'realistic drawing',
+      'hand drawing',
+      'portrait drawing',
+      'pencil sketch',
+    ],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
     order: [
       {
@@ -343,7 +349,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -511,7 +516,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -680,7 +684,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-       
         },
         status: 'pending',
       },
@@ -848,7 +851,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -1016,7 +1018,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -1182,7 +1183,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -1350,7 +1350,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -1519,7 +1518,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -1688,7 +1686,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -1856,7 +1853,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2024,7 +2020,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2192,7 +2187,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2360,7 +2354,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2528,7 +2521,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2696,7 +2688,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -2864,7 +2855,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -3196,7 +3186,12 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
+          gigInclusive: [
+            'Commercial Use',
+            'Color',
+            'Source File',
+            'High Resolution',
+          ],
         },
         status: 'pending',
       },
@@ -3533,7 +3528,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-       
         },
         status: 'pending',
       },
@@ -3700,7 +3694,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -3868,7 +3861,12 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
+          gigInclusive: [
+            'Commercial Use',
+            'Color',
+            'Source File',
+            'High Resolution',
+          ],
         },
         status: 'pending',
       },
@@ -4036,7 +4034,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -4204,7 +4201,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-    
         },
         status: 'pending',
       },
@@ -4372,7 +4368,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-       
         },
         status: 'pending',
       },
@@ -4540,7 +4535,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -4708,7 +4702,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -4875,7 +4868,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -5040,7 +5032,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -5209,7 +5200,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -5374,7 +5364,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -5536,7 +5525,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
@@ -5704,7 +5692,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -5872,7 +5859,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -6040,7 +6026,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-          
         },
         status: 'pending',
       },
@@ -6208,7 +6193,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-        
         },
         status: 'pending',
       },
@@ -6376,7 +6360,12 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-          gigInclusive: ['Commercial Use', 'Color', 'Source File','High Resolution']
+          gigInclusive: [
+            'Commercial Use',
+            'Color',
+            'Source File',
+            'High Resolution',
+          ],
         },
         status: 'pending',
       },
@@ -6544,7 +6533,6 @@ const gDefaultGigs = [
           _id: 'i101',
           name: 'Design Logo',
           price: 20,
-         
         },
         status: 'pending',
       },
