@@ -34,9 +34,9 @@ function query(filterBy) {
 }
 
 function getById(gigId) {
-  console.log(gigId)
+  // console.log(gigId)
   const res = storageService.get(STORAGE_KEY, gigId)
-  console.log(res)
+  // console.log(res)
   return res
 }
 

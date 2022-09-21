@@ -142,8 +142,9 @@ export const GigCheckOut = () => {
                 <p>5 Days</p>
               </div>
             </article>
-
-            <button className='btn-purchase'>Continue to checkout</button>
+            <Link to={`/gig/details/${gig._id}/payment`}>
+              <button className='btn-purchase'>Continue to checkout</button>
+            </Link>
             <p className='not-charge'>You won't be charged yet</p>
           </div>
           <div className='credit-card'>
