@@ -2,15 +2,14 @@ import { ReviewPreview } from './review-preview'
 
 
 export const ReviewList = ({ reviews }) => {
-   console.log(reviews)
-   
-   if (!reviews) return <div className='flex justify-center'>Loading...</div>
+   // console.log(reviews)
+
  if (reviews)  return (
       <section>
-         <div className='review-list'>
-            {/* {reviews.map((gig) => (
-               <ReviewPreview key={gig._id} gig={gig} />
-            ))} */}
+         <div className='reviews-list'>
+            {reviews.map((review) => (
+               <ReviewPreview key={review._id} review={review} />
+            ))}
          </div>
       </section>
 

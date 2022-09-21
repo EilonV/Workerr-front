@@ -56,26 +56,13 @@ export const GigDetails = () => {
                 <h4>{gig.owner.level}|</h4>
                 <h4>{gig.owner.rate}</h4>
                 <svg
-                  className='gig-review-star'
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 1792 1792'
-                  width='16'
-                  height='16'
-                >
-                  <path
-                    fill='#ffbe5b'
-                    d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                  />
-                </svg>
+                  className='gig-review-star' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1792' width='16' height='16'><path fill='#ffbe5b'
+                    d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'/></svg>
               </div>
 
-              <img
-                className='gig-img'
-                src={gig.imgUrl}
-                alt='Some Logo Design'
-              />
+              <img className='gig-img' src={gig.imgUrl} alt='Some Logo Design' />
               <h2>About Gig</h2>
-              <p>{gig.longerDescription} </p>
+              <p>{gig.longerDescription}</p>
             </section>
 
             <h2>About The Seller</h2>
@@ -91,18 +78,7 @@ export const GigDetails = () => {
                 <h4 className='seller-level'>{gig.owner.level}</h4>
                 <div className='seller-rate flex row'>
                   <h4>{gig.owner.rate}</h4>
-                  <svg
-                    className='gig-review-star'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 1792 1792'
-                    width='16'
-                    height='16'
-                  >
-                    <path
-                      fill='#ffbe5b'
-                      d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                    />
-                  </svg>
+                  <svg className='gig-review-star' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1792' width='16' height='16' ><path fill='#ffbe5b' d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z' /></svg>
                 </div>
               </div>
             </section>
@@ -125,17 +101,6 @@ export const GigDetails = () => {
               </div>
             </section>
 
-            <div className='flex' >
-              <TableRating />
-              <section className='ranking'>
-                <h6>Rating Breakdown</h6>
-                <ul className='clean-list'>
-                  <li className='flex space-between'>Seller communication level <span> 5 </span></li>
-                  <li className='flex space-between'>Recommend to a friend <span> 4.9 </span></li>
-                  <li className='flex space-between'>Service as described <span> 4.9 </span></li>
-                </ul>
-              </section>
-            </div>
 
             <ReviewList reviews={gig.reviews} />
 
@@ -167,22 +132,8 @@ export const GigDetails = () => {
 
               <ul className='gig-inclusive flex column'>
                 {gig.tags.map((a) => (
-                  <li>
-                    <svg
-                      width='16'
-                      height='16'
-                      viewBox='0 0 16 16'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        fill='#1dbf73'
-                        d='M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z'
-                      />
-                    </svg>
-                    {a}
-                  </li>
-                ))}
-              </ul>
+                  <li><svg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill='#1dbf73' d='M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z'/></svg>
+                    {a}</li>))}</ul>
               <Link
                 to={`/gig/details/${gig._id}/checkout/`}
                 className='flex row gap justify-center space-between'
