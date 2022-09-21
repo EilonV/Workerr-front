@@ -1,25 +1,8 @@
 
-import { useState, useEffect } from 'react'
-import { useParams} from 'react-router-dom'
-import { gigService } from '../services/gig.service'
 
 
 export const ReviewPreview = () => {
  
-    const params = useParams()
-    const [gig, setGig] = useState(null)
-  
-    useEffect(() => {
-      const id = params.id
-      loadGig(id)
-    }, [])
-  
-    const loadGig = async gigId => {
-      const gig = await gigService.getById(gigId)
-      setGig(gig)
-  
-    }
-
 console.log(gig)
 
     return (
