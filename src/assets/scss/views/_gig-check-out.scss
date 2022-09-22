@@ -164,11 +164,12 @@
         display: grid;
         grid-template-columns: 329px 225px;
         padding: 0;
+
         li {
+          display: flex;
           text-decoration: none;
           list-style: none;
           width: 225px;
-          height: 34px;
           font-size: 14px;
           line-height: 24px;
         }
@@ -177,7 +178,7 @@
         color: #62646a;
       }
       .done {
-        margin-right: 12px;
+        margin-right: 5px;
       }
     }
   }
@@ -237,6 +238,7 @@
     border: 0;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
   }
   .not-charge {
     width: 258px;

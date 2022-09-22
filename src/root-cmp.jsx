@@ -19,7 +19,6 @@ function App() {
     <section>
       <div>
         <div className=''></div>
-      </div>
 
       <div className='main-app main-layout'>
         <main className='main-container'>
@@ -38,6 +37,7 @@ function App() {
           </Routes>
         </main>
         <AppFooter />
+       </div>
       </div>
     </section>
   )

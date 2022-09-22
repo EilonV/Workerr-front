@@ -1,0 +1,54 @@
+import { orderService } from '../../services/order.service'
+
+export function loadOrders() {
+  return async (dispatch, getState) => {
+    const { filterBy } = getState().orderModule
+    try {
+      const orders = await orderService.query(filterBy)
+      dispatch({ type: 'SET_ORDERS', orders })
+    } catch (err) {
+      console.error('err:', err)
+    }
+  }
+}
+
+export function removeOrder(orderId, cb) {
+  return async (dispatch) => {
+    try {
+      await orderService.remove(orderId)
+      dispatch({ type: 'REMOVE_ORDER', orderId })
+      cb()
+    } catch (err) {
+      console.error('err:', err)
+    }
+  }
+}
+
+export function addOrder(order) {
+  return async (dispatch) => {
+    try {
+      const savedOrder = await orderService.save(order)
+      dispatch({ type: 'ADD_ORDER', order: savedOrder })
+    } catch (err) {
+      console.error('Oops:', err)
+    }
+  }
+}
+
+export function onChangeStatus(order) {
+  return async (dispatch) => {
+    const action = { type: 'UPDATE_ORDER', order }
+    dispatch(action)
+    try {
+      orderService.changeStatus(order)
+    } catch (err) {
+      console.log('err', err)
+    }
+  }
+}
+
+export function setFilterBy(filterBy) {
+  return (dispatch) => {
+    dispatch({ type: 'SET_FILTER_BY', filterBy })
+  }
+}
