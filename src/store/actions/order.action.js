@@ -24,11 +24,14 @@ export function removeOrder(orderId, cb) {
   }
 }
 
-export function addOrder(order) {
+export function addOrder(order, cb) {
   return async (dispatch) => {
     try {
       const savedOrder = await orderService.save(order)
+      console.log('savedOrder:', savedOrder)
+
       dispatch({ type: 'ADD_ORDER', order: savedOrder })
+      cb()
     } catch (err) {
       console.error('Oops:', err)
     }

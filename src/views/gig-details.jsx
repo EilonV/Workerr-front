@@ -6,8 +6,6 @@ import { loadGigs, removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
-import { TableRating } from '../cmps/table-rating'
-import { GigCheckOut } from './gig-check-out'
 
 export const GigDetails = () => {
   const params = useParams()
@@ -32,8 +30,6 @@ export const GigDetails = () => {
       })
     )
   }
-  // console.log(gig);
-  // console.log(gig.user[0].reviews);
 
   if (gig)
     return (

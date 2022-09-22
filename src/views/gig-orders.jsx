@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
-import { loadOrders } from '../store/actions/order.action'
+import { loadOrders, removeOrder } from '../store/actions/order.action'
 
 export const Orders = () => {
   const params = useParams()
@@ -13,6 +13,29 @@ export const Orders = () => {
   useEffect(() => {
     dispatch(loadOrders())
   }, [])
+
+  const onRemoveOrder = (orderId) => {
+    dispatch(
+      removeOrder(orderId, () => {
+        // navigate('/orders')
+      })
+    )
+  }
+
+  const format = (time) => {
+    new Date(time).getTime()
+    return [
+      new Date(time).getUTCDate(),
+      '.',
+      new Date(time).getMonth() + 1,
+      '.',
+      new Date(time).getFullYear(),
+      '\n',
+      new Date(time).getHours(),
+      ':',
+      new Date(time).getMinutes(),
+    ]
+  }
 
   if (!orders) return ''
 
@@ -24,21 +47,26 @@ export const Orders = () => {
         <h1>Your orders</h1>
         <div className='table-orders'>
           {orders.map((order) => (
-            <table key={order._id} order={order}>
+            <table key={order._id}>
               <tr>
-                <th> DATE </th>
-                <th> BUYER </th>
-                <th> GIG</th>
+                <th> Date </th>
+                <th> Buyer </th>
+                <th> Gig</th>
                 <th> Seller name </th>
                 <th> Price</th>
                 <th> Status </th>
+                <th> Actions </th>
               </tr>
-              <td>{order.createdAt} </td>
-              <td>{order.buyer} </td>
+              <td>{format(order.createdAt)} </td>
+              <td>{order.buyer.fullname} </td>
               <td>{order.gig._id} </td>
-              <td>{order.seller} </td>
+              <td>{order.seller.fullname} </td>
               <td>${order.gig.price} </td>
               <td>{order.status} </td>
+              <td>
+                <button onClick={() => onRemoveOrder(order._id)}>Delete</button>
+                {/* <button>Update</button> */}
+              </td>
             </table>
           ))}
         </div>
