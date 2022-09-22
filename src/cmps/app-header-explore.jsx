@@ -34,7 +34,7 @@ export function AppHeaderExplore() {
         <NavLink to='/about'>About </NavLink>
         <NavLink to='/user'>User </NavLink>
         <button className='header-join'>
-          <NavLink to='/user'>Join </NavLink>
+          <NavLink to='/login'>Join </NavLink>
         </button>
       </nav>
     </header>

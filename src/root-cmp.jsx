@@ -12,6 +12,7 @@ import { GigDetails } from './views/gig-details'
 import { GigCheckOut } from './views/gig-check-out'
 import { AppHeaderExplore } from './cmps/app-header-explore'
 import { AddNewGig } from './views/add-new-gig'
+import {LoginSignup} from '../src/cmps/login-signup'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path='/user' element={<UserPage />} />
             <Route path='/admin' element={<AdminPage />} />
             <Route path='/' element={<Home />} />
+            <Route path='/login' element={<LoginSignup />} />
           </Routes>
         </main>
         <AppFooter />

@@ -16,6 +16,21 @@ export function loadUsers() {
     }
 }
 
+export function updateUser(userToUpdate) {
+    console.log('before action', userToUpdate);
+    return async (dispatch) => {
+        try {
+            const user = await userService.update(userToUpdate)
+            console.log('user after action', user);
+            dispatch({ type: 'SET_USER', user })
+
+        } catch (err) {
+            console.log('Cannot update user');
+
+        }
+    }
+}
+
 export function removeUser(userId) {
     return async dispatch => {
         try {
