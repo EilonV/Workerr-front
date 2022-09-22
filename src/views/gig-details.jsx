@@ -138,10 +138,10 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
+            {/* 
+            <div> {gig.user.reviews.}</div>
 
-            {/* <div> {gig.user.reviews.}</div> */}
-
-            {/* { gig.reviews.map(<ReviewSeller review={review} key={review._id} />)} */}
+            { gig.reviews.map(<ReviewSeller review={review} key={review._id} />)} */}
 
             <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
             <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
@@ -198,7 +198,7 @@ export const GigDetails = () => {
                 ))}
               </ul>
               <Link
-                to={`/gig/details/${gig._id}/checkout/`}
+                to={`/gig/details/${gig._id}/checkout`}
                 className='flex row gap justify-center space-between'
               >
                 Continue <span>(${gig.price})</span>

@@ -6,7 +6,7 @@ import { HeaderCategories } from '../cmps/header-categories'
 import { loadOrders, removeOrder } from '../store/actions/order.action'
 
 export const Orders = () => {
-  const params = useParams()
+  // const params = useParams()
   const orders = useSelector((state) => state.orderModule.orders)
   const dispatch = useDispatch()
 
@@ -38,13 +38,18 @@ export const Orders = () => {
   }
 
   if (!orders) return ''
+  console.log('orders:', orders)
 
   return (
     <section>
       <AppHeaderExplore />
       <HeaderCategories orders={orders} />
       <div className='features'>
-        <h1>Your orders</h1>
+        <div className='total-orders'>
+          {orders.length === 1
+            ? orders.length + ' order'
+            : orders.length + ' orders'}
+        </div>
         <div className='table-orders'>
           {orders.map((order) => (
             <table key={order._id}>
