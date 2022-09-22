@@ -117,8 +117,8 @@ export const Home = () => {
       }
     }, 8000)
   }
-  changeHero()
-  // scrollFunction()
+  // changeHero()
+
 
   return (
     <section>
@@ -133,8 +133,8 @@ export const Home = () => {
                 src={HeroImg6}
                 alt='Dani, Web Expert'
               />
-              <div className='hero-info-container main-layout'>
-                <div className='hero-info flex column'>
+              <div className='hero-info-container'>
+                <div className='hero-info flex column main-layout'>
                   <div>
                     <svg
                       className='gig-review-star'
@@ -433,7 +433,7 @@ export const Home = () => {
                 src={HeroImg2}
                 alt='Dani, Web Expert'
               />
-              <div className='hero-info-container main-layout'>
+              <div className='hero-info-container'>
                 <div className='hero-info flex column'>
                   <div>
                     <svg
@@ -505,7 +505,7 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className='hero-info-container main-layout flex align-center'>
+          <div className='hero-info-container flex align-center'>
             <div className='hero-content-left '>
               <h2>
                 Find the perfect{' '}
@@ -555,40 +555,42 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className='trusted-by-full'>
-            <div className='trusted-by-content main-layout flex justify-center align-center'>
-              <p>Trusted by:</p>
-              <div>
-                <ul className='flex justify-center align-center'>
-                  <li>
-                    <img src={trusted1} alt='facebook' />
-                  </li>
-                  <li>
-                    <img src={trusted2} alt='google' />
-                  </li>{' '}
-                  <li>
-                    <img src={trusted3} alt='netflix' />
-                  </li>{' '}
-                  <li>
-                    <img src={trusted4} alt='p&g' />
-                  </li>{' '}
-                  <li>
-                    <img src={trusted5} alt='paypal' />
-                  </li>
-                </ul>
-              </div>
+
+        </div>
+
+        <div className='trusted-by-full'>
+          <div className='trusted-by-content flex justify-center align-center'>
+            <p>Trusted by:</p>
+            <div>
+              <ul className='flex justify-center align-center'>
+                <li>
+                  <img src={trusted1} alt='facebook' />
+                </li>
+                <li>
+                  <img src={trusted2} alt='google' />
+                </li>{' '}
+                <li>
+                  <img src={trusted3} alt='netflix' />
+                </li>{' '}
+                <li>
+                  <img src={trusted4} alt='p&g' />
+                </li>{' '}
+                <li>
+                  <img src={trusted5} alt='paypal' />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div className='social-proof-line flex row gap justify-center'></div>
+        {/* <div className='social-proof-line flex row gap justify-center'></div> */}
 
-        <div className='filler'></div>
+        {/* <div className='filler'></div> */}
 
         <h2 className='popular-text fs32'>Popular professional services</h2>
 
         <div className='slick-container'>
-          <Slider className='flex align-center' {...settings}>
+          <Slider {...settings}>
             <div className='slick-img'>
               <a href=''>
                 <img src={pop1} alt='' />
@@ -661,7 +663,7 @@ export const Home = () => {
                 <h3>Category</h3>
               </div>
             </div>
-            <div>
+            {/* <div>
               <a href=''>
                 <img src={pop9} alt='' />
               </a>
@@ -669,117 +671,117 @@ export const Home = () => {
                 <p>Sub-Cat</p>
                 <h3>Category</h3>
               </div>
-            </div>
+            </div> */}
           </Slider>
         </div>
 
-        <div className='blue-container'>
-          <div className='video-container flex'>
-            <div className='flex-video flex main-layout align-center'>
-              <div className='video-text'>
-                <h2>A whole world of freelance talent at your fingertips</h2>
-                <div className='flex'>
-                  <svg
-                    className='mar-right-10'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 16 16'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fill='#74767e'
-                      d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
-                    />
-                    <path
-                      fill='#74767e'
-                      d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
-                    />
-                  </svg>
-                  <h6>The best for every budget</h6>
-                </div>
-                <p>
-                  Find high-quality services at every price point. No hourly
-                  rates, just project-based pricing.
-                </p>
-                <div className='flex'>
-                  <svg
-                    className='mar-right-10'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 16 16'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fill='#74767e'
-                      d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
-                    />
-                    <path
-                      fill='#74767e'
-                      d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
-                    />
-                  </svg>
-                  <h6>Quality work done quickly</h6>
-                </div>
-                <p>
-                  Find the right freelancer to begin working on your project
-                  within minutes.
-                </p>
-                <div className='flex'>
-                  <svg
-                    className='mar-right-10'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 16 16'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fill='#74767e'
-                      d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
-                    />
-                    <path
-                      fill='#74767e'
-                      d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
-                    />
-                  </svg>
-                  <h6>Protected payments, every time</h6>
-                </div>
-                <p>
-                  Always know what you'll pay upfront. Your payment isn't
-                  released until you approve the work.
-                </p>
-                <div className='flex'>
-                  <svg
-                    className='mar-right-10'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 16 16'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fill='#74767e'
-                      d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
-                    />
-                    <path
-                      fill='#74767e'
-                      d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
-                    />
-                  </svg>
-                  <h6>24/7 support</h6>
-                </div>
-                <p>
-                  Questions? Our round-the-clock support team is available to
-                  help anytime, anywhere.
-                </p>
+        {/* <div className='blue-container'> */}
+        <div className='video-container flex'>
+          <div className='flex-video flex align-center'>
+            <div className='video-text'>
+              <h2>A whole world of freelance talent at your fingertips</h2>
+              <div className='flex'>
+                <svg
+                  className='mar-right-10'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 16 16'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fill='#74767e'
+                    d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
+                  />
+                  <path
+                    fill='#74767e'
+                    d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
+                  />
+                </svg>
+                <h6>The best for every budget</h6>
               </div>
-              <div className='video'>
-                <iframe
-                  src='https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7'
-                  frameBorder='0'
-                ></iframe>
+              <p>
+                Find high-quality services at every price point. No hourly
+                rates, just project-based pricing.
+              </p>
+              <div className='flex'>
+                <svg
+                  className='mar-right-10'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 16 16'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fill='#74767e'
+                    d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
+                  />
+                  <path
+                    fill='#74767e'
+                    d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
+                  />
+                </svg>
+                <h6>Quality work done quickly</h6>
               </div>
+              <p>
+                Find the right freelancer to begin working on your project
+                within minutes.
+              </p>
+              <div className='flex'>
+                <svg
+                  className='mar-right-10'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 16 16'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fill='#74767e'
+                    d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
+                  />
+                  <path
+                    fill='#74767e'
+                    d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
+                  />
+                </svg>
+                <h6>Protected payments, every time</h6>
+              </div>
+              <p>
+                Always know what you'll pay upfront. Your payment isn't
+                released until you approve the work.
+              </p>
+              <div className='flex'>
+                <svg
+                  className='mar-right-10'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 16 16'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fill='#74767e'
+                    d='M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z'
+                  />
+                  <path
+                    fill='#74767e'
+                    d='M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z'
+                  />
+                </svg>
+                <h6>24/7 support</h6>
+              </div>
+              <p>
+                Questions? Our round-the-clock support team is available to
+                help anytime, anywhere.
+              </p>
+            </div>
+            <div className='video'>
+              <iframe
+                src='https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7'
+                frameBorder='0'
+              ></iframe>
             </div>
           </div>
         </div>
+        {/* </div> */}
       </section>
     </section>
   )
