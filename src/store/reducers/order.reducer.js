@@ -1,11 +1,11 @@
 const initialState = {
   orders: [],
-  // filterBy: {
-  //   buyer: '',
-  //   seller: '',
-  //   createdAt: '',
-  // },
-  // page: null,
+  filterBy: {
+    buyer: '',
+    seller: '',
+    createdAt: '',
+  },
+  page: null,
 }
 export function orderReducer(state = initialState, action) {
   var newState = state

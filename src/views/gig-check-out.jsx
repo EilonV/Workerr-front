@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { gigService } from '../services/gig.service'
 import { NavLink } from 'react-router-dom'
 import ArrowRight from '../assets/imgs/icons/arrow-right.svg'
@@ -11,10 +12,39 @@ import Bank from '../assets/imgs/icons/paypal/Bank.svg'
 import Mastercard from '../assets/imgs/icons/paypal/Mastercard.svg'
 import UBS from '../assets/imgs/icons/paypal/UBS.svg'
 import Visa from '../assets/imgs/icons/paypal/Visa.svg'
+import { addOrder } from '../store/actions/order.action'
 
 export const GigCheckOut = () => {
   const params = useParams()
+  const order = useSelector((state) => state.orderModule.orders)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
+
+  var ordersArray = []
+
+  const onAddOrder = async () => {
+    const order = {
+      buyer: '',
+      seller: {
+        fullname: gig.owner.fullname,
+        _id: gig.owner._id,
+      },
+      gig: {
+        _id: gig._id,
+        name: gig.name,
+        price: gig.price,
+      },
+    }
+
+    dispatch(
+      addOrder(order, () => {
+        ordersArray.push(order)
+        console.log('checkout orders', order)
+        navigate(`/gig/details/${gig._id}/checkout/payment`)
+      })
+    )
+  }
 
   useEffect(() => {
     const id = params.id
@@ -22,6 +52,7 @@ export const GigCheckOut = () => {
   }, [])
 
   if (!gig) return ''
+
   return (
     <section className='gig-check-out'>
       <div className='app-header-checkout'>
@@ -108,7 +139,7 @@ export const GigCheckOut = () => {
                 <div className='features '>
                   <ul>
                     {gig.tags.map((a) => (
-                      <li className='svg'>
+                      <li className='svg' key={a}>
                         <img className='done' src={Done} alt='done' />
                         {a}
                       </li>
@@ -142,9 +173,14 @@ export const GigCheckOut = () => {
                 <p>5 Days</p>
               </div>
             </article>
-            <Link to={`/gig/details/${gig._id}/payment`}>
-              <button className='btn-purchase'>Continue to checkout</button>
-            </Link>
+            {/* <Link to={`/gig/details/${gig._id}/payment`}> */}
+            <button
+              className='btn-purchase'
+              onClick={() => onAddOrder(gig._id)}
+            >
+              Continue to checkout
+            </button>
+            {/* </Link> */}
             <p className='not-charge'>You won't be charged yet</p>
           </div>
           <div className='credit-card'>

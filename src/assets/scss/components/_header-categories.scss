@@ -1,19 +1,27 @@
 .header-categories {
   padding: 0;
-
+  // display: flex !important;
+  // margin: auto;
+  
   a {
     padding: 8px 0;
     font-size: 16px;
     color: $footer-logo-gray;
   }
+  .tags{
+    position: relative;
+    right: 0 !important;
+    display: flex !important;
+  }
 }
 
 .header-categories-wrapper {
+  width: 100%;
   padding: 0 32px;
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px $footer-line-gray solid;
+  border: 1px $footer-line-gray solid;
   border-bottom: 1px $footer-line-gray solid;
   height: 40px;
 }

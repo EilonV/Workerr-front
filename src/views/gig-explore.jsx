@@ -30,7 +30,6 @@ export const GigExplore = () => {
   return (
     <section>
       <AppHeaderExplore />
-      <GigFilter onChangeFilter={onChangeFilter} />
       <HeaderCategories gigs={gigs} />
       <GigList gigs={gigs} />
     </section>

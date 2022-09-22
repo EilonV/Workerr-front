@@ -24,15 +24,14 @@ function query() {
 }
 
 function getById(orderId) {
-  console.log(orderId)
+  // console.log(orderId)
   const res = storageService.get(STORAGE_KEY, orderId)
-  console.log(res)
+  // console.log(res)
   return res
 }
 
 function remove(orderId) {
-  console.log('orderId:', orderId)
-
+  // console.log('orderId:', orderId)
   return storageService.remove(STORAGE_KEY, orderId)
 }
 
@@ -41,6 +40,8 @@ function save(order) {
     return storageService.put(STORAGE_KEY, order)
   } else {
     order._id = utilService.makeId(4)
+    order.createdAt = Date.now()
+    order.status = 'pending'
     return storageService.post(STORAGE_KEY, order)
   }
 }
@@ -53,9 +54,15 @@ async function changeStatus(order) {
 const gDefaultOrders = [
   {
     _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
+    createdAt: Date.now(),
+    buyer: {
+      fullname: 'Guy',
+      _id: '622f3401e36c59e6164faguy',
+    },
+    seller: {
+      fullname: 'Edgar',
+      _id: '622f3401e36c59e6164fab4d',
+    },
     gig: {
       _id: utilService.makeId(6),
       name: utilService.randomUserName(2),
@@ -63,172 +70,173 @@ const gDefaultOrders = [
     },
     status: 'pending',
   },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
-  {
-    _id: utilService.makeId(6),
-    createdAt: new Date().toDateString(),
-    buyer: utilService.randomUserName(2),
-    seller: utilService.randomUserName(2),
-    gig: {
-      _id: utilService.makeId(6),
-      name: utilService.randomUserName(2),
-      price: utilService.getRandomInt(1, 50),
-    },
-    status: 'pending',
-  },
+
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
+  // {
+  //   _id: utilService.makeId(6),
+  //   createdAt: new Date().toDateString(),
+  //   buyer: utilService.randomUserName(2),
+  //   seller: utilService.randomUserName(2),
+  //   gig: {
+  //     _id: utilService.makeId(6),
+  //     name: utilService.randomUserName(2),
+  //     price: utilService.getRandomInt(1, 50),
+  //   },
+  //   status: 'pending',
+  // },
 ]
