@@ -13,10 +13,11 @@
 
 .details-container {
     margin: 0;
+    padding-top: 5rem;
 
     .main-details {
-        // padding-top: 20px;
-        padding: 1rem 0rem;
+        // padding-top: 50px;
+        // padding: 1rem 0rem;
 
         h1 {
             padding-bottom: 10px;
@@ -131,7 +132,7 @@
         .package-content {
             position: sticky;
             top: 150px;
-            padding: 1.5rem 2rem;
+            padding: 0rem 2rem;
             width: 100%;
             border: 1px solid $border-gray;
 
