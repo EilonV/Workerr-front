@@ -2,22 +2,29 @@
   padding: 0;
   // display: flex !important;
   margin: auto;
-  
+  padding-right: 63px;
+  // grid-column: 1 / -1 !important;
+
   a {
-    padding: 8px 0;
+    // padding: 8px 2px;
     font-size: 16px;
     color: $footer-logo-gray;
+    // margin-top: 2px;
   }
-  .tags{
-    // position: relative;
-    // right: 0 !important;
-    // display: flex !important;
+
+  .category-section {
+    height: 40px;
+    &:hover {
+      border-bottom: 3px solid $bright-green;
+    }
   }
+
+  .tags {}
 }
 
 .header-categories-wrapper {
   width: 100%;
-  padding: 0 32px;
+  padding: 2px 32px;
   position: absolute;
   left: 0;
   right: 0;
