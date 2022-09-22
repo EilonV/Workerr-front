@@ -22,23 +22,23 @@ export const UserPage = () => {
     loadUser(id)
   }, [])
 
-  const loadUser = async userId => {
+  const loadUser = async (userId) => {
     const user = await userService.getById(userId)
     setUser(user)
 
   }
 
-  const onRemoveUser = (userId) => {
-    dispatch(removeUser(userId, () => {
-      navigate('/gigs')
-    }))
-  }
+  // const onRemoveUser = (userId) => {
+  //   dispatch(removeUser(userId, () => {
+  //     navigate('/gigs')
+  //   }))
+  // }
 
-  const onUpdateUser = (userId) => {
-    dispatch(updateUser(userId, () => {
-      navigate('/gigs')
-    }))
-  }
+  // const onUpdateUser = (userId) => {
+  //   dispatch(updateUser(userId, () => {
+  //     navigate('/gigs')
+  //   }))
+  // }
 
   console.log(user);
   return (

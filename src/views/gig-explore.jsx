@@ -6,6 +6,7 @@ import { GigList } from '../cmps/gig-list'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { GigFilter } from '../cmps/gig-filter'
+import { loadUsers } from '../store/actions/user.actions'
 
 export const GigExplore = () => {
   const params = useParams()
@@ -14,6 +15,7 @@ export const GigExplore = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    
     dispatch(loadGigs(gigs.price > 652))
   }, [gigs])
 
