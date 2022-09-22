@@ -8,6 +8,7 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
 import { TableRating } from '../cmps/table-rating'
 import { GigCheckOut } from './gig-check-out'
+import { HeaderCategories } from '../cmps/header-categories'
 
 export const GigDetails = () => {
   const params = useParams()
@@ -32,18 +33,12 @@ export const GigDetails = () => {
       })
     )
   }
-  // console.log(gig);
-  // console.log(gig.user[0].reviews);
 
   if (gig)
     return (
       <section className='gig-details'>
         <AppHeaderExplore />
-        <header className='scroll-to flex row space-between'>
-          {gig.tags.map((tag) => (
-            <nav>{tag}</nav>
-          ))}
-        </header>
+        <HeaderCategories gig={gig} />
         <div className='details-container flex row'>
           <div className='main-details gap'>
             <section>
@@ -143,10 +138,10 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
+            {/* 
+            <div> {gig.user.reviews.}</div>
 
-            {/* <div> {gig.user.reviews.}</div> */}
-
-            {/* { gig.reviews.map(<ReviewSeller review={review} key={review._id} />)} */}
+            { gig.reviews.map(<ReviewSeller review={review} key={review._id} />)} */}
 
             <Link to={`/gig/edit/${gig._id}`}>Edit</Link>
             <button onClick={() => onRemoveGig(gig._id)}>Delete</button>
@@ -203,7 +198,7 @@ export const GigDetails = () => {
                 ))}
               </ul>
               <Link
-                to={`/gig/details/${gig._id}/checkout/`}
+                to={`/gig/details/${gig._id}/checkout`}
                 className='flex row gap justify-center space-between'
               >
                 Continue <span>(${gig.price})</span>
