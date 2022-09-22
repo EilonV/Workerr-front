@@ -1,7 +1,7 @@
 .header-categories {
   padding: 0;
   // display: flex !important;
-  // margin: auto;
+  margin: auto;
   
   a {
     padding: 8px 0;
@@ -9,9 +9,9 @@
     color: $footer-logo-gray;
   }
   .tags{
-    position: relative;
-    right: 0 !important;
-    display: flex !important;
+    // position: relative;
+    // right: 0 !important;
+    // display: flex !important;
   }
 }
 
