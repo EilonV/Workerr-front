@@ -24,7 +24,10 @@ function App() {
         <div className='main-app main-layout'>
           <main className='main-container'>
             <Routes>
-              <Route path='gig/details/:id/payment' element={<GigPayment />} />
+              <Route
+                path='gig/details/:id/checkout/payment'
+                element={<GigPayment />}
+              />
               <Route
                 path='gig/details/:id/checkout'
                 element={<GigCheckOut />}

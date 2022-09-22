@@ -1,22 +1,51 @@
 .features {
   margin-top: 50px;
-  text-align: center;
 
+  .total-orders {
+  }
   .table-orders {
     h1 {
-      text-align: center;
     }
     table {
-      width: 80vh;
-      height: 100%;
+      width: 70vh;
+      tr {
+        width: 100px;
+      }
+      // height: 100%;
       //   border: 1px $footer-line-gray solid;
     }
     td {
-      width: 100px;
-      border: 2px $footer-line-gray solid;
+      width: 50px;
+      border: 1px $footer-line-gray solid;
+      text-align: center;
     }
     th {
-      border: 5px $footer-line-gray solid;
+      border: 1px $footer-line-gray solid;
     }
+    .status {
+      color: $yellow;
+    }
+    .delete-btn {
+      background-color: rgb(242, 141, 141);
+      // border: 0;
+      cursor: pointer;
+    }
+    .user-container {
+      height: 500px;
+    }
+  }
+  .star-fill {
+    width: 100px;
+    margin-left: 100px;
+    height: 100px;
+  }
+  .location {
+    height: 14px;
+  }
+  .user {
+    height: 14px;
+  }
+  .country {
+    justify-content: end;
   }
 }
