@@ -1,14 +1,11 @@
 .slick-container {
-    margin: auto;
-    margin-bottom: 96px;
-
     img {
         max-height: 345px;
     }
 
     .slick-img {
-        position: relative;
-        margin: 0 !important;
+        // position: relative;
+        // margin: 0 !important;
     }
 
     .slick-img-caption {
@@ -37,22 +34,30 @@
 
 .slick-prev:before {
     color: black !important;
+
+    padding: 10px;
+    font-size: 50px !important;
+    // opacity: 1 !important;
 }
 
 .slick-next:before {
+
+    color: $bright-gray  !important;
+    font-size: 50px !important;
+    opacity: 1 !important;
+    border-radius: 50%;
+}
+
+.slick-arrow {
     color: black !important;
 }
 
-// .slick-arrow::before{
-//     font-size: 200px !important;
-// }
-.slick-next:before,
-.slick-prev:before {
-    font-size: 48px !important;
-    position: absolute !important;
+button.slick-next,
+button.slick-prev {
+
 }
 
-button.slick-prev {
-    position: absolute !important;
-    z-index: 200 !important;
-}
+// button.slick-prev {
+//     // position: absolute !important;
+//     z-index: 1 !important;
+// }
