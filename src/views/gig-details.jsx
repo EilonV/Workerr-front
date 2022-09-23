@@ -34,6 +34,8 @@ export const GigDetails = () => {
     )
   }
 
+  console.log(gig);
+
   if (gig)
     return (
       <section className='gig-details'>
