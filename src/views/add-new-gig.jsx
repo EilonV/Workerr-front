@@ -5,7 +5,7 @@ export const AddNewGig = () => {
   return (
     <section>
       <AppHeaderExplore />
-      <div className='top-navbar-container wizard-mode'>
+      <div className='top-navbar-container wizard-mode main-layout'>
         <nav className='navbar-overview'>
           <ul>
             <li>

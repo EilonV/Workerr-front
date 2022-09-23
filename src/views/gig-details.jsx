@@ -34,11 +34,11 @@ export const GigDetails = () => {
     )
   }
 
-  console.log(gig);
+  console.log(gig)
 
   if (gig)
     return (
-      <section className='gig-details'>
+      <section className='gig-details main-layout'>
         <AppHeaderExplore />
         <HeaderCategories gig={gig} />
         <div className='details-container flex row'>
