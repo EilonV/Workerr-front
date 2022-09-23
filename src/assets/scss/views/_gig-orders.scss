@@ -1,7 +1,16 @@
 .features {
-  margin-top: 50px;
+  margin-top: 0;
 
-  .total-orders {
+  .profile-user {
+    margin-top: 0;
+  }
+  .order-container {
+  }
+  .orders {
+    margin-left: 91px;
+  }
+  .num-orders {
+    margin-left: 100px;
   }
   .table-orders {
     h1 {
@@ -33,19 +42,17 @@
     .user-container {
       height: 500px;
     }
-  }
-  .star-fill {
-    width: 100px;
-    margin-left: 100px;
-    height: 100px;
-  }
-  .location {
-    height: 14px;
-  }
-  .user {
-    height: 14px;
-  }
-  .country {
-    justify-content: end;
+
+    .star-fill {
+      width: 100px;
+      margin-left: 100px;
+    }
+    .location {
+      height: 13px;
+    }
+
+    .country {
+      justify-content: end;
+    }
   }
 }

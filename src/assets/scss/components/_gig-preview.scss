@@ -1,13 +1,22 @@
 .gig-preview {
+
+  a {
+    position: relative;
+  }
+
   display: flex;
   flex-direction: column;
   border: $border-gray 1px solid;
   height: 100%;
+  width: 100%;
 
   .img-gig {
+    position: relative;
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    max-height: 180px;
+    // height: 100%;
+    object-fit: fill;
+
   }
 
   .gig-owner-image {

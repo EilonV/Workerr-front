@@ -1,57 +1,56 @@
+.seller-reviews {
+    border-bottom: 1px solid #efeff0;
+    ;
+    // border-top: 1px solid $review-gray;
+    // margin-top: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    .user-review-img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
 
 
-        .seller-reviews {
-            border-bottom: 1px solid #efeff0;;
-            // border-top: 1px solid $review-gray;
-            // margin-top: 40px;
-            padding-top: 25px;
-            padding-bottom: 25px;
+    .inner-container>span {
+        font-size: 16px;
+    }
 
-            .user-review-img {
-                width: 40px;
-                height: 40px;
-                object-fit: cover;
-            }
+    .inner-container>p {
+        padding-top: 8px;
+        font-size: 14px;
+    }
 
+    .user-name-svg {
+        padding-bottom: 10px;
+    }
 
-            .inner-container>span {
-                font-size: 16px;
-            }
+    .user-country-flag {
+        padding-bottom: 10px;
+    }
 
-            .inner-container>p {
-                padding-top: 8px;
-                font-size: 14px;
-            }
+    .user-country-flag>img {
+        width: 20px;
+        border-radius: 5px;
+    }
 
-            .user-name-svg {
-                padding-bottom: 10px;
-            }
+    .user-country-flag>span {
+        align-self: center;
+        font-size: 13px;
 
-            .user-country-flag {
-                padding-bottom: 10px;
-            }
+    }
 
-            .user-country-flag>img {
-                width: 20px;
-                border-radius: 5px;
-            }
+    .user-review-txt {
+        padding-right: 400px;
 
-            .user-country-flag>span {
-                align-self: center;
-                font-size: 13px;
-                
-            }
-
-            .user-review-txt {
-                padding-right: 400px;
-                
-            }
+    }
 
 
-            .reviewed-at {
-                padding-top: 15px;
-                font-size: 12px;
-                color: #95979d;
-                font-weight: 500px;
-            }
-        }
+    .reviewed-at {
+        padding-top: 15px;
+        font-size: 12px;
+        color: #95979d;
+        font-weight: 500px;
+    }
+}

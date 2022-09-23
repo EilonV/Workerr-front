@@ -1,64 +1,39 @@
-.profile-user {
-  margin-top: 91px;
-  width: 338px;
-  height: 358px;
-  border: 1px $footer-line-gray solid;
-  // background-color: lightblue;
+.gig-profile-container {
+}
 
-  .profile-pic {
-    display: flex;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    font-size: 42px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    user-select: none;
-    background-color: $footer-logo-gray;
-    color: $white;
-    margin-top: 31px;
-    margin-left: 94px;
-  }
-  .user-name {
-    width: 338px;
-    margin-left: 138px;
-    margin-right: 138px;
-    margin-top: 15px;
-    .show {
-      color: #222325;
-      font-size: 20px;
-      line-height: 18.5px;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-    }
-  }
-  .profile-btn {
-    width: 338px;
-    height: 36px;
-    border: 1px $footer-line-gray solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+.orders-container {
+  margin-left: 104px;
+  margin-bottom: 40px;
+
   .my-orders {
+    width: 736px;
+    height: 66px;
+    border: 1px $footer-line-gray solid;
+    margin-bottom: 40px;
+
     h1 {
-      width: 736px;
-      height: 66px;
-      border: 1px $footer-line-gray solid;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      height: 97%;
+      border-bottom: 3px solid $bright-green;
+      margin-left: 26px;
+      font-size: 14px;
+      line-height: 18.5px;
     }
   }
+}
+.new-gig {
+  width: 736px;
+  height: 428px;
+  border: 1px $footer-line-gray solid;
+  text-align: center;
+  padding-top: 22px;
+  margin-top: -20px;
+  padding-bottom: 45px;
 
-  .new-gig {
-    // margin-top: 20px;
-    width: 734px;
-    height: 428px;
-    border: 1px $footer-line-gray solid;
-    text-align: center;
-  }
   .active-gigs {
-    height: 21px;
-    padding-bottom: 40px;
-    margin-top: 23px;
+    height: 66px;
   }
   .img-create {
     margin-left: 244px;
