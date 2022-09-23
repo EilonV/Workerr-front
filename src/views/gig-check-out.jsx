@@ -54,7 +54,7 @@ export const GigCheckOut = () => {
   if (!gig) return ''
 
   return (
-    <section className='gig-check-out'>
+    <section className='gig-check-out main-layout'>
       <div className='app-header-checkout'>
         <NavLink to='/gigs'>
           <h1 className='logo'>
@@ -62,7 +62,7 @@ export const GigCheckOut = () => {
           </h1>
         </NavLink>
 
-        <nav className='header-order flex'>
+        <nav className='header-order main-layout flex'>
           <ul className='order-details flex'>
             <li className='list flex'>
               <p className='number num'>1</p>

@@ -34,7 +34,7 @@ export const GigDetails = () => {
     )
   }
 
-  console.log(gig);
+  console.log(gig)
 
   if (gig)
     return (
