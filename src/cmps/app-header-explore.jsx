@@ -14,15 +14,16 @@ export function AppHeaderExplore() {
     // console.log(gigs)
   }
   return (
-    <header className='app-header-explore'>
-      <NavLink to='/'>
-        <h1 className='logo'>
-          Workerr<span>.</span>
-        </h1>
-      </NavLink>
-      <div className='header-search flex'>
-        <GigFilter onChangeFilter={onChangeFilter}/>
-        {/* <input
+    <section className='main-layout full'>
+      <header className='app-header-explore'>
+        <NavLink to='/'>
+          <h1 className='logo'>
+            Workerr<span>.</span>
+          </h1>
+        </NavLink>
+        <div className='header-search flex'>
+          <GigFilter onChangeFilter={onChangeFilter} />
+          {/* <input
           className='header-input'
           type='text'
           placeholder='What service are you looking for today?'
@@ -40,17 +41,19 @@ export function AppHeaderExplore() {
             />
           </svg>
         </button> */}
-      </div>
-      <nav className='header-nav '>
-        <NavLink to='/'>Home </NavLink>
-        <NavLink to='/gigs'>Explore </NavLink>
-        <NavLink to='/about'>About </NavLink>
-        <NavLink to='/user'>User </NavLink>
-        <NavLink to='/orders'>Order </NavLink>
-        <button className='header-join'>
-          <NavLink to='/login'>Join </NavLink>
-        </button>
-      </nav>
-    </header>
+        </div>
+        <nav className='header-nav '>
+          <NavLink to='/'>Home </NavLink>
+          <NavLink to='/gigs'>Explore </NavLink>
+          <NavLink to='/about'>About </NavLink>
+          <NavLink to='/user'>User </NavLink>
+          <NavLink to='/orders'>Order </NavLink>
+          <button className='header-join'>
+            <NavLink to='/login'>Join </NavLink>
+          </button>
+        </nav>
+      </header>
+    </section>
+
   )
 }

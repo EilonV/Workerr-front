@@ -28,7 +28,7 @@ export const GigExplore = () => {
   }
 
   return (
-    <section>
+    <section className='main-layout'>
       <AppHeaderExplore />
       <HeaderCategories gigs={gigs} />
       <GigList gigs={gigs} />

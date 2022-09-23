@@ -1,12 +1,32 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import Slider from 'react-slick'
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 export const GigPreview = ({ gig }) => {
-  // console.log(gig)
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 200,
+    slidesToShow: 1,
+    slidesToScroll: gig.imgUrl.length
+  }
+
+
   if (!gig) return ''
   return (
     <section className='gig-preview'>
       <Link to={`/gig/details/${gig._id}`}>
-        <img className='img-gig' src={gig.imgUrl} />
+        <div className='slick-container'>
+          <Slider {...settings}>
+            <img className='img-gig' src={gig.imgUrl} />
+            <img className='img-gig' src={gig.imgUrl} />
+            <img className='img-gig' src={gig.imgUrl} />
+          </Slider>
+
+        </div>
+
       </Link>
       <div className='gig-owner-info gig-owner-info-wrapper flex align-center'>
         {
@@ -94,7 +114,7 @@ export const GigPreview = ({ gig }) => {
           </div>
         </Link>
       </div>
-      {/* <p>{`$` + gig.price}</p> */}
-    </section>
+      {/* <p>{`$` + gig.price}</p> */ }
+    </section >
   )
 }
