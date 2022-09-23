@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 export function HeaderCategories({ gigs }) {
   return (
-    <section className='header-categories-wrapper flex'>
+    <section className='header-categories-wrapper flex full'>
       <div className='header-categories flex space-between main-layout'>
         <div className='tags flex space-between'>
           <div className='category-section flex align-center'>
