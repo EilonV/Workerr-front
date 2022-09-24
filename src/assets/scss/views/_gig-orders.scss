@@ -1,54 +1,63 @@
 .features {
-  margin-top: 0;
+  margin-top: 51px;
+  margin-left: 91px;
 
   .profile-user {
-    margin-top: 0;
-  }
-  .order-container {
-  }
-  .orders {
-    margin-left: 91px;
-  }
-  .num-orders {
-    margin-left: 100px;
-  }
-  .table-orders {
-    h1 {
+    .star-fill {
+      margin: 0;
     }
-    table {
-      width: 70vh;
+    .order-container {
+      margin: 0;
+    }
+    .total-orders {
+      text-align: center;
+      margin-left: 91px;
+      width: 780px;
+      // border: 1px $footer-line-gray solid;
+    }
+    .price {
+      color: $bright-green;
+      font-weight: 600;
+    }
+
+    .orders {
+      margin-left: 91px;
+    }
+    .num-orders {
+      text-align: center;
+      padding-bottom: 10px;
+      border-top: 1px $footer-line-gray solid;
+
+      .title {
+        font-size: 10px;
+      }
+    }
+
+    .table-orders {
+      margin-top: 15px;
+      width: 100%;
       tr {
         width: 100px;
       }
       // height: 100%;
-      //   border: 1px $footer-line-gray solid;
     }
     td {
-      width: 50px;
+      width: 100px;
+      // height: 100px;
       border: 1px $footer-line-gray solid;
       text-align: center;
     }
     th {
       border: 1px $footer-line-gray solid;
+      width: 120px;
     }
-    .status {
-      color: $yellow;
-    }
+    // .status {
+    //   color: $yellow;
+    // }
     .delete-btn {
       background-color: rgb(242, 141, 141);
       // border: 0;
       cursor: pointer;
-    }
-    .user-container {
-      height: 500px;
-    }
-
-    .star-fill {
-      width: 100px;
-      margin-left: 100px;
-    }
-    .location {
-      height: 13px;
     }
 
     .country {
@@ -56,3 +65,4 @@
     }
   }
 }
+// }

@@ -16,13 +16,13 @@ export function LoginSignup(props) {
 
     }, [])
 
-    useEffect(() => {
-        const { username, password } = credentials
-        if (username === 'guest' && password === 'guest') {
-            props.onLogin(credentials);
-            clearState()
-        }
-    }, [credentials]);
+    // useEffect(() => {
+    //     const { username, password } = credentials
+    //     if (username === 'guest' && password === 'guest') {
+    //         props.onLogin(credentials);
+    //         clearState()
+    //     }
+    // }, [credentials]);
 
     const clearState = () => {
         setCredentials({ username: '', password: '', fullname: '' })
@@ -35,7 +35,6 @@ export function LoginSignup(props) {
         const value = ev.target.value;
         setCredentials({ ...credentials, [field]: value });
     }
-
 
     function onGuestMode() {
         setCredentials({ username: 'guest', password: 'guest', fullname: '' })
@@ -69,7 +68,7 @@ export function LoginSignup(props) {
     console.log(users)
 
     return (
-        <section>
+        <section className='main-layout'>
  <AppHeaderExplore />
             <div className="login-background flex justify-center align-center" onClick={() => { props.toggleSignIn(false); props.toggleSignUp(false); }}>
 
@@ -153,12 +152,12 @@ export function LoginSignup(props) {
                         {/* <hr></hr> */}
 
                     </section>}
-                    <div className="form-footer flex justify-center align-center">
-                        <p><span onClick={onGuestMode} className="green pointer">Try as a guest</span></p>
-                    </div>
-                    {/* <p>
-                    <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
-                </p> */}
+
+                    {/* <div className="form-footer flex justify-center align-center">
+                    <p><span onClick={onGuestMode} className="green pointer">Try as a guest</span></p>
+                </div> */}
+
+               
                 </div>
             </div>
         </section>

@@ -1,13 +1,8 @@
-.user-page-orders {
-  margin-left: 91px;
-  height: 2000px;
-  width: 1240px;
-}
+// .user-page-orders {
+//   // margin-left: 91px;
+// }
 
 .profile-user {
-  margin-top: 91px;
-  // margin-left: 5em;
-
   .user-container {
     padding: 30px;
     width: 338px;
@@ -59,6 +54,7 @@
     font-size: 20px;
     line-height: 18.5px;
   }
+
   .show {
     color: #222325;
     font-size: 20px;
@@ -94,8 +90,11 @@
     .first {
       margin-bottom: 15px;
     }
+    .location {
+      height: 12px;
+    }
     .user {
-      height: 13px;
+      height: 12px;
     }
     .from {
       margin-left: 5px;

@@ -41,7 +41,7 @@ export const UserPage = () => {
       <AppHeaderExplore />
       <HeaderCategories />
 
-      <section className='gig-profile-container'>
+      <section className='gig-profile-container main-layout'>
         <div className='navs'></div>
         <section className='user-page-orders flex'>
           <UserNav />

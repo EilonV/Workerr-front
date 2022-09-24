@@ -30,7 +30,7 @@ export const userService = {
 window.userService = userService
 
 function getUsers() {
-    // console.log(user);
+    console.log(usersDefult);
     return storageService.query(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
     // return httpService.get(`user`)
 }
@@ -51,10 +51,13 @@ console.log(userId);
     // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     gWatchedUser = user;
+    console.log(userId);
     return user;
 }
+
+
 function remove(userId) {
-    return storageService.remove('user', userId)
+    return storageService.remove(STORAGE_KEY_LOGGEDIN_USER, userId)
     // return httpService.delete(`user/${userId}`)
 }
 
@@ -67,7 +70,7 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    const users = await storageService.query('user')
+    const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
     const user = users.find((user) => user.username === userCred.username)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
@@ -76,8 +79,9 @@ async function login(userCred) {
     }
 }
 async function signup(userCred) {
+    console.log(userCred);
     // userCred.score = 10000
-    const user = await storageService.post('user', userCred)
+    const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
     // const user = await httpService.post('auth/signup', userCred)
     // socketService.login(user._id)
     return saveLocalUser(user)

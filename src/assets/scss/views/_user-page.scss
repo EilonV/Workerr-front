@@ -1,8 +1,10 @@
 .gig-profile-container {
+  .profile-user {
+    margin-top: 51px;
+    margin-left: 91px;
+  }
 }
-
 .orders-container {
-  margin-left: 104px;
   margin-bottom: 40px;
 
   .my-orders {
@@ -24,7 +26,7 @@
   }
 }
 .new-gig {
-  width: 736px;
+  width: 734px;
   height: 428px;
   border: 1px $footer-line-gray solid;
   text-align: center;

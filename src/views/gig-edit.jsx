@@ -54,7 +54,7 @@ export const GigEdit = () => {
   // }
 
   return (
-    <section className='gig-edit'>
+    <section className='gig-edit main-layout'>
       <AppHeaderExplore />
       <h1>{gig._id ? 'Edit' : 'Add'} Gig</h1>
       <form onSubmit={onSaveGig}>
