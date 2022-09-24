@@ -781,6 +781,21 @@ export const Home = () => {
 
         </div>
 
+        <div className='bottom-categories'>
+          <h2>Explore the marketplace</h2>
+          <ul className='bot-category-list'>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg" alt="" /><br /> Graphics & Design</a> </li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg" alt="" /><br />Digital Marketing</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg" alt="" /><br />Writing & Translation</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg" alt="" /><br />Video & Animation</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg" alt="" /><br />Music & Audio</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg" alt="" /><br />Programming & Tech</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg" alt="" /><br />Business</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg" alt="" /><br />Lifestyle</a></li>
+            <li><a href=""><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg" alt="" /><br />Data</a></li>
+          </ul>
+        </div>
+
       </section>
     </section>
   )

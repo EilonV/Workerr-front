@@ -331,13 +331,17 @@
         background-color: #f1fdf7;
         height: 700px;
         width: 100%;
-        .over-blue{
+        margin-bottom: 90px;
+        margin-top: 90px;
+
+        .over-blue {
             position: absolute;
             top: 0;
             right: 0;
             left: 0;
             bottom: 0;
         }
+
         .video-text {
             padding-right: 11%;
 
@@ -445,5 +449,41 @@
 
     .popular-text {
         padding: 40px 0 24px 0;
+    }
+
+    .bottom-categories {
+        justify-content: center;
+        width: 100%;
+
+        .bot-category-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            margin: auto;
+            padding: 0;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        li {
+            width: 20%;
+            padding-bottom: 55px;
+            list-style: none;
+            text-align: center;
+
+            img {
+                width: 48px;
+                height: 48px;
+                margin: 0 auto 15px;
+            }
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+        }
     }
 }
