@@ -180,12 +180,23 @@
       border: 1px solid $border-gray;
 
       .levels {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 24px;
+        font-weight: 800;
         padding: 16px;
-        height: 24px;
+        // height: 24px;
         border-bottom: 1px solid $border-gray;
-        p {
+        label {
           width: 104px;
+          height: 24px;
+        }
+
+        .basic {
+          // border-bottom: 3px solid #1dbf73;
+          background-color: #fff;
+          color: #1dbf73;
           text-align: center;
+          // background-color: #1dbf73;
         }
       }
       .package-title {

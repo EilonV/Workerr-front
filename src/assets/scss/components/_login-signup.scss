@@ -1,8 +1,11 @@
-.login-background {
+
+
+.log-boxs {
     position: fixed;
     background-color: rgba(0, 0, 0, .65);
     height: 100%;
     width: 100%;
+ overflow-y: hidden;
     // z-index: 9999;
 }
 
@@ -24,6 +27,7 @@
         padding: 0 36px 0px;
 
         input {
+            justify-self: center;
             background-color: #fff;
             font: inherit;
             color: #404145;

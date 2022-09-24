@@ -1,16 +1,25 @@
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { useParams, useNavigate, Link } from 'react-router-dom'
+import App from '../cmps/alert-message'
 
 export const GigPayment = () => {
-  const navigate = useNavigate()
-
   return (
-    <section>
+    <section className='main-layout'>
       <AppHeaderExplore />
-      <h1>Thank you for buying!</h1>
-      <Link to='/gigs'>
-        <button>Go Back</button>
-      </Link>
+      <div className='gig-container full'>
+        <div className='modal flex'>
+          <App />
+        </div>
+        <p>
+          Your order has been received by the user, you can see it
+          <span className='link'>
+            <Link to='/orders'>&nbsp;here&nbsp;</Link>
+          </span>
+        </p>
+        <Link to='/gigs'>
+          <button className='back-btn'>Go to Gigs</button>
+        </Link>
+      </div>
     </section>
   )
 }
