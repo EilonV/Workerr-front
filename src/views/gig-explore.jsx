@@ -7,6 +7,8 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { GigFilter } from '../cmps/gig-filter'
 import { loadUsers } from '../store/actions/user.actions'
+import { GigSort } from '../cmps/gig-sort'
+import { GigFilterExplore } from '../cmps/gig-filter-explore'
 
 export const GigExplore = () => {
   const params = useParams()
@@ -15,9 +17,9 @@ export const GigExplore = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    
-    dispatch(loadGigs(gigs.price > 652))
-  }, [gigs])
+
+    dispatch(loadGigs())
+  }, [])
 
   const onChangeFilter = (filterBy) => {
     dispatch(setFilterBy(filterBy))
@@ -26,11 +28,12 @@ export const GigExplore = () => {
     console.log(filterBy)
     // console.log(gigs)
   }
-
   return (
     <section className='main-layout'>
       <AppHeaderExplore />
       <HeaderCategories gigs={gigs} />
+      <GigFilterExplore/>
+      <GigSort gigs={gigs} />
       <GigList gigs={gigs} />
     </section>
   )

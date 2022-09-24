@@ -2029,28 +2029,28 @@ const gDefaultGigs = [
   },
 ]
 
-const updatedGigs = gDefaultGigs.map(gig => {
-  gig.reviews = [
-    {
-      id: utilService.makeId(4),
-      txt: utilService.makeLorem(16),
-      rate: utilService.getRandomInt(0, 4),
-      by: {
-        _id: utilService.makeId(4),
-        fullname: 'jeffgordon123',
-        imgUrl: ['https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/b5b46e55a8b4ac6240874ee2271cf9fd-1598818335946/4458cfa4-f67e-467d-a624-37aaeae5fcad.jpg'],
-        country: 'United Kingdom',
-        flag: 'https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png',
-        reviewedAt: 'Published 3 weeks ago',
-        memberSince: 'may 2012',
-        avgResponseTime: '2 hours',
-        lastDelivery: 'about 14 hours',
-        ownerLetter: `Excellent experience, highly recommended. Communications were very quick and clear. Prices are very reasonable, Job was completed same-day. Excellent quality product. Will definitely be using this service again in the future and recommending to other musicians.`,
-      },
-    }
-  ]
-  gig.owner.username = 'user'
-  return gig
-})
+// const updatedGigs = gDefaultGigs.map(gig => {
+//   gig.reviews = [
+//     {
+//       id: utilService.makeId(4),
+//       txt: utilService.makeLorem(16),
+//       rate: utilService.getRandomInt(0, 4),
+//       by: {
+//         _id: utilService.makeId(4),
+//         fullname: 'jeffgordon123',
+//         imgUrl: ['https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/b5b46e55a8b4ac6240874ee2271cf9fd-1598818335946/4458cfa4-f67e-467d-a624-37aaeae5fcad.jpg'],
+//         country: 'United Kingdom',
+//         flag: 'https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png',
+//         reviewedAt: 'Published 3 weeks ago',
+//         memberSince: 'may 2012',
+//         avgResponseTime: '2 hours',
+//         lastDelivery: 'about 14 hours',
+//         ownerLetter: `Excellent experience, highly recommended. Communications were very quick and clear. Prices are very reasonable, Job was completed same-day. Excellent quality product. Will definitely be using this service again in the future and recommending to other musicians.`,
+//       },
+//     }
+//   ]
+//   gig.owner.username = 'user'
+//   return gig
+// })
 
-console.log(updatedGigs)
+// console.log(updatedGigs)

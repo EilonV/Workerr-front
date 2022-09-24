@@ -1,0 +1,26 @@
+.gig-sort {
+    height: 40px;
+    margin: 10px 0;
+
+    .services-num {
+        font-weight: 600;
+        font-size: 14px;
+        color: $bright-gray;
+        padding: 0 10px;
+    }
+
+    select {
+        border: none;
+        font-size: 16px;
+        color: $black  !important;
+        font-weight: 700;
+
+        :focus {
+            border: none;
+        }
+
+        option {
+            color: $black  !important;
+        }
+    }
+}

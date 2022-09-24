@@ -2,6 +2,10 @@
     img {
         // border: 30px white solid;
         max-width: 250px;
+        transition: 0.5s;
+        &:hover{
+            opacity: 0.8;
+        }
     }
 
     .carousel-img-wrapper {

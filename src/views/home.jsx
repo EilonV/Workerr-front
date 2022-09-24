@@ -29,14 +29,15 @@ import pop7 from '../assets/imgs/popular-slideshow-imgs/phone-white.jpeg'
 import pop8 from '../assets/imgs/popular-slideshow-imgs/phone.jpeg'
 import pop9 from '../assets/imgs/popular-slideshow-imgs/photography.jpeg'
 import { AppHeaderScroll } from '../cmps/app-header-scroll'
+import { useEffect } from 'react'
 
 let hero = 1
 let interval
 
 export const Home = () => {
-  window.onscroll = function () {
-    scrollFunction()
-  }
+  // window.onscroll = function () {
+  //   scrollFunction()
+  // }
   function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.querySelector('.header-scroll').style.opacity = 1
@@ -47,6 +48,12 @@ export const Home = () => {
     }
   }
 
+  useEffect(() => {
+    window.addEventListener('scroll', scrollFunction)
+    return () => {
+      window.removeEventListener('scroll', scrollFunction)
+    }
+  })
   const settings = {
     dots: false,
     infinite: true,
@@ -54,41 +61,41 @@ export const Home = () => {
     slidesToShow: 5,
     slidesToScroll: 4,
     initialSlide: 0,
-    // responsive: [
-    //   {
-    //     breakpoint: 1300,
-    //     settings: {
-    //       slidesToShow: 4,
-    //       slidesToScroll: 4,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 1100,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 800,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //       initialSlide: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 0,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 0,
+        },
+      },
+    ],
   }
 
   useLayoutEffect(() => {
@@ -588,7 +595,7 @@ export const Home = () => {
 
         <div className='slick-container-home'>
           <Slider {...settings}>
-            <div className='wrap'>
+            <div>
               <a href=''>
                 <img src={pop1} alt='' />
               </a>
