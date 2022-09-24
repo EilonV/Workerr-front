@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 
@@ -68,9 +69,8 @@ export function LoginSignup(props) {
     console.log(users)
 
     return (
-        <section className='main-layout'>
- <AppHeaderExplore />
-            <div className="login-background flex justify-center align-center" onClick={() => { props.toggleSignIn(false); props.toggleSignUp(false); }}>
+        
+            <div className="log-boxs flex justify-center align-center" onClick={() => { props.toggleSignIn(false); props.toggleSignUp(false); }}>
 
                 <div className="signIn-up-section" onClick={stopPropagation}>
                     {!isSignup && <section>
@@ -152,14 +152,15 @@ export function LoginSignup(props) {
                         {/* <hr></hr> */}
 
                     </section>}
+                    <Link to='/'>
+                        <div className="form-footer flex justify-center align-center">
+                            <p><span onClick={onGuestMode} className="green pointer">Try as a guest</span></p>
+                        </div>
+                    </Link>
 
-                    {/* <div className="form-footer flex justify-center align-center">
-                    <p><span onClick={onGuestMode} className="green pointer">Try as a guest</span></p>
-                </div> */}
 
-               
                 </div>
             </div>
-        </section>
+        
     )
 }

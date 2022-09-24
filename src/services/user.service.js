@@ -30,10 +30,18 @@ export const userService = {
 window.userService = userService
 
 function getUsers() {
-    console.log(usersDefult);
-    return storageService.query(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
+    return storageService.query(STORAGE_KEY_LOGGEDIN_USER).then((users) => {
+        if (!users || !users.length) {
+          storageService.postMany(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
+          users = usersDefult
+        }
+    
+        return users
+      })
+    }
+   
     // return httpService.get(`user`)
-}
+
 
 // function onUserUpdate(user) {
 //     showSuccessMsg(
@@ -92,13 +100,6 @@ async function logout() {
     // return await httpService.post('auth/logout')
 }
 
-// async function changeScore(by) {
-//     const user = getLoggedinUser()
-//     if (!user) throw new Error('Not loggedin')
-//     user.score = user.score + by || by
-//     await update(user)
-//     return user.score
-// }
 
 function saveLocalUser(user) {
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
@@ -120,45 +121,45 @@ const usersDefult = [
      
     },
 
-    // {
-    //     fullname: 'Edgar',
-    //     imgUrl: 'https://a0.muscache.com/im/pictures/d17abb7c-beb0-4dbe-976e-fc633de18b4b.jpg?aki_policy=profile_small',
-    //     username: '75091963',
-    //     password: 'Edgar',
-    //     _id: 'h123564',
-    // },
+    {
+        fullname: 'Edgar',
+        imgUrl: 'https://a0.muscache.com/im/pictures/d17abb7c-beb0-4dbe-976e-fc633de18b4b.jpg?aki_policy=profile_small',
+        username: '75091963',
+        password: 'Edgar',
+        _id: 'h123564',
+    },
 
-    // {
-    //     fullname: 'Leo',
-    //     imgUrl: 'https://robohash.org/59985?set=set1',
-    //     username: '59985',
-    //     password: 'Leo',
-    //     _id: 'h12554',
-    // },
+    {
+        fullname: 'Leo',
+        imgUrl: 'https://robohash.org/59985?set=set1',
+        username: '59985',
+        password: 'Leo',
+        _id: 'h12554',
+    },
 
-    // {
-    //     fullname: 'Margaux',
-    //     imgUrl: 'https://robohash.org/3805403?set=set1',
-    //     username: '3805403',
-    //     password: 'Margaux',
-    //     _id: 'h1234',
-    // },
+    {
+        fullname: 'Margaux',
+        imgUrl: 'https://robohash.org/3805403?set=set1',
+        username: '3805403',
+        password: 'Margaux',
+        _id: 'h1234',
+    },
 
-    // {
-    //     fullname: 'Francine',
-    //     imgUrl: 'https://robohash.org/25851994?set=set1',
-    //     username: '25851994',
-    //     password: 'Francine',
-    //     _id: utilService.makeId(4),
-    // },
+    {
+        fullname: 'Francine',
+        imgUrl: 'https://robohash.org/25851994?set=set1',
+        username: '25851994',
+        password: 'Francine',
+        _id: utilService.makeId(4),
+    },
 
-    // {
-    //     fullname: 'Winnie',
-    //     imgUrl: 'https://robohash.org/1205536?set=set1',
-    //     username: '1205536',
-    //     password: 'Winnie',
-    //     _id: utilService.makeId(4),
-    // },
+    {
+        fullname: 'Winnie',
+        imgUrl: 'https://robohash.org/1205536?set=set1',
+        username: '1205536',
+        password: 'Winnie',
+        _id: utilService.makeId(4),
+    },
 
 
 ]
