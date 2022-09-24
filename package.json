@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-sortablejs": "^6.1.4",
+    "reactjs-alert": "^2.2.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "sass": "^1.54.9",

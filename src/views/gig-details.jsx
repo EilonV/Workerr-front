@@ -1,13 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { loadGigs, removeGig } from '../store/actions/gig.action'
+import { useDispatch } from 'react-redux'
+import { removeGig } from '../store/actions/gig.action'
 import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
-import { TableRating } from '../cmps/table-rating'
-import { GigCheckOut } from './gig-check-out'
 import { HeaderCategories } from '../cmps/header-categories'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Done from '../assets/imgs/icons/done.svg'
@@ -159,10 +157,12 @@ export const GigDetails = () => {
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
-              <div className='levels flex space-between'>
-                <p>Basic</p>
-                <p>Standard</p>
-                <p>Premium</p>
+              <div>
+                <div className='levels flex space-between'>
+                  <lab className='basic'>Basic</lab>
+                  <p className='standard'>Standard</p>
+                  <p className='premium'>Premium</p>
+                </div>
               </div>
               <section>
                 <div className='details'>
@@ -186,7 +186,7 @@ export const GigDetails = () => {
 
                     <ul className='gig-inclusive grid'>
                       {gig.tags.map((a) => (
-                        <li className='list flex'>
+                        <li key={gig._id} className='list flex'>
                           <img className='done' src={Done} alt='done' />
                           {a}
                         </li>
