@@ -159,42 +159,48 @@ export const GigDetails = () => {
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
+              <div className='levels flex space-between'>
+                <p>Basic</p>
+                <p>Standard</p>
+                <p>Premium</p>
+              </div>
               <section>
-                <div className='package-title flex'>
-                  <h1>Package details</h1>
-                  <h1>${gig.price}</h1>
-                </div>
-                <p>Complete arrangement of your original or cover song.</p>
-                <div>
-                  <div className='delivery-revision flex row gap justify-center'>
-                    <div className='flex'>
-                      <img className='svg clock' src={Clock} alt='clock' />
+                <div className='details'>
+                  <div className='package-title flex space-between'>
+                    <h1>Package details</h1>
+                    <h1>${gig.price}</h1>
+                  </div>
+                  <p>Complete arrangement of your original or cover song.</p>
+                  <div>
+                    <div className='delivery-revision flex'>
+                      <div className='flex'>
+                        <img className='svg clock' src={Clock} alt='clock' />
 
-                      <span>{gig.daysToMake} Days To Make</span>
+                        <span>{gig.daysToMake} Days To Make</span>
+                      </div>
+                      <div className='flex'>
+                        <img className='svg sync' src={Sync} alt='sync' />
+                        <span>Revisions</span>
+                      </div>
                     </div>
-                    <div className='flex'>
-                      <img className='svg sync' src={Sync} alt='sync' />
 
-                      <span>Revisions</span>
-                    </div>
+                    <ul className='gig-inclusive grid'>
+                      {gig.tags.map((a) => (
+                        <li className='list flex'>
+                          <img className='done' src={Done} alt='done' />
+                          {a}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to={`/gig/details/${gig._id}/checkout`}
+                      className='procced-btn'
+                    >
+                      Continue <span>(${gig.price})</span>
+                    </Link>
                   </div>
                 </div>
-
-                <ul className='gig-inclusive flex column'>
-                  {gig.tags.map((a) => (
-                    <li>
-                      <img className='done' src={Done} alt='done' />
-                      {a}
-                    </li>
-                  ))}
-                </ul>
               </section>
-              <Link
-                to={`/gig/details/${gig._id}/checkout`}
-                className='flex row gap justify-center space-between'
-              >
-                Continue <span>(${gig.price})</span>
-              </Link>
             </div>
           </aside>
         </div>

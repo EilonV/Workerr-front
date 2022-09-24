@@ -176,28 +176,31 @@
       position: sticky;
       top: 150px;
       width: 25.75em;
-      height: 17.0625em;
+      height: 23.875em;
       border: 1px solid $border-gray;
-      margin-left: 24px;
 
-      .package-title {
-        justify-content: space-around;
-        padding-bottom: 1rem;
-
-        h1 {
-          margin-top: 32px;
-          //   color: $bright-green;
+      .levels {
+        padding: 16px;
+        height: 24px;
+        border-bottom: 1px solid $border-gray;
+        p {
+          width: 104px;
+          text-align: center;
         }
       }
-
-      //   .package-title {
-      //     font-weight: 800;
-      //     font-size: 1em;
-      //     // background-color: aqua;
-
-      //   }
-
+      .package-title {
+        font-size: 24px;
+        padding-bottom: 1rem;
+        font-weight: 800;
+        font-size: 1.5em;
+      }
+      .details {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
       .delivery-revision {
+        margin-top: 8px;
+        margin-bottom: 8px;
         gap: 30px;
       }
       .clock {
@@ -209,26 +212,36 @@
         height: 1em;
       }
 
-      .delivery-revision > span {
-      }
+      // .delivery-revision > span {
+      // }
 
       .delivery-revision > * {
         font-size: 14px;
         align-self: center;
         gap: 5px;
+        height: 24px;
+      }
+      .gig-inclusive {
+        padding: 0;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr;
       }
 
-      ul.gig-inclusive {
-        list-style: none;
+      li {
+        .done {
+          margin-right: 5px;
+        }
+      }
+
+      .list {
+        display: flex;
         text-decoration: none;
-        gap: 10px;
-        margin-left: 0%;
-        object-fit: cover;
-        align-items: stretch;
-      }
-
-      ul li {
-        font-size: 16px;
+        list-style: none;
+        width: 225px;
+        font-size: 14px;
+        line-height: 24px;
       }
 
       a {
@@ -242,6 +255,25 @@
         color: $white;
         font-size: 16px;
       }
+    }
+    .procced-btn {
+      width: 365px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      padding-top: 38px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      -webkit-transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
+      -o-transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
+      transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
     }
   }
   .btn {
