@@ -24,16 +24,35 @@
   border: 1px solid #404145;
   margin-top: 20px;
   line-height: 20.8px;
+
   &:hover {
     background-color: #1dbf73;
     color: #ffffff;
     font-weight: 600;
   }
 }
+
 .link {
   border-bottom: 3px solid #1dbf73;
   font-weight: 600;
+
   &:hover {
     background-color: #1dbf73;
+  }
+}
+
+.alert-wrapper {
+
+  h3,
+  button {
+    font-family: Work Sans !important;
+  }
+
+  button:last-child {
+    background-color: #1dbf73 !important;
+  }
+
+  svg {
+    fill: #1dbf73 !important;
   }
 }

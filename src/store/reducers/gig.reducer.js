@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   gigs: [],
   filterBy: {
     title: '',
-    tags: '',
+    tags: [],
     userId: '',
   },
   page: null,

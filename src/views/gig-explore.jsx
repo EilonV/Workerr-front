@@ -25,14 +25,14 @@ export const GigExplore = () => {
     dispatch(setFilterBy(filterBy))
     dispatch(loadGigs())
 
-    console.log(filterBy)
+    // console.log(filterBy)
     // console.log(gigs)
   }
   return (
     <section className='main-layout'>
       <AppHeaderExplore />
       <HeaderCategories gigs={gigs} />
-      <GigFilterExplore/>
+      <GigFilterExplore onChangeFilter={onChangeFilter} gigs={gigs} />
       <GigSort gigs={gigs} />
       <GigList gigs={gigs} />
     </section>
