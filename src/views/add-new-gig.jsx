@@ -11,6 +11,7 @@ import { HeaderCategories } from '../cmps/header-categories'
 
 export const AddNewGig = () => {
   // const params = useParams()
+
   // const navigate = useNavigate()
   // const dispatch = useDispatch()
 
@@ -42,7 +43,7 @@ export const AddNewGig = () => {
   // console.log(inputRef)
 
   // useEffect(() => {
-  //   inputRef.current.focus()
+  //   // inputRef.current.focus()
   //   const gigId = params.id
   //   if (!gigId) return
   //   gigService
@@ -69,15 +70,14 @@ export const AddNewGig = () => {
   // }
 
   return (
-    <section className='main-container'>
+    <section classNameName='main-container'>
       <AppHeaderExplore />
       <HeaderCategories />
-      <section className='content-container'>
-        <div className='create-container flex column'>
-          {/* <form onSubmit={onSaveGig}> */}
-          <div className='title-container flex'>
-            <div className='title-nav'>
-              <div className='desc' htmlFor='name'>
+      <section classNameName='content-container'>
+        <div classNameName='create-container flex column'>
+          <div classNameName='title-container flex'>
+            <div classNameName='title-nav'>
+              <div classNameName='desc' htmlFor='name'>
                 <h1>Gig Title</h1>
               </div>
               <p>
@@ -87,19 +87,19 @@ export const AddNewGig = () => {
               </p>
             </div>
 
-            <div className='text-area'>
+            <div classNameName='text-area'>
               <textarea placeholder="I will do something I'm really good at"></textarea>
 
-              <div class='title-footer flex space-between'>
-                <span class='title-status-msg '></span>
-                <span class='chars-count'>0 / 80 max</span>
+              <div className='title-footer flex space-between'>
+                <span className='title-status-msg '></span>
+                <span className='chars-count'>0 / 80 max</span>
               </div>
             </div>
           </div>
 
-          <div className='category-container flex'>
-            <div className='title-nav category'>
-              <div className='desc' htmlFor='name'>
+          <div classNameName='category-container flex'>
+            <div classNameName='title-nav category'>
+              <div classNameName='desc' htmlFor='name'>
                 <h1>Category</h1>
               </div>
               <p>
@@ -107,7 +107,7 @@ export const AddNewGig = () => {
               </p>
             </div>
 
-            <div className='selection-bar flex space-between'>
+            <div classNameName='selection-bar flex space-between'>
               <select name='tags' id='tag-select'>
                 <option value='digital-marketing'>Digital Marketing</option>
                 <option value='wWriting-translation'>
@@ -132,13 +132,13 @@ export const AddNewGig = () => {
                 <option value='busines'>Busines</option>
                 <option value='lifeStyle'>LifeStyle</option> */}
               </select>
-              <div class='title-footer flex space-between'></div>
+              <div className='title-footer flex space-between'></div>
             </div>
           </div>
 
-          <div className='tag-container flex '>
-            <div className='tag-nav'>
-              <div className='desc'>
+          <div classNameName='tag-container flex '>
+            <div classNameName='tag-nav'>
+              <div classNameName='desc'>
                 <h1>Search Tags</h1>
               </div>
               <p>
@@ -146,8 +146,8 @@ export const AddNewGig = () => {
                 you offer. Use all 5 tags to get found.
               </p>
             </div>
-            <div className='search-tags'>
-              <div className='desc' htmlFor='name'>
+            <div classNameName='search-tags'>
+              <div classNameName='desc' htmlFor='name'>
                 <h1>Positive keywords</h1>
                 <p>
                   Enter search terms you feel your buyers will use when looking
@@ -158,76 +158,19 @@ export const AddNewGig = () => {
               </div>
             </div>
           </div>
-          <div className='note'>
+          <div classNameName='note'>
             <p>
               <span>Please note: </span> Some categories require that sellers
               verify their skills.
             </p>
           </div>
-
-          {/* <input
-            ref={inputRef}
-            value={gig.title}
-            onChange={handleChange}
-            type='text'
-            name='title'
-            id='title'
-          />
-
-          <label>
-            Days To Make
-            <input
-              placeholder='Days To Make'
-              type='number'
-              id='daysToMake'
-              name='daysToMake'
-              className='input-field'
-              required
-            />
-          </label>
-
-          <div className='add-container'>
-            <label htmlFor='price'>Price</label>
-            <input
-              value={gig.price}
-              onChange={handleChange}
-              type='number'
-              name='price'
-              id='price'
-            />
-          </div>
-
-          <div className='add-container'>
-            <label htmlFor='desc'>Description</label>
-            <textarea
-              name='desc'
-              rows='5'
-              cols='60'
-              type='text'
-              placeholder='Enter Gig Desc...'
-              required=''
-              autocomplete='off'
-            ></textarea>
-          </div>
-
-          <div className='add-container'>
-            <label htmlFor='tag'>Add some tags</label>
-            <input
-              placeholder='Add tags..'
-              value={gig.tags}
-              onChange={handleChange}
-              type='text'
-              name='tag'
-              id='tag'
-            />
-          </div> */}
-
-          {/* <button>Add</button> */}
-          {/* </form> */}
         </div>
-        <div className='btn'>
+
+        {/* <form onSubmit={onSaveGig}> */}
+
+        <div classNameName='btn'>
           <Link to='/gigs/:'>
-            <span className='create-btn align-center'>Save & Continue</span>
+            <span classNameName='create-btn align-center'>Save & Continue</span>
           </Link>
         </div>
       </section>
