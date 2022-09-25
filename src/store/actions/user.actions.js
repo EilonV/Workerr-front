@@ -44,7 +44,9 @@ export function removeUser(userId) {
 }
 
 export function onLogin(credentials) {
+    // console.log('onLogin', credentials)
     return async (dispatch) => {
+        console.log('ACTION AFTER DISPATCH')
         try {
             const user = await userService.login(credentials)
             dispatch({
@@ -63,6 +65,7 @@ export function onSignup(credentials) {
     return async (dispatch) => {
         try {
             const user = await userService.signup(credentials)
+            console.log(user);
             dispatch({
                 type: 'SET_USER',
                 user
@@ -91,6 +94,7 @@ export function onLogout() {
 }
 
 export function loadUser(userId) {
+    console.log('user action', userId);
     return async (dispatch) => {
         try {
             const user = await userService.getById(userId);
