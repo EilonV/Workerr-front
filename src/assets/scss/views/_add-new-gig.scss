@@ -1,9 +1,10 @@
 .content-container {
   //   background-color: lightblue;
   width: 988px;
-  height: 711px;
+  height: 852px;
   margin: 30px auto 0;
   padding-top: 50px;
+  padding-bottom: 90px;
 
   textarea {
     position: static;
@@ -21,10 +22,12 @@
   }
   .create-container {
     border: $border-gray 1px solid;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     position: relative;
     padding: 28px;
     border-radius: 4px;
+    width: 777px;
+    height: 585px;
     p {
       margin-top: 8px;
       font-size: 14px;
@@ -115,6 +118,24 @@
     span {
       color: #fc832b;
       font-weight: bold;
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: end;
+    left: 0;
+    width: 835px;
+
+    .create-btn {
+      background-color: #1dbf73;
+      color: white;
+      width: 150px;
+      height: 40px;
+      font-size: 1em;
+      line-height: 24px;
+      border: 0;
+      padding: 13px 16px 13px 16px;
+      left: 0;
     }
   }
 }

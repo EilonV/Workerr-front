@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
@@ -72,8 +72,8 @@ export const AddNewGig = () => {
     <section className='main-container'>
       <AppHeaderExplore />
       <HeaderCategories />
-      <section className='content-container flex'>
-        <div className='create-container'>
+      <section className='content-container'>
+        <div className='create-container flex column'>
           {/* <form onSubmit={onSaveGig}> */}
           <div className='title-container flex'>
             <div className='title-nav'>
@@ -164,6 +164,7 @@ export const AddNewGig = () => {
               verify their skills.
             </p>
           </div>
+
           {/* <input
             ref={inputRef}
             value={gig.title}
@@ -223,6 +224,11 @@ export const AddNewGig = () => {
 
           {/* <button>Add</button> */}
           {/* </form> */}
+        </div>
+        <div className='btn'>
+          <Link to='/gigs/:'>
+            <span className='create-btn align-center'>Save & Continue</span>
+          </Link>
         </div>
       </section>
     </section>
