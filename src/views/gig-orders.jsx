@@ -37,6 +37,7 @@ export const Orders = () => {
 
       new Date(time).getHours(),
       ':',
+
       new Date(time).getMinutes(),
     ]
   }

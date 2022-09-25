@@ -1,7 +1,7 @@
 import { storageService } from '../../src/services/async-storage'
 import { utilService } from './util.service'
 // import { httpService } from './http.service'
-import { store } from '../store/store'
+// import { store } from '../store/store'
 // import { getActionSetWatchedUser } from '../store/review.actions'
 // import {
 //     socketService,
@@ -24,7 +24,7 @@ export const userService = {
     getById,
     remove,
     update,
-    
+
 }
 
 window.userService = userService
@@ -32,15 +32,15 @@ window.userService = userService
 function getUsers() {
     return storageService.query(STORAGE_KEY_LOGGEDIN_USER).then((users) => {
         if (!users || !users.length) {
-          storageService.postMany(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
-          users = usersDefult
+            storageService.postMany(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
+            users = usersDefult
         }
-    
+
         return users
-      })
-    }
-   
-    // return httpService.get(`user`)
+    })
+}
+
+// return httpService.get(`user`)
 
 
 // function onUserUpdate(user) {
@@ -51,7 +51,7 @@ function getUsers() {
 // }
 
 async function getById(userId) {
-console.log(userId);
+    console.log(userId);
     const user = await storageService.get(STORAGE_KEY_LOGGEDIN_USER, userId)
     // const user = await httpService.get(`user/${userId}`)
 
@@ -78,6 +78,7 @@ async function update(user) {
 }
 
 async function login(userCred) {
+    console.log('@@@@@@@@@@@@@@@ user.service login', userCred);
     const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
     const user = users.find((user) => user.username === userCred.username)
     // const user = await httpService.post('auth/login', userCred)
@@ -107,7 +108,7 @@ function saveLocalUser(user) {
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER)||'null')
+    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
 }
 
 const usersDefult = [
@@ -118,7 +119,7 @@ const usersDefult = [
         username: 'user1',
         password: 'secret',
         _id: '622f3401e36c59e6164faguy',
-     
+
     },
 
     {
@@ -150,7 +151,7 @@ const usersDefult = [
         imgUrl: 'https://robohash.org/25851994?set=set1',
         username: '25851994',
         password: 'Francine',
-        _id: utilService.makeId(4),
+        _id: 'h45532',
     },
 
     {
@@ -158,7 +159,7 @@ const usersDefult = [
         imgUrl: 'https://robohash.org/1205536?set=set1',
         username: '1205536',
         password: 'Winnie',
-        _id: utilService.makeId(4),
+        _id: 'h422532',
     },
 
 

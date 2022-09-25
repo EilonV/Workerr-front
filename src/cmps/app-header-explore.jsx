@@ -1,10 +1,25 @@
+import React from "react"
+import { useState, useEffect } from "react"
+import { connect } from "react-redux"
 import { NavLink } from 'react-router-dom'
 import { loadGigs, setFilterBy } from '../store/actions/gig.action'
 import { useSelector, useDispatch } from 'react-redux'
 import { GigFilter } from './gig-filter'
+import { onLogin, onLogout, onSignup, removeUser } from '../store/actions/user.actions'
+import { LoginSignup } from "./login-signup.jsx"
+import { PopoverNav } from "./popover-nav.jsx"
 
-export function AppHeaderExplore() {
+export function AppHeaderExplore({ user }) {
   const dispatch = useDispatch()
+  const [isSignIn, toggleSignIn] = useState(false)
+  const [isSignUp, toggleSignUp] = useState(false)
+  const [isPopoverNav, togglePopoverNav] = useState(false)
+
+  useEffect(() => {
+    if (isSignIn) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+  }, [isSignIn])
+
 
   const onChangeFilter = (filterBy) => {
     dispatch(setFilterBy(filterBy))
@@ -42,18 +57,46 @@ export function AppHeaderExplore() {
           </svg>
         </button> */}
         </div>
-        <nav className='header-nav '>
+        <nav className='header-nav flex row '>
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
-          <NavLink to='/about'>About </NavLink>
           <NavLink to='/user'>User </NavLink>
           <NavLink to='/orders'>Order </NavLink>
-          <button className='header-join'>
-            <NavLink to='/login'>Join </NavLink>
-          </button>
+          {!user && <section className=" flex row gap">
+            <div className=" header-signin" onClick={() => { toggleSignIn(true) }}>
+              Sign in
+            </div>
+            
+            <div className="header-join" onClick={() => { toggleSignIn(true); toggleSignUp(true) }}>
+              Join
+            </div>
+          </section>}
         </nav>
       </header>
+      {isSignIn && !user && <LoginSignup toggleSignIn={toggleSignIn} toggleSignUp={toggleSignUp} isSignUp={isSignUp} onLogin={onLogin} onSignup={onSignup} />}
+      {isPopoverNav && <PopoverNav togglePopoverNav={togglePopoverNav} onLogout={onLogout} />}
     </section>
 
   )
 }
+
+
+function mapStateToProps(state) {
+  return {
+
+    user: state.userModule.user,
+
+  }
+}
+const mapDispatchToProps = {
+
+  onLogin,
+  onSignup,
+  onLogout,
+  removeUser,
+}
+
+export const AppHeader = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppHeaderExplore)

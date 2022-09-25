@@ -8,7 +8,7 @@ import ArrowRight from '../assets/imgs/icons/arrow-right.svg'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import PayPal from '../assets/imgs/icons/paypal/paypal.svg'
-import Bank from '../assets/imgs/icons/paypal/Bank.svg'
+import Payment from '../assets/imgs/icons/paypal/payment.svg'
 import Mastercard from '../assets/imgs/icons/paypal/Mastercard.svg'
 import UBS from '../assets/imgs/icons/paypal/UBS.svg'
 import Visa from '../assets/imgs/icons/paypal/Visa.svg'
@@ -186,7 +186,7 @@ export const GigCheckOut = () => {
           <div className='credit-card'>
             <div className='cards-container'>
               <img className='paypal cards' src={PayPal} alt='paypal' />
-              <img className='bank cards' src={Bank} alt='bank' />
+              <img className='bank cards' src={Payment} alt='bank' />
               <img
                 className='mastercard cards'
                 src={Mastercard}

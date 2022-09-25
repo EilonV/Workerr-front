@@ -29,6 +29,9 @@
 @import 'components/_login-signup.scss';
 @import 'components/_login-signup.scss';
 @import 'components/_alert-message.scss';
+@import 'components/_popover-nav.scss';
+
+
 
 // PAGES
 @import 'views/_home.scss';
@@ -41,3 +44,4 @@
 @import 'views/_workerr-app.scss';
 @import 'views/_gig-check-out.scss';
 @import 'views/_gig-orders.scss';
+@import 'views/_add-new-gig.scss';
