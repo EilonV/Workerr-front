@@ -27,7 +27,7 @@ export const AddNewGig = () => {
      longerDescription: '',
      tags: [],
      order: '',
-    //  imgUrl: '',
+     imgUrl: [],
    })
 
    const inputRef = useRef()

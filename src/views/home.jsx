@@ -6,6 +6,11 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import StarFill from '../assets/imgs/icons/5-stars.svg'
+import DoneCircle from '../assets/imgs/icons/done-circle.svg'
+import Magnifying from '../assets/imgs/icons/magnifying-glass.svg'
+
+
 import BottomImg1 from '../assets/imgs/jumbo/1.png'
 import HeroImg2 from '../assets/imgs/jumbo/2.jpeg'
 import HeroImg3 from '../assets/imgs/jumbo/3.jpeg'
