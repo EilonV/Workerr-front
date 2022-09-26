@@ -37,6 +37,5 @@ export const GigFilter = (props) => {
         </section>
       </form>
     </div>
-
   )
 }
