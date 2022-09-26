@@ -24,7 +24,8 @@ function query(filterBy) {
         const regex = new RegExp(title, 'i')
         gigs = gigs.filter((gig) => regex.test(gig.title))
       }
-      if (tags.length > 0 ) {
+      if (tags && tags.length > 0) {
+        console.log('ENTERED TAGS');
         gigs = gigs.filter((gig) => {
           (tags.forEach(tag => {
             check = gig.tags.includes(tag)

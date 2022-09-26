@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   },
   page: null,
 }
+
 export function gigReducer(state = INITIAL_STATE, action) {
   var newState = state
   var gigs
@@ -34,6 +35,7 @@ export function gigReducer(state = INITIAL_STATE, action) {
       newState = { ...state, gigs }
       break
     case 'SET_FILTER_BY':
+      console.log(state.filterBy)
       return { ...state, filterBy: action.filterBy }
     default:
       newState = state
