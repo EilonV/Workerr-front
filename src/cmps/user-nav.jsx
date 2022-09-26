@@ -2,8 +2,37 @@ import { Link } from 'react-router-dom'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Location from '../assets/imgs/icons/location.svg'
 import User from '../assets/imgs/icons/user.svg'
+import { useEffect, useState } from 'react'
+import { userService } from '../services/user.service'
 
-export function UserNav() {
+
+export const UserNav = () => {
+  const [user, setUser] = useState(null)
+  
+  useEffect(() => {
+
+    loadUser()
+
+  }, [])
+
+  const loadUser = async () => {
+    const user = await userService.getLoggedinUser()
+    setUser(user)
+  }
+
+  // const onRemoveUser = (userId) => {
+  //   dispatch(removeUser(userId, () => {
+  //     navigate('/gigs')
+  //   }))
+  // }
+
+  // const onUpdateUser = (userId) => {
+  //   dispatch(updateUser(userId, () => {
+  //     navigate('/gigs')
+  //   }))
+  // }
+
+  console.log(user)
   return (
     <div className='profile-user'>
       <div className='user-container'>
@@ -14,7 +43,7 @@ export function UserNav() {
           </div>
 
           <p className='profile-pic'>U</p>
-          <p className='user-name show'>user</p>
+          <p className='user-name show'>{user.username}</p>
           <img className='star-fill' src={StarFill} alt='star-fill' />
 
           <Link to='/user/:'>
@@ -35,7 +64,7 @@ export function UserNav() {
                 <p className='from'>From</p>
               </div>
 
-              <p className='country'>Israel</p>
+              <p className='country'>{user.country}</p>
             </div>
 
             <div className='second flex space-between'>

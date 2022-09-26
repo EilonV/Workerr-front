@@ -79,6 +79,7 @@ export function onSignup(credentials) {
 }
 
 export function onLogout() {
+    console.log('user logout')
     return async (dispatch) => {
         try {
             await userService.logout()

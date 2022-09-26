@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { useDispatch } from 'react-redux'
-import { onSignup } from '../store/actions/user.actions'
+import { onSignup, onLogin } from '../store/actions/user.actions'
 
 
 
@@ -16,13 +16,13 @@ export function LoginSignup(props) {
     const [users, setUsers] = useState([])
     const dispatch = useDispatch()
 
-    useEffect( () => {
-   
-       loadUsers()
+    useEffect(() => {
+
+        loadUsers()
 
     }, [])
 
-    const loadUsers = async() => {
+    const loadUsers = async () => {
         const users = await userService.getUsers()
         setUsers(users)
     }
@@ -55,8 +55,11 @@ export function LoginSignup(props) {
         if (ev) ev.preventDefault();
         if (!credentials.username) return;
         // console.log(credentials)
-        dispatch(onSignup(credentials))
+        dispatch(onLogin(credentials))
+
         clearState()
+        window.location.reload(false)
+
 
     }
     const handleSignup = (ev = null) => {
@@ -64,8 +67,9 @@ export function LoginSignup(props) {
         if (!credentials.username || !credentials.password || !credentials.fullname) return;
         // props.onSignup(credentials);
         dispatch(onSignup(credentials))
-    
+
         clearState()
+       
 
     }
 
