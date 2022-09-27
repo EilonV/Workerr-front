@@ -85,7 +85,7 @@ export function AppHeaderExplore({ user }) {
                 {/* {user.imgUrl && <img src={user.imgUrl} />}
                             {user.fullname} */}
               </Link>
-              <button onClick={handleLogout}>Logout</button>
+              <a onClick={handleLogout}>Logout</a>
             </span>
           ) : (
             <section className=' flex row gap'>

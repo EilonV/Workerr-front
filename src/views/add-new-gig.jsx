@@ -21,7 +21,7 @@ export const AddNewGig = () => {
   const gigs = useSelector((state) => state.gigModule.gigs)
 
   const user = userService.getById(loggedinUser._id).then((res) => {
-    console.log('res:', res)
+    // console.log('res:', res)
   })
 
   const title = 'I will '
