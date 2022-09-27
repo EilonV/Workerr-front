@@ -18,7 +18,7 @@ export const GigPreview = ({ gig }) => {
       <Link to={`/gig/details/${gig._id}`}>
         <div className='slick-container'>
           <Slider {...settings}>
-            {gig.imgUrl.map(img =>
+            {gig.imgUrl && gig.imgUrl.map(img =>
               <img className='img-gig' src={img} />
             )}
           </Slider>
