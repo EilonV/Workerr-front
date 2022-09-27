@@ -43,7 +43,7 @@ export const UserNav = () => {
           </div>
 
           <p className='profile-pic'>U</p>
-          <p className='user-name show'>{user.username}</p>
+          <p className='user-name show'></p>
           <img className='star-fill' src={StarFill} alt='star-fill' />
 
           {/* {sessionStorage.loggedinUser && (
@@ -66,12 +66,12 @@ export const UserNav = () => {
                 <p className='from'>From</p>
               </div>
 
-              <p className='country'>{user.country}</p>
+              <p className='country'>''</p>
             </div>
 
             <div className='second flex space-between'>
               <div className='member flex'>
-                <img className='user' src={User} alt='user' />
+                <img className='user' src='' alt='user' />
                 <p className='from'>Member since</p>
               </div>
               <p className='first year'>Sep 2021</p>
