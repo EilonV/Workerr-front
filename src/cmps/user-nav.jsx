@@ -46,15 +46,17 @@ export const UserNav = () => {
           <p className='user-name show'>{user.username}</p>
           <img className='star-fill' src={StarFill} alt='star-fill' />
 
-          <Link to='/user/:'>
-            <p
-              className='profile-btn'
-              text='seller_card.view_as_buyer'
-              href='/ilyaig8?public_mode=true'
-            >
-              Preview Fiverr Profile
-            </p>
-          </Link>
+          {/* {sessionStorage.loggedinUser && (
+            <Link to='/user/:'>
+              <p
+                className='profile-btn'
+                text='seller_card.view_as_buyer'
+                href='/ilyaig8?public_mode=true'
+              >
+                Preview Fiverr Profile
+              </p>
+            </Link>
+          )} */}
 
           <section className='user-details'>
             <div className='first flex space-between'>

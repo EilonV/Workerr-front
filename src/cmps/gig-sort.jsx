@@ -3,7 +3,7 @@
 
 export const GigSort = ({ gigs }) => {
   if (!gigs) return ''
-  console.log(gigs);
+  // console.log(gigs)
   return <section className='gig-sort flex space-between align-center'>
     <p className="services-num ">{gigs.length} services available</p>
     <div className='flex align-center'>

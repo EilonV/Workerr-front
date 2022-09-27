@@ -5,14 +5,19 @@ export const GigFilter = (props) => {
   const [register, setFilterBy, filterBy] = useFormRegister(
     {
       title: '',
-      tags: '',
     },
     props.onChangeFilter
   )
 
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault()
+    props.onChangeFilter(filterBy)
+  }
+  // console.log(props);
   return (
     <div className='header-search'>
-      <form className='filter'>
+      <form className='filter' onSubmit={handleSubmit}>
         <section className='flex'>
           <label htmlFor='title'></label>
           <input className='header-input' {...register('title', 'text')} placeholder='What service are you looking for today?' />

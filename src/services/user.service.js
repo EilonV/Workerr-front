@@ -51,7 +51,7 @@ function getUsers() {
 // }
 
 async function getById(userId) {
-    console.log(userId);
+    // console.log(userId);
     const user = await storageService.get(STORAGE_KEY_LOGGEDIN_USER, userId)
     // const user = await httpService.get(`user/${userId}`)
 

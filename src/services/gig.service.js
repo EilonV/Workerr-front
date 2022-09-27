@@ -11,22 +11,27 @@ export const gigService = {
 const STORAGE_KEY = 'gig'
 
 function query(filterBy) {
+  let check = false
   return storageService.query(STORAGE_KEY).then((gigs) => {
     if (!gigs || !gigs.length) {
       storageService.postMany(STORAGE_KEY, gDefaultGigs)
       gigs = gDefaultGigs
     }
-    // if (filterBy) {
-    //   var { title } = filterBy
-    //   gigs = gigs.filter((gig) =>
-    //     gig.title.toLowerCase().includes(title.toLowerCase())
-    //   )
-    // }
+
     if (filterBy) {
-      const { title, minPrice } = filterBy
+      const { title, tags } = filterBy
       if (title) {
         const regex = new RegExp(title, 'i')
         gigs = gigs.filter((gig) => regex.test(gig.title))
+      }
+      if (tags.length > 0 ) {
+        gigs = gigs.filter((gig) => {
+          (tags.forEach(tag => {
+            check = gig.tags.includes(tag)
+          }))
+          if (check === true) return gig
+        })
+        console.log(gigs)
       }
       return gigs
     }
