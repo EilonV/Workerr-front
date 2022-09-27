@@ -7,12 +7,19 @@ import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
 import { HeaderCategories } from '../cmps/header-categories'
+import Slider from "react-slick";
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import Clock from '../assets/imgs/icons/clock.svg'
 import Sync from '../assets/imgs/icons/sync.svg'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export const GigDetails = () => {
+
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -22,6 +29,8 @@ export const GigDetails = () => {
     const id = params.id
     loadGig(id)
   }, [])
+
+
 
   const loadGig = async (gigId) => {
     const gig = await gigService.getById(gigId)
@@ -51,6 +60,7 @@ export const GigDetails = () => {
               </div>
 
               <div className='seller-avatar-top flex row align-center gap'>
+
                 <img
                   className='gig-owner-image-top border-radius'
                   src={gig.owner.imgUrl}
@@ -69,11 +79,29 @@ export const GigDetails = () => {
                 5 ({gig.reviews.length})
               </div>
 
-              <img
-                className='gig-img'
-                src={gig.imgUrl}
-                alt='Some Logo Design'
-              />
+
+              <div className='details-carousel'>
+                <div>
+                  <div className='big-slider'>
+                    <Slider slidesToShow={1} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
+                      {gig.imgUrl.map(img => <div className='big-slider-img'><img src={img} alt="" /></div>)}
+                    </Slider>
+                  </div>
+
+                  <div className='small-slider'>
+                    <Slider
+                      asNavFor={nav1}
+                      ref={(slider2) => setNav2(slider2)}
+                      slidesToShow={4}
+                      swipeToSlide={true}
+                      focusOnSelect={true}
+                    >
+                      {gig.imgUrl.map(img => <div className='small-slider-img'><img src={img} alt="" /></div>)}
+                    </Slider>
+                  </div>
+
+                </div>
+              </div>
               <h2 className='desc'>About This Gig</h2>
 
               <p className='desc-list'>{gig.longerDescription}</p>

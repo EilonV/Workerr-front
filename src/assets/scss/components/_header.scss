@@ -13,6 +13,7 @@
   padding: 0;
   transition: 0.2s;
 
+
   .logo {
     font-size: 2em;
     letter-spacing: -1.5px;
@@ -30,6 +31,14 @@
   .header {
     height: 100%;
   }
+
+  .header-nav {
+
+    @include for-mobile-layout {
+      display: none;
+    }
+  }
+
 
   .header-nav>a {
     padding: 0 10px;

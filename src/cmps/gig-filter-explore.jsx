@@ -17,11 +17,6 @@ export const GigFilterExplore = ({ gigs, onChangeFilter }) => {
     userId: ''
   }
 
-  const queryStringParams = filterBy.tags.map((tag) =>
-    `tag=${tag}`
-  )
-  const newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + queryStringParams
-
   const handleSubmit = (ev) => {
     ev.preventDefault()
     // onChangeFilter(filterBy)
@@ -60,12 +55,6 @@ export const GigFilterExplore = ({ gigs, onChangeFilter }) => {
   const changeFilter = (ev) => {
     ev.preventDefault()
     onChangeFilter(filterBy)
-    console.log(window.location.pathname);
-    const queryStringParams = filterBy.tags.map((tag) =>
-      `tag=${tag}`
-    )
-    const newUrl = window.location.pathname + queryStringParams
-    window.history.pushState({ path: newUrl }, '', newUrl)
   }
 
   const clearFilter = () => {

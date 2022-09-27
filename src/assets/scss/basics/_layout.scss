@@ -1,17 +1,14 @@
-.main-layout{
+.main-layout {
     // max-width: 1400px;
     // padding-right: 32px;
     // padding-left: 32px;
     // margin: auto;
 
     display: grid !important;
-    grid-template-columns: 
-    minmax(32px, 1fr)
-     minmax(auto, 1400px)
-     minmax(32px, 1fr)
-     ;
+    grid-template-columns:
+        minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
 
-    > * {
+    >* {
         grid-column: 2;
 
         &.full {
@@ -19,6 +16,21 @@
         }
     }
 
+    @include for-mobile-layout {
+        @include layoutGTC($mobile-breakpoint);
+    }
+
+    @include for-tablet-layout {
+        @include layoutGTC($tablet-breakpoint);
+    }
+
+    @include for-wide-layout {
+        @include layoutGTC($desktop-breakpoint);
+    }
+
+    @include for-wide-layout {
+        @include layoutGTC($wide-dekstop-breakpoint);
+    }
 }
 
 .main-container {

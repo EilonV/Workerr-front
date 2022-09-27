@@ -40,9 +40,6 @@ let hero = 1
 let interval
 
 export const Home = () => {
-  // window.onscroll = function () {
-  //   scrollFunction()
-  // }
   function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.querySelector('.header-scroll').style.opacity = 1
@@ -97,7 +94,7 @@ export const Home = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 0,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -124,13 +121,13 @@ export const Home = () => {
           document.querySelector(`.hero-background6`).style.opacity = '0'
         currHero.style.opacity = '1'
       } else {
-        // document.querySelector(`.hero-background${--hero}`).style.opacity = '1'
         currHero.style.opacity = '0'
       }
     }, 8000)
   }
-  // changeHero()
 
+  //activates the changing jumbo
+  changeHero()
 
   return (
     <section>
@@ -148,66 +145,7 @@ export const Home = () => {
               <div className='hero-info-container'>
                 <div className='hero-info flex column main-layout'>
                   <div>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
+                    <svg width="78" height="13" viewBox="0 0 78 13" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.5l-4.114 2.163.785-4.581L.343 4.837l4.6-.669L7 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L39 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm-16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L23 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L55 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L71 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581z" fill="#FFC100" /></svg>
                   </div>
                   <p>
                     Gabrielle, <span className='bold'>Video Editor</span>
@@ -217,69 +155,10 @@ export const Home = () => {
             </div>
             <div className='hero-background5' style={{ opacity: 0 }}>
               <img className='hero-image' src={HeroImg5} alt='Zac, Bar Owner' />
-              <div className='hero-info-container main-layout'>
-                <div className='hero-info flex column'>
+              <div className='hero-info-container'>
+                <div className='hero-info flex column main-layout'>
                   <div>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
+                    <svg width="78" height="13" viewBox="0 0 78 13" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.5l-4.114 2.163.785-4.581L.343 4.837l4.6-.669L7 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L39 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm-16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L23 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L55 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L71 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581z" fill="#FFC100" /></svg>
                   </div>
                   <p>
                     Zac, <span className='bold'>Bar Owner</span>
@@ -293,69 +172,11 @@ export const Home = () => {
                 src={HeroImg4}
                 alt='Ritika, Shoemaker and Designer'
               />
-              <div className='hero-info-container main-layout'>
-                <div className='hero-info flex column'>
+              <div className='hero-info-container'>
+                <div className='hero-info flex column main-layout'>
                   <div>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
+                    <svg width="78" height="13" viewBox="0 0 78 13" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.5l-4.114 2.163.785-4.581L.343 4.837l4.6-.669L7 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L39 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm-16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L23 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L55 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L71 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581z" fill="#FFC100" /></svg>
+
                   </div>
                   <p>
                     Ritika, <span className='bold'>Shoemaker and Designer</span>
@@ -369,69 +190,11 @@ export const Home = () => {
                 src={HeroImg3}
                 alt='Moon, Marketing Expert'
               />
-              <div className='hero-info-container main-layout'>
-                <div className='hero-info flex column'>
+              <div className='hero-info-container'>
+                <div className='hero-info flex column main-layout'>
                   <div>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
+                    <svg width="78" height="13" viewBox="0 0 78 13" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.5l-4.114 2.163.785-4.581L.343 4.837l4.6-.669L7 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L39 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm-16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L23 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L55 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L71 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581z" fill="#FFC100" /></svg>
+
                   </div>
                   <p>
                     Moon, <span className='bold'>Marketing Expert</span>
@@ -446,68 +209,9 @@ export const Home = () => {
                 alt='Dani, Web Expert'
               />
               <div className='hero-info-container'>
-                <div className='hero-info flex column'>
+                <div className='hero-info flex column main-layout'>
                   <div>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
-                    <svg
-                      className='gig-review-star'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 1792 1792'
-                      width='16'
-                      height='16'
-                    >
-                      <path
-                        fill='#ffbe5b'
-                        d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
-                      />{' '}
-                    </svg>
+                    <svg width="78" height="13" viewBox="0 0 78 13" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.5l-4.114 2.163.785-4.581L.343 4.837l4.6-.669L7 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L39 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm-16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L23 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm32 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L55 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581zm16 0l-4.114 2.163.785-4.581-3.328-3.245 4.6-.669L71 0l2.057 4.168 4.6.669-3.328 3.245.785 4.581z" fill="#FFC100" /></svg>
                   </div>
                   <p>
                     Andrea, <span className='bold'>Fashion Designer</span>
