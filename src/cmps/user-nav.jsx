@@ -29,7 +29,7 @@ export const UserNav = () => {
   //     navigate('/gigs')
   //   }))
   // }
-
+  if (!user) return ''
   console.log(user)
   return (
     <div className='profile-user'>

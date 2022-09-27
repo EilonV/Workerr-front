@@ -51,6 +51,10 @@ export const AddNewGig = () => {
 
   const inputRef = useRef()
 
+  const refreshPage = () => {
+    window.location.reload(false)
+  }
+
   useEffect(() => {
     //  inputRef.current.focus()
     const gigId = params.id
@@ -71,6 +75,7 @@ export const AddNewGig = () => {
     dispatch(
       addGig(gig, () => {
         navigate('/gigs')
+        refreshPage()
       })
     )
   }
@@ -85,11 +90,12 @@ export const AddNewGig = () => {
 
   const onImgUpload = async (ev) => {
     const res = await uploadService.uploadImg(ev)
-    console.log('res:', res.url)
-    const imgUrl = res.map((image) => image.url)
+    // console.log('res:', res.url)
+    const urls = res.map((image) => image.url)
+    gig.imgUrl = urls
+    console.log(gig.imgUrl)
 
-    imgUrl.push(res.url)
-    // console.log('imgUrl:', imgUrl)
+    // imgUrl.push(res.url)
   }
 
   return (
