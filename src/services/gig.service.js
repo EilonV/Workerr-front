@@ -24,11 +24,12 @@ function query(filterBy) {
         const regex = new RegExp(title, 'i')
         gigs = gigs.filter((gig) => regex.test(gig.title))
       }
-      if (tags.length > 0 ) {
+      if (tags && tags.length > 0) {
+        console.log('ENTERED TAGS')
         gigs = gigs.filter((gig) => {
-          (tags.forEach(tag => {
+          tags.forEach((tag) => {
             check = gig.tags.includes(tag)
-          }))
+          })
           if (check === true) return gig
         })
         console.log(gigs)
@@ -85,8 +86,12 @@ const gDefaultGigs = [
     description: 'the color of television was . ',
     longerDescription:
       'Using a perfect combination of melody, harmony, and rhythm, I will compose harmonious piano music that allows ones emotions to be changed.Songs can be used in films, podcasts, ads, or music streaming platforms.If you have any feelings that you wish to be portrayed in the music, let me know, and feel free to send me links to songs that you like, or similar styles that you would like me to compose in. Note: Fees may vary depending on the complexity of the genre. Songs are unique, copyright free and will belong exclusively to the buyer once the order is completed. I can create multiple songs for the time requested.    I can provide the midi for the song at no extra cost. Please request before placing the order.     Please contact me before placing your order if you require 10 minutes of music or more, so that I can create a custom offer with the discounted amount taken off. ',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/zi9vophqo9wyccfyk4rc.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pj8rebjsi6jubjcy2nls.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/241489346/original/eb93901PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/241489346/original/2e78f8bc27de727f6c45a6f4cb452f0f5ded6df8.jpg',
+    ],
     tags: [
       'pencil drawing',
       'realistic drawing',
@@ -140,8 +145,12 @@ const gDefaultGigs = [
     description: '. it . ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/202488483/original/806fd73b7899cd827a2817bc2db0b6b8eb69c115.jpg',
+      'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/202488483/original/1b5bf30940252bd58fda18f5d519d9b6d30c213d.jpg',
+      'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/202488483/original/0156ccdd1d913642161899d07e096ddd099cfa20.jpg',
+      'https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -189,8 +198,12 @@ const gDefaultGigs = [
     description: 'a pleasure in such cases as generally ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/so_66.2342621450047,t_gig_cards_web/tuhnn5o31keeaepu9fej.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/158053112/original/fd2ed08ae9c79925afffc6058813dbe419197e54.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/158053112/original/1190c747a780f3a558645bcd4c0d64f35db2667a.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto/search_perseus/default-audio-bg.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -238,8 +251,16 @@ const gDefaultGigs = [
     description: '. above a dead channel ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/123919942/original/33e571244a54683576c40f9b9927884721fe300e.png',
+      ,
+      'https://fiverr-res.cloudinary.com/video/upload/so_4.601842,t_gig_cards_web/yomuejfmqhkegmpafswh.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/17859329/original/51PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR2b283.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/17859329/original/3ece9b763057a044408eca30a6b85c3b669f0426.jpg',
+      ,
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/uk1dqfe088n4mimnmehr.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/128509090/original/d39a3d19717cbfb56b2e62af6e7bcf2804dd0577.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -288,8 +309,12 @@ const gDefaultGigs = [
     description: 'it . the port ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/46657159/original/d81004f82d847933a3e944c87f6aea1fe2a0117b.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ycrb87wzko3hvdgjsint.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/171325551/original/a49d4f80a8256ef9bbe68daffc4f286a2fc7ab96.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/egq1fgfrr7yptapqq3uu.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -337,8 +362,12 @@ const gDefaultGigs = [
     description: '. The sky as generally ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/143350958/original/038fc8b05ffecf665a97016ba73c5252a4dcb1c0.jpeg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/vsfcacfqcjylx2wfmx9v.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/135943918/original/f368f06f2892a7da4dfa454031d7e5ee17cf90ef.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto/search_perseus/default-audio-bg.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -386,8 +415,12 @@ const gDefaultGigs = [
     description: '. a pleasure All ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/256418126/original/06f1d1a420c266a3f923c52b0c0323a0f48e914d.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/138364513/original/f3a92aac76ed783e1cf74d00b2c4550267de0e42.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/askhylpdf55bbahmdmxt.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/5747717/original/b2f47dece6eff17a965b29d7ac16d4399e6351f5.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -435,8 +468,12 @@ const gDefaultGigs = [
     description: 'each time It . ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_16.461057,t_main1,q_auto,f_auto/bobsafkbwfyvzkcrshtx/produce-instrumental-for-you-in-any-genre.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/5747717/original/b2f47dece6eff17a965b29d7ac16d4399e6351f5.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/160135386/original/acb7400d7f44fd982015fef102265781e405ee9a.jpeg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/150971995/original/24ff7a0d0c19801fe1c5dafab44c3dc7d2e26610.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -484,8 +521,12 @@ const gDefaultGigs = [
     description: 'more or less a pleasure above ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/209535406/original/406b6a668c80b38dbc961b89262941a111824e51.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/211837893/original/01d9717b7957ae5477a35dfe0140f2c31718ef5c.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/211837893/original/dd71be07d7774e525800fef6929027852f00613b.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/idygy0vhdywiooggctgv.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -533,8 +574,12 @@ const gDefaultGigs = [
     description: 'had bit by bit a different story ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/247071165/original/9553d1ba4b8456b613e7de3ac35e21b61839fbe1.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/177713633/original/e97c0eb7eaab427fbfb178c7d25c0cf7e8af9edd.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/177713633/original/b6aabd2e6e5a2cfed06cc3df258587b8bb640fea.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/177713633/original/85837dc1cf07a6cd5672d8cdcde11a118e3d83e1.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -582,8 +627,12 @@ const gDefaultGigs = [
     description: 'from various people from various people as generally ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/so_0.58378,t_gig_cards_web/ijxnutocxnyakosbpb8o.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/120985144/original/2af5368f982e7610ec79eec3f2059d4f204ca28d.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ouol13mlgj1sqfnxuskr.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/101678310/original/91PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR3ff83.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -631,8 +680,12 @@ const gDefaultGigs = [
     description: 'to to the color of television ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/241489346/original/de1f8bf2cbf64b9dc0f45ee826f3034bcf9a147a.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/196493877/original/07eb44925bc9f33aaa2e4c99b8fb7225d7e3087a.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155841436/original/9cb1b7b3dccd32a181eec3ff1a320a3f7fdeca19.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/78072881/original/703b6e7183b18883406fa21f60d9c53bf9965f66.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -680,8 +733,12 @@ const gDefaultGigs = [
     description: 'The sky burn in such cases ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/197122247/original/fc8c2475847dfbd6f11a296f400f8c494055eae5.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/196128842/original/022d0852c76447e1d6c968aeda0e57d3642c4213.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/196128842/original/fd229b7db582ae3b40b7ac6f4826dac3a94fb5fb.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/196128842/original/983d2ae596ce263f7b5b45c8441ae59b4127e69b.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -729,8 +786,12 @@ const gDefaultGigs = [
     description: 'more or less bit by bit and ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/qgwbc0j5uydwwcgbmig1/arrange-or-produce-your-song.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/wtzo3lvjnnyb9soyjnrl.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/173629201/original/429fb44c99eddf0762c80b6f66ada0f8d491a85b.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/227278363/original/3f29ce8701a74e35354f1f06604dacf2fcdfc623.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -778,8 +839,12 @@ const gDefaultGigs = [
     description: 'to . the color of television ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/271220899/original/25e87c57227ff78333f002d859903dcef8cf9554.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/so_66.224414575,t_gig_cards_web/msb5z1cr7nxnxk0nyidt.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/139277870/original/c548f8782a599fd479b43622f3ab277a4d0281ae.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/24496242/original/46d61316b4bd1ed22308c3b7660846fa87855550.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -827,8 +892,12 @@ const gDefaultGigs = [
     description: 'a pleasure more or less a pleasure ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_74.030129,t_main1,q_auto,f_auto/nrjbeta35icfna8pynrz/create-orchestral-music-epic-orchestra-trailer-film-score.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_40.602937,t_gig_cards_web/dw5viuw1frfsky6k1kxa.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_54.605002,t_gig_cards_web/vkj0ryzw00gv3rdfao6v.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127651923/original/6d4992e28a26f6a6ca22c0accb657794352b9199.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -876,8 +945,12 @@ const gDefaultGigs = [
     description: 'a different story All in such cases ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/184721743/original/da73f48358910208d3ce16196b44696f24a01f53.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/j2n3tmrfy2u9aqwvlq9c.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/201488794/original/aa06e58c78c348c939d87b7117a5f89d77e91742.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/vyy3ipwxurevbhpgy5eg.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -925,8 +998,12 @@ const gDefaultGigs = [
     description: 'happens All above ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/bnebzwaherc8nh8kkufp/produce-and-arrange-your-song.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/105383080/original/18ab7321ee75459b53e6d303329b17ea04b807c6.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/105383080/original/3b82b474139079f1ab4139ac96c432f667bd38ad.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/deaypy5qbruwpmhfh0bw.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -974,8 +1051,12 @@ const gDefaultGigs = [
     description: 'and in such cases the color of television ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/215625652/original/00d1b8ea3d0f4a6759477a6afb0009f31997787d.jpeg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/110773529/original/1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eRd00fba.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/110773529/original/48e9c6c2c62262d4057a7e6a4e32769c40313b2c.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/110773529/original/00ee0fe1bf1a78dcae9419cf45b4efcf3e65d640.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1023,8 +1104,12 @@ const gDefaultGigs = [
     description: 'was more or less . ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/so_6.717682,t_gig_cards_web/ikmbym6fvpzmzjkop2rs.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/gs2f8p2kpbw17yft4jhg.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/145477185/original/4f66c5c8849f9f3d6555f2bdba5332ee924e015f.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/126307528/original/eac3b0b4abf57cb6654f0cd0c0de7bc79f42699a.jpeg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1073,8 +1158,12 @@ const gDefaultGigs = [
     description: '. . a different story ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_62.664502,t_main1,q_auto,f_auto/syjkev459eze3ubmonjs/compose-a-professional-soundtrack-for-you-score-or-vsti.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/229273265/original/2aac307a5c840a6fa2c0642ce74d2dd1dd733691.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/229273265/original/54d770e1539ec461023161e849bdff113fadf050.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/229273265/original/f90aeae0d727c97aa98d5924e78f4c49b32fe33a.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1123,8 +1212,12 @@ const gDefaultGigs = [
     description: 'happens the port happens ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/tdrfy3wra7shrz4z2q0h/ghost-produce-a-high-quality-edm-track-for-djs.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_1.160529,t_gig_cards_web/xukyt9h0chmdrjrjespk.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/214917248/original/ca517ed42c732d2a089970160312754ec19d3f49.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/hvrml2gvno93i5omedjq.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1172,8 +1265,12 @@ const gDefaultGigs = [
     description: 'a different story tuned . ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_0.0,t_main1,q_auto,f_auto/tfbsa6nf1cwzojwpamdb/create-cinematic-trailer-or-epic-music-for-your-projects.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ue1evfa2vqognrqezh41.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/261488807/original/6e3d86fcc6d9d830177827331e0ec1a0c200fe82.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_17.467274,t_gig_cards_web/sc5t97cpjrdsjtmn1id6.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1221,8 +1318,12 @@ const gDefaultGigs = [
     description: '. was I ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/132558750/original/d075b2c0d807c9c7039429d24fb8012d20394251.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/192620210/original/ae9b72529ffb1c26b2cfcb2699d462f1b3423a54.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/anrxrwix2fz05rul615q.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/238177421/original/53b00c66696a994c2b2f562e96da7ec246dac92b.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1270,8 +1371,12 @@ const gDefaultGigs = [
     description: 'in such cases the story in such cases ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_17.268086,t_main1,q_auto,f_auto/dsrgdqugw88ujrvso5mt/produce-your-pop-track-or-cover.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/248710645/original/531c6716de2acfe309f7dac527de56e876fd1905.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/248710645/original/3a77518e005cd990f23c0e20e06818ac862c4db3.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/154368259/original/2ffa056ed0065c5da8eb60df66f794e3276dcdf4.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1319,8 +1424,12 @@ const gDefaultGigs = [
     description: 'The sky tuned to ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/wzxpaqjjucltryekgrdb.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/utsjaj71db2xmky9vf5s.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/223362680/original/c65f64bf3d5c2202ba5f290b61b22fdd9180c857.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/223362680/original/22bfca368578b8e0d117cca4cd1fc8f3606f333d.jfif',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1368,8 +1477,12 @@ const gDefaultGigs = [
     description: 'tuned was was ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_33.748866,t_main1,q_auto,f_auto/i4gsxs2r0rw051dokhgn/write-a-metal-or-rock-song-for-you.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/164392140/original/3090d7dab262f2a1c8695fd43318f600e23078a2.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/164392140/original/876a1d72f28acd0cac20b0fee477a494819fe982.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/164392140/original/9a1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR543b.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1417,8 +1530,12 @@ const gDefaultGigs = [
     description: 'All All was ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/101678310/original/62f9387aee7b57215f8047e3b62c87870b5da88b.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/iempfzaqgcfpsl01zrk4.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/160694354/original/827358cdb1ba905eaa4b633179e01621fc95753f.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/160694354/original/c98d2d723e0da2a9fd99417909e7bcb42a6517f2.jpeg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1466,8 +1583,12 @@ const gDefaultGigs = [
     description: 'All as generally The sky ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/syuyf0ptkiytt82d8otj/create-relaxing-emotional-piano-music-for-you.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/253075300/original/7edf6b1afd1f44b9201ea512b0d49331f13a6cee.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/d2nvfnlqlmasnsjo6rxr.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/bz5mcj1depmypakjl2ql.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1515,8 +1636,12 @@ const gDefaultGigs = [
     description: 'from various people the port as generally ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/ll2kbljooylmogsuv4ua/produce-anime-song-for-you.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/214579916/original/7d1ecece68034bb0809a1277efb8dbe2ceac5c20.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231356584/original/25cd2194c2eebe1506dd46ac426b9dd28ffedce3.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/221928237/original/b7981b98bbcc6a2e665dfe2a1608dffc9c74f571.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1564,8 +1689,12 @@ const gDefaultGigs = [
     description: '. burn the story ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/138364513/original/f3a92aac76ed783e1cf74d00b2c4550267de0e42.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.118363,t_gig_cards_web/ui3fsxluh7gotnpt3at3.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/168349143/original/6950fb6dceb977965dc9f50472f8ec0c6eeffcb1.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/168349143/original/cceca41PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1614,8 +1743,12 @@ const gDefaultGigs = [
     description: 'the port tuned had ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/235091809/original/661afeec5dba47fbe267fc596b290eddcca39a77.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/svkawawlwomuifyajphc.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/222985078/original/082cdc0adcd036ae35c7c77ed91f7271afffa55d.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/222985078/original/0b1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR19b0.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1663,8 +1796,12 @@ const gDefaultGigs = [
     description: 'I All All ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/j2n3tmrfy2u9aqwvlq9c/make-hard-rock-classic-rock-song-for-you.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/cobhsu2fctlnhc5pujnw.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/tfbsa6nf1cwzojwpamdb.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/fhvif8zaszmjjniafxbe.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1712,8 +1849,12 @@ const gDefaultGigs = [
     description: 'in such cases . a pleasure ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/248678351/original/c20c631c8701b2ae44338b081239e1a86c269cca.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/250652628/original/759a93f03f57f9db0dd8e1ef1bf108063f84973c.png',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/b4l9mezsg4n4myscll3q.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/239843245/original/92f7fb362bbc783c7ef18e130b178f3095a5d0e5.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1761,8 +1902,12 @@ const gDefaultGigs = [
     description: '. was this happened ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/cobhsu2fctlnhc5pujnw/record-cover-or-backing-track-for-any-song.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/214478398/original/e5f29f46b415d55c399a7c448fb657c50841520c.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/214478398/original/0519db60299aa3fc6e8c34ede9565b0343f80bc1.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/214478398/original/6170c57e627ced09464abfc974a18364d0325e8e.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1810,8 +1955,12 @@ const gDefaultGigs = [
     description: 'tuned The sky above ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/200560716/original/607a3ffa6245afe35daed0599fd21a2cf5d4aaab.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/so_1.897012,t_gig_cards_web/h9rmmb4owm6y0zjtkdew.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/103761075/original/86c3e35ce558e4df09332870ecb082083dfe8261.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/136837982/original/df73124633d9ee6f0e6d4869e4398ce3c502746b.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1859,8 +2008,12 @@ const gDefaultGigs = [
     description: 'was it was ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/mlq5vopjvbnplu8dv0tu/produce-a-full-song-for-you.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/122237170/original/d5c91a21e49f4f703bf15340ace4af01b07648a6.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/156022425/original/c10f3ef070b4bc2f47e8f0b552b3532020226be2.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/137394575/original/0bb4dda42fdaf566a203b89f1809eb13230a3bce.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1908,8 +2061,12 @@ const gDefaultGigs = [
     description: 'each time It tuned ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/171395377/original/891cbf02ac8a6d6b845c8f69ecee504b1fe56630/produce-mix-and-master-your-song.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/yy1dvf7s0r3boc1qpmyy.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/137394575/original/898230a4e225dc1218e50c3ed806ecb63e8aa8a6.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/eydxsozz7xriaecsvkql.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -1957,8 +2114,12 @@ const gDefaultGigs = [
     description: 'was . it ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_5.346422,t_main1,q_auto,f_auto/ih51gpio6px7ub1opv88/be-your-edm-ghost-producer.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/113810060/original/1PbqpeGbHi8bXhDyMP2m1NDUSiYmznAJdJzX36DD.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/113175820/original/0af191b1607868e6b2d2c54a3962571cee7a558d.jpeg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/mxhzd3qxbsdqrjs307lr.png',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -2006,8 +2167,12 @@ const gDefaultGigs = [
     description: 'It more or less bit by bit ',
     longerDescription:
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
-    imgUrl:
+    imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/242934288/original/3aa4c6e71522a04b62fb9208c40f9ddd1fc301a6.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_57.715888,t_gig_cards_web/dkuvuzckq4sdfkhoo7zb.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/215083322/original/e6e1250c4efe60e8e887c9d356b5b2d49e574ea8.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/152251109/original/ce5454e9f14227103474185b1224562ffdf3b1fd.jpg',
+    ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
     reviews: [

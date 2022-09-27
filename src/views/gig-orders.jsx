@@ -51,8 +51,9 @@ export const Orders = () => {
       <HeaderCategories orders={orders} />
       <div className='features main-layout'>
         <div className='profile-user '>
-          <div className='order-container flex '>
+          <div className='page-container flex '>
             <UserNav />
+            <div className='orders-container'>
             <section className='total-orders'>
               <div className='title flex space-between'>
                 <p>Total orders &nbsp; </p>
@@ -61,9 +62,9 @@ export const Orders = () => {
                     ? orders.length + ' order'
                     : orders.length + ' orders'}
                 </p>
-                <p>This month's orders &nbsp; </p>
+                {/* <p>This month's orders &nbsp; </p> */}
               </div>
-              <div className='title flex space-between'>
+              {/* <div className='title flex space-between'>
                 <p className='num-orders'>
                   Revenues: <span className='price'>$ 0.00</span> &nbsp;
                 </p>
@@ -78,7 +79,7 @@ export const Orders = () => {
                 <p>Quantity:0 &nbsp;</p>
                 <p>Quantity:0 &nbsp;</p>
                 <p>Quantity:0 &nbsp;</p>
-              </div>
+              </div> */}
 
               <div className='table-orders'>
                 {orders.map((order) => (
@@ -111,6 +112,7 @@ export const Orders = () => {
                 ))}
               </div>
             </section>
+            </div>
           </div>
         </div>
       </div>

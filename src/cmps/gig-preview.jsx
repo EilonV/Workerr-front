@@ -9,7 +9,7 @@ export const GigPreview = ({ gig }) => {
     infinite: true,
     speed: 200,
     slidesToShow: 1,
-    slidesToScroll: gig.imgUrl.length,
+    slidesToScroll: 1,
   }
 
   if (!gig) return ''
@@ -18,9 +18,9 @@ export const GigPreview = ({ gig }) => {
       <Link to={`/gig/details/${gig._id}`}>
         <div className='slick-container'>
           <Slider {...settings}>
-            <img className='img-gig' src={gig.imgUrl} />
-            <img className='img-gig' src={gig.imgUrl} />
-            <img className='img-gig' src={gig.imgUrl} />
+            {gig.imgUrl.map(img =>
+              <img className='img-gig' src={img} />
+            )}
           </Slider>
         </div>
       </Link>
@@ -63,9 +63,6 @@ export const GigPreview = ({ gig }) => {
         {gig.owner.rate > 0 ? <p>&nbsp;{gig.owner.rate}.0</p> : <p>&nbsp;0</p>}
         <div className='flex'>
           <p className='user-reviews-count'>({gig.reviews.length})</p>
-          {/* {(gig.user[0].reviews && gig.user[0].reviews.length > 0) ?
-            (<p className='user-reviews-count'>({gig.user[0].reviews.length})</p>) :
-            (<p className='user-reviews-count'>888</p>)} */}
         </div>
       </div>
 

@@ -22,6 +22,7 @@ export const GigExplore = () => {
   }, [])
 
   const onChangeFilter = (filterBy) => {
+    console.log('filterBy', filterBy)
     dispatch(setFilterBy(filterBy))
     dispatch(loadGigs())
 

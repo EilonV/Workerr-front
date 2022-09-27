@@ -14,13 +14,11 @@ export const AddNewGig = () => {
   ? JSON.parse(sessionStorage.loggedinUser)
   : ''
 
-
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const gigs = useSelector((state) => state.gigModule.gigs)
  
-
   const title ='I will '
    const [gig, handleChange, setGig] = useForm({
      title: title,
@@ -29,7 +27,7 @@ export const AddNewGig = () => {
      longerDescription: '',
      tags: [],
      order: '',
-    //  imgUrl: '',
+     imgUrl: [],
    })
 
    const inputRef = useRef()
