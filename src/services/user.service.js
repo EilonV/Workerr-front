@@ -119,6 +119,9 @@ const usersDefult = [
         username: 'user1',
         password: 'secret',
         _id: '622f3401e36c59e6164faguy',
+        country: 'Israel',
+        memberSince:'sep 2019'
+
     },
 
     {
@@ -127,6 +130,8 @@ const usersDefult = [
         username: '75091963',
         password: 'Edgar',
         _id: 'h123564',
+        country: 'Israel',
+        memberSince:'sep 2021'
     },
 
     {
@@ -135,6 +140,8 @@ const usersDefult = [
         username: '59985',
         password: 'Leo',
         _id: 'h12554',
+        country: 'Lebanon',
+        memberSince:'sep 2021'
     },
 
     {
@@ -143,6 +150,8 @@ const usersDefult = [
         username: '3805403',
         password: 'Margaux',
         _id: 'h1234',
+        country: 'United States',
+        memberSince:'sep 2021'
     },
 
     {
@@ -151,6 +160,8 @@ const usersDefult = [
         username: '25851994',
         password: 'Francine',
         _id: 'h45532',
+        country: 'Israel',
+        memberSince:'sep 2021'
     },
 
     {
@@ -159,6 +170,8 @@ const usersDefult = [
         username: '1205536',
         password: 'Winnie',
         _id: 'h422532',
+        country: 'Israel',
+        memberSince:'sep 2017'
     },
 
 

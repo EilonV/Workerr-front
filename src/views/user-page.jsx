@@ -17,12 +17,13 @@ export const UserPage = () => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const id = params.id
-    loadUser(id)
-  }, [user])
 
-  const loadUser = async (userId) => {
-    const user = await userService.getById(userId)
+    loadUser()
+
+  }, [])
+
+  const loadUser = async () => {
+    const user = await userService.getLoggedinUser()
     setUser(user)
   }
 

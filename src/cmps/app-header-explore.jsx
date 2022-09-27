@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import { connect } from "react-redux"
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { loadGigs, setFilterBy } from '../store/actions/gig.action'
 import { useSelector, useDispatch } from 'react-redux'
 import { GigFilter } from './gig-filter'
@@ -15,10 +15,10 @@ export function AppHeaderExplore({ user }) {
   const [isSignUp, toggleSignUp] = useState(false)
   const [isPopoverNav, togglePopoverNav] = useState(false)
 
-  useEffect(() => {
-    if (isSignIn) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'unset';
-  }, [isSignIn])
+  // useEffect(() => {
+  //   if (isSignIn) document.body.style.overflow = 'hidden';
+  //   else document.body.style.overflow = 'unset';
+  // }, [isSignIn])
 
 
   const onChangeFilter = (filterBy) => {
@@ -28,6 +28,21 @@ export function AppHeaderExplore({ user }) {
     console.log(filterBy)
     // console.log(gigs)
   }
+
+  const handleLogout = () => {
+    if (isSignIn) return;
+    dispatch(onLogout())
+    clearState()
+    window.location.reload(false)
+  }
+
+  const clearState = () => {
+    return isSignIn
+  }
+  console.log(sessionStorage.loggedinUser)
+
+
+
   return (
     <section className='main-layout full'>
       <header className='app-header-explore'>
@@ -60,17 +75,29 @@ export function AppHeaderExplore({ user }) {
         <nav className='header-nav flex row '>
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
-          <NavLink to='/user'>User </NavLink>
-          <NavLink to='/orders'>Order </NavLink>
-          {!user && <section className=" flex row gap">
-            <div className=" header-signin" onClick={() => { toggleSignIn(true) }}>
-              Sign in
-            </div>
-            
-            <div className="header-join" onClick={() => { toggleSignIn(true); toggleSignUp(true) }}>
-              Join
-            </div>
-          </section>}
+<NavLink to='/user'>User </NavLink>
+<NavLink to='/orders'>Order </NavLink>
+          {sessionStorage.loggedinUser ?
+
+            <span className="user-info">
+              <Link to={`user/`}>
+                {/* {user.imgUrl && <img src={user.imgUrl} />}
+                            {user.fullname} */}
+              </Link>
+              <button onClick={handleLogout}>Logout</button>
+            </span> :
+
+
+            <section className=" flex row gap">
+              <div className=" header-signin" onClick={() => { toggleSignIn(true) }}>
+                Sign in
+              </div>
+
+              <div className="header-join" onClick={() => { toggleSignIn(true); toggleSignUp(true) }}>
+                Join
+              </div>
+            </section>
+          }
         </nav>
       </header>
       {isSignIn && !user && <LoginSignup toggleSignIn={toggleSignIn} toggleSignUp={toggleSignUp} isSignUp={isSignUp} onLogin={onLogin} onSignup={onSignup} />}

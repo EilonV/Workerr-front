@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { useDispatch } from 'react-redux'
-import { onSignup } from '../store/actions/user.actions'
+import { onSignup, onLogin } from '../store/actions/user.actions'
 
 export function LoginSignup(props) {
   // console.log(props);
@@ -26,13 +26,13 @@ export function LoginSignup(props) {
     setUsers(users)
   }
 
-  useEffect(() => {
-    const { username, password } = credentials
-    if (username === 'guest' && password === 'guest') {
-      props.onLogin(credentials)
-      clearState()
-    }
-  }, [credentials])
+  // useEffect(() => {
+  //   const { username, password } = credentials
+  //   if (username === 'guest' && password === 'guest') {
+  //     props.onLogin(credentials)
+  //     clearState()
+  //   }
+  // }, [credentials])
 
   const clearState = () => {
     setCredentials({ username: '', password: '', fullname: '' })
@@ -49,21 +49,28 @@ export function LoginSignup(props) {
     setCredentials({ username: 'guest', password: 'guest', fullname: '' })
   }
 
+
+
+
   const handleLogin = (ev = null) => {
-    if (ev) ev.preventDefault()
-    if (!credentials.username) return
+    if (ev) ev.preventDefault();
+    if (!credentials.username) return;
     // console.log(credentials)
-    dispatch(onSignup(credentials))
+    dispatch(onLogin(credentials))
+
     clearState()
+    window.location.reload(false)
+
+
   }
   const handleSignup = (ev = null) => {
-    if (ev) ev.preventDefault()
-    if (!credentials.username || !credentials.password || !credentials.fullname)
-      return
+    if (ev) ev.preventDefault();
+    if (!credentials.username || !credentials.password || !credentials.fullname) return;
     // props.onSignup(credentials);
     dispatch(onSignup(credentials))
 
     clearState()
+
   }
 
   const toggleSignup = (ev) => {
@@ -75,22 +82,29 @@ export function LoginSignup(props) {
     ev.stopPropagation()
   }
 
-  // console.log(users)
+  const checkIfUserAllreadyIn  = (allreadyIn) => {
+    allreadyIn = sessionStorage.loggedinUser.map(users => users.includes(users.username))
 
-  return (
-    <div
-      className='login-background flex justify-center align-center'
-      onClick={() => {
-        props.toggleSignIn(false)
-        props.toggleSignUp(false)
-      }}
-    >
-      <div className='signIn-up-section' onClick={stopPropagation}>
-        {!isSignup && (
-          <section>
-            <h4>Sign In to Workerr</h4>
-            <form className='login-form' onSubmit={handleLogin}>
-              {/* <select
+    console.log('You allready in mate ',allreadyIn)
+  }
+
+
+    console.log(users)
+
+    return (
+      <div
+        className='login-background flex justify-center align-center'
+        onClick={() => {
+          props.toggleSignIn(false)
+          props.toggleSignUp(false)
+        }}
+      >
+        <div className='signIn-up-section' onClick={stopPropagation}>
+          {!isSignup && (
+            <section>
+              <h4>Sign In to Workerr</h4>
+              <form className='login-form' onSubmit={handleLogin} checkIfUserAllreadyIn={checkIfUserAllreadyIn} >
+                {/* <select
                             name="username"
                             value={credentials.username}
                             onChange={handleChange}
@@ -98,93 +112,93 @@ export function LoginSignup(props) {
                             <option value="">Select User</option>
                             {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                         </select> */}
-              <input
-                type='text'
-                name='username'
-                value={credentials.username}
-                placeholder='Username'
-                onChange={handleChange}
-                required
-                autoComplete='true'
-                autoFocus
-              />
-              <input
-                type='password'
-                name='password'
-                value={credentials.password}
-                placeholder='Password'
-                onChange={handleChange}
-                required
-                autoComplete='false'
-              />
-              <button>Continue</button>
-            </form>
-            <div className='form-footer flex justify-center align-center'>
-              <p>
-                Not a member yet?{' '}
-                <span onClick={toggleSignup} className='green pointer'>
-                  Join now
-                </span>
-              </p>
-            </div>
-          </section>
-        )}
-        {isSignup && (
-          <section>
-            <h4>Join Workerr</h4>
-            <form className='signup-form' onSubmit={handleSignup}>
-              <input
-                type='text'
-                name='fullname'
-                value={credentials.fullname}
-                placeholder='Fullname'
-                onChange={handleChange}
-                required
-                autoFocus
-                autoComplete='true'
-              />
-              <input
-                type='text'
-                name='username'
-                value={credentials.username}
-                placeholder='Username'
-                onChange={handleChange}
-                required
-                autoComplete='true'
-              />
-              <input
-                type='password'
-                name='password'
-                value={credentials.password}
-                placeholder='Password'
-                onChange={handleChange}
-                required
-                autoComplete='false'
-              />
-              <button>Continue</button>
-            </form>
-            <div className='form-footer flex justify-center align-center'>
-              <p>
-                Already a member?
-                <span onClick={toggleSignup} className='green pointer'>
-                  Sign In
-                </span>
-              </p>
-            </div>
+                <input
+                  type='text'
+                  name='username'
+                  value={credentials.username}
+                  placeholder='Username'
+                  onChange={handleChange}
+                  required
+                  autoComplete='true'
+                  autoFocus
+                />
+                <input
+                  type='text'
+                  name='password'
+                  value={credentials.password}
+                  placeholder='Password'
+                  onChange={handleChange}
+                  required
+                  autoComplete='false'
+                />
+                <button>Continue</button>
+              </form>
+              <div className='form-footer flex justify-center align-center'>
+                <p>
+                  Not a member yet?{' '}
+                  <span onClick={toggleSignup} className='green pointer'>
+                    Join now
+                  </span>
+                </p>
+              </div>
+            </section>
+          )}
+          {isSignup && (
+            <section>
+              <h4>Join Workerr</h4>
+              <form className='signup-form' onSubmit={handleSignup}>
+                <input
+                  type='text'
+                  name='fullname'
+                  value={credentials.fullname}
+                  placeholder='Fullname'
+                  onChange={handleChange}
+                  required
+                  autoFocus
+                  autoComplete='true'
+                />
+                <input
+                  type='text'
+                  name='username'
+                  value={credentials.username}
+                  placeholder='Username'
+                  onChange={handleChange}
+                  required
+                  autoComplete='true'
+                />
+                <input
+                  type='password'
+                  name='password'
+                  value={credentials.password}
+                  placeholder='Password'
+                  onChange={handleChange}
+                  required
+                  autoComplete='false'
+                />
+                <button>Continue</button>
+              </form>
+              <div className='form-footer flex justify-center align-center'>
+                <p>
+                  Already a member?
+                  <span onClick={toggleSignup} className='green pointer'>
+                    Sign In
+                  </span>
+                </p>
+              </div>
 
-            {/* <hr></hr> */}
-          </section>
-        )}
-        <Link to='/'>
-          <div className='form-footer flex justify-center align-center'>
-            <p>
-              <span onClick={onGuestMode} className='green pointer'>
-                Try as a guest
-              </span>
-            </p>
-          </div>
-        </Link>
+              {/* <hr></hr> */}
+            </section>
+          )}
+          <Link to='/'>
+            <div className='form-footer flex justify-center align-center'>
+              <p>
+                <span onClick={onGuestMode} className='green pointer'>
+                  Try as a guest
+                </span>
+              </p>
+            </div>
+          </Link>
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  }
