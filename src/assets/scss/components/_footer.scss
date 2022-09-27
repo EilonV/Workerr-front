@@ -1,12 +1,16 @@
+@include for-wider-layout {}
+
 .footer {
     border-top: 2px $footer-line-gray solid;
     height: 51px;
     padding-bottom: 20px;
     padding-top: 16px;
-    font-size: 15px;    
+    font-size: 15px;
+
     .footer-icons {
         margin-right: 14px;
         padding-top: 3px;
+
         .footer-icon-wrapper {
             position: absolute;
             padding: 20px;
@@ -68,5 +72,28 @@
     .footer-accs {
         padding-left: 8px;
         padding-right: 1px;
+    }
+
+    @include for-mobile-layout {
+
+        .footer-left,
+        .icons-access-container {
+            flex-direction: column;
+        }
+
+        .footer-icons {
+            padding-left: 50px;
+        }
+        .access-container{
+            padding-left: 10px;
+        }
+        .icons-access-container,.access-container {
+            margin: 20px 0;
+        }
+        .footer-rights{
+            margin: 0;
+        }
+        display: flex;
+        flex-direction: column;
     }
 }
