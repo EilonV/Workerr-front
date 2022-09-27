@@ -119,7 +119,6 @@ const usersDefult = [
         username: 'user1',
         password: 'secret',
         _id: '622f3401e36c59e6164faguy',
-
     },
 
     {
