@@ -1,132 +1,172 @@
-import { useEffect } from 'react'
-import { useRef } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useEffect, useState, useRef } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useForm } from '../hooks/useForm'
 import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
+import { uploadService } from '../services/upload.service'
+import { userService } from '../services/user.service'
 
 export const AddNewGig = () => {
-  const user = JSON.parse(sessionStorage.loggedinUser)
+  // const user = JSON.parse(sessionStorage.loggedinUser)
   const loggedinUser = sessionStorage.loggedinUser
-  ? JSON.parse(sessionStorage.loggedinUser)
-  : ''
+    ? JSON.parse(sessionStorage.loggedinUser)
+    : ''
 
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const gigs = useSelector((state) => state.gigModule.gigs)
- 
-  const title ='I will '
-   const [gig, handleChange, setGig] = useForm({
-     title: title,
-     price: '',
-     daysToMake: '',
-     longerDescription: '',
-     tags: [],
-     order: '',
-     imgUrl: [],
-   })
 
-   const inputRef = useRef()
+  const user = userService.getById(loggedinUser._id).then((res) => {
+    console.log('res:', res)
+  })
 
-   useEffect(() => {
+  const title = 'I will '
+  const [gig, handleChange, setGig] = useForm({
+    title: title,
+    price: '',
+    daysToMake: '',
+    longerDescription: '',
+    tags: [],
+    order: '',
+    imgUrl: [],
+    owner: {
+      _id: loggedinUser._id,
+      fullname: loggedinUser.fullname,
+      ownerCountry: loggedinUser.country,
+      imgUrl: loggedinUser.imgUrl,
+      memberSince: loggedinUser.memberSince,
+      username: loggedinUser.username,
+      password: loggedinUser.password,
+      rate: loggedinUser.rate,
+      // avgResponseTime: '1 hour',
+      // lastDelivery: 'about 17 hours',
+      ownerLetter: loggedinUser.ownerLetter,
+      reviews: loggedinUser.reviews,
+    },
+  })
+
+  const inputRef = useRef()
+
+  const refreshPage = () => {
+    window.location.reload(false)
+  }
+
+  useEffect(() => {
     //  inputRef.current.focus()
-     const gigId = params.id
-     if (!gigId) return
-     gigService
-       .getById(gigId)
-       .then((gig) => {
-         setGig(gig)
-       })
-       .catch((err) => {
-         console.log('err:', err)
-       })
-   }, [])
+    const gigId = params.id
+    if (!gigId) return
+    gigService
+      .getById(gigId)
+      .then((gig) => {
+        setGig(gig)
+      })
+      .catch((err) => {
+        console.log('err:', err)
+      })
+  }, [])
 
-      const onSaveGig = () => {
-        // console.log('onSaveGig:active')
-        
-        //  ev.preventDefault()
-     if (gig._id) {
-       dispatch(updateGig(gig)).then(() => {
-         navigate('/gigs')
-       })
-     } else {
-       dispatch(addGig(gig)).then(() => {
-         navigate('/gigs')
-       })
-     }
-   }
+  const onSaveGig = () => {
+    // console.log('onSaveGig:active')
+    //  ev.preventDefault()
+    dispatch(
+      addGig(gig, () => {
+        navigate('/gigs')
+        refreshPage()
+      })
+    )
+  }
 
-   const handleSelect =(ev) =>{
+  const handleSelect = (ev) => {
     // console.log('ev:', ev.target.value)
     const updatedTags = [...gig.tags, ev.target.value]
-   setGig({...gig, tags: updatedTags})
-    
-   }
+    // console.log('updatedTags:', updatedTags)
 
-   return (
-     <section className='main-container'>
-       <AppHeaderExplore />
-       <HeaderCategories />
-    
-       <form>
-        
-       <section className='content-container'>
-         <div className='create-container flex column'>
-           <div className='title-container flex'>
-             <div className='title-nav'>
-               <div className='desc' htmlFor='name'>
-                 <h1>Gig Title</h1>
-               </div>
-               <p>
-                 As your Gig storefront, your title is the most important place
-                 to include keywords that buyers would likely use to search for a
-                 service like yours.
-               </p>
-             </div>
+    setGig({ ...gig, tags: updatedTags })
+  }
 
-             <div className='text-area'>
-               <textarea value ={gig.title} onChange={handleChange} name='title' placeholder="I will do something I'm really good at"></textarea>
+  const onImgUpload = async (ev) => {
+    const res = await uploadService.uploadImg(ev)
+    // console.log('res:', res.url)
+    const urls = res.map((image) => image.url)
+    gig.imgUrl = urls
+    console.log(gig.imgUrl)
 
-               <div className='title-footer flex space-between'>
-                 <span className='title-status-msg '></span>
-                 <span className='chars-count'>0 / 80 max</span>
-               </div>
-             </div>
-           </div>
+    // imgUrl.push(res.url)
+  }
 
-           <div className='category-container flex'>
-             <div className='title-nav category'>
-               <div className='desc' htmlFor='name'>
-                 <h1>Category</h1>
-               </div>
-               <p>
-                 Choose the category and sub-category most suitable for your Gig.
-               </p>
-             </div>
+  return (
+    <section className='main-container'>
+      <AppHeaderExplore />
+      <HeaderCategories />
 
-             <div className='selection-bar flex space-between'>
-               <select  value={gig.tags} onChange={handleSelect}  name='tags' id='tag-select'>
-                 <option value='digital-marketing'>Digital Marketing</option>
-                 <option value='writing-translation'>
-                   Writing & Translation
-                 </option>
-                 <option value='video-animation'>Video & Animation</option>
-                 <option value='music-audio'>Music & Audio</option>
-                 <option value='programming-Tech'>Programming & Tech</option>
-                 <option value='data'>Data</option>
-                 <option value='busines'>Busines</option>
-                 <option value='lifeStyle'>LifeStyle</option>
-               </select>
+      <form>
+        <section className='content-container'>
+          <div className='create-container flex column'>
+            <div className='title-container flex'>
+              <div className='title-nav'>
+                <div className='desc' htmlFor='name'>
+                  <h1>Gig Title</h1>
+                </div>
+                <p>
+                  As your Gig storefront, your title is the most important place
+                  to include keywords that buyers would likely use to search for
+                  a service like yours.
+                </p>
+              </div>
 
+              <div className='text-area'>
+                <textarea
+                  value={gig.title}
+                  onChange={handleChange}
+                  name='title'
+                  placeholder="I will do something I'm really good at"
+                  required
+                ></textarea>
 
+                <div className='title-footer flex space-between'>
+                  <span className='title-status-msg '></span>
+                  <span className='chars-count'>0 / 80 max</span>
+                </div>
+              </div>
+            </div>
 
-               <select name='tags' id='tag-select'>
-                 {/* <option value='digital-marketing'>Digital Marketing</option>
+            <div className='category-container flex'>
+              <div className='title-nav category'>
+                <div className='desc' htmlFor='name'>
+                  <h1>Category</h1>
+                </div>
+                <p>
+                  Choose the category and sub-category most suitable for your
+                  Gig.
+                </p>
+              </div>
+
+              <div className='selection-bar flex space-between'>
+                <select
+                  value={gig.tags}
+                  onChange={handleSelect}
+                  name='tags'
+                  id='tag-select'
+                  required
+                >
+                  <option value='digital-marketing'>Digital Marketing</option>
+                  <option value='writing-translation'>
+                    Writing & Translation
+                  </option>
+                  <option value='video-animation'>Video & Animation</option>
+                  <option value='music-audio'>Music & Audio</option>
+                  <option value='programming-Tech'>Programming & Tech</option>
+                  <option value='data'>Data</option>
+                  <option value='busines'>Busines</option>
+                  <option value='lifeStyle'>LifeStyle</option>
+                </select>
+
+                <select name='tags' id='tag-select'>
+                  {/* <option value='digital-marketing'>Digital Marketing</option>
                  <option value='wWriting-translation'>
                    Writing & Translation
                  </option>
@@ -136,12 +176,12 @@ export const AddNewGig = () => {
                  <option value='data'>Data</option>
                  <option value='busines'>Busines</option>
                  <option value='lifeStyle'>LifeStyle</option> */}
-               </select>
-               <div className='title-footer flex space-between'></div>
-             </div>
-           </div>
+                </select>
+                <div className='title-footer flex space-between'></div>
+              </div>
+            </div>
 
-           {/* <div className='tag-container flex '>
+            {/* <div className='tag-container flex '>
              <div className='title-nav'>
                <div className='desc'>
                  <h1>Search Tags</h1>
@@ -164,90 +204,87 @@ export const AddNewGig = () => {
              </div>
            </div> */}
 
-           <div className='price-container flex '>
-             <div className='title-nav'>
-               <div className='desc'>
-                 <h1>Insert your price</h1>
-               </div>
-         
-             </div>
-             <div className='search-tags'>
-               <div className='desc' htmlFor='name'>
-            
-               <label htmlFor='price'></label>
-           <input
-           value={gig.price}
-           onChange={handleChange}
-           type='number'
-           name='price'
-           id='price'
-           />
-               </div>
-             </div>
-           </div>
-           <div className='days-container flex '>
-             <div className='title-nav'>
-               <div className='desc'>
-                 <h1>Insert your days to make</h1>
-               </div>
-         
-             </div>
-             <div className='search-tags'>
-               <div className='desc' htmlFor='name'>
-            
-           <label htmlFor='daysToMake'></label>
-           <input
-           value={gig.daysToMake}
-           onChange={handleChange}
-           type='number'
-           name='daysToMake'
-           id='daysToMake'
-           />
-               </div>
-             </div>
-           </div>
-{/* 
-           <div className='image-container flex '>
-             <div className='title-nav'>
-               <div className='desc'>
-                 <h1>Insert your image</h1>
-               </div>
-             
-             </div>
-             <div className='search-tags'>
-               <div className='desc' htmlFor='name'>
-               <div className='img-upload-container'>
-                   <label for='imgUrl' className='not-drag'>
-                     <img
-                      value={gig.imgUrl}
-                       alt='imgUrl'
-                       src='https:higherr-app.herokuapp.com/img/upload.dc98df6c.png'
-                     />
-                     <h6>
-                       Choose an image
-                  </h6>
-                   </label>
-                   <input value={gig.imgUrl} type='file' name='imgUrl' id='imgUrl' />
-                 </div>
-               </div>
-             </div>
-           </div> */}
+            <div className='price-container flex '>
+              <div className='title-nav'>
+                <div className='desc'>
+                  <h1>Insert your price</h1>
+                </div>
+              </div>
+              <div className='search-tags'>
+                <div className='desc' htmlFor='name'>
+                  <label htmlFor='price'></label>
+                  <input
+                    value={gig.price}
+                    onChange={handleChange}
+                    type='number'
+                    name='price'
+                    id='price'
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='days-container flex '>
+              <div className='title-nav'>
+                <div className='desc'>
+                  <h1>Insert your days to make</h1>
+                </div>
+              </div>
+              <div className='search-tags'>
+                <div className='desc' htmlFor='name'>
+                  <label htmlFor='daysToMake'></label>
+                  <input
+                    value={gig.daysToMake}
+                    onChange={handleChange}
+                    type='number'
+                    name='daysToMake'
+                    id='daysToMake'
+                    required
+                  />
+                </div>
+              </div>
+            </div>
 
-           <div className='note'>
-             <p>
-               <span>Please note: </span> Some categories require that sellers
-               verify their skills.
-             </p>
-           </div>
-         </div>
+            <div className='image-container flex '>
+              <div className='title-nav'>
+                <div className='desc'>
+                  <h1>Insert your image</h1>
+                </div>
+              </div>
+              <div className='search-tags'>
+                <div className='desc' htmlFor='name'>
+                  <div className='img-upload-container'>
+                    <label>
+                      Images
+                      <input
+                        value={gig.imgUrls}
+                        type='file'
+                        name='imgUrls'
+                        id='imgUrls'
+                        multiple
+                        onChange={onImgUpload}
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-         <div className='btn'>
-           <Link onClick={onSaveGig} to='/gigs'>
-             <span className='create-btn align-center'>Save & Continue</span>
-           </Link>
-         </div>
-       </section>
-         </form>
-     </section>
-   )
- }
+            <div className='note'>
+              <p>
+                <span>Please note: </span> Some categories require that sellers
+                verify their skills.
+              </p>
+            </div>
+          </div>
+
+          <div className='btn'>
+            <Link onClick={onSaveGig} to='/gigs'>
+              <span className='create-btn align-center'>Save & Continue</span>
+            </Link>
+          </div>
+        </section>
+      </form>
+    </section>
+  )
+}

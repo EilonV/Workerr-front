@@ -57,6 +57,7 @@ function save(gig) {
     return storageService.put(STORAGE_KEY, gig)
   } else {
     gig._id = utilService.makeId(4)
+    gig.reviews = []
     return storageService.post(STORAGE_KEY, gig)
   }
 }
@@ -89,7 +90,7 @@ const gDefaultGigs = [
     imgUrl: [
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/zi9vophqo9wyccfyk4rc.png',
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/pj8rebjsi6jubjcy2nls.png',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/241489346/original/eb93901PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/lulc4xy4klf6owylfyye.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/241489346/original/2e78f8bc27de727f6c45a6f4cb452f0f5ded6df8.jpg',
     ],
     tags: [
@@ -253,11 +254,8 @@ const gDefaultGigs = [
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
     imgUrl: [
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/123919942/original/33e571244a54683576c40f9b9927884721fe300e.png',
-      ,
       'https://fiverr-res.cloudinary.com/video/upload/so_4.601842,t_gig_cards_web/yomuejfmqhkegmpafswh.png',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/17859329/original/51PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR2b283.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/17859329/original/3ece9b763057a044408eca30a6b85c3b669f0426.jpg',
-      ,
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/uk1dqfe088n4mimnmehr.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/128509090/original/d39a3d19717cbfb56b2e62af6e7bcf2804dd0577.jpg',
     ],
@@ -631,7 +629,7 @@ const gDefaultGigs = [
       'https://fiverr-res.cloudinary.com/video/upload/so_0.58378,t_gig_cards_web/ijxnutocxnyakosbpb8o.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/120985144/original/2af5368f982e7610ec79eec3f2059d4f204ca28d.jpg',
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/ouol13mlgj1sqfnxuskr.png',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/101678310/original/91PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR3ff83.png',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/zxjfjalk6es9sjsipnqd.png',
     ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
@@ -1053,7 +1051,7 @@ const gDefaultGigs = [
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
     imgUrl: [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/215625652/original/00d1b8ea3d0f4a6759477a6afb0009f31997787d.jpeg',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/110773529/original/1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eRd00fba.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/266007109/original/44294f4ab3fbbc10f37c226773ea89bfdb9a2559.jpg',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/110773529/original/48e9c6c2c62262d4057a7e6a4e32769c40313b2c.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/110773529/original/00ee0fe1bf1a78dcae9419cf45b4efcf3e65d640.png',
     ],
@@ -1428,7 +1426,7 @@ const gDefaultGigs = [
       'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/wzxpaqjjucltryekgrdb.png',
       'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/utsjaj71db2xmky9vf5s.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/223362680/original/c65f64bf3d5c2202ba5f290b61b22fdd9180c857.jpg',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/223362680/original/22bfca368578b8e0d117cca4cd1fc8f3606f333d.jfif',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/bpknfvxh9uhpecdzvd8s.png',
     ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
@@ -1481,7 +1479,7 @@ const gDefaultGigs = [
       'https://fiverr-res.cloudinary.com/videos/so_33.748866,t_main1,q_auto,f_auto/i4gsxs2r0rw051dokhgn/write-a-metal-or-rock-song-for-you.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/164392140/original/3090d7dab262f2a1c8695fd43318f600e23078a2.jpg',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/164392140/original/876a1d72f28acd0cac20b0fee477a494819fe982.jpg',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/164392140/original/9a1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR543b.jpg',
+      'https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/kmukuavgn5mdlcz8mnyu.png',
     ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
@@ -1693,7 +1691,7 @@ const gDefaultGigs = [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/138364513/original/f3a92aac76ed783e1cf74d00b2c4550267de0e42.jpg',
       'https://fiverr-res.cloudinary.com/video/upload/so_0.118363,t_gig_cards_web/ui3fsxluh7gotnpt3at3.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/168349143/original/6950fb6dceb977965dc9f50472f8ec0c6eeffcb1.jpg',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/168349143/original/cceca41PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR.jpg',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/139277870/original/c548f8782a599fd479b43622f3ab277a4d0281ae.jpg',
     ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
@@ -1747,7 +1745,7 @@ const gDefaultGigs = [
       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/235091809/original/661afeec5dba47fbe267fc596b290eddcca39a77.jpg',
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/svkawawlwomuifyajphc.png',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/222985078/original/082cdc0adcd036ae35c7c77ed91f7271afffa55d.png',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs3/222985078/original/0b1PbqpeGUtu6gwPq2ujNkcnqEkDHqHqk2eR19b0.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/133928692/original/67bfb66b0cbda9776dd81b53cd01c70c1b8ecb86.jpg',
     ],
     tags: ['logo - design', 'artisitic', 'proffesional', 'accessible'],
     likedByUsers: ['mini-user'],
@@ -2116,7 +2114,7 @@ const gDefaultGigs = [
       'Youre in the right place For $40 Ill draw you a colorfull and modern  trippy dripping style illustration in  less than 7 days. Perfect for stickers, your website, app, blog, album or single  cover or for anything you want.   Let me make your ideas come to life with a lot of dripping color.',
     imgUrl: [
       'https://fiverr-res.cloudinary.com/videos/so_5.346422,t_main1,q_auto,f_auto/ih51gpio6px7ub1opv88/be-your-edm-ghost-producer.png',
-      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/113810060/original/1PbqpeGbHi8bXhDyMP2m1NDUSiYmznAJdJzX36DD.png',
+      'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/138929602/original/77701e46299279bb4cb93e923208c05d9f476b40.jpg',
       'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/113175820/original/0af191b1607868e6b2d2c54a3962571cee7a558d.jpeg',
       'https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/mxhzd3qxbsdqrjs307lr.png',
     ],
@@ -2146,7 +2144,7 @@ const gDefaultGigs = [
   },
   {
     _id: '6ypR',
-    title: 'I will write and produce fun childrens music and kids songs',
+    title: 'I will write and produce fun music songs',
     price: 398,
     owner: {
       _id: 'u101',

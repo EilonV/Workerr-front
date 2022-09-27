@@ -5,19 +5,17 @@ import User from '../assets/imgs/icons/user.svg'
 import { useEffect, useState } from 'react'
 import { userService } from '../services/user.service'
 
-
 export const UserNav = () => {
   const [user, setUser] = useState(null)
-  
+
   useEffect(() => {
-
     loadUser()
-
   }, [])
 
   const loadUser = async () => {
     const user = await userService.getLoggedinUser()
     setUser(user)
+    // console.log('user:', user)
   }
 
   // const onRemoveUser = (userId) => {
@@ -31,7 +29,7 @@ export const UserNav = () => {
   //     navigate('/gigs')
   //   }))
   // }
-
+  if (!user) return ''
   console.log(user)
   return (
     <div className='profile-user'>
@@ -66,12 +64,12 @@ export const UserNav = () => {
                 <p className='from'>From</p>
               </div>
 
-              <p className='country'>''</p>
+              <p className='country'>{user.country}</p>
             </div>
 
             <div className='second flex space-between'>
               <div className='member flex'>
-                <img className='user' src='' alt='user' />
+                <img className='user' src={User} alt='user' />
                 <p className='from'>Member since</p>
               </div>
               <p className='first year'>Sep 2021</p>
