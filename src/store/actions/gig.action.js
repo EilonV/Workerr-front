@@ -24,11 +24,14 @@ export function removeGig(gigId, cb) {
   }
 }
 
-export function addGig(gig) {
+export function addGig(gig, cb) {
   return async (dispatch) => {
     try {
       const savedGig = await gigService.save(gig)
+      // console.log('savedGig:', savedGig)
+
       dispatch({ type: 'ADD_GIG', gig: savedGig })
+      cb()
     } catch (err) {
       console.error('Oops:', err)
     }

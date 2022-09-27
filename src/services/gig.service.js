@@ -57,6 +57,7 @@ function save(gig) {
     return storageService.put(STORAGE_KEY, gig)
   } else {
     gig._id = utilService.makeId(4)
+    gig.reviews = []
     return storageService.post(STORAGE_KEY, gig)
   }
 }

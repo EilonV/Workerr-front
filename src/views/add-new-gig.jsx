@@ -7,17 +7,22 @@ import { addGig, updateGig } from '../store/actions/gig.action'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { uploadService } from '../services/upload.service'
+import { userService } from '../services/user.service'
 
 export const AddNewGig = () => {
   // const user = JSON.parse(sessionStorage.loggedinUser)
-  // const loggedinUser = sessionStorage.loggedinUser
-  //   ? JSON.parse(sessionStorage.loggedinUser)
-  //   : ''
+  const loggedinUser = sessionStorage.loggedinUser
+    ? JSON.parse(sessionStorage.loggedinUser)
+    : ''
 
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const gigs = useSelector((state) => state.gigModule.gigs)
+
+  const user = userService.getById(loggedinUser._id).then((res) => {
+    console.log('res:', res)
+  })
 
   const title = 'I will '
   const [gig, handleChange, setGig] = useForm({
@@ -25,9 +30,23 @@ export const AddNewGig = () => {
     price: '',
     daysToMake: '',
     longerDescription: '',
-    tags: '',
+    tags: [],
     order: '',
-    imgUrls: [],
+    imgUrl: [],
+    owner: {
+      _id: loggedinUser._id,
+      fullname: loggedinUser.fullname,
+      ownerCountry: loggedinUser.country,
+      imgUrl: loggedinUser.imgUrl,
+      memberSince: loggedinUser.memberSince,
+      username: loggedinUser.username,
+      password: loggedinUser.password,
+      rate: loggedinUser.rate,
+      // avgResponseTime: '1 hour',
+      // lastDelivery: 'about 17 hours',
+      ownerLetter: loggedinUser.ownerLetter,
+      reviews: loggedinUser.reviews,
+    },
   })
 
   const inputRef = useRef()
@@ -48,28 +67,29 @@ export const AddNewGig = () => {
 
   const onSaveGig = () => {
     // console.log('onSaveGig:active')
-
     //  ev.preventDefault()
-    if (gig._id) {
-      dispatch(updateGig(gig)).then(() => {
+    dispatch(
+      addGig(gig, () => {
         navigate('/gigs')
       })
-    } else {
-      dispatch(addGig(gig)).then(() => {
-        navigate('/gigs')
-      })
-    }
+    )
   }
 
   const handleSelect = (ev) => {
     // console.log('ev:', ev.target.value)
     const updatedTags = [...gig.tags, ev.target.value]
+    // console.log('updatedTags:', updatedTags)
+
     setGig({ ...gig, tags: updatedTags })
   }
 
-  const onImgUpload = (ev) => {
-    const imgUrls = []
-    uploadService.uploadImg(ev).then((res) => res.url)
+  const onImgUpload = async (ev) => {
+    const res = await uploadService.uploadImg(ev)
+    console.log('res:', res.url)
+    const imgUrl = res.map((image) => image.url)
+
+    imgUrl.push(res.url)
+    // console.log('imgUrl:', imgUrl)
   }
 
   return (
@@ -230,14 +250,15 @@ export const AddNewGig = () => {
                   <div className='img-upload-container'>
                     <label>
                       Images
-                      <input type='file' onChange={onImgUpload} />
+                      <input
+                        value={gig.imgUrls}
+                        type='file'
+                        name='imgUrls'
+                        id='imgUrls'
+                        multiple
+                        onChange={onImgUpload}
+                      />
                     </label>
-                    {/* <input
-                      value={gig.imgUrl}
-                      type='file'
-                      name='imgUrl'
-                      id='imgUrl'
-                    /> */}
                   </div>
                 </div>
               </div>
