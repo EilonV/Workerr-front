@@ -1,47 +1,42 @@
 .app-header-explore {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  font-size: 16px;
 
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    font-size: 16px;
+  .logo {
+    font-size: 2em;
+    letter-spacing: -1.5px;
+    font-family: Work Sans Bold;
+    font-size: 30px;
+    padding-bottom: 7px;
+  }
 
-    .logo {
-        font-size: 2em;
-        letter-spacing: -1.5px;
-        font-family: Work Sans Bold;
-        font-size: 30px;
-        padding-bottom: 7px;
+  .header-search {
+    flex-grow: 1;
+    margin: 0 30px;
+
+    .header-input {
+      width: 80%;
+      padding: 10px 2px 10px 16px;
+      border: 1px $header-input-gray solid;
+      border-radius: 4px 0 0 4px;
+      font-size: 18px;
+      font-weight: 400;
     }
 
-    .header-search {
-        flex-grow: 1;
-        margin: 0 30px;
-
-        .header-input {
-            width: 80%;
-            padding: 10px 2px 10px 16px;
-            border: 1px $header-input-gray solid;
-            border-radius: 4px 0 0 4px;
-            font-size: 18px;
-            font-weight: 400;
-        }
-
-        .header-search-btn {
-            background-color: $black;
-            padding: 8px 15px;
-            border-radius: 0 4px 4px 0;
-            border-color: transparent;
-        }
-
-        .header-search-btn:hover {
-            opacity: 0.9;
-        }
+    .header-search-btn {
+      background-color: $black;
+      padding: 8px 15px;
+      border-radius: 0 4px 4px 0;
+      border-color: transparent;
     }
 
-    .header {
-        height: 100%;
+    .header-search-btn:hover {
+      opacity: 0.9;
     }
+  }
 
     .header-nav {
         .header-join {
@@ -85,6 +80,7 @@
         font-size: 45px;
     }
 
+  .header-nav {
     .header-join {
         padding: 8px 16px;
         display: flex;
@@ -101,8 +97,21 @@
         color: $bright-green;
 
         a {
-            color: $bright-green;
+          color: white !important;
         }
+      }
+    }
+  }
+  .header-nav {
+    span {
+      padding: 0 10px;
+      font-weight: 600;
+      color: $bright-gray;
+      transition: 0.2s;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  }
 
         &:hover {
             color: white;
@@ -114,9 +123,28 @@
     a:hover {
         color: $bright-green;
     }
+  }
 
-    a.active:not(:last-child) {
-        color: $bright-green;
+  a:hover {
+    color: $bright-green;
+  }
+
+  a.active:not(:last-child) {
+    color: $bright-green;
+  }
+
+  .header-join:hover {
+    background-color: $bright-green;
+  }
+
+  .header-signin {
+    font-weight: 600;
+    cursor: pointer;
+    color: $bright-gray;
+    padding: 0 10px;
+
+    .header-signin :hover {
+      color: $bright-green;
     }
 
     .header-join:hover {

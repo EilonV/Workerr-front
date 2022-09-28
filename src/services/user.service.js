@@ -51,7 +51,6 @@ async function getById(userId) {
   // console.log(userId);
   const user = await storageService.get(STORAGE_KEY_LOGGEDIN_USER, userId)
   // const user = await httpService.get(`user/${userId}`)
-  console.log('HFGHGF', user)
   // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
   // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
   // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)

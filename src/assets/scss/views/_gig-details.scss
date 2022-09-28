@@ -169,6 +169,17 @@
       }
     }
 
+    .details-carousel {
+      .big-slider {
+        img {
+          width: 625px;
+        }
+      }
+      button.slick-next {
+        right: 60px !important;
+      }
+    }
+
     .seller-desc {
       width: 662px;
       height: 259px;
@@ -374,6 +385,28 @@
     &:hover {
       background-color: #62646a;
       color: #ffffff;
+    }
+  }
+  .reviews-list {
+  }
+
+  .review-container {
+    border-bottom: 1px solid #404145;
+
+    .add-review-btn {
+      width: 100%;
+      text-align: center;
+      width: 250px;
+      height: 50px;
+      background-color: #1dbf73;
+      color: #ffffff;
+      border: 0;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      textarea {
+        width: 50%;
+      }
     }
   }
 }

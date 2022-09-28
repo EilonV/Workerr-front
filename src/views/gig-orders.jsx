@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useNavigate, useParams, NavLink } from 'react-router-dom'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
+import { ProfileHeader } from '../cmps/profile-header'
 import { UserNav } from '../cmps/user-nav'
 import { loadOrders, removeOrder } from '../store/actions/order.action'
 import { orderService } from '../services/order.service'
@@ -55,10 +56,11 @@ export const Orders = () => {
     <section>
       <AppHeaderExplore />
       <HeaderCategories orders={orders} />
+      <ProfileHeader />
       <div className='features main-layout'>
         <div className='profile-user '>
           <div className='page-container flex '>
-            <UserNav />
+            {/* <UserNav /> */}
             <div className='orders-container'>
               <section className='total-orders'>
                 <div className='title flex space-between'>

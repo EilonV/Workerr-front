@@ -2,17 +2,33 @@
   width: 100%;
   h2 {
     width: 300px;
-    margin-left: 750px;
+    margin-left: 450px;
     margin-top: 50px;
     box-shadow: 4px 1px 10px 4px $footer-line-gray;
     text-align: center;
     border-radius: 4px;
     border: 1px solid $bright-green;
     &:hover {
-      background-color: #1dbf73;
+      background-color: $bright-green;
     }
   }
 }
+.app-header-nav {
+  .up-nav {
+    margin-top: 50px;
+    margin-left: 91px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    a {
+      padding-right: 15px;
+    }
+  }
+}
+
 .gig-profile-container {
   .profile-user {
     margin-top: 51px;
@@ -36,6 +52,71 @@
         margin-left: 26px;
         font-size: 14px;
         line-height: 18.5px;
+      }
+    }
+    .gig-owner {
+      display: grid;
+      height: 250px;
+      width: 230px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .gig-owner-details {
+        width: 230px;
+        height: 250px;
+        text-align: center;
+        border: 1px solid $bright-gray;
+        margin-right: 20px;
+        margin-top: 20px;
+        img {
+          height: 145px;
+          width: 230px;
+        }
+        h3 {
+          height: 40px;
+          font-size: 15px;
+        }
+        a {
+          width: 75px;
+          padding-bottom: 20px;
+          opacity: 0;
+          z-index: -1;
+          color: $bright-green;
+          font-size: 1em;
+          border: 0;
+          cursor: pointer;
+          transition: 0.2s;
+        }
+
+        &:hover {
+          a {
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+      }
+      .create-new-gig {
+        margin-top: 20px;
+        height: 250px;
+        width: 230px;
+        text-align: center;
+        border: 1px solid $bright-gray;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        .plus {
+          content: '+';
+          background-color: #78cdd2;
+          color: #fff;
+          font-size: 48px;
+          font-weight: 400;
+          width: 66px;
+          height: 66px;
+          border-radius: 50%;
+          display: block;
+          margin: 80px auto 20px;
+          line-height: 69px;
+        }
       }
     }
     .new-gig {
@@ -83,7 +164,7 @@
         }
 
         .create-btn {
-          background-color: #1dbf73;
+          background-color: $bright-green;
           color: white;
           width: 150px;
           height: 40px;
@@ -95,12 +176,10 @@
       }
     }
   }
-  .search-tags{
+  .search-tags {
     height: 100px;
   }
-  h6{
-
+  h6 {
     margin: 0;
   }
-  
 }
