@@ -1,7 +1,7 @@
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 
 export const ReviewPreview = ({ review }) => {
-  console.log(review)
+  // console.log(review)
 
   return (
     <div className='seller-reviews flex column'>

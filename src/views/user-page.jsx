@@ -6,6 +6,7 @@ import { userService } from '../services/user.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { UserNav } from '../cmps/user-nav'
+import { ProfileHeader } from '../cmps/profile-header'
 
 export const UserPage = () => {
   const loggedinUser = sessionStorage.loggedinUser
@@ -17,9 +18,7 @@ export const UserPage = () => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-
     loadUser()
-
   }, [])
 
   const loadUser = async () => {
@@ -31,9 +30,9 @@ export const UserPage = () => {
     <section>
       <AppHeaderExplore />
       <HeaderCategories />
-
-      {sessionStorage.loggedinUser ? (
-        <section className='gig-profile-container main-layout'>
+      <section className='gig-profile-container main-layout'>
+        <ProfileHeader />
+        {sessionStorage.loggedinUser ? (
           <section className='user-page-orders flex'>
             <UserNav />
 
@@ -95,14 +94,14 @@ export const UserPage = () => {
               </div>
             </div>
           </section>
-        </section>
-      ) : (
-        <Link to={'/login'}>
-          <div className='login-modal'>
-            <h2>Click here to log in</h2>
-          </div>
-        </Link>
-      )}
+        ) : (
+          <Link to={'/login'}>
+            <div className='login-modal'>
+              <h2>Click here to log in</h2>
+            </div>
+          </Link>
+        )}
+      </section>
     </section>
   )
 }

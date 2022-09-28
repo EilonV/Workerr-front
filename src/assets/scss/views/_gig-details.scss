@@ -143,6 +143,17 @@
       }
     }
 
+    .details-carousel {
+      .big-slider {
+        img {
+          width: 625px;
+        }
+      }
+      button.slick-next {
+        right: 60px !important;
+      }
+    }
+
     .seller-desc {
       width: 662px;
       height: 259px;
@@ -176,29 +187,18 @@
       position: sticky;
       top: 150px;
       width: 25.75em;
-      height: 23.875em;
+      height: 21.875em;
       border: 1px solid $border-gray;
+      padding-top: 32px;
 
-      .levels {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        line-height: 24px;
-        font-weight: 800;
-        padding: 16px;
-        // height: 24px;
-        border-bottom: 1px solid $border-gray;
-        label {
-          width: 104px;
-          height: 24px;
-        }
-
-        .basic {
-          // border-bottom: 3px solid #1dbf73;
-          background-color: #fff;
-          color: #1dbf73;
-          text-align: center;
-          // background-color: #1dbf73;
-        }
+      .basic {
+        // border-bottom: 3px solid #1dbf73;
+        background-color: #fff;
+        color: #1dbf73;
+        text-align: center;
+        // background-color: #1dbf73;
       }
+
       .package-title {
         font-size: 24px;
         padding-bottom: 1rem;
@@ -307,6 +307,28 @@
     &:hover {
       background-color: #62646a;
       color: #ffffff;
+    }
+  }
+  .reviews-list {
+  }
+
+  .review-container {
+    border-bottom: 1px solid #404145;
+
+    .add-review-btn {
+      width: 100%;
+      text-align: center;
+      width: 250px;
+      height: 50px;
+      background-color: #1dbf73;
+      color: #ffffff;
+      border: 0;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      textarea {
+        width: 50%;
+      }
     }
   }
 }

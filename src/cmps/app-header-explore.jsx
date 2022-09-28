@@ -78,7 +78,7 @@ export function AppHeaderExplore({ user }) {
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
           <NavLink to='/user'>User </NavLink>
-          <NavLink to='/orders'>Order </NavLink>
+          {/* <NavLink to='/orders'>Order </NavLink> */}
           {sessionStorage.loggedinUser ? (
             <span className='user-info'>
               <Link to={`user/`}>

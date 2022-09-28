@@ -13,6 +13,22 @@
     }
   }
 }
+.app-header-nav {
+  .up-nav {
+    margin-top: 50px;
+    margin-left: 91px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    a {
+      padding-right: 15px;
+    }
+  }
+}
+
 .gig-profile-container {
   .profile-user {
     margin-top: 51px;
@@ -95,12 +111,10 @@
       }
     }
   }
-  .search-tags{
+  .search-tags {
     height: 100px;
   }
-  h6{
-
+  h6 {
     margin: 0;
   }
-  
 }

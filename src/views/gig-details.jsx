@@ -7,30 +7,39 @@ import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
 import { HeaderCategories } from '../cmps/header-categories'
-import Slider from "react-slick";
+import Slider from 'react-slick'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import Clock from '../assets/imgs/icons/clock.svg'
 import Sync from '../assets/imgs/icons/sync.svg'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { AddReview } from '../cmps/add-review'
 
 export const GigDetails = () => {
-
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
+  const [nav1, setNav1] = useState()
+  const [nav2, setNav2] = useState()
 
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpen = () => {
+    setIsModalOpen(true)
+  }
+
+  // Define function that will close the modal
+  const handleClose = () => {
+    setIsModalOpen(false)
+  }
+
   useEffect(() => {
     const id = params.id
     loadGig(id)
   }, [])
-
-
 
   const loadGig = async (gigId) => {
     const gig = await gigService.getById(gigId)
@@ -45,7 +54,7 @@ export const GigDetails = () => {
     )
   }
 
-  console.log(gig)
+  // console.log(gig)
 
   if (gig)
     return (
@@ -60,7 +69,6 @@ export const GigDetails = () => {
               </div>
 
               <div className='seller-avatar-top flex row align-center gap'>
-
                 <img
                   className='gig-owner-image-top border-radius'
                   src={gig.owner.imgUrl}
@@ -79,12 +87,19 @@ export const GigDetails = () => {
                 5 ({gig.reviews.length})
               </div>
 
-
               <div className='details-carousel'>
                 <div>
                   <div className='big-slider'>
-                    <Slider slidesToShow={1} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
-                      {gig.imgUrl.map(img => <div className='big-slider-img'><img src={img} alt="" /></div>)}
+                    <Slider
+                      slidesToShow={1}
+                      asNavFor={nav2}
+                      ref={(slider1) => setNav1(slider1)}
+                    >
+                      {gig.imgUrl.map((img) => (
+                        <div className='big-slider-img'>
+                          <img src={img} alt='' />
+                        </div>
+                      ))}
                     </Slider>
                   </div>
 
@@ -96,10 +111,13 @@ export const GigDetails = () => {
                       swipeToSlide={true}
                       focusOnSelect={true}
                     >
-                      {gig.imgUrl.map(img => <div className='small-slider-img'><img src={img} alt="" /></div>)}
+                      {gig.imgUrl.map((img) => (
+                        <div className='small-slider-img'>
+                          <img src={img} alt='' />
+                        </div>
+                      ))}
                     </Slider>
                   </div>
-
                 </div>
               </div>
               <h2 className='desc'>About This Gig</h2>
@@ -173,6 +191,17 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
+
+            <section className='review-container'>
+              <button className='add-review-btn-1' onClick={handleClose}>
+                Add review
+              </button>
+              <button className='close-review-btn-1' onClick={handleOpen}>
+                Close
+              </button>
+              {!isModalOpen && <AddReview />}
+            </section>
+
             <section className=''>
               <Link className='btn' to={`/gig/edit/${gig._id}`}>
                 Edit
@@ -186,11 +215,7 @@ export const GigDetails = () => {
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
               <div>
-                <div className='levels flex space-between'>
-                  <lab className='basic'>Basic</lab>
-                  <p className='standard'>Standard</p>
-                  <p className='premium'>Premium</p>
-                </div>
+                <div className='levels flex space-between'></div>
               </div>
               <section>
                 <div className='details'>
@@ -220,6 +245,7 @@ export const GigDetails = () => {
                         </li>
                       ))}
                     </ul>
+
                     <Link
                       to={`/gig/details/${gig._id}/checkout`}
                       className='procced-btn'

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useNavigate, useParams, NavLink } from 'react-router-dom'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
+import { ProfileHeader } from '../cmps/profile-header'
 import { UserNav } from '../cmps/user-nav'
 import { loadOrders, removeOrder } from '../store/actions/order.action'
 
@@ -49,22 +50,23 @@ export const Orders = () => {
     <section>
       <AppHeaderExplore />
       <HeaderCategories orders={orders} />
+      <ProfileHeader />
       <div className='features main-layout'>
         <div className='profile-user '>
           <div className='page-container flex '>
-            <UserNav />
+            {/* <UserNav /> */}
             <div className='orders-container'>
-            <section className='total-orders'>
-              <div className='title flex space-between'>
-                <p>Total orders &nbsp; </p>
-                <p className='num-orders'>
-                  {orders.length === 1
-                    ? orders.length + ' order'
-                    : orders.length + ' orders'}
-                </p>
-                {/* <p>This month's orders &nbsp; </p> */}
-              </div>
-              {/* <div className='title flex space-between'>
+              <section className='total-orders'>
+                <div className='title flex space-between'>
+                  <p>Total orders &nbsp; </p>
+                  <p className='num-orders'>
+                    {orders.length === 1
+                      ? orders.length + ' order'
+                      : orders.length + ' orders'}
+                  </p>
+                  {/* <p>This month's orders &nbsp; </p> */}
+                </div>
+                {/* <div className='title flex space-between'>
                 <p className='num-orders'>
                   Revenues: <span className='price'>$ 0.00</span> &nbsp;
                 </p>
@@ -81,37 +83,37 @@ export const Orders = () => {
                 <p>Quantity:0 &nbsp;</p>
               </div> */}
 
-              <div className='table-orders'>
-                {orders.map((order) => (
-                  <table key={order._id}>
-                    <tr>
-                      <th> Date </th>
-                      <th> Buyer </th>
-                      <th> Gig</th>
-                      <th> Seller name </th>
-                      <th> Price</th>
-                      <th> Status </th>
-                      <th> Actions </th>
-                    </tr>
-                    <td>{format(order.createdAt)} </td>
-                    <td>{order.buyer.fullname} </td>
-                    <td>{order.gig._id} </td>
-                    <td>{order.seller.fullname} </td>
-                    <td>${order.gig.price} </td>
-                    <td className='status'>{order.status} </td>
-                    <td>
-                      <button
-                        className='delete-btn'
-                        onClick={() => onRemoveOrder(order._id)}
-                      >
-                        Delete
-                      </button>
-                      {/* <button>Update</button> */}
-                    </td>
-                  </table>
-                ))}
-              </div>
-            </section>
+                <div className='table-orders'>
+                  {orders.map((order) => (
+                    <table key={order._id}>
+                      <tr>
+                        <th> Date </th>
+                        <th> Buyer </th>
+                        <th> Gig</th>
+                        <th> Seller name </th>
+                        <th> Price</th>
+                        <th> Status </th>
+                        <th> Actions </th>
+                      </tr>
+                      <td>{format(order.createdAt)} </td>
+                      <td>{order.buyer.fullname} </td>
+                      <td>{order.gig._id} </td>
+                      <td>{order.seller.fullname} </td>
+                      <td>${order.gig.price} </td>
+                      <td className='status'>{order.status} </td>
+                      <td>
+                        <button
+                          className='delete-btn'
+                          onClick={() => onRemoveOrder(order._id)}
+                        >
+                          Delete
+                        </button>
+                        {/* <button>Update</button> */}
+                      </td>
+                    </table>
+                  ))}
+                </div>
+              </section>
             </div>
           </div>
         </div>
