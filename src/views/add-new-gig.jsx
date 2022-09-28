@@ -78,6 +78,7 @@ export const AddNewGig = () => {
         refreshPage()
       })
     )
+    console.log('newgigs:', gig)
   }
 
   const handleSelect = (ev) => {

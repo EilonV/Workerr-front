@@ -8,13 +8,37 @@ import { gigService } from '../services/gig.service'
 import { addGig, updateGig } from '../store/actions/gig.action'
 
 export const GigEdit = () => {
+  const loggedinUser = sessionStorage.loggedinUser
+    ? JSON.parse(sessionStorage.loggedinUser)
+    : ''
+
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const title = 'I will '
   const [gig, handleChange, setGig] = useForm({
-    title: '',
+    title: title,
     price: '',
+    daysToMake: '',
+    longerDescription: '',
+    tags: [],
+    order: '',
+    imgUrl: [],
+    owner: {
+      _id: loggedinUser._id,
+      fullname: loggedinUser.fullname,
+      ownerCountry: loggedinUser.country,
+      imgUrl: loggedinUser.imgUrl,
+      memberSince: loggedinUser.memberSince,
+      username: loggedinUser.username,
+      password: loggedinUser.password,
+      rate: loggedinUser.rate,
+      // avgResponseTime: '1 hour',
+      // lastDelivery: 'about 17 hours',
+      ownerLetter: loggedinUser.ownerLetter,
+      reviews: loggedinUser.reviews,
+    },
   })
 
   const inputRef = useRef()
@@ -33,25 +57,25 @@ export const GigEdit = () => {
       })
   }, [])
 
-  const onSaveGig = async (ev) => {
-    ev.preventDefault()
-    if (gig._id) dispatch(updateGig(gig))
-    else dispatch(addGig(gig))
-    navigate('/gigs')
-  }
-
-  // const onSaveGig = (ev) => {
+  // const onSaveGig = async (ev) => {
   //   ev.preventDefault()
-  //   if (gig._id) {
-  //     dispatch(updateGig(gig)).then(() => {
-  //       navigate('/gigs')
-  //     })
-  //   } else {
-  //     dispatch(addGig(gig)).then(() => {
-  //       navigate('/gigs')
-  //     })
-  //   }
+  //   if (gig._id) dispatch(updateGig(gig))
+  //   else dispatch(addGig(gig))
+  //   navigate('/gigs')
   // }
+
+  const onSaveGig = (ev) => {
+    ev.preventDefault()
+    if (gig._id) {
+      dispatch(updateGig(gig)).then(() => {
+        navigate('/user')
+      })
+    } else {
+      dispatch(addGig(gig)).then(() => {
+        navigate('/gigs')
+      })
+    }
+  }
 
   return (
     <section className='gig-edit main-layout'>
