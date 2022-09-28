@@ -80,13 +80,14 @@ export function AppHeaderExplore({ user }) {
           <NavLink to='/user'>User </NavLink>
           <NavLink to='/orders'>Order </NavLink>
           {sessionStorage.loggedinUser ? (
-            <span className='user-info'>
+            <div className='flex'>
               <Link to={`user/`}>
                 {/* {user.imgUrl && <img src={user.imgUrl} />}
                             {user.fullname} */}
               </Link>
-              <button onClick={handleLogout}>Logout</button>
-            </span>
+              <button className='logout-btn' onClick={handleLogout}>Logout</button>
+            </div>
+
           ) : (
             <section className=' flex row gap'>
               <div

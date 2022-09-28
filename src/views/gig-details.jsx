@@ -46,6 +46,7 @@ export const GigDetails = () => {
   }
 
   console.log(gig)
+  const user = (sessionStorage.loggedinUser) ? JSON.parse(sessionStorage.loggedinUser) : ''
 
   if (gig)
     return (
@@ -71,12 +72,15 @@ export const GigDetails = () => {
                 </Link>
                 <h4>{gig.owner.level}|</h4>
                 <h4>{gig.owner.rate}</h4>|
-                <img
-                  className='gig-review-star'
-                  src={StarFill}
-                  alt='star-fill'
-                />
-                5 ({gig.reviews.length})
+                <div className='flex'>
+                  <img
+                    className='gig-review-star'
+                    src={StarFill}
+                    alt='star-fill'
+                  />
+
+                  <span>{gig.owner.rate}</span>({gig.reviews.length})
+                </div>
               </div>
 
 
@@ -134,7 +138,7 @@ export const GigDetails = () => {
                       alt='star-fill'
                     />
                     <p className='rate'>
-                      {gig.owner.rate}({gig.reviews.length})
+                      <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
                     </p>
                   </div>
                   <button className='btn-contact'>Contact Me</button>
@@ -173,24 +177,23 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
-            <section className=''>
-              <Link className='btn' to={`/gig/edit/${gig._id}`}>
-                Edit
-              </Link>
-              <button className='btn' onClick={() => onRemoveGig(gig._id)}>
-                Delete
-              </button>
-            </section>
+            {user._id === gig.owner._id &&
+              <section className='edit-dlt-buttons flex justify-center'>
+                <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
+                  Edit
+                </Link>
+                <button className='btn delete' onClick={() => onRemoveGig(gig._id)}>
+                  Delete
+                </button>
+              </section>
+            }
+
           </div>
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
               <div>
-                <div className='levels flex space-between'>
-                  <lab className='basic'>Basic</lab>
-                  <p className='standard'>Standard</p>
-                  <p className='premium'>Premium</p>
-                </div>
+
               </div>
               <section>
                 <div className='details'>
@@ -206,10 +209,7 @@ export const GigDetails = () => {
 
                         <span>{gig.daysToMake} Days To Make</span>
                       </div>
-                      <div className='flex'>
-                        <img className='svg sync' src={Sync} alt='sync' />
-                        <span>Revisions</span>
-                      </div>
+
                     </div>
 
                     <ul className='gig-inclusive grid'>
@@ -220,12 +220,26 @@ export const GigDetails = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link
+                    {user ?
+                      <Link
+                        to={`/gig/details/${gig._id}/checkout`}
+                        className='procced-btn'
+                      >
+                        Continue <span>(${gig.price})</span>
+                      </Link> :
+                      <Link
+                        to={`/gig/details/${gig._id}`}
+                        className='procced-btn'
+                      >
+                        Log in to continue
+                      </Link>}
+
+                    {/* <Link
                       to={`/gig/details/${gig._id}/checkout`}
                       className='procced-btn'
                     >
                       Continue <span>(${gig.price})</span>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </section>

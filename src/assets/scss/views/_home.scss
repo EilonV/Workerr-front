@@ -1,4 +1,8 @@
 .home {
+    @include for-mobile-layout {
+        margin: auto;
+    }
+
     .filler {
         height: 700px;
     }
@@ -119,7 +123,8 @@
                     form {
                         flex-direction: column;
                     }
-                    button{
+
+                    button {
                         border-radius: 4px !important;
                     }
 
@@ -165,6 +170,7 @@
                     top: 16px;
                     left: 16px;
                     z-index: 1;
+
                     @include for-mobile-layout {
                         top: 26px;
                     }

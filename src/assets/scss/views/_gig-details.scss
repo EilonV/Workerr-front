@@ -13,16 +13,15 @@
   padding-top: 2.125rem;
 
   .main-details {
+    width: 100%;
+
     .text-title {
-      height: 72px;
-      margin-bottom: 1em;
+      padding-bottom: 16px;
 
       h1 {
         color: #404145;
         font-size: 1.75em;
         line-height: 1.5em;
-        margin-bottom: 1em;
-        padding-bottom: 16px;
       }
     }
 
@@ -32,7 +31,13 @@
 
     .seller-avatar-top {
       padding-bottom: 24px;
+
       //   height: 121px;
+      span {
+        color: $yellow;
+        font-weight: 600;
+        padding: 0 4px;
+      }
 
       .seller-name-top {
         font-size: 16px;
@@ -50,33 +55,40 @@
         image-rendering: auto;
       }
     }
+
     .name {
       font-weight: 600;
     }
+
     .gig-img {
       width: 600px;
       padding-bottom: 50px;
       image-rendering: auto;
     }
+
     .desc {
       height: 28px;
       padding-bottom: 25px;
+
       .desc-list {
         margin-left: 24px;
         height: 48px;
       }
     }
-    section > p {
+
+    section>p {
       //   height: 240px;
       padding-bottom: 20px;
       border-bottom: 1px $footer-line-gray solid;
       padding-bottom: 44px;
     }
+
     .genre {
       height: 68px;
       padding-top: 20px;
       font-size: 1em;
       line-height: 24px;
+
       .genre-title {
         color: #95979d;
         font-size: 1em;
@@ -88,16 +100,20 @@
         }
       }
     }
+
     .seller {
       margin-top: 64px;
+
       h2 {
         height: 28px;
       }
     }
+
     .seller-avatar-about {
       height: 131px;
       padding-bottom: 24px;
       margin-left: 15px;
+      margin-top: 25px;
 
       .gig-owner-image-about {
         width: 80px;
@@ -106,8 +122,15 @@
         object-fit: cover;
         image-resolution: 500;
       }
-      .about {
+
+      .rate {
+        span {
+          color: $yellow;
+          font-weight: 600;
+          padding-left: 4px;
+        }
       }
+
       .seller-level {
         font-size: 13px;
       }
@@ -116,9 +139,11 @@
         // padding-top: 20px;
         justify-self: center;
       }
+
       .proposal {
         height: 20px;
       }
+
       .btn-contact {
         width: 130px;
         font-weight: 600;
@@ -136,6 +161,7 @@
         border: 1px solid #404145;
         margin-top: 20px;
         line-height: 20.8px;
+
         &:hover {
           background-color: #62646a;
           color: #ffffff;
@@ -167,6 +193,23 @@
         }
       }
     }
+
+    .edit-dlt-buttons {
+      margin-bottom: 20px;
+      >*{
+        margin: 5px;
+        transition: 0.2s;
+        font-size: 16px;
+      }
+      :last-child {
+        color: black;
+        background-color: rgb(255, 185, 185);
+        &:hover {
+          background-color: red;
+          color: white;
+        }
+      }
+    }
   }
 
   .aside {
@@ -175,9 +218,8 @@
     .package-content {
       position: sticky;
       top: 150px;
-      width: 25.75em;
-      height: 23.875em;
-      border: 1px solid $border-gray;
+      border: 1px solid #DADBDD;
+      gap: 0;
 
       .levels {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -186,6 +228,7 @@
         padding: 16px;
         // height: 24px;
         border-bottom: 1px solid $border-gray;
+
         label {
           width: 104px;
           height: 24px;
@@ -199,25 +242,43 @@
           // background-color: #1dbf73;
         }
       }
+
       .package-title {
         font-size: 24px;
-        padding-bottom: 1rem;
+        padding-bottom: 40px;
         font-weight: 800;
         font-size: 1.5em;
+
+        h1:last-child {
+          font-weight: 400;
+        }
       }
+
       .details {
-        padding-left: 24px;
-        padding-right: 24px;
+        // padding-top: 20px;
+        // padding-left: 24px;
+        // padding-right: 24px;
+        padding: 20px 24px;
+
+        h1 {
+          font-size: 18px;
+        }
+
+        h1:last-child {
+          font-size: 20px;
+        }
       }
+
       .delivery-revision {
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin-top: 40px;
         gap: 30px;
       }
+
       .clock {
         width: 1em;
         height: 1em;
       }
+
       .sync {
         width: 1em;
         height: 1em;
@@ -226,15 +287,18 @@
       // .delivery-revision > span {
       // }
 
-      .delivery-revision > * {
+      .delivery-revision>* {
         font-size: 14px;
         align-self: center;
         gap: 5px;
         height: 24px;
       }
+
       .gig-inclusive {
         padding: 0;
+        margin: 0 0 20px 0;
       }
+
       ul {
         display: grid;
         grid-template-columns: 1fr;
@@ -262,11 +326,12 @@
         font-size: 16px;
       }
 
-      a > span {
+      a>span {
         color: $white;
         font-size: 16px;
       }
     }
+
     .procced-btn {
       width: 365px;
       border: 1px solid transparent;
@@ -287,6 +352,7 @@
       transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
     }
   }
+
   .btn {
     width: 150px;
     font-weight: 600;
@@ -304,6 +370,7 @@
     border: 1px solid #404145;
     margin-top: 20px;
     line-height: 20.8px;
+
     &:hover {
       background-color: #62646a;
       color: #ffffff;

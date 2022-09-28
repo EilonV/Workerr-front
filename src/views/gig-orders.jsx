@@ -5,6 +5,7 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { UserNav } from '../cmps/user-nav'
 import { loadOrders, removeOrder } from '../store/actions/order.action'
+import { orderService } from '../services/order.service'
 
 // import { useNavigate, useParams } from 'react-router-dom'
 
@@ -25,6 +26,12 @@ export const Orders = () => {
     )
   }
 
+  const onAcceptOrder = (orderId) => {
+    console.log(orderId)
+    console.log(orderService.getById(orderId))
+    console.log(orders)
+  }
+
   const format = (time) => {
     new Date(time).getTime()
     return [
@@ -43,8 +50,7 @@ export const Orders = () => {
   }
 
   if (!orders) return ''
-  // console.log('orders:', orders)
-
+  console.log(orders)
   return (
     <section>
       <AppHeaderExplore />
@@ -54,17 +60,17 @@ export const Orders = () => {
           <div className='page-container flex '>
             <UserNav />
             <div className='orders-container'>
-            <section className='total-orders'>
-              <div className='title flex space-between'>
-                <p>Total orders &nbsp; </p>
-                <p className='num-orders'>
-                  {orders.length === 1
-                    ? orders.length + ' order'
-                    : orders.length + ' orders'}
-                </p>
-                {/* <p>This month's orders &nbsp; </p> */}
-              </div>
-              {/* <div className='title flex space-between'>
+              <section className='total-orders'>
+                <div className='title flex space-between'>
+                  <p>Total orders &nbsp; </p>
+                  <p className='num-orders'>
+                    {orders.length === 1
+                      ? orders.length + ' order'
+                      : orders.length + ' orders'}
+                  </p>
+                  {/* <p>This month's orders &nbsp; </p> */}
+                </div>
+                {/* <div className='title flex space-between'>
                 <p className='num-orders'>
                   Revenues: <span className='price'>$ 0.00</span> &nbsp;
                 </p>
@@ -81,37 +87,41 @@ export const Orders = () => {
                 <p>Quantity:0 &nbsp;</p>
               </div> */}
 
-              <div className='table-orders'>
-                {orders.map((order) => (
-                  <table key={order._id}>
+                <div className='table-orders'>
+                  <table>
                     <tr>
                       <th> Date </th>
-                      <th> Buyer </th>
+                      <th> Client </th>
                       <th> Gig</th>
                       <th> Seller name </th>
                       <th> Price</th>
                       <th> Status </th>
                       <th> Actions </th>
                     </tr>
-                    <td>{format(order.createdAt)} </td>
-                    <td>{order.buyer.fullname} </td>
-                    <td>{order.gig._id} </td>
-                    <td>{order.seller.fullname} </td>
-                    <td>${order.gig.price} </td>
-                    <td className='status'>{order.status} </td>
-                    <td>
-                      <button
-                        className='delete-btn'
-                        onClick={() => onRemoveOrder(order._id)}
-                      >
-                        Delete
-                      </button>
-                      {/* <button>Update</button> */}
-                    </td>
+                    {orders.map((order) => (
+                      <tr>
+                        <td>{format(order.createdAt)} </td>
+                        <td>{order.buyer.username} <br />({order.buyer.fullname}) </td>
+                        <td>{order.gig._id} </td>
+                        <td>{order.seller.fullname} </td>
+                        <td>${order.gig.price} </td>
+                        <td className='status'>{order.status} </td>
+                        <td className='flex'>
+                          {/* <button
+                            className='delete-btn'
+                            onClick={() => onRemoveOrder(order._id)}
+                          >
+                            Delete
+                          </button> */}
+                          <button onClick={() => onAcceptOrder(order._id)}>Accept</button>
+                          <button>Decline</button>
+                          {/* <button>Update</button> */}
+                        </td>
+                      </tr>
+                    ))}
                   </table>
-                ))}
-              </div>
-            </section>
+                </div>
+              </section>
             </div>
           </div>
         </div>

@@ -102,7 +102,10 @@ export const GigFilterExplore = ({ gigs, onChangeFilter }) => {
           </div>
           <footer className='modal-footer'>
             <button className='clear' onClick={() => clearFilter()}>Clear All</button>
-            <button className='apply' onClick={changeFilter}>Apply</button>
+            <button className='apply' onClick={(ev) => {
+              changeFilter(ev)
+              closeModal()
+            }}>Apply</button>
           </footer>
         </div>
       </div>

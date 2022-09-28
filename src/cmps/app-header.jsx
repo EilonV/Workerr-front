@@ -12,7 +12,6 @@ export function AppHeader() {
           <NavLink to='/gigs'>Explore </NavLink>
           <NavLink to='/about'>About </NavLink>
           <NavLink to='/user'>User </NavLink>
-          <NavLink to='/admin'>Admin </NavLink>
           <button className='header-join'>
             <NavLink to='/user'>Join </NavLink>
           </button>

@@ -309,8 +309,8 @@ export const Home = () => {
                 <img src={pop1} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Go global</p>
+                <h3>Translation</h3>
               </div>
             </div>
             <div>
@@ -318,8 +318,8 @@ export const Home = () => {
                 <img src={pop2} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Showcase your story</p>
+                <h3>Book Covers</h3>
               </div>
             </div>
             <div>
@@ -327,8 +327,8 @@ export const Home = () => {
                 <img src={pop3} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Customize your site</p>
+                <h3>WordPress</h3>
               </div>
             </div>
             <div>
@@ -336,8 +336,8 @@ export const Home = () => {
                 <img src={pop4} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Build your brand</p>
+                <h3>Logo Design</h3>
               </div>
             </div>
             <div>
@@ -345,8 +345,8 @@ export const Home = () => {
                 <img src={pop5} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Unlock growth online</p>
+                <h3>SEO</h3>
               </div>
             </div>
             <div>
@@ -354,8 +354,8 @@ export const Home = () => {
                 <img src={pop6} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Share your message</p>
+                <h3>Voice Over</h3>
               </div>
             </div>
             <div>
@@ -363,8 +363,8 @@ export const Home = () => {
                 <img src={pop7} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Learn your business</p>
+                <h3>Data Entry</h3>
               </div>
             </div>
             <div>
@@ -372,19 +372,19 @@ export const Home = () => {
                 <img src={pop8} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Color your dreams</p>
+                <h3>Illustration</h3>
               </div>
             </div>
-            {/* <div>
+            <div>
               <a href=''>
                 <img src={pop9} alt='' />
               </a>
               <div className='slick-img-caption'>
-                <p>Sub-Cat</p>
-                <h3>Category</h3>
+                <p>Engage your audience</p>
+                <h3>Video Explainer</h3>
               </div>
-            </div> */}
+            </div>
           </Slider>
         </div>
 
