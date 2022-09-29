@@ -9,6 +9,7 @@ export const utilService = {
   makeLevel,
   makeTitle,
   makeCountry,
+  makeMonth,
 }
 
 function makeId(length = 6) {
@@ -48,6 +49,29 @@ function makeCountry(size = 1) {
     'France',
     'belgium',
     'Moroco',
+  ]
+  var txt = ''
+  while (size > 0) {
+    size--
+    txt += country[Math.floor(Math.random() * country.length)] + ' '
+  }
+  return txt
+}
+
+function makeMonth(size = 1) {
+  var country = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ]
   var txt = ''
   while (size > 0) {

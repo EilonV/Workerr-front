@@ -13,17 +13,13 @@
     .page-container {
       margin: 0;
     }
-<<<<<<< HEAD
 
     .user-container {
       margin-right: 0 !important;
     }
 
-    .orders-container {}
-=======
     .orders-container {
     }
->>>>>>> 1f43599230b5937298f4af363ddf2ace1730eaec
 
     .total-orders {
       text-align: center;
@@ -48,7 +44,6 @@
       padding-bottom: 10px;
       // border-top: 1px $footer-line-gray solid;
     }
-<<<<<<< HEAD
 
     table {
       padding: 0;
@@ -66,12 +61,12 @@
 
         &:hover {
           border-bottom: 1px $bright-green solid;
-
         }
       }
     }
 
-    .table-orders {}
+    .table-orders {
+    }
 
     margin-top: 15px;
     width: 100%;
@@ -80,53 +75,25 @@
       width: 100%;
       margin-top: 15px;
       padding-bottom: 10px;
-      tr{
-      button{
-        margin: 0;
-      }
-      }
-=======
-    .title {
-      justify-content: space-around;
-      font-size: 10px;
-      p {
-        font-size: large;
-        border-bottom: 1px $footer-line-gray solid;
-        padding: 10px;
-      }
-    }
 
-    .table-orders {
-    }
-    margin-top: 15px;
-    width: 100%;
-    table {
-      width: 100%;
-      margin-top: 15px;
-      padding-bottom: 20px;
->>>>>>> 1f43599230b5937298f4af363ddf2ace1730eaec
+      tr {
+        button {
+          margin: 0;
+        }
+      }
+
       th {
         // border-bottom: 1px $footer-line-gray solid;
 
         width: 100px;
       }
-<<<<<<< HEAD
 
-      td {
-        height: 50px;
-        border-bottom: 1px $footer-line-gray solid;
-
-
-      }
-    }
-
-=======
       td {
         height: 50px;
         border-bottom: 1px $footer-line-gray solid;
       }
     }
->>>>>>> 1f43599230b5937298f4af363ddf2ace1730eaec
+
     button {
       font-size: 1em;
       width: 50;
@@ -145,11 +112,8 @@
       border: 1px solid #404145;
       margin-top: 20px;
       line-height: 20.8px;
-<<<<<<< HEAD
       transition: 0.2s;
-=======
 
->>>>>>> 1f43599230b5937298f4af363ddf2ace1730eaec
       &:hover {
         background-color: #1dbf73;
         color: #ffffff;
@@ -157,9 +121,4 @@
       }
     }
   }
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> 1f43599230b5937298f4af363ddf2ace1730eaec

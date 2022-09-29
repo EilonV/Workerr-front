@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-
 import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { useDispatch } from 'react-redux'
 import { onSignup, onLogin } from '../store/actions/user.actions'
+import { uploadService } from '../services/upload.service'
 
 export function LoginSignup(props) {
   // console.log(props);
@@ -12,6 +12,7 @@ export function LoginSignup(props) {
     username: '',
     password: '',
     fullname: '',
+    imgUrl: '',
   })
   const [isSignup, setIsSignup] = useState(props.isSignUp)
   const [users, setUsers] = useState([])
@@ -71,6 +72,7 @@ export function LoginSignup(props) {
   const toggleSignup = (ev) => {
     ev.stopPropagation()
     setIsSignup(!isSignup)
+    console.log('signUp:')
   }
 
   const stopPropagation = (ev) => {
@@ -82,10 +84,20 @@ export function LoginSignup(props) {
       users.includes(users.username)
     )
 
-    console.log('You allready in mate ', allreadyIn)
+    // console.log('You allready in mate ', allreadyIn)
   }
 
-  console.log(users)
+  const onImgUpload = async (ev) => {
+    const res = await uploadService.uploadImg(ev)
+    // console.log('res:', res.url)
+    const urls = res.map((image) => image.url)
+    credentials.imgUrl = urls
+    console.log(credentials.imgUrl)
+
+    // imgUrl.push(res.url)
+  }
+
+  // console.log(users)
 
   return (
     <div
@@ -131,6 +143,7 @@ export function LoginSignup(props) {
                 required
                 autoComplete='false'
               />
+
               <button>Continue</button>
             </form>
             <div className='form-footer flex justify-center align-center'>
@@ -175,6 +188,21 @@ export function LoginSignup(props) {
                 required
                 autoComplete='false'
               />
+
+              {/* <div className='img-upload-container'>
+                <label>
+                  Images
+                  <input
+                    value={credentials.imgUrl}
+                    type='file'
+                    name='imgUrls'
+                    id='imgUrls'
+                    multiple
+                    onChange={onImgUpload}
+                  />
+                </label>
+              </div> */}
+
               <button>Continue</button>
             </form>
             <div className='form-footer flex justify-center align-center'>

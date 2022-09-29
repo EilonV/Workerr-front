@@ -1,4 +1,5 @@
 import { storageService } from './async-storage'
+import { userService } from './user.service'
 import { utilService } from './util.service'
 import { httpService } from './http.service'
 
@@ -9,6 +10,8 @@ export const gigService = {
   remove,
   getById,
 }
+const user = userService.getLoggedinUser()
+// console.log(user)
 
 const STORAGE_KEY = 'gig'
 
@@ -73,7 +76,6 @@ function save(gig) {
     // return storageService.post(STORAGE_KEY, gig)
   }
 }
-
 const gDefaultGigs = [
   {
     _id: 'XvgR',

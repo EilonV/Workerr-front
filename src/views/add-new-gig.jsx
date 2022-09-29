@@ -42,12 +42,11 @@ export const AddNewGig = () => {
       username: loggedinUser.username,
       password: loggedinUser.password,
       rate: loggedinUser.rate,
-      // avgResponseTime: '1 hour',
-      // lastDelivery: 'about 17 hours',
       ownerLetter: loggedinUser.ownerLetter,
       reviews: loggedinUser.reviews,
     },
   })
+  // console.log('loggedinUser:', loggedinUser)
 
   const inputRef = useRef()
 
@@ -162,7 +161,7 @@ export const AddNewGig = () => {
                   <option value='music-audio'>Music & Audio</option>
                   <option value='programming-Tech'>Programming & Tech</option>
                   <option value='data'>Data</option>
-                  <option value='busines'>Busines</option>
+                  <option value='busines'>Business</option>
                   <option value='lifeStyle'>LifeStyle</option>
                 </select>
 
@@ -204,6 +203,31 @@ export const AddNewGig = () => {
                </div>
              </div>
            </div> */}
+            <div className='title-container flex'>
+              <div className='title-nav'>
+                <div className='desc' htmlFor='name'>
+                  <h1>Gig Description</h1>
+                </div>
+                <p>
+                  Description is very important for your gig, people can use it
+                  for their own purposes and buy your gig.
+                </p>
+
+                <div className='title-footer flex space-between'>
+                  <span className='title-status-msg '></span>
+                </div>
+              </div>
+
+              <div className='text-area'>
+                <textarea
+                  value={gig.longerDescription}
+                  onChange={handleChange}
+                  name='longerDescription'
+                  placeholder='Tell us about your gig...'
+                  required
+                ></textarea>
+              </div>
+            </div>
 
             <div className='price-container flex '>
               <div className='title-nav'>
