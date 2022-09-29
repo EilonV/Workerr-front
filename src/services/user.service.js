@@ -64,6 +64,16 @@ async function update(user) {
   return user
 }
 
+async function signup(userCred) {
+  console.log(userCred)
+  // userCred.score = 10000
+  // const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
+  const user = await httpService.post('auth/signup', userCred)
+  // socketService.login(user._id)
+  return saveLocalUser(user)
+}
+
+
 async function login(userCred) {
   // console.log('@@@@@@@@@@@@@@@ user.service login', userCred);
   // const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
