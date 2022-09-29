@@ -13,6 +13,11 @@
     .page-container {
       margin: 0;
     }
+
+    .user-container {
+      margin-right: 0 !important;
+    }
+
     .orders-container {
     }
 
@@ -39,34 +44,56 @@
       padding-bottom: 10px;
       // border-top: 1px $footer-line-gray solid;
     }
+
+    table {
+      padding: 0;
+    }
+
     .title {
       justify-content: space-around;
       font-size: 10px;
+
       p {
         font-size: large;
         border-bottom: 1px $footer-line-gray solid;
         padding: 10px;
+        transition: 0.2s;
+
+        &:hover {
+          border-bottom: 1px $bright-green solid;
+        }
       }
     }
 
     .table-orders {
     }
+
     margin-top: 15px;
     width: 100%;
+
     table {
       width: 100%;
       margin-top: 15px;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
+
+      tr {
+        button {
+          margin: 0;
+        }
+      }
+
       th {
         // border-bottom: 1px $footer-line-gray solid;
 
         width: 100px;
       }
+
       td {
         height: 50px;
         border-bottom: 1px $footer-line-gray solid;
       }
     }
+
     button {
       font-size: 1em;
       width: 50;
@@ -85,6 +112,8 @@
       border: 1px solid #404145;
       margin-top: 20px;
       line-height: 20.8px;
+      transition: 0.2s;
+
       &:hover {
         background-color: #1dbf73;
         color: #ffffff;

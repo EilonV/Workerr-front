@@ -38,12 +38,12 @@ export function addOrder(order, cb) {
   }
 }
 
-export function onChangeStatus(order) {
+export function updateOrder(order) {
   return async (dispatch) => {
-    const action = { type: 'UPDATE_ORDER', order }
-    dispatch(action)
     try {
-      orderService.changeStatus(order)
+      const updatedOrder = orderService.changeStatus(order)
+      const action = { type: 'UPDATE_ORDER', order: updatedOrder }
+      dispatch(action)
     } catch (err) {
       console.log('err', err)
     }

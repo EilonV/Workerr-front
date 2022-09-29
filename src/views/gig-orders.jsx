@@ -5,14 +5,14 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { ProfileHeader } from '../cmps/profile-header'
 import { UserNav } from '../cmps/user-nav'
-import { loadOrders, removeOrder } from '../store/actions/order.action'
+import { loadOrders, removeOrder, updateOrder } from '../store/actions/order.action'
 import { orderService } from '../services/order.service'
 
 // import { useNavigate, useParams } from 'react-router-dom'
 
 export const Orders = () => {
   // const params = useParams()
-  const orders = useSelector((state) => state.orderModule.orders)
+  let orders = useSelector((state) => state.orderModule.orders)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -27,10 +27,9 @@ export const Orders = () => {
     )
   }
 
-  const onAcceptOrder = (orderId) => {
-    console.log(orderId)
-    console.log(orderService.getById(orderId))
-    console.log(orders)
+  const onChangeStatus = (order, newStatus) => {
+    const updatedOrder = { ...order, status: newStatus }
+    dispatch(updateOrder(updatedOrder))
   }
 
   const format = (time) => {
@@ -50,8 +49,12 @@ export const Orders = () => {
     ]
   }
 
+  const user = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : ''
+
   if (!orders) return ''
   console.log(orders)
+  console.log(user)
+  orders = orders.filter(order => order.seller._id === user._id)
   return (
     <section>
       <AppHeaderExplore />
@@ -115,8 +118,8 @@ export const Orders = () => {
                           >
                             Delete
                           </button> */}
-                          <button onClick={() => onAcceptOrder(order._id)}>Accept</button>
-                          <button>Decline</button>
+                          <button onClick={() => onChangeStatus(order,'in progress')}>Accept</button>
+                          <button onClick={() => onChangeStatus(order,'declined')}>Decline</button>
                           {/* <button>Update</button> */}
                         </td>
                       </tr>
