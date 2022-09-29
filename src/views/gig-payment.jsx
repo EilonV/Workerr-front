@@ -13,7 +13,7 @@ export const GigPayment = () => {
         <p>
           Your order has been received by the user, you can see it
           <span className='link'>
-            <Link to='/orders'>&nbsp;here&nbsp;</Link>
+            <Link to='/user/orders'>&nbsp;here&nbsp;</Link>
           </span>
         </p>
         <Link to='/gigs'>

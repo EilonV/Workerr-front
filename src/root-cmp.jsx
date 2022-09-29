@@ -16,8 +16,6 @@ import { Orders } from './views/gig-orders'
 import { GigPayment } from './views/gig-payment'
 import { LoginSignup } from '../src/cmps/login-signup'
 
-
-
 function App() {
   return (
     <section>
@@ -27,17 +25,23 @@ function App() {
         <div className='main-app'>
           <main className='main-container'>
             <Routes>
-              <Route path='gig/details/:id/checkout/payment' element={<GigPayment />} />
-              <Route path='gig/details/:id/checkout' element={<GigCheckOut />} />
+              <Route
+                path='gig/details/:id/checkout/payment'
+                element={<GigPayment />}
+              />
+              <Route
+                path='gig/details/:id/checkout'
+                element={<GigCheckOut />}
+              />
               <Route path='gig/details/:id' element={<GigDetails />} />
               <Route path='gig/edit/:id' element={<GigEdit />} />
               <Route path='gig/edit' element={<GigEdit />} />
+              <Route path='/user/orders' element={<Orders />} />
               <Route path='/about' element={<About />} />
-              <Route path='/gigs' element={<GigExplore />} />
               <Route path='/user/:' element={<AddNewGig />} />
+              <Route path='/gigs' element={<GigExplore />} />
               <Route path='/user' element={<UserPage />} />
               <Route path='/admin' element={<AdminPage />} />
-              <Route path='/orders' element={<Orders />} />
               <Route path='/' element={<Home />} />
               <Route path='/login' element={<LoginSignup />} />
             </Routes>

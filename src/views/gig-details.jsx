@@ -7,16 +7,34 @@ import { gigService } from '../services/gig.service'
 import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { ReviewList } from '../cmps/review-list'
 import { HeaderCategories } from '../cmps/header-categories'
+import Slider from 'react-slick'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import Clock from '../assets/imgs/icons/clock.svg'
 import Sync from '../assets/imgs/icons/sync.svg'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { AddReview } from '../cmps/add-review'
 
 export const GigDetails = () => {
+  const [nav1, setNav1] = useState()
+  const [nav2, setNav2] = useState()
+
   const params = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpen = () => {
+    setIsModalOpen(true)
+  }
+
+  // Define function that will close the modal
+  const handleClose = () => {
+    setIsModalOpen(false)
+  }
 
   useEffect(() => {
     const id = params.id
@@ -37,6 +55,7 @@ export const GigDetails = () => {
   }
 
   console.log(gig)
+  const user = (sessionStorage.loggedinUser) ? JSON.parse(sessionStorage.loggedinUser) : ''
 
   if (gig)
     return (
@@ -61,19 +80,50 @@ export const GigDetails = () => {
                 </Link>
                 <h4>{gig.owner.level}|</h4>
                 <h4>{gig.owner.rate}</h4>|
-                <img
-                  className='gig-review-star'
-                  src={StarFill}
-                  alt='star-fill'
-                />
-                5 ({gig.reviews.length})
+                <div className='flex'>
+                  <img
+                    className='gig-review-star'
+                    src={StarFill}
+                    alt='star-fill'
+                  />
+
+                  <span>{gig.owner.rate}</span>({gig.reviews.length})
+                </div>
               </div>
 
-              <img
-                className='gig-img'
-                src={gig.imgUrl}
-                alt='Some Logo Design'
-              />
+              <div className='details-carousel'>
+                <div>
+                  <div className='big-slider'>
+                    <Slider
+                      slidesToShow={1}
+                      asNavFor={nav2}
+                      ref={(slider1) => setNav1(slider1)}
+                    >
+                      {gig.imgUrl.map((img) => (
+                        <div className='big-slider-img'>
+                          <img src={img} alt='' />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+
+                  <div className='small-slider'>
+                    <Slider
+                      asNavFor={nav1}
+                      ref={(slider2) => setNav2(slider2)}
+                      slidesToShow={4}
+                      swipeToSlide={true}
+                      focusOnSelect={true}
+                    >
+                      {gig.imgUrl.map((img) => (
+                        <div className='small-slider-img'>
+                          <img src={img} alt='' />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+                </div>
+              </div>
               <h2 className='desc'>About This Gig</h2>
 
               <p className='desc-list'>{gig.longerDescription}</p>
@@ -106,7 +156,7 @@ export const GigDetails = () => {
                       alt='star-fill'
                     />
                     <p className='rate'>
-                      {gig.owner.rate}({gig.reviews.length})
+                      <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
                     </p>
                   </div>
                   <button className='btn-contact'>Contact Me</button>
@@ -145,25 +195,32 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
-            <section className=''>
-              <Link className='btn' to={`/gig/edit/${gig._id}`}>
-                Edit
-              </Link>
-              <button className='btn' onClick={() => onRemoveGig(gig._id)}>
-                Delete
+            <section className='review-container'>
+              <button className='add-review-btn-1' onClick={handleClose}>
+                Add review
               </button>
+              <button className='close-review-btn-1' onClick={handleOpen}>
+                Close
+              </button>
+              {!isModalOpen && <AddReview />}
             </section>
+            {user._id === gig.owner._id &&
+              <section className='edit-dlt-buttons flex justify-center'>
+                <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
+                  Edit
+                </Link>
+                <button className='btn delete' onClick={() => onRemoveGig(gig._id)}>
+                  Delete
+                </button>
+              </section>
+            }
+
           </div>
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
               <div>
-                <div className='levels flex space-between'>
-                  <lab className='basic'>Basic</lab>
-                  <p className='standard'>Standard</p>
-                  <p className='premium'>Premium</p>
-                </div>
-              </div>
+              </div >
               <section>
                 <div className='details'>
                   <div className='package-title flex space-between'>
@@ -178,10 +235,7 @@ export const GigDetails = () => {
 
                         <span>{gig.daysToMake} Days To Make</span>
                       </div>
-                      <div className='flex'>
-                        <img className='svg sync' src={Sync} alt='sync' />
-                        <span>Revisions</span>
-                      </div>
+
                     </div>
 
                     <ul className='gig-inclusive grid'>
@@ -192,18 +246,34 @@ export const GigDetails = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link
+                    {
+                      user ?
+                        <Link
+                          to={`/gig/details/${gig._id}/checkout`}
+                          className='procced-btn'
+                        >
+                          Continue <span>(${gig.price})</span>
+                        </Link> :
+                        <Link
+                          to={`/gig/details/${gig._id}`}
+                          className='procced-btn'
+                        >
+                          Log in to continue
+                        </Link>
+                    }
+
+                    {/* <Link
                       to={`/gig/details/${gig._id}/checkout`}
                       className='procced-btn'
                     >
                       Continue <span>(${gig.price})</span>
-                    </Link>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </aside>
-        </div>
-      </section>
+                    </Link> */}
+                  </div >
+                </div >
+              </section >
+            </div >
+          </aside >
+        </div >
+      </section >
     )
 }

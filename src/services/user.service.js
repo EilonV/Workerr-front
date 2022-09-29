@@ -11,20 +11,18 @@ import { httpService } from './http.service'
 // import { showSuccessMsg } from '../services/event-bus.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
-var gWatchedUser = null;
-
+var gWatchedUser = null
 
 export const userService = {
-    login,
-    logout,
-    signup,
-    getLoggedinUser,
-    saveLocalUser,
-    getUsers,
-    getById,
-    remove,
-    update,
-
+  login,
+  logout,
+  signup,
+  getLoggedinUser,
+  saveLocalUser,
+  getUsers,
+  getById,
+  remove,
+  update,
 }
 
 window.userService = userService
@@ -54,7 +52,6 @@ async function getById(userId) {
     // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 }
-
 
 function remove(userId) {
     // return storageService.remove(STORAGE_KEY_LOGGEDIN_USER, userId)
@@ -86,6 +83,15 @@ async function signup(userCred) {
     const user = await httpService.post('auth/signup', userCred)
     // socketService.login(user._id)
     return saveLocalUser(user)
+  }
+}
+async function signup(userCred) {
+  console.log(userCred)
+  // userCred.score = 10000
+  const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
+  // const user = await httpService.post('auth/signup', userCred)
+  // socketService.login(user._id)
+  return saveLocalUser(user)
 }
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
@@ -93,17 +99,30 @@ async function logout() {
     return await httpService.post('auth/logout')
 }
 
-
 function saveLocalUser(user) {
-    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-    return user
+  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+  return user
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
+  return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
 }
 
 const usersDefult = [
+  {
+    fullname: 'Guy',
+    imgUrl:
+      'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0f37300e1e09cba08685e3c85a4ceb3f-1661447564773/305c8f97-9a87-449a-908a-20275c9ab8d4.jpg',
+    username: 'user1',
+    password: 'secret',
+    _id: '622f3401e36c59e6164faguy',
+    country: 'Israel',
+    memberSince: 'sep 2019',
+    rate: 4,
+    ownerLetter:
+      "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
+    reviews: [],
+  },
 
     {
         fullname: 'Guy',
@@ -113,8 +132,20 @@ const usersDefult = [
         _id: '622f3401e36c59e6164faguy',
         country: 'Israel',
         memberSince: 'sep 2019'
-
     },
+  {
+    fullname: 'Leo',
+    imgUrl: 'https://robohash.org/59985?set=set1',
+    username: '59985',
+    password: 'Leo',
+    _id: 'h12554',
+    country: 'Lebanon',
+    memberSince: 'sep 2021',
+    rate: 4,
+    ownerLetter:
+      "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
+    reviews: [],
+  },
 
     {
         fullname: 'Edgar',
@@ -166,5 +197,31 @@ const usersDefult = [
         memberSince: 'sep 2017'
     },
 
+  {
+    fullname: 'Francine',
+    imgUrl: 'https://robohash.org/25851994?set=set1',
+    username: '25851994',
+    password: 'Francine',
+    _id: 'h45532',
+    country: 'Israel',
+    memberSince: 'sep 2021',
+    rate: 1,
+    ownerLetter:
+      "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
+    reviews: [],
+  },
 
+  {
+    fullname: 'Winnie',
+    imgUrl: 'https://robohash.org/1205536?set=set1',
+    username: '1205536',
+    password: 'Winnie',
+    _id: 'h422532',
+    country: 'Israel',
+    memberSince: 'sep 2017',
+    rate: 3.2,
+    ownerLetter:
+      "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
+    reviews: [],
+  },
 ]

@@ -13,7 +13,12 @@
   padding: 0;
   transition: 0.2s;
 
+
   .logo {
+    @include for-mobile-layout {
+      margin: auto;
+    }
+
     font-size: 2em;
     letter-spacing: -1.5px;
     font-family: Work Sans Bold;
@@ -30,6 +35,14 @@
   .header {
     height: 100%;
   }
+
+  .header-nav {
+
+    @include for-mobile-layout {
+      display: none;
+    }
+  }
+
 
   .header-nav>a {
     padding: 0 10px;

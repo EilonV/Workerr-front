@@ -1,13 +1,18 @@
-import React from "react"
-import { useState, useEffect } from "react"
-import { connect } from "react-redux"
+import React from 'react'
+import { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import { loadGigs, setFilterBy } from '../store/actions/gig.action'
 import { useSelector, useDispatch } from 'react-redux'
 import { GigFilter } from './gig-filter'
-import { onLogin, onLogout, onSignup, removeUser } from '../store/actions/user.actions'
-import { LoginSignup } from "./login-signup.jsx"
-import { PopoverNav } from "./popover-nav.jsx"
+import {
+  onLogin,
+  onLogout,
+  onSignup,
+  removeUser,
+} from '../store/actions/user.actions'
+import { LoginSignup } from './login-signup.jsx'
+import { PopoverNav } from './popover-nav.jsx'
 
 export function AppHeaderExplore({ user }) {
   const dispatch = useDispatch()
@@ -20,7 +25,6 @@ export function AppHeaderExplore({ user }) {
   //   else document.body.style.overflow = 'unset';
   // }, [isSignIn])
 
-
   const onChangeFilter = (filterBy) => {
     dispatch(setFilterBy(filterBy))
     dispatch(loadGigs())
@@ -30,7 +34,7 @@ export function AppHeaderExplore({ user }) {
   }
 
   const handleLogout = () => {
-    if (isSignIn) return;
+    if (isSignIn) return
     dispatch(onLogout())
     clearState()
     window.location.reload(false)
@@ -39,9 +43,7 @@ export function AppHeaderExplore({ user }) {
   const clearState = () => {
     return isSignIn
   }
-  console.log(sessionStorage.loggedinUser)
-
-
+  // console.log(sessionStorage.loggedinUser)
 
   return (
     <section className='main-layout full'>
@@ -75,48 +77,63 @@ export function AppHeaderExplore({ user }) {
         <nav className='header-nav flex row '>
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
-<NavLink to='/user'>User </NavLink>
-<NavLink to='/orders'>Order </NavLink>
-          {sessionStorage.loggedinUser ?
-
-            <span className="user-info">
+          <NavLink to='/user'>User </NavLink>
+          {/* <NavLink to='/orders'>Order </NavLink> */}
+          {sessionStorage.loggedinUser ? (
+            <div className='flex'>
               <Link to={`user/`}>
                 {/* {user.imgUrl && <img src={user.imgUrl} />}
                             {user.fullname} */}
               </Link>
-              <button onClick={handleLogout}>Logout</button>
-            </span> :
+              <button className='logout-btn' onClick={handleLogout}>Logout</button>
+            </div>
 
-
-            <section className=" flex row gap">
-              <div className=" header-signin" onClick={() => { toggleSignIn(true) }}>
+          ) : (
+            <section className=' flex row gap'>
+              <div
+                className=' header-signin'
+                onClick={() => {
+                  toggleSignIn(true)
+                }}
+              >
                 Sign in
               </div>
 
-              <div className="header-join" onClick={() => { toggleSignIn(true); toggleSignUp(true) }}>
+              <div
+                className='header-join'
+                onClick={() => {
+                  toggleSignIn(true)
+                  toggleSignUp(true)
+                }}
+              >
                 Join
               </div>
             </section>
-          }
+          )}
         </nav>
       </header>
-      {isSignIn && !user && <LoginSignup toggleSignIn={toggleSignIn} toggleSignUp={toggleSignUp} isSignUp={isSignUp} onLogin={onLogin} onSignup={onSignup} />}
-      {isPopoverNav && <PopoverNav togglePopoverNav={togglePopoverNav} onLogout={onLogout} />}
+      {isSignIn && !user && (
+        <LoginSignup
+          toggleSignIn={toggleSignIn}
+          toggleSignUp={toggleSignUp}
+          isSignUp={isSignUp}
+          onLogin={onLogin}
+          onSignup={onSignup}
+        />
+      )}
+      {isPopoverNav && (
+        <PopoverNav togglePopoverNav={togglePopoverNav} onLogout={onLogout} />
+      )}
     </section>
-
   )
 }
 
-
 function mapStateToProps(state) {
   return {
-
     user: state.userModule.user,
-
   }
 }
 const mapDispatchToProps = {
-
   onLogin,
   onSignup,
   onLogout,

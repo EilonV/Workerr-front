@@ -23,12 +23,14 @@
     color: $bright-green;
     font-size: 45px;
   }
+
   nav {
     li {
       display: flex;
       justify-content: center;
       align-items: center;
       text-decoration: none;
+
       ul {
         margin: 0;
         padding: 32px;
@@ -41,6 +43,7 @@
     // width: 590px;
     // justify-content: space-between;
   }
+
   .number {
     display: inline-flex;
     -webkit-box-pack: center;
@@ -58,6 +61,7 @@
     background: #b5b6ba;
     margin-right: 8px;
   }
+
   .num {
     background: rgb(29, 191, 115);
   }
@@ -67,6 +71,7 @@
     font-size: 16px;
     font-weight: 600;
   }
+
   .svg {
     width: 12px;
     height: 12px;
@@ -84,15 +89,18 @@
     width: 104px;
     color: rgb(29, 191, 115);
   }
+
   .text2 {
     height: 24px;
     width: 112px;
   }
+
   .text3 {
     height: 24px;
     // width: 167px;
   }
 }
+
 .summary-container {
   .text-body {
     width: 776px;
@@ -102,6 +110,7 @@
     margin-bottom: 15px;
     border-bottom: 1px $footer-line-gray solid;
   }
+
   .summary-loyalty {
     width: 776px;
     height: 100px;
@@ -131,18 +140,24 @@
     .gig-rating {
       height: 28px;
       width: 345px;
-      padding-left: 5px;
+      margin-left: 15px;
+
+      h4 {
+        color: $yellow;
+        margin: 0 4px;
+      }
     }
 
     .reviews {
       // width: 85px;
       height: 24px;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 24px;
       color: #95979d;
       padding-left: 2px;
       padding-top: -1;
     }
+
     .included {
       height: 28px;
       width: 345px;
@@ -151,6 +166,7 @@
       font-size: 14px;
       line-height: 24px;
     }
+
     .pricing {
       width: 140px;
       height: 100px;
@@ -160,9 +176,10 @@
 
   .package {
     .features {
+      margin: 0;
+
       ul {
-        display: grid;
-        grid-template-columns: 329px 225px;
+        
         padding: 0;
 
         li {
@@ -174,14 +191,17 @@
           line-height: 24px;
         }
       }
+
       span.line-list {
         color: #62646a;
       }
+
       .done {
         margin-right: 5px;
       }
     }
   }
+
   .checkout-container {
     margin-left: 113px;
     margin-right: 92px;
@@ -190,9 +210,11 @@
     padding: 19px;
     border: 1px solid #ddd;
     color: #62646a;
+
     .subtotal {
       margin-top: 23px;
     }
+
     .service {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -204,6 +226,7 @@
     height: 24px;
     margin-bottom: 10px;
   }
+
   .total {
     border-top: 1px $footer-line-gray solid;
     margin-top: 10px;
@@ -219,6 +242,7 @@
         width: 55px;
         height: 24px;
       }
+
       h3 {
         // margin-left: 21px;
         // margin-top: 21px;
@@ -227,9 +251,11 @@
       }
     }
   }
+
   .delivery {
     margin-bottom: 20px;
   }
+
   .btn-purchase {
     width: 301px;
     height: 48px;
@@ -240,6 +266,7 @@
     font-weight: 500;
     cursor: pointer;
   }
+
   .not-charge {
     height: 15px;
     font-size: 13px;
@@ -251,6 +278,7 @@
 
   .credit-card {
     margin-left: 113px;
+
     .cards-container {
       text-align: center;
       margin: 15px 0 15px 0;
