@@ -40,7 +40,7 @@ export const UserNav = () => {
             <i className='status'>Online</i>
           </div>
 
-          <p className='profile-pic'>{user.fullname.charAt(0).toUpperCase()}</p>
+          <img className='profile-pic' src={user.imgUrl} alt='profile-pic' />
           <p className='user-name show'>{user.username}</p>
           <img className='star-fill' src={StarFill} alt='star-fill' />
 
