@@ -11,7 +11,12 @@ export function AppHeader() {
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
           <NavLink to='/about'>About </NavLink>
+
+
+
           <NavLink to='/user'>User </NavLink>
+
+          
           <button className='header-join'>
             <NavLink to='/user'>Join </NavLink>
           </button>

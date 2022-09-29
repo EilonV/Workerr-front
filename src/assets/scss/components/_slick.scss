@@ -8,7 +8,6 @@
 
         img {
             max-width: 300px !important;
-
         }
     }
 
@@ -29,7 +28,6 @@
     // .carousel-img-wrapper {
     //     margin: 0 50px;
     // }
-
     .slick-dots {
         display: none !important;
     }
@@ -53,7 +51,7 @@
     }
 
     button.slick-next {
-        right: 50px !important;
+        right: 50px;
     }
 
     button.slick-prev {
@@ -64,9 +62,6 @@
     // img {
     //     width: 100%;
     // }
-
-
-
     .slick-prev:before {
         color: black !important;
         padding: 10px;
@@ -83,26 +78,20 @@
     .slick-arrow {
         color: black !important;
     }
-
 }
 
 //     .slick-img {
 //         // position: relative;
 //         // margin: 0 !important;
 //     }
-
 // }
-
 // button.slick-next,
 // button.slick-prev {
-
 // }
-
 // // button.slick-prev {
 // //     // position: absolute !important;
 // //     z-index: 1 !important;
 // // }
-
 .slick-dots {
     bottom: 10px !important;
     // opacity: 0;
@@ -136,12 +125,10 @@
     .slick-container {
         position: relative;
         width: 100%;
-
         // img {
         //     width: 100%;
         //     height: 100%;
         // }
-
         // a {
         //     max-width: 320px;
         // }
@@ -162,7 +149,6 @@
         z-index: 10;
         opacity: 0;
         border-radius: 10px !important;
-
     }
 
     .slick-next {
@@ -177,7 +163,6 @@
         opacity: 1 !important;
         font-size: 30px !important;
     }
-
 }
 
 a:hover {
@@ -190,12 +175,14 @@ a:hover {
     width: 100%;
 
     .slick-list {
-        background-color: #f5f5f5;
+        background-color: #F5F5F5;
     }
 
     .big-slider {
+
         img {
             object-fit: contain;
+            margin: auto;
         }
 
         .slick-next:before,
@@ -206,7 +193,7 @@ a:hover {
         }
 
         .slick-next {
-            right: -20px;
+            
         }
 
         .slick-prev {
@@ -232,12 +219,12 @@ a:hover {
         }
     }
 
-
     .big-slider-img {
         // width: 430px !important;
 
         img {
             width: 100%;
+            bottom: 50%;
         }
     }
 
