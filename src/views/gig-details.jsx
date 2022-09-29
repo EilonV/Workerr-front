@@ -81,7 +81,8 @@ export const GigDetails = () => {
                   {gig.owner.fullname} |
                 </Link>
                 {/* <h4>{gig.owner.level}|</h4> */}
-                <h4>{gig.owner.rate}</h4>|
+                {/* <h4>{gig.owner.rate}</h4>| */}
+                <img className='gig-review-star' src={StarFill} alt='star' />
                 <div className='flex'>
                   <span>{gig.owner.rate}</span>({gig.reviews.length})
                 </div>
@@ -146,18 +147,13 @@ export const GigDetails = () => {
                     <p className='proposal'>Let me be your producer</p>
                   </div>
                   <div className='flex'>
-                    {
-                      <div>
-                        {
-                          <img
-                            className='gig-review-star'
-                            src={Star}
-                            alt='star-fill'
-                          />
-                        }
-                        *{gig.owner.rate}
-                      </div>
-                    }
+                    <div>
+                      <img
+                        className='gig-review-star'
+                        src={StarFill}
+                        alt='star'
+                      />
+                    </div>
 
                     <p className='rate'>
                       <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
@@ -199,7 +195,7 @@ export const GigDetails = () => {
             </section>
 
             <ReviewList reviews={gig.reviews} />
-            <section className='review-container'>
+            {/* <section className='review-container'>
               <button className='add-review-btn-1' onClick={handleClose}>
                 Add review
               </button>
@@ -207,7 +203,7 @@ export const GigDetails = () => {
                 Close
               </button>
               {!isModalOpen && <AddReview />}
-            </section>
+            </section> */}
             {user._id === gig.owner._id && (
               <section className='edit-dlt-buttons flex justify-center'>
                 <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
