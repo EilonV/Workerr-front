@@ -1,18 +1,24 @@
 .header-profile {
-  width: 400px;
+  // width: 400px;
   height: 50px;
-  margin: auto;
-  margin-top: 30px;
+  margin: 30px auto;
+
+  .header {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center;
+  }
+
   a {
-    font-size: 1em;
+    transition: 0.2s;
+    margin: auto;
+    font-size: 1.75em;
+    font-weight: 600;
     text-align: center;
-    padding-right: 20px;
-    height: 20px;
+    margin: 0 50px;
+
     &:hover {
       border-bottom: 3px solid $bright-green;
-    }
-    a.active:not(:last-child) {
-      color: $bright-green;
     }
   }
 }

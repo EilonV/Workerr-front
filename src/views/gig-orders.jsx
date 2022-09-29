@@ -54,7 +54,7 @@ export const Orders = () => {
   if (!orders) return ''
   console.log(orders)
   console.log(user)
-  orders = orders.filter(order => order.seller._id === user._id)
+  orders = orders.filter(order => (order.seller._id === user._id) || (order.buyer._id === user._id))
   return (
     <section>
       <AppHeaderExplore />
@@ -118,9 +118,12 @@ export const Orders = () => {
                           >
                             Delete
                           </button> */}
-                          <button onClick={() => onChangeStatus(order,'in progress')}>Accept</button>
-                          <button onClick={() => onChangeStatus(order,'declined')}>Decline</button>
-                          {/* <button>Update</button> */}
+                          {console.log(order)}
+                          {order.seller._id === user._id && <div className='seller-btns flex'>
+                            <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
+                            <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
+                          </div>
+                          }
                         </td>
                       </tr>
                     ))}
@@ -130,7 +133,7 @@ export const Orders = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }
