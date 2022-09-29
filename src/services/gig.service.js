@@ -1,5 +1,7 @@
 import { storageService } from './async-storage'
 import { utilService } from './util.service'
+import { httpService } from './http.service'
+
 
 export const gigService = {
   query,
@@ -10,54 +12,65 @@ export const gigService = {
 
 const STORAGE_KEY = 'gig'
 
-function query(filterBy) {
-  let check = false
-  return storageService.query(STORAGE_KEY).then((gigs) => {
-    if (!gigs || !gigs.length) {
-      storageService.postMany(STORAGE_KEY, gDefaultGigs)
-      gigs = gDefaultGigs
-    }
+function query(filterBy) { //How to implemente http?
+  // let check = false
+  return httpService.get('gig', filterBy)
+  
+  // return storageService.query(STORAGE_KEY).then((gigs) => {
+  //   if (!gigs || !gigs.length) {
+  //     storageService.postMany(STORAGE_KEY, gDefaultGigs)
+  //     gigs = gDefaultGigs
+  //   }
 
-    if (filterBy) {
-      const { title, tags } = filterBy
-      if (title) {
-        const regex = new RegExp(title, 'i')
-        gigs = gigs.filter((gig) => regex.test(gig.title))
-      }
-      if (tags && tags.length > 0) {
-        console.log('ENTERED TAGS')
-        gigs = gigs.filter((gig) => {
-          tags.forEach((tag) => {
-            check = gig.tags.includes(tag)
-          })
-          if (check === true) return gig
-        })
-        console.log(gigs)
-      }
-      return gigs
-    }
-  })
+    // if (filterBy) {
+    //   const { title, tags } = filterBy
+    //   if (title) {
+    //     const regex = new RegExp(title, 'i')
+    //     gigs = gigs.filter((gig) => regex.test(gig.title))
+    //   }
+    //   if (tags && tags.length > 0) {
+    //     console.log('ENTERED TAGS')
+    //     gigs = gigs.filter((gig) => {
+    //       tags.forEach((tag) => {
+    //         check = gig.tags.includes(tag)
+    //       })
+    //       if (check === true) return gig
+    //     })
+    //     console.log(gigs)
+    //   }
+    //   return gigs
+    // }
+  // })
 }
 
 function getById(gigId) {
-  console.log(gigId)
-  const res = storageService.get(STORAGE_KEY, gigId)
-  console.log(res)
-  return res
+  return httpService.get(`gig/${gigId}`)
+  
+  // console.log(gigId)
+  // const res = storageService.get(STORAGE_KEY, gigId)
+  // console.log(res)
+  // return res
 }
 
 function remove(gigId) {
-  console.log('gigId:', gigId)
+  return httpService.remove('gig', gigId)
 
-  return storageService.remove(STORAGE_KEY, gigId)
+  // console.log('gigId:', gigId)
+
+  // return storageService.remove(STORAGE_KEY, gigId)
 }
 
 function save(gig) {
   if (gig._id) {
-    return storageService.put(STORAGE_KEY, gig)
+    return httpService.put('gig', gig)
+    // return storageService.put(STORAGE_KEY, gig)
+
   } else {
-    gig._id = utilService.makeId(4)
-    return storageService.post(STORAGE_KEY, gig)
+    
+    return httpService.post('gig', gig)
+
+    // gig._id = utilService.makeId(4)
+    // return storageService.post(STORAGE_KEY, gig)
   }
 }
 
@@ -2198,6 +2211,8 @@ const gDefaultGigs = [
     ],
   },
 ]
+
+// console.log(gDefaultGigs);
 
 // const updatedGigs = gDefaultGigs.map(gig => {
 //   gig.reviews = [

@@ -1,6 +1,6 @@
 import { storageService } from '../../src/services/async-storage'
 import { utilService } from './util.service'
-// import { httpService } from './http.service'
+import { httpService } from './http.service'
 // import { store } from '../store/store'
 // import { getActionSetWatchedUser } from '../store/review.actions'
 // import {
@@ -30,58 +30,50 @@ export const userService = {
 window.userService = userService
 
 function getUsers() {
-    return storageService.query(STORAGE_KEY_LOGGEDIN_USER).then((users) => {
-        if (!users || !users.length) {
-            storageService.postMany(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
-            users = usersDefult
-        }
+    // return storageService.query(STORAGE_KEY_LOGGEDIN_USER).then((users) => {
+    //     if (!users || !users.length) {
+    //         storageService.postMany(STORAGE_KEY_LOGGEDIN_USER, usersDefult)
+    //         users = usersDefult
+    //     }
 
-        return users
-    })
+    //     return users
+    // })
+    return httpService.get(`user`)
 }
 
-// return httpService.get(`user`)
 
-
-// function onUserUpdate(user) {
-//     showSuccessMsg(
-//         `This user ${user.fullname} just got updated from socket, new score: ${user.score}`
-//     )
-//     store.dispatch(getActionSetWatchedUser(user))
-// }
 
 async function getById(userId) {
     // console.log(userId);
-    const user = await storageService.get(STORAGE_KEY_LOGGEDIN_USER, userId)
-    // const user = await httpService.get(`user/${userId}`)
-
+    // const user = await storageService.get(STORAGE_KEY_LOGGEDIN_USER, userId)
+    const user = await httpService.get(`user/${userId}`)
+    gWatchedUser = user;
+    return user;
+    // 
     // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
     // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    gWatchedUser = user;
-    console.log(userId);
-    return user;
 }
 
 
 function remove(userId) {
-    return storageService.remove(STORAGE_KEY_LOGGEDIN_USER, userId)
-    // return httpService.delete(`user/${userId}`)
+    // return storageService.remove(STORAGE_KEY_LOGGEDIN_USER, userId)
+    return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {
-    await storageService.put(STORAGE_KEY_LOGGEDIN_USER, user)
-    // user = await httpService.put(`user/${user._id}`, user)
+    // await storageService.put(STORAGE_KEY_LOGGEDIN_USER, user)
+    user = await httpService.put(`user/${user._id}`, user)
     // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) saveLocalUser(user)
     return user
 }
 
 async function login(userCred) {
-    console.log('@@@@@@@@@@@@@@@ user.service login', userCred);
-    const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
-    const user = users.find((user) => user.username === userCred.username)
-    // const user = await httpService.post('auth/login', userCred)
+    // console.log('@@@@@@@@@@@@@@@ user.service login', userCred);
+    // const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
+    // const user = users.find((user) => user.username === userCred.username)
+    const user = await httpService.post('auth/login', userCred)
     if (user) {
         // socketService.login(user._id)
         return saveLocalUser(user)
@@ -90,15 +82,15 @@ async function login(userCred) {
 async function signup(userCred) {
     console.log(userCred);
     // userCred.score = 10000
-    const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
-    // const user = await httpService.post('auth/signup', userCred)
+    // const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
+    const user = await httpService.post('auth/signup', userCred)
     // socketService.login(user._id)
     return saveLocalUser(user)
 }
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     // socketService.logout()
-    // return await httpService.post('auth/logout')
+    return await httpService.post('auth/logout')
 }
 
 
@@ -120,7 +112,7 @@ const usersDefult = [
         password: 'secret',
         _id: '622f3401e36c59e6164faguy',
         country: 'Israel',
-        memberSince:'sep 2019'
+        memberSince: 'sep 2019'
 
     },
 
@@ -131,7 +123,7 @@ const usersDefult = [
         password: 'Edgar',
         _id: 'h123564',
         country: 'Israel',
-        memberSince:'sep 2021'
+        memberSince: 'sep 2021'
     },
 
     {
@@ -141,7 +133,7 @@ const usersDefult = [
         password: 'Leo',
         _id: 'h12554',
         country: 'Lebanon',
-        memberSince:'sep 2021'
+        memberSince: 'sep 2021'
     },
 
     {
@@ -151,7 +143,7 @@ const usersDefult = [
         password: 'Margaux',
         _id: 'h1234',
         country: 'United States',
-        memberSince:'sep 2021'
+        memberSince: 'sep 2021'
     },
 
     {
@@ -161,7 +153,7 @@ const usersDefult = [
         password: 'Francine',
         _id: 'h45532',
         country: 'Israel',
-        memberSince:'sep 2021'
+        memberSince: 'sep 2021'
     },
 
     {
@@ -171,7 +163,7 @@ const usersDefult = [
         password: 'Winnie',
         _id: 'h422532',
         country: 'Israel',
-        memberSince:'sep 2017'
+        memberSince: 'sep 2017'
     },
 
 

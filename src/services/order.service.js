@@ -1,6 +1,8 @@
 import { storageService } from './async-storage'
 import { utilService } from './util.service'
 // import { utilService } from './util.service'
+import { httpService } from './http.service'
+
 
 export const orderService = {
   query,
@@ -12,38 +14,50 @@ export const orderService = {
 
 const STORAGE_KEY = 'order'
 
-function query() {
-  return storageService.query(STORAGE_KEY).then((orders) => {
-    if (!orders || !orders.length) {
-      storageService.postMany(STORAGE_KEY, gDefaultOrders)
-      orders = gDefaultOrders
-    }
+function query(filterBy) {
+  return httpService.get('order', filterBy) // filterBy??
 
-    return orders
-  })
+  // return storageService.query(STORAGE_KEY).then((orders) => {
+  //   if (!orders || !orders.length) {
+  //     storageService.postMany(STORAGE_KEY, gDefaultOrders)
+  //     orders = gDefaultOrders
+  //   }
+
+  //   return orders
+  // })
+
 }
 
 function getById(orderId) {
+  return httpService.get(`order/${orderId}`)
   // console.log(orderId)
-  const res = storageService.get(STORAGE_KEY, orderId)
+  // const res = storageService.get(STORAGE_KEY, orderId)
   // console.log(res)
-  return res
+  // return res
 }
 
 function remove(orderId) {
-  // console.log('orderId:', orderId)
-  return storageService.remove(STORAGE_KEY, orderId)
+  return httpService.remove('order', orderId)
 }
+  // console.log('orderId:', orderId)
+  // return storageService.remove(STORAGE_KEY, orderId)
+
 
 function save(order) {
   if (order._id) {
-    return storageService.put(STORAGE_KEY, order)
-  } else {
-    order._id = utilService.makeId(4)
-    order.createdAt = Date.now()
-    order.status = 'pending'
-    return storageService.post(STORAGE_KEY, order)
-  }
+    return httpService.put(`order/${order._id}`, order)
+} else {
+    return httpService.post('order', order)
+}
+
+  // if (order._id) {
+  //   return storageService.put(STORAGE_KEY, order)
+  // } else {
+  //   order._id = utilService.makeId(4)
+  //   order.createdAt = Date.now()
+  //   order.status = 'pending'
+  //   return storageService.post(STORAGE_KEY, order)
+  // }
 }
 
 async function changeStatus(order) {
@@ -240,3 +254,6 @@ const gDefaultOrders = [
     status: 'pending',
   },
 ]
+
+
+// console.log(gDefaultOrders);
