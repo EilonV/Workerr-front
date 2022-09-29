@@ -1,4 +1,5 @@
 import { storageService } from './async-storage'
+import { userService } from './user.service'
 import { utilService } from './util.service'
 
 export const gigService = {
@@ -7,6 +8,8 @@ export const gigService = {
   remove,
   getById,
 }
+const user = userService.getLoggedinUser()
+// console.log(user)
 
 const STORAGE_KEY = 'gig'
 
@@ -40,14 +43,14 @@ function query(filterBy) {
 }
 
 function getById(gigId) {
-  console.log(gigId)
+  // console.log(gigId)
   const res = storageService.get(STORAGE_KEY, gigId)
-  console.log(res)
+  // console.log(res)
   return res
 }
 
 function remove(gigId) {
-  console.log('gigId:', gigId)
+  // console.log('gigId:', gigId)
 
   return storageService.remove(STORAGE_KEY, gigId)
 }
@@ -58,10 +61,15 @@ function save(gig) {
   } else {
     gig._id = utilService.makeId(4)
     gig.reviews = []
+    gig.owner.ownerCountry = user.country
+    gig.owner.memberSince = user.memberSince
+    gig.owner.avgResponseTime = user.avgResponseTime
+    gig.owner.lastDelivery = user.lastDelivery
+    // console.log('gig:', gig)
+
     return storageService.post(STORAGE_KEY, gig)
   }
 }
-
 const gDefaultGigs = [
   {
     _id: 'XvgR',

@@ -9,6 +9,7 @@ import { ReviewList } from '../cmps/review-list'
 import { HeaderCategories } from '../cmps/header-categories'
 import Slider from 'react-slick'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
+import Star from '../assets/imgs/icons/star-fill.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import Clock from '../assets/imgs/icons/clock.svg'
 import Sync from '../assets/imgs/icons/sync.svg'
@@ -54,8 +55,9 @@ export const GigDetails = () => {
     )
   }
 
-  console.log(gig)
-  const user = (sessionStorage.loggedinUser) ? JSON.parse(sessionStorage.loggedinUser) : ''
+  const user = sessionStorage.loggedinUser
+    ? JSON.parse(sessionStorage.loggedinUser)
+    : ''
 
   if (gig)
     return (
@@ -76,17 +78,11 @@ export const GigDetails = () => {
                   alt=''
                 />
                 <Link className='seller-name-top' to={'/#'}>
-                  {gig.owner.fullname}|
+                  {gig.owner.fullname} |
                 </Link>
-                <h4>{gig.owner.level}|</h4>
+                {/* <h4>{gig.owner.level}|</h4> */}
                 <h4>{gig.owner.rate}</h4>|
                 <div className='flex'>
-                  <img
-                    className='gig-review-star'
-                    src={StarFill}
-                    alt='star-fill'
-                  />
-
                   <span>{gig.owner.rate}</span>({gig.reviews.length})
                 </div>
               </div>
@@ -150,11 +146,19 @@ export const GigDetails = () => {
                     <p className='proposal'>Let me be your producer</p>
                   </div>
                   <div className='flex'>
-                    <img
-                      className='gig-review-star'
-                      src={StarFill}
-                      alt='star-fill'
-                    />
+                    {
+                      <div>
+                        {
+                          <img
+                            className='gig-review-star'
+                            src={Star}
+                            alt='star-fill'
+                          />
+                        }
+                        *{gig.owner.rate}
+                      </div>
+                    }
+
                     <p className='rate'>
                       <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
                     </p>
@@ -204,23 +208,24 @@ export const GigDetails = () => {
               </button>
               {!isModalOpen && <AddReview />}
             </section>
-            {user._id === gig.owner._id &&
+            {user._id === gig.owner._id && (
               <section className='edit-dlt-buttons flex justify-center'>
                 <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
                   Edit
                 </Link>
-                <button className='btn delete' onClick={() => onRemoveGig(gig._id)}>
+                <button
+                  className='btn delete'
+                  onClick={() => onRemoveGig(gig._id)}
+                >
                   Delete
                 </button>
               </section>
-            }
-
+            )}
           </div>
 
           <aside className='aside flex column gap'>
             <div className='package-content flex column gap'>
-              <div>
-              </div >
+              <div></div>
               <section>
                 <div className='details'>
                   <div className='package-title flex space-between'>
@@ -235,7 +240,6 @@ export const GigDetails = () => {
 
                         <span>{gig.daysToMake} Days To Make</span>
                       </div>
-
                     </div>
 
                     <ul className='gig-inclusive grid'>
@@ -246,21 +250,21 @@ export const GigDetails = () => {
                         </li>
                       ))}
                     </ul>
-                    {
-                      user ?
-                        <Link
-                          to={`/gig/details/${gig._id}/checkout`}
-                          className='procced-btn'
-                        >
-                          Continue <span>(${gig.price})</span>
-                        </Link> :
-                        <Link
-                          to={`/gig/details/${gig._id}`}
-                          className='procced-btn'
-                        >
-                          Log in to continue
-                        </Link>
-                    }
+                    {user ? (
+                      <Link
+                        to={`/gig/details/${gig._id}/checkout`}
+                        className='procced-btn'
+                      >
+                        Continue <span>(${gig.price})</span>
+                      </Link>
+                    ) : (
+                      <Link
+                        to={`/gig/details/${gig._id}`}
+                        className='procced-btn'
+                      >
+                        Log in to continue
+                      </Link>
+                    )}
 
                     {/* <Link
                       to={`/gig/details/${gig._id}/checkout`}
@@ -268,12 +272,12 @@ export const GigDetails = () => {
                     >
                       Continue <span>(${gig.price})</span>
                     </Link> */}
-                  </div >
-                </div >
-              </section >
-            </div >
-          </aside >
-        </div >
-      </section >
+                  </div>
+                </div>
+              </section>
+            </div>
+          </aside>
+        </div>
+      </section>
     )
 }

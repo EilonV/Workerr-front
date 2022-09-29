@@ -83,7 +83,7 @@ async function login(userCred) {
   }
 }
 async function signup(userCred) {
-  console.log(userCred)
+  // console.log(userCred)
   // userCred.score = 10000
   const user = await storageService.post(STORAGE_KEY_LOGGEDIN_USER, userCred)
   // const user = await httpService.post('auth/signup', userCred)
@@ -109,16 +109,18 @@ const usersDefult = [
   {
     fullname: 'Guy',
     imgUrl:
-      'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0f37300e1e09cba08685e3c85a4ceb3f-1661447564773/305c8f97-9a87-449a-908a-20275c9ab8d4.jpg',
+      'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/bf5c452ba37a969d49123ddaa52c9e8f-1651802541562/8be10932-d82a-43cc-a106-032fdade978e.png',
     username: 'user1',
     password: 'secret',
     _id: '622f3401e36c59e6164faguy',
     country: 'Israel',
     memberSince: 'sep 2019',
-    rate: 4,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],
+    avgResponseTime: '4 hours',
+    lastDelivery: '22 hours',
   },
 
   {
@@ -130,7 +132,7 @@ const usersDefult = [
     _id: 'h123564',
     country: 'Israel',
     memberSince: 'sep 2021',
-    rate: 5,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],
@@ -144,7 +146,7 @@ const usersDefult = [
     _id: 'h12554',
     country: 'Lebanon',
     memberSince: 'sep 2021',
-    rate: 4,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],
@@ -158,7 +160,7 @@ const usersDefult = [
     _id: 'h1234',
     country: 'United States',
     memberSince: 'sep 2021',
-    rate: 3,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],
@@ -172,7 +174,7 @@ const usersDefult = [
     _id: 'h45532',
     country: 'Israel',
     memberSince: 'sep 2021',
-    rate: 1,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],
@@ -186,7 +188,7 @@ const usersDefult = [
     _id: 'h422532',
     country: 'Israel',
     memberSince: 'sep 2017',
-    rate: 3.2,
+    rate: 0,
     ownerLetter:
       "I have worked for about 8 full years mixing audio in live performances. I have been working as a dj for 15 years. I produce my or others' music (home studio) for about 16 years. ",
     reviews: [],

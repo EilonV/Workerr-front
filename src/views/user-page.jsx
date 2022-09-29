@@ -54,7 +54,7 @@ export const UserPage = () => {
   const onRemoveGig = (gigId) => {
     dispatch(
       removeGig(gigId, () => {
-        navigate('/')
+        navigate('/user')
       })
     )
   }
