@@ -102,7 +102,9 @@ export const GigPreview = ({ gig }) => {
         <Link to={`/gig/details/${gig._id}`}>
           <div className='gig-footer-pricing'>
             <p className='gig-starting'>STARTING AT</p>
-            <p className='gig-price-card'>${gig.price}</p>
+            <p className='gig-price-card'>
+              ${gig.price.toLocaleString('en-US')}
+            </p>
           </div>
         </Link>
       </div>
