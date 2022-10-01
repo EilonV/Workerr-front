@@ -1,7 +1,15 @@
 .slick-container-home {
-    max-width: 100vw;
+    max-width: 95vw;
 
-    // width: 100%;
+    // CAROUSEL FIX TRIES  ~~~ WORKS !!
+
+    .slick-slide {
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    // CAROUSEL FIX TRIES ~~~ WORKS !!
+
     @include for-mobile-layout {
         max-width: 85vw;
         margin: auto;
@@ -12,22 +20,18 @@
     }
 
     img {
-        // margin-right: 10px !important;
-        width: 220px;
-        // margin: 0 20px !important;
-        // margin: 0 100px;
-        // border: 20px white solid;
-        transition: 0.5s;
-        display: inline;
+        display: block;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: 0.2s;
 
         &:hover {
             opacity: 0.8;
         }
     }
 
-    // .carousel-img-wrapper {
-    //     margin: 0 50px;
-    // }
     .slick-dots {
         display: none !important;
     }
@@ -51,47 +55,57 @@
     }
 
     button.slick-next {
-        right: 50px;
+        // right: 50px;
     }
 
     button.slick-prev {
-        left: -50px !important;
+        // left: -50px !important;
         z-index: 1;
     }
 
-    // img {
-    //     width: 100%;
+    // .slick-prev:before {
+    //     content: '';
+    //     color: black !important;
+    //     padding: 10px;
+    //     // font-size: 50px !important;
+    //     opacity: 1 !important;
     // }
-    .slick-prev:before {
-        color: black !important;
-        padding: 10px;
-        font-size: 50px !important;
-        opacity: 1 !important;
-    }
 
     .slick-next:before {
-        color: black !important;
-        font-size: 50px !important;
+        content: '';
+        background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+        color: yellow !important;
+        background-size: 16px 64px;
+        width: 16px;
+        height: 16px;
+        margin-top: 3px;
+        display: inline-block;
+        background-position: 0 -48px;
         opacity: 1 !important;
     }
 
-    .slick-arrow {
-        color: black !important;
+    .slick-prev:before {
+        content: '';
+        background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+        background-size: 16px 64px;
+        width: 16px;
+        height: 16px;
+        margin-top: 3px;
+        display: inline-block;
+        opacity: 1 !important;
+    }
+
+    .slick-arrow.slick-next,
+    .slick-arrow.slick-prev {
+        width: 48px;
+        height: 48px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        opacity: 1 !important;
     }
 }
 
-//     .slick-img {
-//         // position: relative;
-//         // margin: 0 !important;
-//     }
-// }
-// button.slick-next,
-// button.slick-prev {
-// }
-// // button.slick-prev {
-// //     // position: absolute !important;
-// //     z-index: 1 !important;
-// // }
 .slick-dots {
     bottom: 10px !important;
     // opacity: 0;
@@ -143,25 +157,66 @@
         }
     }
 
+    // .slick-prev {
+    //     transition: 0.2s;
+    //     left: 0 !important;
+    //     z-index: 10;
+    //     opacity: 0;
+    //     border-radius: 10px !important;
+    // }
+
+    // .slick-next {
+    //     transition: 0.2s;
+    //     right: 10px !important;
+    //     z-index: 1;
+    //     opacity: 0;
+    // }
+    .slick-arrow.slick-next,
+    .slick-arrow.slick-prev {
+        width: 25px;
+        height: 30px;
+        background-color: white;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        position: absolute;
+    }
+
     .slick-prev {
-        transition: 0.2s;
-        left: 0 !important;
-        z-index: 10;
+        position: inherit;
+        left: -15px;
+        z-index: -1;
         opacity: 0;
-        border-radius: 10px !important;
+        border-radius: 0 50% 50% 0;
+        transition: 0.2s;
     }
 
     .slick-next {
-        transition: 0.2s;
-        right: 10px !important;
-        z-index: 1;
+        position: inherit;
+        right: -15px;
+        z-index: -1;
         opacity: 0;
+        border-radius: 50% 0 0 50%;
+        transition: 0.2s;
     }
 
-    .slick-prev:before,
+
+    .slick-prev:before {
+        content: '';
+        background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+        background-size: 12px 64px;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+
     .slick-next:before {
+        content: '';
+        background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+        background-size: 16px 64px;
+        width: 16px;
+        height: 16px;
+        background-position: 0 -48px;
+        display: inline-block;
         opacity: 1 !important;
-        font-size: 30px !important;
     }
 }
 
@@ -169,47 +224,116 @@ a:hover {
     .slick-dots {
         opacity: 1;
     }
+
+    .slick-next {
+        right: 0px;
+        z-index: 1;
+    }
+
+    .slick-prev {
+        left: 0px;
+        z-index: 1;
+    }
 }
 
 .details-carousel {
     width: 100%;
+    height: 427px;
+    margin-bottom: 100px;
 
     .slick-list {
-        background-color: #F5F5F5;
+        height: 427px;
     }
 
     .big-slider {
+        background-color: #F5F5F5;
+        max-height: 427px;
+
+        .big-slider-img {
+            max-height: 100%;
+        }
 
         img {
+            position: relative;
+            bottom: 0;
             object-fit: contain;
             margin: auto;
+            max-height: 100%;
+            width: 100%;
         }
 
-        .slick-next:before,
+        button.slick-prev {
+            left: -24px;
+            z-index: 1;
+        }
+
+        button.slick-next {
+            right: -24px;
+            z-index: 1;
+        }
+
+        .slick-next:before {
+            content: '';
+            background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+            color: yellow !important;
+            background-size: 16px 64px;
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+            display: inline-block;
+            background-position: 0 -48px;
+            opacity: 1 !important;
+        }
+
         .slick-prev:before {
-            color: black !important;
-            z-index: 1;
-            font-size: 50px;
+            content: '';
+            background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/arrows.a8b0bad.svg) no-repeat;
+            background-size: 16px 64px;
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+            display: inline-block;
+            opacity: 1 !important;
         }
 
-        .slick-next {
-            
+        .slick-arrow.slick-next,
+        .slick-arrow.slick-prev {
+            width: 48px;
+            height: 48px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+            opacity: 1 !important;
         }
 
-        .slick-prev {
-            left: -50px;
-            z-index: 1;
-        }
+        // .slick-next:before,
+        // .slick-prev:before {
+        //     color: black !important;
+        //     z-index: 1;
+        //     font-size: 50px;
+        // }
+
+        // .slick-next {}
+
+        // .slick-prev {
+        //     left: -50px;
+        //     z-index: 1;
+        // }
     }
 
     .small-slider {
-        width: 50%;
-        // margin-bottom: 30px;
+        width: 100%;
         margin: 0 auto 60px;
+        height: 60px;
 
         .slick-next:before,
         .slick-prev:before {
             display: none;
+        }
+
+        .slick-list,
+        .slick-track {
+            height: 60px;
         }
 
         .slick-slide:not(.slick-current) {
@@ -217,22 +341,18 @@ a:hover {
             transition: 0.2s;
             position: relative;
         }
-    }
 
-    .big-slider-img {
-        // width: 430px !important;
-
-        img {
-            width: 100%;
-            bottom: 50%;
-        }
-    }
-
-    .small-slider-img {
-        img {
+        .small-slider-img {
             height: 60px;
+            width: 100px !important;
+            margin-right: 5pxp  ;
+        }
+
+        img {
+            margin-right: 5px !important;
+            height: 100%;
             width: 100%;
-            margin-right: 0 !important;
+            // width: 100px;
         }
     }
 }
