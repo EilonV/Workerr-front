@@ -29,7 +29,7 @@ export function AppHeaderExplore({ user }) {
     dispatch(setFilterBy(filterBy))
     dispatch(loadGigs())
 
-    console.log(filterBy)
+    // console.log(filterBy)
     // console.log(gigs)
   }
 
@@ -85,9 +85,10 @@ export function AppHeaderExplore({ user }) {
                 {/* {user.imgUrl && <img src={user.imgUrl} />}
                             {user.fullname} */}
               </Link>
-              <button className='logout-btn' onClick={handleLogout}>Logout</button>
+              <button className='logout-btn' onClick={handleLogout}>
+                Logout
+              </button>
             </div>
-
           ) : (
             <section className=' flex row gap'>
               <div

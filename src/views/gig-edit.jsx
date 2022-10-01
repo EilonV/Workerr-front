@@ -33,7 +33,7 @@ export const GigEdit = () => {
       memberSince: loggedinUser.memberSince,
       username: loggedinUser.username,
       password: loggedinUser.password,
-      rate: loggedinUser.rate,
+      rate: loggedinUser.rate.toFixed(1),
       // avgResponseTime: '1 hour',
       // lastDelivery: 'about 17 hours',
       ownerLetter: loggedinUser.ownerLetter,

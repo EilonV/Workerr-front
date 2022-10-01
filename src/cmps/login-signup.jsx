@@ -73,7 +73,7 @@ export function LoginSignup(props) {
   const toggleSignup = (ev) => {
     ev.stopPropagation()
     setIsSignup(!isSignup)
-    console.log('signUp:')
+    // console.log('signUp:')
   }
 
   const stopPropagation = (ev) => {
@@ -93,7 +93,7 @@ export function LoginSignup(props) {
     console.log('res:', res)
     const urls = res.map((image) => image.url)
     credentials.imgUrl = urls
-    console.log(credentials.imgUrl)
+    // console.log(credentials.imgUrl)
 
     // imgUrl.push(res.url)
   }

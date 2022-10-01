@@ -1,11 +1,10 @@
-import { AppHeaderExplore } from "../cmps/app-header-explore"
+import { AppHeaderExplore } from '../cmps/app-header-explore'
 
 export const About = () => {
-
-    return (
-        <section>
-            <AppHeaderExplore />
-            <h1>About</h1>
-        </section>
-    )
+  return (
+    <section>
+      <AppHeaderExplore />
+      <h1>About</h1>
+    </section>
+  )
 }

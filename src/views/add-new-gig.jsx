@@ -41,7 +41,7 @@ export const AddNewGig = () => {
       memberSince: loggedinUser.memberSince,
       username: loggedinUser.username,
       password: loggedinUser.password,
-      rate: loggedinUser.rate,
+      rate: loggedinUser.rate.toFixed(1),
       ownerLetter: loggedinUser.ownerLetter,
       reviews: loggedinUser.reviews,
     },
@@ -77,7 +77,7 @@ export const AddNewGig = () => {
         refreshPage()
       })
     )
-    console.log('newgigs:', gig)
+    // console.log('newgigs:', gig)
   }
 
   const handleSelect = (ev) => {
@@ -165,8 +165,8 @@ export const AddNewGig = () => {
                   <option value='lifeStyle'>LifeStyle</option>
                 </select>
 
-                <select name='tags' id='tag-select'>
-                  {/* <option value='digital-marketing'>Digital Marketing</option>
+                {/* <select name='tags' id='tag-select'> */}
+                {/* <option value='digital-marketing'>Digital Marketing</option>
                  <option value='wWriting-translation'>
                    Writing & Translation
                  </option>
@@ -176,7 +176,7 @@ export const AddNewGig = () => {
                  <option value='data'>Data</option>
                  <option value='busines'>Busines</option>
                  <option value='lifeStyle'>LifeStyle</option> */}
-                </select>
+                {/* </select> */}
                 <div className='title-footer flex space-between'></div>
               </div>
             </div>

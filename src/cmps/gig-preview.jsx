@@ -12,6 +12,12 @@ export const GigPreview = ({ gig }) => {
     slidesToScroll: 1,
   }
 
+  const getRate = () => {
+    let rate = 0
+    gig.reviews.map((review) => (rate += review.rate))
+    return (rate / gig.reviews.length).toFixed(1)
+  }
+
   if (!gig) return ''
   return (
     <section className='gig-preview'>
@@ -59,7 +65,7 @@ export const GigPreview = ({ gig }) => {
             d='M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z'
           />
         </svg>
-        {gig.owner.rate > 0 ? <p>&nbsp;{gig.owner.rate}.0</p> : <p>&nbsp;0</p>}
+        {gig.owner.rate > 0 ? <p>&nbsp;{getRate()}</p> : <p>&nbsp;0</p>}
         <div className='flex'>
           <p className='user-reviews-count'>({gig.reviews.length})</p>
         </div>
@@ -102,7 +108,9 @@ export const GigPreview = ({ gig }) => {
         <Link to={`/gig/details/${gig._id}`}>
           <div className='gig-footer-pricing'>
             <p className='gig-starting'>STARTING AT</p>
-            <p className='gig-price-card'>${gig.price}</p>
+            <p className='gig-price-card'>
+              ${gig.price.toLocaleString('en-US')}
+            </p>
           </div>
         </Link>
       </div>
