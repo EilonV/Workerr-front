@@ -26,23 +26,33 @@
 .fs30 {
   font-size: rem(30px);
 }
+
 .fs32 {
   font-size: 32px;
 }
 
-.pad-bot24{
+.pad-bot24 {
   padding-bottom: 24px;
 }
 
-.mar-right-10{
+.marg-auto {
+  margin: auto;
+}
+
+.mar-right-10 {
   margin-right: 10px;
 }
+
+.text-center{
+  text-align: center;
+}
+
 // flex helpers
 
 .flex {
   display: flex;
 
-  > *.full {
+  >*.full {
     flex: 1;
   }
 

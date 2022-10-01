@@ -5,12 +5,8 @@ export function ProfileHeader() {
     <section className='header-profile flex main-layout'>
       <div className='header flex'>
         <div className='category-section flex align-center'>
-          <div>
-            <NavLink to='/user'>Profile</NavLink>
-          </div>
-          <div>
-            <NavLink to='/user/orders'>Orders</NavLink>
-          </div>
+          <NavLink to='/user'>Profile</NavLink>
+          <NavLink to='/user/orders'>Orders</NavLink>
         </div>
       </div>
       {/* </div> */}

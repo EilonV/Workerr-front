@@ -82,44 +82,45 @@ export const GigDetails = () => {
                 </Link>
                 {/* <h4>{gig.owner.level}|</h4> */}
                 {/* <h4>{gig.owner.rate}</h4>| */}
-                <img className='gig-review-star' src={StarFill} alt='star' />
                 <div className='flex'>
+                  <img className='gig-review-star' src={StarFill} alt='star' />
                   <span>{gig.owner.rate}</span>({gig.reviews.length})
                 </div>
               </div>
 
               <div className='details-carousel'>
-                <div>
-                  <div className='big-slider'>
-                    <Slider
-                      slidesToShow={1}
-                      asNavFor={nav2}
-                      ref={(slider1) => setNav1(slider1)}
-                    >
-                      {gig.imgUrl.map((img) => (
-                        <div className='big-slider-img'>
-                          <img src={img} alt='' />
-                        </div>
-                      ))}
-                    </Slider>
-                  </div>
 
-                  <div className='small-slider'>
-                    <Slider
-                      asNavFor={nav1}
-                      ref={(slider2) => setNav2(slider2)}
-                      slidesToShow={4}
-                      swipeToSlide={true}
-                      focusOnSelect={true}
-                    >
-                      {gig.imgUrl.map((img) => (
-                        <div className='small-slider-img'>
-                          <img src={img} alt='' />
-                        </div>
-                      ))}
-                    </Slider>
-                  </div>
+                <div className='big-slider'>
+                  <Slider
+                    slidesToShow={1}
+                    asNavFor={nav2}
+                    ref={(slider1) => setNav1(slider1)}
+                  >
+                    {gig.imgUrl.map((img) => (
+                      <div className='big-slider-img'>
+                        <img src={img} alt='' />
+                      </div>
+                    ))}
+                  </Slider>
                 </div>
+
+                <div className='small-slider'>
+                  <Slider
+                    asNavFor={nav1}
+                    ref={(slider2) => setNav2(slider2)}
+                    slidesToShow={gig.imgUrl.length}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                  >
+
+                    {gig.imgUrl.map((img) => (
+                      <div className='small-slider-img'>
+                        <img src={img} alt='' />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+
               </div>
               <h2 className='desc'>About This Gig</h2>
 
@@ -204,7 +205,7 @@ export const GigDetails = () => {
               </button>
               {!isModalOpen && <AddReview />}
             </section> */}
-            {user._id === gig.owner._id && (
+            {/* {user._id === gig.owner._id && (
               <section className='edit-dlt-buttons flex justify-center'>
                 <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
                   Edit
@@ -216,7 +217,7 @@ export const GigDetails = () => {
                   Delete
                 </button>
               </section>
-            )}
+            )} */}
           </div>
 
           <aside className='aside flex column gap'>

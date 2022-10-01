@@ -6,9 +6,9 @@
   .user-container {
     padding: 30px;
     width: 338px;
-    height: 358px;
     border: 1px $footer-line-gray solid;
   }
+
   .on-off {
     height: 18px;
     width: 53px;
@@ -19,6 +19,7 @@
     color: #1dbf73;
     padding: 0 6px 0 6px;
   }
+
   // .dot {
   //   color: #1dbf73;
   //   text-align: center;
@@ -29,23 +30,16 @@
 }
 
 .profile-pic {
-  // margin-top: 30px;
   display: flex;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  font-size: 42px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   user-select: none;
-  background-color: $footer-logo-gray;
-  color: $white;
-  margin-left: 91px;
+  margin: auto;
+  object-fit: cover;
 }
 
 .user-container {
-  height: 358px;
   text-align: center;
 
   .user-name {
@@ -62,6 +56,7 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
   }
+
   .profile-btn {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 600;
@@ -87,20 +82,36 @@
     margin-top: 24px;
     height: 52px;
     border-top: 1px $footer-line-gray solid;
+
     .first {
       margin-bottom: 15px;
+
+      .from-since {
+        align-items: center;
+      }
     }
+
+    .second {
+      .member {
+        height: fit-content;
+        align-items: center;
+      }
+    }
+
     .location {
       height: 12px;
     }
+
     .user {
       height: 12px;
     }
+
     .from {
       margin-left: 5px;
     }
+
     .country {
-      margin-left: 242px;
+      // margin-left: 242px;
     }
   }
 }

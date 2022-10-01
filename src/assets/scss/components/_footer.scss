@@ -8,7 +8,6 @@
     font-size: 15px;
 
     .footer-icons {
-        margin-right: 14px;
         padding-top: 3px;
 
         .footer-icon-wrapper {
@@ -21,6 +20,7 @@
             margin: 0 0 0 -10px;
             transition: 0.2s;
         }
+
     }
 
     a {
@@ -81,19 +81,29 @@
             flex-direction: column;
         }
 
-        .footer-icons {
-            padding-left: 50px;
-        }
-        .access-container{
+        .access-container {
             padding-left: 10px;
         }
-        .icons-access-container,.access-container {
+
+        .icons-access-container,
+        .access-container {
             margin: 20px 0;
         }
-        .footer-rights{
+
+        .footer-rights {
             margin: 0;
         }
+
         display: flex;
         flex-direction: column;
+    }
+
+    .footer-icons {
+        :last-child {
+            svg {
+                margin: 0;
+            }
+        }
+
     }
 }

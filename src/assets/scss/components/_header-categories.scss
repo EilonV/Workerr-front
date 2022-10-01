@@ -2,7 +2,7 @@
   padding: 0;
   // display: flex !important;
   margin: auto;
-  padding-right: 63px;
+  // padding-right: 63px;
   // grid-column: 1 / -1 !important;
 
   a {
@@ -14,22 +14,24 @@
 
   .category-section {
     height: 40px;
+
     &:hover {
       border-bottom: 3px solid $bright-green;
     }
   }
 
-  .tags {
-  }
+  .tags {}
 }
 
 .header-categories-wrapper {
-  width: 100%;
-  padding: 2px 32px;
+  width: 95%;
+  padding: 2px 20px;
   position: relative;
+  margin: auto;
   left: 0;
   right: 0;
-  border: 1px $footer-line-gray solid;
+  border-top: 1px $footer-line-gray solid;
+  border-bottom: 1px $footer-line-gray solid;
   border-bottom: 1px $footer-line-gray solid;
   height: 40px;
 }

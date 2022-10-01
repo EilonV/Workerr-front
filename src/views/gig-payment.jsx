@@ -10,7 +10,7 @@ export const GigPayment = () => {
         <div className='modal flex'>
           <App />
         </div>
-        <p>
+        {/* <p>
           Your order has been received by the user, you can see it
           <span className='link'>
             <Link to='/user/orders'>&nbsp;here&nbsp;</Link>
@@ -18,7 +18,7 @@ export const GigPayment = () => {
         </p>
         <Link to='/gigs'>
           <button className='back-btn'>Go to Gigs</button>
-        </Link>
+        </Link> */}
       </div>
     </section>
   )

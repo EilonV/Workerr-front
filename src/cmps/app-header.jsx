@@ -8,15 +8,8 @@ export function AppHeader() {
           Workerr<span>.</span>
         </h1>
         <nav className='header-nav'>
-          <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
-          <NavLink to='/about'>About </NavLink>
-
-
-
           <NavLink to='/user'>User </NavLink>
-
-          
           <button className='header-join'>
             <NavLink to='/user'>Join </NavLink>
           </button>

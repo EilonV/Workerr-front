@@ -1,14 +1,20 @@
 .gig-preview {
-
-  a {
-    position: relative;
-  }
-
+  min-width: 245px;
   display: flex;
   flex-direction: column;
   border: $border-gray 1px solid;
   height: 100%;
   width: 100%;
+
+  &:hover {
+    .gig-title {
+      color: $bright-green;
+    }
+  }
+
+  a {
+    position: relative;
+  }
 
   .img-gig {
     position: relative;
@@ -77,11 +83,7 @@
     min-height: 38px;
   }
 
-  &:hover {
-    .gig-title {
-      color: $bright-green;
-    }
-  }
+
 
   .gig-reviews-card {
     padding: 10px 12px;

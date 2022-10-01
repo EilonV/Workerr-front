@@ -59,7 +59,9 @@ export const UserPage = () => {
     )
   }
 
-  const userGigs = gigs.filter((gig) => gig.owner._id === loggedinUser._id)
+  const userGigs = gigs.filter((gig) => gig.owner.username === loggedinUser.username)
+  // gig.owner._id === loggedinUser._id)
+  console.log(loggedinUser)
 
   return (
     <section>
@@ -85,7 +87,7 @@ export const UserPage = () => {
                           {
                             <img
                               className='gig-owner-image'
-                              src={gig.imgUrl}
+                              src={gig.imgUrl[0]}
                               alt='gig owner image'
                             />
                           }
@@ -169,7 +171,7 @@ export const UserPage = () => {
         ) : (
           <Link to={'/login'}>
             <div className='login-modal'>
-              <h2>Click here to log in</h2>
+              {/* <h2>Click here to log in</h2> */}
             </div>
           </Link>
         )}

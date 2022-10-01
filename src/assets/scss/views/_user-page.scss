@@ -37,10 +37,10 @@
     margin-bottom: 40px;
 
     .my-orders {
-      width: 736px;
+      width:818px;
       height: 66px;
       border: 1px $footer-line-gray solid;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
 
       h1 {
         width: fit-content;
@@ -65,12 +65,14 @@
         width: 230px;
         height: 250px;
         text-align: center;
-        border: 1px solid $bright-gray;
+        border: 1px solid $footer-line-gray;
         margin-right: 20px;
         margin-top: 20px;
         img {
-          height: 145px;
-          width: 230px;
+          position: relative;
+          left: -1px;
+          height: 100%;
+          width: 100.5%;
         }
         h3 {
           height: 40px;
@@ -100,7 +102,7 @@
         height: 250px;
         width: 230px;
         text-align: center;
-        border: 1px solid $bright-gray;
+        border: 1px solid $footer-line-gray;
         margin-right: 20px;
         margin-bottom: 20px;
         .plus {

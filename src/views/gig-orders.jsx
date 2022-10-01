@@ -7,6 +7,7 @@ import { ProfileHeader } from '../cmps/profile-header'
 import { UserNav } from '../cmps/user-nav'
 import { loadOrders, removeOrder, updateOrder } from '../store/actions/order.action'
 import { orderService } from '../services/order.service'
+import login from '../assets/imgs/icons/must-login.svg'
 
 // import { useNavigate, useParams } from 'react-router-dom'
 
@@ -30,6 +31,7 @@ export const Orders = () => {
   const onChangeStatus = (order, newStatus) => {
     const updatedOrder = { ...order, status: newStatus }
     dispatch(updateOrder(updatedOrder))
+    dispatch(loadOrders())
   }
 
   const format = (time) => {
@@ -42,98 +44,165 @@ export const Orders = () => {
       new Date(time).getFullYear(),
       '\n',
 
-      new Date(time).getHours(),
-      ':',
-
-      new Date(time).getMinutes(),
+      // new Date(time).getHours(),
+      // ':',
+      // new Date(time).getMinutes(),
     ]
   }
-
+  const changeStatusColor = (status) => {
+    switch (status) {
+      case 'pending':
+        console.log("pending")
+        break;
+      case 'in progress':
+        console.log("in progress")
+        break;
+      case 'declined':
+        console.log("declined")
+        break;
+    }
+  }
   const user = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : ''
 
+
   if (!orders) return ''
+
+  const isBuyer = orders.some(order => order.buyer._id === user._id)
+  const isSeller = orders.some(order => order.seller.username === user.username)
+  const sellerOrders = orders.filter(order => order.seller.username === user.username)
+  const buyerOrders = orders.filter(order => order.buyer._id === user._id)
   console.log(orders)
-  console.log(user)
-  orders = orders.filter(order => (order.seller._id === user._id) || (order.buyer._id === user._id))
   return (
     <section>
       <AppHeaderExplore />
       <HeaderCategories orders={orders} />
-      <ProfileHeader />
-      <div className='features main-layout'>
-        <div className='profile-user '>
-          <div className='page-container flex '>
-            {/* <UserNav /> */}
-            <div className='orders-container'>
-              <section className='total-orders'>
-                <div className='title flex space-between'>
-                  <p>Total orders &nbsp; </p>
-                  <p className='num-orders'>
-                    {orders.length === 1
-                      ? orders.length + ' order'
-                      : orders.length + ' orders'}
-                  </p>
-                  {/* <p>This month's orders &nbsp; </p> */}
-                </div>
-                {/* <div className='title flex space-between'>
-                <p className='num-orders'>
-                  Revenues: <span className='price'>$ 0.00</span> &nbsp;
-                </p>
-                <p className='num-orders'>
-                  Revenues: <span className='price'>$ 0.00</span> &nbsp;
-                </p>
-                <p className='num-orders'>
-                  Revenues: <span className='price'>$ 0.00</span> &nbsp;
-                </p>
-              </div>
-              <div className='title flex space-between'>
-                <p>Quantity:0 &nbsp;</p>
-                <p>Quantity:0 &nbsp;</p>
-                <p>Quantity:0 &nbsp;</p>
-              </div> */}
+      {user ?
+        <div className='features main-layout'>
+            <ProfileHeader />
+          <div className='orders-wrapper'>
+            <div className='profile-user '>
+              <div className='page-container flex '>
+                {/* <UserNav /> */}
+                <div className='orders-container'>
+                  {isSeller &&
+                    <div className='sales-info flex'>
+                      <div className='total-sales'>
+                        <h1>Total sales revenue</h1>
+                        <p>${sellerOrders.reduce((a, b) => a.gig.price + b.gig.price)}</p>
+                      </div>
+                      <div className='total-sales'>
+                        <h1>Total customers served</h1>
+                        <p>{sellerOrders.length}</p>
+                      </div>
+                    </div>
 
-                <div className='table-orders'>
-                  <table>
-                    <tr>
-                      <th> Date </th>
-                      <th> Client </th>
-                      <th> Gig</th>
-                      <th> Seller name </th>
-                      <th> Price</th>
-                      <th> Status </th>
-                      <th> Actions </th>
-                    </tr>
-                    {orders.map((order) => (
-                      <tr>
-                        <td>{format(order.createdAt)} </td>
-                        <td>{order.buyer.username} <br />({order.buyer.fullname}) </td>
-                        <td>{order.gig._id} </td>
-                        <td>{order.seller.fullname} </td>
-                        <td>${order.gig.price} </td>
-                        <td className='status'>{order.status} </td>
-                        <td className='flex'>
-                          {/* <button
-                            className='delete-btn'
-                            onClick={() => onRemoveOrder(order._id)}
-                          >
-                            Delete
-                          </button> */}
-                          {console.log(order)}
-                          {order.seller._id === user._id && <div className='seller-btns flex'>
-                            <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
-                            <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
-                          </div>
-                          }
-                        </td>
-                      </tr>
-                    ))}
-                  </table>
+                  }
+                  {isSeller && <section className='total-orders'>
+
+                    <div>
+
+                      <div className='table-orders'>
+                        <h2>Orders as seller</h2>
+
+                        <table>
+                          <tr>
+                            <th> Client </th>
+                            <th> Gig title</th>
+                            <th> Date </th>
+                            <th> Price</th>
+                            <th> Status </th>
+                            <th> Actions </th>
+                          </tr>
+                          {sellerOrders.map((order) => (
+                            <tr>
+                              <td>
+                                <div className='flex align-center'>
+                                  <img src={order.buyer.imgUrl} alt="" />
+                                  {order.buyer.username}
+                                </div>
+                              </td>
+                              <td className='order-title'>{order.gig.title} </td>
+                              <td>{format(order.createdAt)} </td>
+                              <td>${order.gig.price} </td>
+                              <td className='status'>{order.status}</td>
+                              <td className=''>
+                                {order.status === 'pending' &&
+                                  <div className='seller-btns flex'>
+                                    <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
+                                    <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
+                                  </div>
+                                }
+
+                              </td>
+                            </tr>
+                          ))}
+                        </table>
+                      </div>
+                    </div>
+
+                  </section>}
+
+
+                  <section className='total-orders'>
+
+                    {isBuyer &&
+                      <div>
+
+                        <div className='table-orders2'>
+                          <h2>Orders as buyer</h2>
+
+                          <table>
+                            <tr>
+                              <th> Seller </th>
+                              <th> Gig title</th>
+                              <th> Date </th>
+                              <th> Price</th>
+                              <th> Status </th>
+                              {/* <th> Actions </th> */}
+                            </tr>
+                            {buyerOrders.map((order) => (
+                              <tr>
+                                <td>
+                                  <div className='flex align-center'>
+                                    {order.seller.imgUrl ? (<img src={order.seller.imgUrl} alt="" />) :
+                                      (order.seller.username ? <div className='no-pic-bg'><p >{order.seller.username.charAt(0).toUpperCase()}</p></div> : 'NO USERNAME')}
+                                    {order.seller.username}
+                                  </div>
+                                </td>
+                                <td className='order-title'>{order.gig.title} </td>
+                                <td>{format(order.createdAt)} </td>
+                                <td>${order.gig.price} </td>
+                                <td className='status'>{order.status} </td>
+                                {/* <td className='flex'>
+                              {order.status === 'pending' &&
+                                <div className='seller-btns flex'>
+                                  <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
+                                  <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
+                                </div>
+                              }
+
+                            </td> */}
+                              </tr>
+                            ))}
+                          </table>
+                        </div>
+                      </div>
+
+                    }
+                  </section>
+                  {(!isBuyer && !isSeller)}
+
                 </div>
-              </section>
+              </div>
             </div>
           </div>
+
+        </div > :
+        <div className='not-logged main-layout text-center '>
+          <h2>Must be logged in to view orders</h2>
+          <img src={login} alt="" style={{ width: "60%" }} />
         </div>
-      </div >
+      }
     </section >
   )
 }

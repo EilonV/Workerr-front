@@ -31,6 +31,7 @@ export const UserNav = () => {
   // }
   if (!user) return ''
   // console.log(user)
+  console.log(user);
   return (
     <div className='profile-user'>
       <div className='user-container'>

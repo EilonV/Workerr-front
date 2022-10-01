@@ -8,7 +8,7 @@ export default class App extends Component {
     this.state = {
       type: 'success',
       status: true,
-      title: 'Thank You for buying',
+      title: 'Thank You for your purchase.',
     }
   }
 

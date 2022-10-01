@@ -15,6 +15,7 @@
         @content;
     }
 }
+
 @mixin for-wider-layout {
     @media (min-width: $wide-dekstop-breakpoint) {
         @content;
@@ -24,4 +25,8 @@
 @mixin layoutGTC($max) {
     grid-template-columns:
         minmax($layoutPadding, 1fr) minmax(auto, $max) minmax($layoutPadding, 1fr);
+}
+
+@mixin random-clr() {
+    background: rgb(random(255), random(255), random(255));
 }

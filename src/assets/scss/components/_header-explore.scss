@@ -44,6 +44,7 @@
   }
 
   .header-nav {
+    align-items: center;
       .header-join {
           &:hover {
               a {
@@ -137,4 +138,12 @@
           color: $bright-green ;
       }
   }
+}
+
+.header-user-img{
+    object-fit: cover;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    filter: blur(0.35px);
 }

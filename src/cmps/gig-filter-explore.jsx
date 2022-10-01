@@ -27,8 +27,6 @@ export const GigFilterExplore = ({ gigs, onChangeFilter }) => {
   }
 
   // Get all tags from gigs
-
-
   const gigCountByCategory = useMemo(() => {
     return gigs.reduce((map, gig) => {
       gig.tags.forEach((tag) => {
