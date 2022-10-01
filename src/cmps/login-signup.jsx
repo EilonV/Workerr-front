@@ -13,6 +13,7 @@ export function LoginSignup(props) {
     password: '',
     fullname: '',
     imgUrl: '',
+    country: '',
   })
   const [isSignup, setIsSignup] = useState(props.isSignUp)
   const [users, setUsers] = useState([])
@@ -63,7 +64,7 @@ export function LoginSignup(props) {
     if (ev) ev.preventDefault()
     if (!credentials.username || !credentials.password || !credentials.fullname)
       return
-    // props.onSignup(credentials);
+    props.onSignup(credentials);
     dispatch(onSignup(credentials))
 
     clearState()
@@ -89,7 +90,7 @@ export function LoginSignup(props) {
 
   const onImgUpload = async (ev) => {
     const res = await uploadService.uploadImg(ev)
-    // console.log('res:', res.url)
+    console.log('res:', res)
     const urls = res.map((image) => image.url)
     credentials.imgUrl = urls
     console.log(credentials.imgUrl)
@@ -189,9 +190,16 @@ export function LoginSignup(props) {
                 autoComplete='false'
               />
 
-              {/* <div className='img-upload-container'>
-                <label>
-                  Images
+              <input
+                type='text'
+                name='country'
+                value={credentials.country}
+                placeholder='country'
+                onChange={handleChange}
+                required
+                autoComplete='true'
+              />
+                 
                   <input
                     value={credentials.imgUrl}
                     type='file'
@@ -200,9 +208,7 @@ export function LoginSignup(props) {
                     multiple
                     onChange={onImgUpload}
                   />
-                </label>
-              </div> */}
-
+                
               <button>Continue</button>
             </form>
             <div className='form-footer flex justify-center align-center'>
