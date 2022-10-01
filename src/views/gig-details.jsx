@@ -55,6 +55,12 @@ export const GigDetails = () => {
     )
   }
 
+  const getRate = () => {
+    let rate = 0
+    gig.reviews.map((review) => (rate += review.rate))
+    return rate / gig.reviews.length
+  }
+
   const user = sessionStorage.loggedinUser
     ? JSON.parse(sessionStorage.loggedinUser)
     : ''
@@ -77,14 +83,13 @@ export const GigDetails = () => {
                 src={gig.owner.imgUrl}
                 alt=''
               />
-              <Link className='seller-name-top' to={'/#'}>
-                {gig.owner.fullname} |
-              </Link>
+              {/* <Link to={'/user'} className='seller-name-top'> */}
+              {gig.owner.fullname} |{/* </Link> */}
               {/* <h4>{gig.owner.level}|</h4> */}
               {/* <h4>{gig.owner.rate}</h4>| */}
-              <img className='gig-review-star' src={StarFill} alt='star' />
+              <img className='gig-review-star' src={Star} alt='star' />
               <div className='flex'>
-                <span>{gig.owner.rate}</span>({gig.reviews.length})
+                <span>{getRate()}</span>({gig.reviews.length})
               </div>
             </div>
 
@@ -140,23 +145,28 @@ export const GigDetails = () => {
                 alt=''
               />
               <div className='flex column'>
-                <Link className='name' to={'/#'}>
-                  {gig.owner.fullname}
-                </Link>
+                {/* <Link className='name' to={'/user'}> */}
+                {gig.owner.fullname}
+                {/* </Link> */}
                 <div className='seller-rate flex'>
                   <p className='proposal'>Let me be your producer</p>
                 </div>
                 <div className='flex'>
                   <div>
-                    <img
-                      className='gig-review-star'
-                      src={StarFill}
-                      alt='star'
-                    />
+                    {/* {gig.rate()} */}
+                    {new Array(gig.owner.rate).map((rate) => (
+                      <img
+                        className='gig-review-star'
+                        key={rate}
+                        src={Star}
+                        alt='star'
+                      />
+                    ))}
                   </div>
-
                   <p className='rate'>
-                    <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
+                    <span>{getRate()}</span>
+                    &nbsp;(
+                    {gig.reviews.length})
                   </p>
                 </div>
                 <button className='btn-contact'>Contact Me</button>
@@ -195,15 +205,15 @@ export const GigDetails = () => {
           </section>
 
           <ReviewList reviews={gig.reviews} />
-          {/* <section className='review-container'>
-              <button className='add-review-btn-1' onClick={handleClose}>
-                Add review
-              </button>
-              <button className='close-review-btn-1' onClick={handleOpen}>
-                Close
-              </button>
-              {!isModalOpen && <AddReview />}
-            </section> */}
+          <section className='review-container'>
+            <button className='add-review-btn-1' onClick={handleClose}>
+              Add review
+            </button>
+            <button className='close-review-btn-1' onClick={handleOpen}>
+              Close
+            </button>
+            {!isModalOpen && <AddReview gig={gig} />}
+          </section>
           {user._id === gig.owner._id && (
             <section className='edit-dlt-buttons flex justify-center'>
               <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
@@ -251,7 +261,7 @@ export const GigDetails = () => {
                       to={`/gig/details/${gig._id}/checkout`}
                       className='procced-btn'
                     >
-                      Continue{' '}
+                      Continue
                       <span>(${gig.price.toLocaleString('en-US')})</span>
                     </Link>
                   ) : (
