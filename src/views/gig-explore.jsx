@@ -17,7 +17,6 @@ export const GigExplore = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-
     dispatch(loadGigs())
   }, [])
 
@@ -29,6 +28,7 @@ export const GigExplore = () => {
     // console.log(filterBy)
     // console.log(gigs)
   }
+
   return (
     <section className='main-layout'>
       <AppHeaderExplore />

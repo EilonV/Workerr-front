@@ -6,7 +6,7 @@ export const GigSort = ({ gigs }) => {
   const onSortByPrice = (ev) => {
     if (ev.target[0].value === 'price') {
       console.log('its by price')
-      console.log(gigs);
+      // console.log(gigs);
       // gigs.sort((a, b) => { a - b, a.price - b.price })
     }
   }

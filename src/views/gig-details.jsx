@@ -55,6 +55,12 @@ export const GigDetails = () => {
     )
   }
 
+  const getRate = () => {
+    let rate = 0
+    gig.reviews.map((review) => (rate += review.rate))
+    return rate / gig.reviews.length
+  }
+
   const user = sessionStorage.loggedinUser
     ? JSON.parse(sessionStorage.loggedinUser)
     : ''
@@ -77,14 +83,13 @@ export const GigDetails = () => {
                 src={gig.owner.imgUrl}
                 alt=''
               />
-              <Link className='seller-name-top' to={'/#'}>
-                {gig.owner.fullname} |
-              </Link>
+              {/* <Link to={'/user'} className='seller-name-top'> */}
+              {gig.owner.fullname} |{/* </Link> */}
               {/* <h4>{gig.owner.level}|</h4> */}
               {/* <h4>{gig.owner.rate}</h4>| */}
-              <img className='gig-review-star' src={StarFill} alt='star' />
+              <img className='gig-review-star' src={Star} alt='star' />
               <div className='flex'>
-                <span>{gig.owner.rate}</span>({gig.reviews.length})
+                <span>{getRate()}</span>({gig.reviews.length})
               </div>
             </div>
 
@@ -143,90 +148,26 @@ export const GigDetails = () => {
                 <Link className='name' to={'/#'}>
                   {gig.owner.fullname}
                 </Link>
-                {/* <h4>{gig.owner.level}|</h4> */}
-                {/* <h4>{gig.owner.rate}</h4>| */}
+                <div className='seller-rate flex'>
+                  <p className='proposal'>Let me be your producer</p>
+                </div>
                 <div className='flex'>
-                  <img className='gig-review-star' src={StarFill} alt='star' />
-                  <span>{gig.owner.rate}</span>({gig.reviews.length})
+                  <div>
+                    <img
+                      className='gig-review-star'
+                      src={StarFill}
+                      alt='star'
+                    />
+                  </div>
+
+                  <p className='rate'>
+                    <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
+                  </p>
                 </div>
+                <button className='btn-contact'>Contact Me</button>
               </div>
-
-              <div className='details-carousel'>
-
-                <div className='big-slider'>
-                  <Slider
-                    slidesToShow={1}
-                    asNavFor={nav2}
-                    ref={(slider1) => setNav1(slider1)}
-                  >
-                    {gig.imgUrl.map((img) => (
-                      <div className='big-slider-img'>
-                        <img src={img} alt='' />
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-
-                <div className='small-slider'>
-                  <Slider
-                    asNavFor={nav1}
-                    ref={(slider2) => setNav2(slider2)}
-                    slidesToShow={gig.imgUrl.length}
-                    swipeToSlide={true}
-                    focusOnSelect={true}
-                  >
-
-                    {gig.imgUrl.map((img) => (
-                      <div className='small-slider-img'>
-                        <img src={img} alt='' />
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-
-              </div>
-              <h2 className='desc'>About This Gig</h2>
-
-              <p className='desc-list'>{gig.longerDescription}</p>
             </section>
-            <div className='genre'>
-              <p className='genre-title'>Genre </p>
-              <p className='genre-list'>Hip-Hop </p>
-            </div>
 
-            <div className='seller'>
-              <h2>About The Seller</h2>
-
-              <section className='seller-avatar-about flex row align-center gap'>
-                <img
-                  className='gig-owner-image-about border-radius'
-                  src={gig.owner.imgUrl}
-                  alt=''
-                />
-                <div className='flex column'>
-                  <Link className='name' to={'/#'}>
-                    {gig.owner.fullname}
-                  </Link>
-                  <div className='seller-rate flex'>
-                    <p className='proposal'>Let me be your producer</p>
-                  </div>
-                  <div className='flex'>
-                    <div>
-                      <img
-                        className='gig-review-star'
-                        src={StarFill}
-                        alt='star'
-                      />
-                    </div>
-
-                    <p className='rate'>
-                      <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
-                    </p>
-                  </div>
-                  <button className='btn-contact'>Contact Me</button>
-                </div>
-              </section>
-            </div>
 
             <section className='seller-desc flex column gap'>
               <div className='formal-desc flex row'>
@@ -259,60 +200,18 @@ export const GigDetails = () => {
             </section>
           </div>
 
-          <section className='seller-desc flex column gap'>
-            <div className='formal-desc flex row'>
-              <div className='flex column gap'>
-                <h4 className='flex column'>
-                  <span className='formal-title'> From</span>
-                  {gig.owner.ownerCountry}
-                </h4>
-                <h4 className='flex column'>
-                  <span className='formal-title'> Member Since</span>
-                  {gig.owner.memberSince}
-                </h4>
-              </div>
-
-              <div className='flex column gap'>
-                <h4 className='flex column'>
-                  <span className='formal-title'> Avg. response time</span>
-                  {gig.owner.avgResponseTime}
-                </h4>
-                <h4 className='flex column'>
-                  <span className='formal-title'> Last delivery</span>
-                  {gig.owner.lastDelivery}
-                </h4>
-              </div>
-            </div>
-
-            <div className='seller-letter'>
-              <p>{gig.owner.ownerLetter}</p>
-            </div>
-          </section>
-
           <ReviewList reviews={gig.reviews} />
-          {/* <section className='review-container'>
-              <button className='add-review-btn-1' onClick={handleClose}>
-                Add review
-              </button>
-              <button className='close-review-btn-1' onClick={handleOpen}>
-                Close
-              </button>
-              {!isModalOpen && <AddReview />}
-            </section> */}
-            {/* {user._id === gig.owner._id && (
-              <section className='edit-dlt-buttons flex justify-center'>
-                <Link className='btn edit' to={`/gig/edit/${gig._id}`}>
-                  Edit
-                </Link>
-                <button
-                  className='btn delete'
-                  onClick={() => onRemoveGig(gig._id)}
-                >
-                  Delete
-                </button>
-              </section>
-            )} */}
-          </div>
+          <section className='review-container'>
+            <button className='add-review-btn-1' onClick={handleClose}>
+              Add review
+            </button>
+            <button className='close-review-btn-1' onClick={handleOpen}>
+              Close
+            </button>
+            {!isModalOpen && <AddReview gig={gig} />}
+          </section>
+         
+        </div>
 
         <aside className='aside flex column gap'>
           <div className='package-content flex column gap'>
@@ -346,7 +245,7 @@ export const GigDetails = () => {
                       to={`/gig/details/${gig._id}/checkout`}
                       className='procced-btn'
                     >
-                      Continue{' '}
+                      Continue
                       <span>(${gig.price.toLocaleString('en-US')})</span>
                     </Link>
                   ) : (

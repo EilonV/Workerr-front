@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { gigService } from '../services/gig.service'
@@ -13,6 +13,7 @@ import Mastercard from '../assets/imgs/icons/paypal/Mastercard.svg'
 import UBS from '../assets/imgs/icons/paypal/UBS.svg'
 import Visa from '../assets/imgs/icons/paypal/Visa.svg'
 import { addOrder } from '../store/actions/order.action'
+// import App from '../cmps/alert-message'
 
 export const GigCheckOut = () => {
   const params = useParams()
@@ -22,27 +23,39 @@ export const GigCheckOut = () => {
   const [gig, setGig] = useState(null)
 
   var ordersArray = []
-  const user = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : ''
+  const user = sessionStorage.loggedinUser
+    ? JSON.parse(sessionStorage.loggedinUser)
+    : ''
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const buttonRef = useRef(null)
 
   const onAddOrder = async () => {
+    buttonRef.current.disabled = true
     const order = {
       buyer: user,
       seller: {
         fullname: gig.owner.fullname,
         _id: gig.owner._id,
+        username: gig.owner.username,
+        imgUrl: gig.owner.imgUrl,
       },
       gig: {
         _id: gig._id,
         name: gig.name,
         price: gig.price,
+        title: gig.title,
       },
+      status: 'pending',
     }
 
     dispatch(
       addOrder(order, () => {
         ordersArray.push(order)
-        console.log('checkout orders', order)
-        navigate(`/gig/details/${gig._id}/checkout/payment`)
+        setIsModalOpen(true)
+        // console.log('checkout orders', order)
+        // navigate(`/gig/details/${gig._id}/checkout/payment`)
       })
     )
   }
@@ -52,14 +65,18 @@ export const GigCheckOut = () => {
     gigService.getById(id).then((gig) => setGig(gig))
   }, [])
 
-
-
   // let newPrice = document.querySelector('.new-price').value
   // console.log(newPrice);
   // const setNewPrice = (ev) => {
   //   newPrice = ev.target.value
   //   console.log(newPrice);
   // }
+
+  const getRate = () => {
+    let rate = 0
+    gig.reviews.map((review) => (rate += review.rate))
+    return (rate / gig.reviews.length).toFixed(1)
+  }
 
   if (!gig) return ''
 
@@ -105,12 +122,11 @@ export const GigCheckOut = () => {
                 <div className='gig-rating flex row align-center'>
                   <img className='star-fill' src={StarFill} alt='star-fill' />
 
-                  <h4>{gig.owner.rate}</h4>
+                  <h4>{getRate()}</h4>
                   <p className='reviews'>({gig.reviews.length} reviews)</p>
                 </div>
                 <div className='gig-more'></div>
               </div>
-
             </div>
           </section>
           <section>
@@ -155,12 +171,30 @@ export const GigCheckOut = () => {
               </div>
             </article>
             {/* <Link to={`/gig/details/${gig._id}/payment`}> */}
+
             <button
+              ref={buttonRef}
               className='btn-purchase'
               onClick={() => onAddOrder(gig._id)}
+              gig={gig}
             >
               Continue to checkout
             </button>
+
+            {isModalOpen && (
+              <div className='gig-container'>
+                <p>
+                  Your order has been received by the user, you can see it
+                  <span className='link'>
+                    <Link to='/user/orders'>&nbsp;here&nbsp;</Link>
+                  </span>
+                </p>
+                <Link to='/gigs'>
+                  <button className='back-btn'>Go to Gigs</button>
+                </Link>
+              </div>
+            )}
+
             {/* </Link> */}
             <p className='not-charge'>You won't be charged yet</p>
           </div>

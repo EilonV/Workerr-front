@@ -29,7 +29,7 @@ export function AppHeaderExplore({ user }) {
     dispatch(setFilterBy(filterBy))
     dispatch(loadGigs())
 
-    console.log(filterBy)
+    // console.log(filterBy)
     // console.log(gigs)
   }
 
@@ -62,8 +62,8 @@ export function AppHeaderExplore({ user }) {
           <NavLink to='/gigs'>Explore </NavLink>
           {sessionStorage.loggedinUser ? (
             <button className='logout-btn' onClick={handleLogout}>Logout</button>
-            ) : (
-              <section className=' flex row gap'>
+          ) : (
+            <section className=' flex row gap'>
               <div
                 className=' header-signin'
                 onClick={() => {
@@ -84,7 +84,7 @@ export function AppHeaderExplore({ user }) {
               </div>
             </section>
           )}
-          <NavLink to='/user'><img className='header-user-img' src={loggedUser.imgUrl} alt="" /></NavLink>
+          {sessionStorage.loggedinUser && <NavLink to='/user'><img className='header-user-img' src={loggedUser.imgUrl} alt="" /></NavLink>}
         </nav>
       </header>
       {isSignIn && !user && (

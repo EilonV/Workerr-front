@@ -3,7 +3,7 @@ export const uploadService = {
 }
 
 function uploadImg(ev) {
-  console.log('ev.target.files:', typeof ev.target.files)
+  // console.log('ev.target.files:', typeof ev.target.files)
 
   const CLOUD_NAME = 'dxav3wzkl'
   const UPLOAD_PRESET = 'xwwpzyi2'
