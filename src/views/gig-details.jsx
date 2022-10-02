@@ -87,8 +87,8 @@ export const GigDetails = () => {
               {gig.owner.fullname} |{/* </Link> */}
               {/* <h4>{gig.owner.level}|</h4> */}
               {/* <h4>{gig.owner.rate}</h4>| */}
-              <img className='gig-review-star' src={Star} alt='star' />
               <div className='flex'>
+              <img className='gig-review-star' src={Star} alt='star' />
                 <span>{getRate()}</span>({gig.reviews.length})
               </div>
             </div>
