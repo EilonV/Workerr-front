@@ -333,15 +333,16 @@ a:hover {
         }
 
 
-        .slick-list {
-            gap: 0 !important;
+        .slick-track {
+            margin: 0;
         }
-
+        .slick-cloned{
+            display: none;
+        }
         .slick-slide {
-            .slick-active {
-                width: 0 !important;
-            }
 
+            width: auto !important;
+            margin-right: 10px;
             gap: 0 !important;
         }
 
