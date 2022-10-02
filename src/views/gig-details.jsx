@@ -26,7 +26,7 @@ export const GigDetails = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
-  console.log('gig:', gig)
+  // console.log('gig:', gig)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
