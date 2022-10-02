@@ -48,7 +48,7 @@ function getById(reviewId) {
 }
 
 async function remove(reviewId) {
-  await httpService.delete(`review/${reviewId}`)
+  await httpService.remove(`review/${reviewId}`)
   // await storageService.remove('review', reviewId)
   reviewChannel.postMessage(removeReview(reviewId))
 }

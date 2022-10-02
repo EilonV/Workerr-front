@@ -76,7 +76,7 @@
       }
     }
 
-    section>p {
+    section > p {
       //   height: 240px;
       padding-bottom: 20px;
       border-bottom: 1px $footer-line-gray solid;
@@ -169,7 +169,6 @@
       }
     }
 
-
     .seller-desc {
       width: 662px;
       height: 259px;
@@ -198,7 +197,7 @@
     .edit-dlt-buttons {
       margin-bottom: 20px;
 
-      >* {
+      > * {
         margin: 5px;
         transition: 0.2s;
         font-size: 16px;
@@ -222,7 +221,7 @@
     .package-content {
       position: sticky;
       top: 150px;
-      border: 1px solid #DADBDD;
+      border: 1px solid #dadbdd;
       gap: 0;
 
       .levels {
@@ -291,7 +290,7 @@
       // .delivery-revision > span {
       // }
 
-      .delivery-revision>* {
+      .delivery-revision > * {
         font-size: 14px;
         align-self: center;
         gap: 5px;
@@ -330,7 +329,7 @@
         font-size: 16px;
       }
 
-      a>span {
+      a > span {
         color: $white;
         font-size: 16px;
       }
@@ -381,10 +380,11 @@
     }
   }
 
-  .reviews-list {}
+  .reviews-list {
+  }
 
   .review-container {
-    border-bottom: 1px solid #404145;
+    // border-bottom: 1px solid #404145;
 
     .add-review-btn {
       width: 100%;

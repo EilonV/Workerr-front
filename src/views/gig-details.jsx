@@ -54,11 +54,11 @@ export const GigDetails = () => {
       })
     )
   }
-
   const getRate = () => {
     let rate = 0
     gig.reviews.map((review) => (rate += review.rate))
-    return rate / gig.reviews.length
+
+    return (rate / gig.reviews.length).toFixed(1)
   }
 
   const user = sessionStorage.loggedinUser
@@ -161,13 +161,12 @@ export const GigDetails = () => {
                   </div>
 
                   <p className='rate'>
-                    <span>{gig.owner.rate}</span>&nbsp;({gig.reviews.length})
+                    <span>{getRate()}</span>&nbsp;({gig.reviews.length})
                   </p>
                 </div>
                 <button className='btn-contact'>Contact Me</button>
               </div>
             </section>
-
 
             <section className='seller-desc flex column gap'>
               <div className='formal-desc flex row'>
@@ -202,15 +201,14 @@ export const GigDetails = () => {
 
           <ReviewList reviews={gig.reviews} />
           <section className='review-container'>
-            <button className='add-review-btn-1' onClick={handleClose}>
+            {/* <button className='add-review-btn-1' onClick={handleClose}>
               Add review
             </button>
             <button className='close-review-btn-1' onClick={handleOpen}>
               Close
-            </button>
+            </button> */}
             {!isModalOpen && <AddReview gig={gig} />}
           </section>
-         
         </div>
 
         <aside className='aside flex column gap'>
