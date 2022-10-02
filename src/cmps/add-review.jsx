@@ -46,7 +46,7 @@ export const AddReview = ({ gig }) => {
   // console.log('review:', review)
 
   const addReview = () => {
-    gig.reviews.push(review)
+    gig.reviews.unshift(review)
   }
 
   // useEffect(() => {
@@ -94,26 +94,26 @@ export const AddReview = ({ gig }) => {
   return (
     <section className='reviews-container'>
       {/* <form> */}
-      <div>
+      <div className='rate-reviews'>
         <h2>Rate & Review</h2>
-        <p>
+        <p className='share'>
           Share with the community your experience when working with this
           seller.
         </p>
         <div className='rates'>
           <h2>Communication With Seller</h2>
-          <p>How responsive was the seller during the process?</p>
+          <p>How was your experience with the seller?</p>
           <select
             name='rate'
             id='rate'
             onChange={handleChange}
             value={gig.rate}
           >
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
+            <option value='1'>Very bad</option>
+            <option value='2'>Bad</option>
+            <option value='3'>OK</option>
+            <option value='4'>Good</option>
+            <option value='5'>Great</option>
           </select>
           {/* <img className='review-review-star' src={StarFill} alt='star-fill' /> */}
         </div>
@@ -148,7 +148,7 @@ export const AddReview = ({ gig }) => {
           </select>  */}
         {/* <img className='review-review-star' src={StarFill} alt='star-fill' /> */}
       </div>
-      <div>
+      <div className='review-inputs flex'>
         <textarea
           value={gig.txt}
           onChange={handleChange}

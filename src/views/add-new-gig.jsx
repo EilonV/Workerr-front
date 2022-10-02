@@ -8,6 +8,7 @@ import { AppHeaderExplore } from '../cmps/app-header-explore'
 import { HeaderCategories } from '../cmps/header-categories'
 import { uploadService } from '../services/upload.service'
 import { userService } from '../services/user.service'
+import dateFormat, { masks } from 'dateformat'
 
 export const AddNewGig = () => {
   // const user = JSON.parse(sessionStorage.loggedinUser)
@@ -41,10 +42,10 @@ export const AddNewGig = () => {
       memberSince: loggedinUser.memberSince,
       username: loggedinUser.username,
       password: loggedinUser.password,
-      rate: loggedinUser.rate.toFixed(1),
+      rate: +loggedinUser.rate,
       ownerLetter: loggedinUser.ownerLetter,
-      reviews: loggedinUser.reviews,
     },
+    reviews: [],
   })
   // console.log('loggedinUser:', loggedinUser)
 

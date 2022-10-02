@@ -11,6 +11,7 @@ export const GigPreview = ({ gig }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+  // console.log('gig.owner.rate.length:', gig.owner.rate)
 
   const getRate = () => {
     let rate = 0

@@ -5,7 +5,6 @@ import { AppFooter } from './cmps/app-footer'
 import { Home } from './views/home'
 import { GigExplore } from './views/gig-explore'
 import { UserPage } from './views/user-page'
-import { AdminPage } from './views/admin-page'
 import { GigEdit } from './views/gig-edit'
 import { GigDetails } from './views/gig-details'
 import { GigCheckOut } from './views/gig-check-out'
@@ -41,7 +40,6 @@ function App() {
               <Route path='/user/:' element={<AddNewGig />} />
               <Route path='/gigs' element={<GigExplore />} />
               <Route path='/user' element={<UserPage />} />
-              <Route path='/admin' element={<AdminPage />} />
               <Route path='/' element={<Home />} />
               <Route path='/login' element={<LoginSignup />} />
             </Routes>

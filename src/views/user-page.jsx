@@ -59,7 +59,9 @@ export const UserPage = () => {
     )
   }
 
-  const userGigs = gigs.filter((gig) => gig.owner.username === loggedinUser.username)
+  const userGigs = gigs.filter(
+    (gig) => gig.owner.username === loggedinUser.username
+  )
   // gig.owner._id === loggedinUser._id)
   console.log(loggedinUser)
 
@@ -123,10 +125,7 @@ export const UserPage = () => {
 
                     <Link to='/user/:'>
                       <div className='img-create'>
-                        <a
-                          href='/users/ilyaig8/manage_gigs/new'
-                          className='st-current'
-                        >
+                        <a href='' className='st-current'>
                           <svg
                             className='svg'
                             xmlns='http://www.w3.org/2000/svg'

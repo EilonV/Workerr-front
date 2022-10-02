@@ -19,6 +19,8 @@ export function LoginSignup(props) {
   const [users, setUsers] = useState([])
   const dispatch = useDispatch()
 
+  console.log('users:', users)
+
   useEffect(() => {
     loadUsers()
   }, [])
@@ -63,7 +65,7 @@ export function LoginSignup(props) {
     if (ev) ev.preventDefault()
     if (!credentials.username || !credentials.password || !credentials.fullname)
       return
-    props.onSignup(credentials);
+    props.onSignup(credentials)
     dispatch(onSignup(credentials))
 
     clearState()
@@ -124,7 +126,7 @@ export function LoginSignup(props) {
                             <option value="">Select User</option>
                             {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                         </select> */}
-              <input
+              <input 
                 type='text'
                 name='username'
                 value={credentials.username}
