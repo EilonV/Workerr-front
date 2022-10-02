@@ -127,7 +127,7 @@ export function LoginSignup(props) {
                             <option value="">Select User</option>
                             {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                         </select> */}
-              <input
+              <input 
                 type='text'
                 name='username'
                 value={credentials.username}
