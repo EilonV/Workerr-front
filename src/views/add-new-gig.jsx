@@ -45,22 +45,7 @@ export const AddNewGig = () => {
       rate: +loggedinUser.rate,
       ownerLetter: loggedinUser.ownerLetter,
     },
-    reviews: [
-      {
-        txt: '',
-        rate: null,
-        by: {
-          // _id: loggedinUser._id,
-          // fullname: loggedinUser.username,
-          // imgUrl: loggedinUser.imgUrl,
-          // country: loggedinUser.country,
-          // flag: loggedinUser.flag,
-          // reviewedAt: loggedinUser.reviewedAt,
-          // memberSince: loggedinUser.memberSince,
-          // reviewedAt: 'Published at ' + dateFormat(new Date()),
-        },
-      },
-    ],
+    reviews: [],
   })
   // console.log('loggedinUser:', loggedinUser)
 
