@@ -10,6 +10,7 @@ import { HeaderCategories } from '../cmps/header-categories'
 import Slider from 'react-slick'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Star from '../assets/imgs/icons/star-fill.svg'
+import HalfStar from '../assets/imgs/icons/star-half.svg'
 import Done from '../assets/imgs/icons/done.svg'
 import Clock from '../assets/imgs/icons/clock.svg'
 import Sync from '../assets/imgs/icons/sync.svg'
@@ -25,6 +26,7 @@ export const GigDetails = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [gig, setGig] = useState(null)
+  console.log('gig:', gig)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -55,15 +57,25 @@ export const GigDetails = () => {
     )
   }
   const getRate = () => {
+    if (!gig) return
     let rate = 0
-    gig.reviews.map((review) => (rate += review.rate))
+    const sum = gig.reviews.reduce((acc, review) => {
+      acc += review.rate
+      return acc
+    }, 0)
 
-    return (rate / gig.reviews.length).toFixed(1)
+    return (sum / gig.reviews.length).toFixed(1)
   }
+  console.log(
+    'gig:',
+    gig?.reviews.map((review) => review.rate)
+  )
 
   const user = sessionStorage.loggedinUser
     ? JSON.parse(sessionStorage.loggedinUser)
     : ''
+
+  // console.log('new Array:', new Array(Math.floor(getRate())))
 
   if (!gig) return ''
   return (
@@ -87,8 +99,24 @@ export const GigDetails = () => {
               {gig.owner.fullname} |{/* </Link> */}
               {/* <h4>{gig.owner.level}|</h4> */}
               {/* <h4>{gig.owner.rate}</h4>| */}
-              <img className='gig-review-star' src={Star} alt='star' />
-              <div className='flex'>
+              <div className='rate-details flex'>
+                {gig.reviews?.length &&
+                  new Array(Math.floor(getRate() || 0))
+                    .fill(0)
+                    .map((e) => (
+                      <img className='gig-review-star' src={Star} alt='star' />
+                    ))}
+                {getRate() % 1 ? (
+                  <span className='half-star'>
+                    <img
+                      className='gig-review-star'
+                      src={HalfStar}
+                      alt='half-star'
+                    />
+                  </span>
+                ) : (
+                  <span></span>
+                )}
                 <span>{getRate()}</span>({gig.reviews.length})
               </div>
             </div>
@@ -151,13 +179,27 @@ export const GigDetails = () => {
                 <div className='seller-rate flex'>
                   <p className='proposal'>Let me be your producer</p>
                 </div>
-                <div className='flex'>
+                <div className='rate-details flex'>
                   <div>
-                    <img
-                      className='gig-review-star'
-                      src={StarFill}
-                      alt='star'
-                    />
+                    {gig.reviews?.length &&
+                      new Array(Math.floor(getRate() || 0))
+                        .fill(0)
+                        .map((e) => (
+                          <img
+                            className='gig-review-star'
+                            src={Star}
+                            alt='star'
+                          />
+                        ))}
+                    {getRate() % 1 ? (
+                      <img
+                        className='gig-review-star'
+                        src={HalfStar}
+                        alt='half-star'
+                      />
+                    ) : (
+                      <span></span>
+                    )}
                   </div>
 
                   <p className='rate'>

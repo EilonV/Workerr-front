@@ -43,11 +43,11 @@ export const AddNewGig = () => {
       username: loggedinUser.username,
       password: loggedinUser.password,
       rate: +loggedinUser.rate,
-      ownerLetter: loggedinUser.ownerLetter,
+      // ownerLetter: loggedinUser.owner.ownerLetter,
     },
     reviews: [],
   })
-  // console.log('loggedinUser:', loggedinUser)
+  console.log('loggedinUser:', loggedinUser)
 
   const inputRef = useRef()
 
