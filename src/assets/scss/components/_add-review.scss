@@ -1,0 +1,38 @@
+.reviews-container {
+  margin-left: 55px;
+  margin-top: 15px;
+  //   background-color: lightblue;
+  p {
+    // border-bottom: 1px solid $bright-gray;
+    padding-bottom: 15px;
+  }
+  .rates {
+    margin-top: 15px;
+    select {
+      text-align: center;
+      width: 100px;
+      height: 25px;
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+  }
+  textarea {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  button {
+    margin-left: 50%;
+    margin-top: 25%;
+    width: 100px;
+    height: 40px;
+    background-color: $bright-green;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: large;
+    font-weight: 700;
+    padding: 10px 15px;
+  }
+}

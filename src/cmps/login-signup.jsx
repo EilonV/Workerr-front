@@ -19,6 +19,8 @@ export function LoginSignup(props) {
   const [users, setUsers] = useState([])
   const dispatch = useDispatch()
 
+  console.log('users:', users)
+
   useEffect(() => {
     loadUsers()
   }, [])
@@ -64,7 +66,7 @@ export function LoginSignup(props) {
     if (ev) ev.preventDefault()
     if (!credentials.username || !credentials.password || !credentials.fullname)
       return
-    props.onSignup(credentials);
+    props.onSignup(credentials)
     dispatch(onSignup(credentials))
 
     clearState()
@@ -199,16 +201,16 @@ export function LoginSignup(props) {
                 required
                 autoComplete='true'
               />
-                 
-                  <input
-                    value={credentials.imgUrl}
-                    type='file'
-                    name='imgUrls'
-                    id='imgUrls'
-                    multiple
-                    onChange={onImgUpload}
-                  />
-                
+
+              <input
+                value={credentials.imgUrl}
+                type='file'
+                name='imgUrls'
+                id='imgUrls'
+                multiple
+                onChange={onImgUpload}
+              />
+
               <button>Continue</button>
             </form>
             <div className='form-footer flex justify-center align-center'>
