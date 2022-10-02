@@ -16,7 +16,9 @@ export const GigPreview = ({ gig }) => {
   const getRate = () => {
     let rate = 0
     gig.reviews.map((review) => (rate += review.rate))
-    return (rate / gig.reviews.length).toFixed(1)
+    console.log(':', (rate / gig.reviews.length).toFixed(1))
+    if (rate !== 0) return (rate / gig.reviews.length).toFixed(1)
+    return 0
   }
 
   if (!gig) return ''
@@ -67,9 +69,9 @@ export const GigPreview = ({ gig }) => {
           />
         </svg>
         {gig.owner.rate > 0 ? (
-          <p>&nbsp;{getRate() === NaN && <span></span>}</p>
+          <p>&nbsp;{getRate()}</p>
         ) : (
-          <p>&nbsp;0</p>
+          getRate() === NaN && <p>&nbsp; 0</p>
         )}
         <div className='flex'>
           <p className='user-reviews-count'>({gig.reviews.length})</p>
