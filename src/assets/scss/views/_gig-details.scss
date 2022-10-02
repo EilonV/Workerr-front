@@ -31,7 +31,16 @@
 
     .seller-avatar-top {
       padding-bottom: 24px;
-
+      .rate-details {
+        width: 15px;
+        .half-star {
+          img {
+            width: 16px;
+            height: 16px;
+            padding: 0;
+          }
+        }
+      }
       //   height: 121px;
       span {
         color: $yellow;

@@ -25,6 +25,8 @@ export function removeGig(gigId, cb) {
 }
 
 export function addGig(gig, cb) {
+  console.log('gig:', gig)
+
   return async (dispatch) => {
     try {
       const savedGig = await gigService.save(gig)
