@@ -100,23 +100,29 @@ export const GigDetails = () => {
               {/* <h4>{gig.owner.level}|</h4> */}
               {/* <h4>{gig.owner.rate}</h4>| */}
               <div className='rate-details flex'>
-                {gig.reviews?.length &&
-                  new Array(Math.floor(getRate() || 0))
-                    .fill(0)
-                    .map((e) => (
-                      <img className='gig-review-star' src={Star} alt='star' />
-                    ))}
-                {getRate() % 1 ? (
-                  <span className='half-star'>
-                    <img
-                      className='gig-review-star'
-                      src={HalfStar}
-                      alt='half-star'
-                    />
-                  </span>
-                ) : (
-                  <span></span>
-                )}
+                <div className='stars flex'>
+                  {gig.reviews?.length &&
+                    new Array(Math.floor(getRate() || 0))
+                      .fill(0)
+                      .map((e) => (
+                        <img
+                          className='gig-review-star'
+                          src={Star}
+                          alt='star'
+                        />
+                      ))}
+                  {getRate() % 1 ? (
+                    <span className='half-star'>
+                      <img
+                        className='gig-review-star'
+                        src={HalfStar}
+                        alt='half-star'
+                      />
+                    </span>
+                  ) : (
+                    <span></span>
+                  )}
+                </div>
                 <span>{getRate()}</span>({gig.reviews.length})
               </div>
             </div>
