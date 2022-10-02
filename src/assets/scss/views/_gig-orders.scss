@@ -8,6 +8,46 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 4px;
+
+    .full-filler {
+      margin: 0 !important;
+      background-color: $bright-green  !important;
+
+      background: linear-gradient(208deg, #916af3, #6aa3f3, #31e6c0, #94dbad);
+      background-size: 800% 800%;
+
+      -webkit-animation: AnimationName 10s ease infinite;
+      animation: AnimationName 10s ease infinite;
+
+
+      @-webkit-keyframes AnimationName {
+        0% {
+          background-position: 0% 54%
+        }
+
+        50% {
+          background-position: 100% 47%
+        }
+
+        100% {
+          background-position: 0% 54%
+        }
+      }
+
+      @keyframes AnimationName {
+        0% {
+          background-position: 0% 54%
+        }
+
+        50% {
+          background-position: 100% 47%
+        }
+
+        100% {
+          background-position: 0% 54%
+        }
+      }
+    }
   }
 
   .sales-info {
@@ -167,6 +207,7 @@
           text-align: center;
           width: 100px;
           padding-right: 10px;
+          padding-left: 10px;
         }
 
 
@@ -180,12 +221,15 @@
         }
       }
 
-      .order-title {}
+      .order-title {
+        width: 550px;
+      }
+
     }
 
     .table-orders2 {
       .status {
-        text-align: right;
+        // text-align: right;
       }
     }
 
@@ -193,26 +237,32 @@
 
     button {
       height: fit-content;
-      padding: 5px 5px;
+      padding: 8px 8px;
       text-align: center;
       border-radius: 4px;
       cursor: pointer;
       background-color: transparent;
-      border: 1px solid #404145;
+      box-shadow: 0 0 3px 0.5px lightgray;
+      border: none;
       transition: 0.2s;
       margin: 0 2px !important;
 
       &:hover {
-        background-color: #1dbf73;
+        background-color: $in-progress;
         color: #ffffff;
 
         // font-weight: 600;
         &:last-child {
-          background-color: red;
-
+          background-color: $declined;
         }
+
       }
+
     }
+  }
+
+  .complete:hover {
+    background-color: $bright-gray  !important;
   }
 }
 

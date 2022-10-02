@@ -44,7 +44,7 @@ export function AppHeaderExplore({ user }) {
     return isSignIn
   }
 
-  const loggedUser = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : 'User'
+  const loggedUser = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : ''
 
   return (
     <section className='main-layout full'>
@@ -61,7 +61,15 @@ export function AppHeaderExplore({ user }) {
           <NavLink to='/'>Home </NavLink>
           <NavLink to='/gigs'>Explore </NavLink>
           {sessionStorage.loggedinUser ? (
-            <button className='logout-btn' onClick={handleLogout}>Logout</button>
+            <div className='flex'>
+              <Link to={`user/`}>
+                {/* {user.imgUrl && <img src={user.imgUrl} />}
+                            {user.fullname} */}
+              </Link>
+              <button className='logout-btn' onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
           ) : (
             <section className=' flex row gap'>
               <div
@@ -84,7 +92,7 @@ export function AppHeaderExplore({ user }) {
               </div>
             </section>
           )}
-          {sessionStorage.loggedinUser && <NavLink to='/user'><img className='header-user-img' src={loggedUser.imgUrl} alt="" /></NavLink>}
+          {loggedUser && <NavLink to='/user'><img className='header-user-img' src={loggedUser.imgUrl} alt="" /></NavLink>}
         </nav>
       </header>
       {isSignIn && !user && (
@@ -94,7 +102,6 @@ export function AppHeaderExplore({ user }) {
           isSignUp={isSignUp}
           onLogin={onLogin}
           onSignup={onSignup}
-          onClose={() => toggleSignIn(false)}
         />
       )}
       {isPopoverNav && (

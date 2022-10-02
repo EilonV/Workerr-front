@@ -49,14 +49,17 @@ export const SellerOrders = () => {
   const changeStatusColor = (status) => {
     switch (status) {
       case 'pending':
-        console.log("pending")
-        break;
+        return 'status pending'
+
       case 'in progress':
-        console.log("in progress")
-        break;
+        return 'status in-progress'
+
       case 'declined':
-        console.log("declined")
-        break;
+        return 'status declined'
+      case 'completed':
+        return 'status completed'
+      default:
+        return 'status'
     }
   }
   const user = sessionStorage.loggedinUser ? JSON.parse(sessionStorage.loggedinUser) : ''
@@ -66,7 +69,11 @@ export const SellerOrders = () => {
 
   const isSeller = orders.some(order => order.seller.username === user.username)
   const sellerOrders = orders.filter(order => order.seller.username === user.username)
+  const currOrders = sellerOrders.filter(order => order.status === 'in progress' || order.status === 'completed')
+  const completedOrders = sellerOrders.filter(order => order.status === 'completed')
+
   console.log(orders)
+
   return (
     <section>
       <AppHeaderExplore />
@@ -83,11 +90,21 @@ export const SellerOrders = () => {
                     <div className='sales-info flex'>
                       <div className='total-sales'>
                         <h1>Total sales revenue</h1>
-                        <p>${sellerOrders.reduce((sum, order) => { return sum += order.gig.price }, 0)}</p>
+                        <p>${currOrders.reduce((sum, order) => { return sum += order.gig.price }, 0)}</p>
                       </div>
                       <div className='total-sales'>
                         <h1>Total customers served</h1>
                         <p>{sellerOrders.length}</p>
+                      </div>
+                      <div className='total-sales'>
+                        <h1>Current ongoing projects</h1>
+                        <p>{currOrders.length}</p>
+                      </div>
+                      <div className='total-sales'>
+                        <h1>Completed projects</h1>
+                        <p>{completedOrders.length}</p>
+                      </div>
+                      <div className='total-sales full full-filler'>
                       </div>
                     </div>
 
@@ -101,12 +118,12 @@ export const SellerOrders = () => {
 
                         <table>
                           <tr>
-                            <th> Client </th>
+                            <th style={{ width: "200px" }}> Client </th>
                             <th> Gig title</th>
                             <th style={{ textAlign: "center" }}> Date </th>
                             <th style={{ textAlign: "center" }}> Price</th>
                             <th style={{ textAlign: "center" }}> Status </th>
-                            <th style={{ textAlign: "center" }}> Actions </th>
+                            <th style={{ textAlign: "center", width: "150px" }}> Actions </th>
                           </tr>
                           {sellerOrders.map((order) => (
                             <tr>
@@ -119,12 +136,17 @@ export const SellerOrders = () => {
                               <td className='order-title'>{order.gig.title} </td>
                               <td style={{ textAlign: "center" }}>{format(order.createdAt)} </td>
                               <td style={{ textAlign: "center" }}>${order.gig.price} </td>
-                              <td className='status'>{order.status}</td>
+                              <td className={changeStatusColor(order.status)}>{order.status}</td>
                               <td style={{ textAlign: "right", width: "130px" }} className=''>
                                 {order.status === 'pending' &&
-                                  <div className='seller-btns flex'>
+                                  <div className='seller-btns flex  justify-center'>
                                     <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
                                     <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
+                                  </div>
+                                }
+                                {order.status === 'in progress' &&
+                                  <div className='seller-btns flex justify-center '>
+                                    <button className='complete' onClick={() => onChangeStatus(order, 'completed')}>Complete</button>
                                   </div>
                                 }
 

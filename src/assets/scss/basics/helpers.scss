@@ -101,3 +101,36 @@
 .bold {
   font-weight: bold;
 }
+
+// Order status coloring
+
+.pending {
+  color: white !important;
+  background-color: $pending;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.in-progress {
+  color: white !important;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: $in-progress  !important;
+}
+
+.declined {
+  color: white !important;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: $declined  !important;
+}
+.completed {
+  color: white !important;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: $bright-gray  !important;
+}
