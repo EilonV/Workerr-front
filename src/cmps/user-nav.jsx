@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import StarFill from '../assets/imgs/icons/5-stars.svg'
 import Location from '../assets/imgs/icons/location.svg'
 import User from '../assets/imgs/icons/user.svg'
+import Star from '../assets/imgs/icons/star-fill.svg'
+import HalfStar from '../assets/imgs/icons/star-half.svg'
+
 import { useEffect, useState } from 'react'
 import { userService } from '../services/user.service'
 
@@ -42,7 +45,10 @@ export const UserNav = () => {
 
           <img className='profile-pic' src={user.imgUrl} alt='profile-pic' />
           <p className='user-name show'>{user.username}</p>
-          <img className='star-fill' src={StarFill} alt='star-fill' />
+          <img className='gig-review-star' src={Star} alt='star' />
+          <img className='gig-review-star' src={Star} alt='star' />
+          <img className='gig-review-star' src={Star} alt='star' />
+          <img className='gig-review-star' src={Star} alt='star' />
 
           <section className='user-details'>
             <div className='first flex space-between'>
