@@ -78,70 +78,11 @@ export const Orders = () => {
       <HeaderCategories orders={orders} />
       {user ?
         <div className='features main-layout'>
-            <ProfileHeader />
+          <ProfileHeader />
           <div className='orders-wrapper'>
             <div className='profile-user '>
               <div className='page-container flex '>
-                {/* <UserNav /> */}
                 <div className='orders-container'>
-                  {isSeller &&
-                    <div className='sales-info flex'>
-                      <div className='total-sales'>
-                        <h1>Total sales revenue</h1>
-                        <p>${sellerOrders.reduce((a, b) => a.gig.price + b.gig.price)}</p>
-                      </div>
-                      <div className='total-sales'>
-                        <h1>Total customers served</h1>
-                        <p>{sellerOrders.length}</p>
-                      </div>
-                    </div>
-
-                  }
-                  {isSeller && <section className='total-orders'>
-
-                    <div>
-
-                      <div className='table-orders'>
-                        <h2>Orders as seller</h2>
-
-                        <table>
-                          <tr>
-                            <th> Client </th>
-                            <th> Gig title</th>
-                            <th> Date </th>
-                            <th> Price</th>
-                            <th> Status </th>
-                            <th> Actions </th>
-                          </tr>
-                          {sellerOrders.map((order) => (
-                            <tr>
-                              <td>
-                                <div className='flex align-center'>
-                                  <img src={order.buyer.imgUrl} alt="" />
-                                  {order.buyer.username}
-                                </div>
-                              </td>
-                              <td className='order-title'>{order.gig.title} </td>
-                              <td>{format(order.createdAt)} </td>
-                              <td>${order.gig.price} </td>
-                              <td className='status'>{order.status}</td>
-                              <td className=''>
-                                {order.status === 'pending' &&
-                                  <div className='seller-btns flex'>
-                                    <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
-                                    <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
-                                  </div>
-                                }
-
-                              </td>
-                            </tr>
-                          ))}
-                        </table>
-                      </div>
-                    </div>
-
-                  </section>}
-
 
                   <section className='total-orders'>
 
@@ -149,15 +90,15 @@ export const Orders = () => {
                       <div>
 
                         <div className='table-orders2'>
-                          <h2>Orders as buyer</h2>
+                          <h2>Total orders</h2>
 
                           <table>
                             <tr>
                               <th> Seller </th>
                               <th> Gig title</th>
-                              <th> Date </th>
-                              <th> Price</th>
-                              <th> Status </th>
+                              <th style={{textAlign:"center"}}> Date </th>
+                              <th style={{ textAlign: "center" }}> Price</th>
+                              <th style={{ textAlign: "right", paddingRight: "10px" }}> Status </th>
                               {/* <th> Actions </th> */}
                             </tr>
                             {buyerOrders.map((order) => (
@@ -170,9 +111,9 @@ export const Orders = () => {
                                   </div>
                                 </td>
                                 <td className='order-title'>{order.gig.title} </td>
-                                <td>{format(order.createdAt)} </td>
-                                <td>${order.gig.price} </td>
-                                <td className='status'>{order.status} </td>
+                                <td style={{textAlign:"center"}}>{format(order.createdAt)} </td>
+                                <td style={{ maxWidth: "60px", textAlign: "center" }}>${order.gig.price} </td>
+                                <td className='status' >{order.status} </td>
                                 {/* <td className='flex'>
                               {order.status === 'pending' &&
                                 <div className='seller-btns flex'>

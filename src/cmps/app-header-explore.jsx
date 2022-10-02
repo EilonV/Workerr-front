@@ -94,6 +94,7 @@ export function AppHeaderExplore({ user }) {
           isSignUp={isSignUp}
           onLogin={onLogin}
           onSignup={onSignup}
+          onClose={() => toggleSignIn(false)}
         />
       )}
       {isPopoverNav && (

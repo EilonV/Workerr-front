@@ -1,6 +1,7 @@
 import { GigPreview } from './gig-preview'
 
 export const GigList = ({ gigs }) => {
+  
   if (!gigs) return <div className='flex justify-center'>Loading...</div>
   return (
     <section>

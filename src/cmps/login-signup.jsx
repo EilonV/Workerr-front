@@ -55,10 +55,9 @@ export function LoginSignup(props) {
     if (ev) ev.preventDefault()
     if (!credentials.username) return
     // console.log(credentials)
-    dispatch(onLogin(credentials))
-
+    dispatch(onLogin(credentials,props.onClose))
     clearState()
-    window.location.reload(false)
+    // window.location.reload(false)
   }
   const handleSignup = (ev = null) => {
     if (ev) ev.preventDefault()
@@ -199,16 +198,16 @@ export function LoginSignup(props) {
                 required
                 autoComplete='true'
               />
-                 
-                  <input
-                    value={credentials.imgUrl}
-                    type='file'
-                    name='imgUrls'
-                    id='imgUrls'
-                    multiple
-                    onChange={onImgUpload}
-                  />
-                
+
+              <input
+                value={credentials.imgUrl}
+                type='file'
+                name='imgUrls'
+                id='imgUrls'
+                multiple
+                onChange={onImgUpload}
+              />
+
               <button>Continue</button>
             </form>
             <div className='form-footer flex justify-center align-center'>

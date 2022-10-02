@@ -14,6 +14,7 @@ import { AddNewGig } from './views/add-new-gig'
 import { Orders } from './views/gig-orders'
 import { GigPayment } from './views/gig-payment'
 import { LoginSignup } from '../src/cmps/login-signup'
+import { SellerOrders } from './views/gig-orders-seller'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path='gig/edit/:id' element={<GigEdit />} />
               <Route path='gig/edit' element={<GigEdit />} />
               <Route path='/user/orders' element={<Orders />} />
+              <Route path='/user/orders/seller' element={<SellerOrders />} />
               <Route path='/user/:' element={<AddNewGig />} />
               <Route path='/gigs' element={<GigExplore />} />
               <Route path='/user' element={<UserPage />} />

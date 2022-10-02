@@ -10,7 +10,9 @@ export const GigSort = ({ gigs }) => {
       // gigs.sort((a, b) => { a - b, a.price - b.price })
     }
   }
-
+  console.log(gigs);
+  gigs.sort((a, b) => a.price < b.price)
+  console.log(gigs);
   if (!gigs) return ''
   return <section className='gig-sort flex space-between align-center'>
     <p className="services-num ">{gigs.length} services available</p>

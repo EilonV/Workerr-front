@@ -12,6 +12,7 @@
 
   .sales-info {
     margin-bottom: 10px;
+
     .total-sales {
       background-color: white;
       width: fit-content;
@@ -152,8 +153,8 @@
       th {
         color: $footer-logo-gray;
         text-align: left;
-        width: 100px;
       }
+
 
       td {
         color: rgba(64, 65, 69, 85%);
@@ -161,6 +162,14 @@
         height: 100%;
         border-bottom: 1px $footer-line-gray solid;
         padding: 10px 0;
+
+        &.status {
+          text-align: center;
+          width: 100px;
+          padding-right: 10px;
+        }
+
+
 
         img {
           width: 40px;
@@ -171,8 +180,12 @@
         }
       }
 
-      .order-title {
-        width: 250px;
+      .order-title {}
+    }
+
+    .table-orders2 {
+      .status {
+        text-align: right;
       }
     }
 
@@ -223,5 +236,25 @@
     &:hover {
       width: 65% !important;
     }
+  }
+}
+
+.no-gigs {
+  // padding: 10px 10px 0 10px ;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 1px lightgray;
+  // width: fit-content;
+  margin: auto;
+
+  h2 {
+    font-size: 40px;
+    padding: 10px;
+    margin-bottom: 60px;
+  }
+
+  img {
+    width: 40%;
+    margin: auto;
   }
 }

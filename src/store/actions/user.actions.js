@@ -40,16 +40,18 @@ export function removeUser(userId) {
   }
 }
 
-export function onLogin(credentials) {
-  // console.log('onLogin', credentials)
+export function onLogin(credentials, cb) {
+  console.log('onLogin', credentials)
   return async (dispatch) => {
     console.log('ACTION AFTER DISPATCH')
     try {
       const user = await userService.login(credentials)
+      console.log(user)
       dispatch({
         type: 'SET_USER',
         user,
       })
+      cb()
     } catch (err) {
       showErrorMsg('Cannot login')
       console.log('Cannot login', err)

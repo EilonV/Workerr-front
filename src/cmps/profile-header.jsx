@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export function ProfileHeader() {
   return (
@@ -7,9 +7,9 @@ export function ProfileHeader() {
         <div className='category-section flex align-center'>
           <NavLink to='/user'>Profile</NavLink>
           <NavLink to='/user/orders'>Orders</NavLink>
+          <NavLink to='/user/orders/seller'>Seller Orders</NavLink>
         </div>
       </div>
-      {/* </div> */}
     </section>
   )
 }
