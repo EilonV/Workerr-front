@@ -33,24 +33,26 @@
       padding-bottom: 24px;
       .rate-details {
         width: 15px;
+        p {
+          color: #ffbe5b;
+          padding: 0;
+        }
+        height: 17px;
 
-        .stars {
-          height: 17px;
+        span {
+          padding: 0;
+          .half-star {
+            // padding: 0;
+            // margin: 0;
+          }
 
-          span {
-            padding: 0;
-            .half-star {
-              // padding: 0;
-              // margin: 0;
-            }
-
-            img {
-              width: 16px;
-              height: 16px;
-            }
+          img {
+            width: 16px;
+            height: 16px;
           }
         }
       }
+
       //   height: 121px;
       span {
         color: $yellow;
@@ -133,6 +135,14 @@
       padding-bottom: 24px;
       margin-left: 15px;
       margin-top: 25px;
+
+      .seller-rate {
+        span {
+          margin-left: 15px;
+          font-weight: 700;
+          color: #ffbe5b;
+        }
+      }
 
       .gig-owner-image-about {
         width: 80px;

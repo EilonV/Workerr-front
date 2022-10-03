@@ -57,14 +57,11 @@ export const GigDetails = () => {
     )
   }
   const getRate = () => {
-    if (!gig) return
     let rate = 0
-    const sum = gig.reviews.reduce((acc, review) => {
-      acc += review.rate
-      return acc
-    }, 0)
-
-    return (sum / gig.reviews.length).toFixed(1)
+    gig.reviews.map((review) => (rate += review.rate))
+    console.log(':', (rate / gig.reviews.length).toFixed(1))
+    if (rate !== 0) return (rate / gig.reviews.length).toFixed(1)
+    return 0
   }
   // console.log(
   //   'gig:',
@@ -125,8 +122,14 @@ export const GigDetails = () => {
                     <span></span>
                   )}
                 </div>
-                <span>{getRate() === NaN && <span></span>}</span>(
-                {gig.reviews.length})
+                <span>
+                  {gig.owner.rate > 0 ? (
+                    <p>&nbsp;{getRate()}</p>
+                  ) : (
+                    getRate() === NaN && <p>&nbsp; 0</p>
+                  )}
+                </span>
+                ({gig.reviews.length})
               </div>
             </div>
 
@@ -189,7 +192,7 @@ export const GigDetails = () => {
                   <p className='proposal'>Let me be your producer</p>
                 </div>
                 <div className='rate-details flex'>
-                  <div>
+                  <div className='stars flex'>
                     {gig.reviews?.length &&
                       new Array(Math.floor(getRate() || 0))
                         .fill(0)
@@ -201,20 +204,25 @@ export const GigDetails = () => {
                           />
                         ))}
                     {getRate() % 1 ? (
-                      <img
-                        className='gig-review-star'
-                        src={HalfStar}
-                        alt='half-star'
-                      />
+                      <span className='half-star'>
+                        <img
+                          className='gig-review-star'
+                          src={HalfStar}
+                          alt='half-star'
+                        />
+                      </span>
                     ) : (
                       <span></span>
                     )}
                   </div>
-
-                  <p className='rate'>
-                    <span>{getRate() === NaN && <span></span>}</span> &nbsp;(
-                    {gig.reviews.length})
-                  </p>
+                  <span className='seller-rate'>
+                    {gig.owner.rate > 0 ? (
+                      <span>&nbsp;{getRate()}</span>
+                    ) : (
+                      getRate() === NaN && <p>&nbsp; 0</p>
+                    )}
+                  </span>
+                  ({gig.reviews.length})
                 </div>
                 <button className='btn-contact'>Contact Me</button>
               </div>
