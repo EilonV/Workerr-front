@@ -54,8 +54,8 @@
     margin-bottom: 10px;
 
     .total-sales {
-      background-color: white;
-      width: fit-content;
+      background-color: #cdbbff;
+      width: 100%;
       padding: 10px;
       margin-right: 10px;
       border-radius: 4px;
@@ -246,23 +246,25 @@
       border: none;
       transition: 0.2s;
       margin: 0 2px !important;
+      background-color: $in-progress;
+      color: #ffffff;
 
-      &:hover {
-        background-color: $in-progress;
-        color: #ffffff;
+      // font-weight: 600;
 
-        // font-weight: 600;
-        &:last-child {
-          background-color: $declined;
-        }
+      :hover {
+        opacity: 0.8s !important;
+      }
 
+      &:last-child {
+        background-color: $declined;
       }
 
     }
   }
 
-  .complete:hover {
+  .complete {
     background-color: $bright-gray  !important;
+    color: white;
   }
 }
 

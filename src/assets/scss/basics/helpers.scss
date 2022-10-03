@@ -105,32 +105,32 @@
 // Order status coloring
 
 .pending {
-  color: white !important;
-  background-color: $pending;
+  // color: white !important;
+  color: $pending !important;
   border-radius: 4px;
   font-weight: 600;
   font-size: 18px;
 }
 
 .in-progress {
-  color: white !important;
+  // color: white !important;
   border-radius: 4px;
   font-weight: 600;
   font-size: 18px;
-  background-color: $in-progress  !important;
+  color: $in-progress  !important;
 }
 
 .declined {
-  color: white !important;
+  // color: white !important;
   border-radius: 4px;
   font-weight: 600;
   font-size: 18px;
-  background-color: $declined  !important;
+  color: $declined  !important;
 }
 .completed {
-  color: white !important;
+  // color: white !important;
   border-radius: 4px;
   font-weight: 600;
   font-size: 18px;
-  background-color: $bright-gray  !important;
+  color: $bright-gray  !important;
 }

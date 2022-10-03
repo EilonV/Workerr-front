@@ -104,8 +104,8 @@ export const SellerOrders = () => {
                         <h1>Completed projects</h1>
                         <p>{completedOrders.length}</p>
                       </div>
-                      <div className='total-sales full full-filler'>
-                      </div>
+                      {/* <div className='total-sales full full-filler'>
+                      </div> */}
                     </div>
 
                   }
@@ -140,13 +140,13 @@ export const SellerOrders = () => {
                               <td style={{ textAlign: "right", width: "130px" }} className=''>
                                 {order.status === 'pending' &&
                                   <div className='seller-btns flex  justify-center'>
-                                    <button onClick={() => onChangeStatus(order, 'in progress')}>Accept</button>
-                                    <button onClick={() => onChangeStatus(order, 'declined')}>Decline</button>
+                                    <button onClick={() => onChangeStatus(order, 'in progress')}>accept</button>
+                                    <button onClick={() => onChangeStatus(order, 'declined')}>decline</button>
                                   </div>
                                 }
                                 {order.status === 'in progress' &&
                                   <div className='seller-btns flex justify-center '>
-                                    <button className='complete' onClick={() => onChangeStatus(order, 'completed')}>Complete</button>
+                                    <button className='complete' onClick={() => onChangeStatus(order, 'completed')}>complete</button>
                                   </div>
                                 }
 
